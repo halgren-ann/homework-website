@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>About Me</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles-2.css">
+</head>
+<body>
+
+    <div id="header" class="black">
+        <hr />
+        <a href="../index.html">Ann Halgren</a>
+        <hr />
+    </div>
+    <div id="sidebar" class="black">
+        <div class="sideElement">
+            <a id="about" href="">About Me</a>
+        </div>
+        <hr />
+        <div class="sideElement">
+            <button onclick="revealClasses()" id="seeClasses" class="black">See Classes</button>
+        </div>
+        <hr />
+        <!--Initially hidden with CSS-->
+        <div id="classList" class="black">
+            <hr />
+            <a href="../CS313/cs313.html">CS 313</a>
+            <hr />
+            <p>CS 261</p>
+            <hr />
+            <p>CS 364</p>
+            <hr />
+            <p>FDREL 250</p>
+            <hr />
+        </div>
+    </div>
+    <div id="content" class="backdrop">
+        <p class="centered">About Me</p>
+        <p class="centered">I am a senior software engineering student at BYU-I. I enjoy my family, music, and sports. My husband and I 
+        love to camp and canyoneer together. We also play lots of board games together and with friends in our ward. The picture on
+        the home page is from my wedding in August of 2017. Something I am looking forward to is taking a trip to Australia next year!</p>
+    </div>
+
+    <script>
+        function revealClasses() {
+            document.getElementById("classList").style.visibility = "visible";
+        }
+    </script>
+
+</body>
+</html>

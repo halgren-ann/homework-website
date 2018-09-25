@@ -1,0 +1,32 @@
+﻿body
+{
+}
+
+.backdrop {
+    background-color: darkslategray;
+    color: black;
+    border: medium;
+    border-color: green;
+    padding: 50px 50px 50px 50px;
+    width: 90%;
+    height: 100%;
+    clear: right;
+}
+
+.centered {
+    display: table;
+    margin: 0 auto;
+    padding: 0px 50px 0px 50px;
+}
+
+#col1 {
+    width: 35%;
+}
+
+#col2 {
+    width: 30%;
+}
+
+#col3 {
+    width: 35%;
+}

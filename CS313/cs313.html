@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>CS 313 Assignments</title>
+    <link rel="stylesheet" type="text/css" href="../styles.css">
+    <link rel="stylesheet" type="text/css" href="../styles-2.css">
+</head>
+<body>
+
+    <div id="header" class="black">
+        <hr />
+        <a href="../index.html">Ann Halgren</a>
+        <hr />
+    </div>
+    <div id="sidebar" class="black">
+        <div class="sideElement">
+            <a id="about" href="../About/about.html">About Me</a>
+        </div>
+        <hr />
+        <div class="sideElement">
+            <button onclick="revealClasses()" id="seeClasses" class="black">See Classes</button>
+        </div>
+        <hr />
+        <!--Initially hidden with CSS-->
+        <div id="classList" class="black">
+            <hr />
+            <a href="">CS 313</a>
+            <hr />
+            <p>CS 261</p>
+            <hr />
+            <p>CS 364</p>
+            <hr />
+            <p>FDREL 250</p>
+            <hr />
+        </div>
+    </div>
+    <div id="content" class="backdrop">
+        <p class="centered">CS 313 Assignments</p><br />
+        <table class="centered">
+            <tr>
+                <td id="col1">Assignment</td>
+                <td id="col2">Due Date</td>
+                <td id="col3">Notes to Professor</td>
+            </tr>
+            <tr>
+                <td><a href="https://mysterious-scrubland-35942.herokuapp.com/">01 Prove: Hello World</a></td>
+                <td>Sep 22, 2018</td>
+                <td>Append 'hello.html' to see the html</td>
+            </tr>
+            <tr>
+                <td><a href="https://cs313-week02-team.herokuapp.com/">02 Teach: Team Activity</a></td>
+                <td>Sep 26, 2018</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><a href="../index.html">02 Prove: Homepage</a></td>
+                <td>Sep 29, 2018</td>
+                <td><a href="02ProveExplanation.txt">read more</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function revealClasses() {
+            document.getElementById("classList").style.visibility = "visible";
+        }
+    </script>
+
+</body>
+</html>
