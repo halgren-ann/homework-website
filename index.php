@@ -33,9 +33,9 @@
             <p>FDREL 250</p>
             <hr />
         </div>
-		<p id="date">
+		<p id="date"> Today is Wednesday
 			<?php
-			echo "Today is " . date("l, m-d-Y");
+				echo "Today is " . date("l, m-d-Y");
 			?>
 		</p>
     </div>
