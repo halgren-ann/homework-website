@@ -1,0 +1,57 @@
+﻿body {
+    color: limegreen;
+    background-color: black;
+    font-size: 20px;
+}
+
+.black {
+    background-color: black;
+}
+
+#header {
+    padding: 0px 0px 0px 0px;
+    border: none;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-size:30px;
+    font-weight: bold;
+}
+
+#sidebar {
+    width: 25%;
+    float: left;
+}
+
+#handsPic {
+    width: 75%;
+    height: auto;
+    clear: right;
+}
+
+#seeClasses {
+    color: limegreen;
+    font-size: 20px;
+}
+
+a:link, a:visited {
+    color: limegreen;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover, #seeClasses:hover {
+    color: blue;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+#classList {
+    visibility: hidden;
+}
+
+#date {
+    color: white;
+    background-color: black;
+    font-size: 15px;
+}

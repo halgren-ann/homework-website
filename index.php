@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -33,6 +33,11 @@
             <p>FDREL 250</p>
             <hr />
         </div>
+		<p id="date">
+			<?php
+			echo "Today is " . date("l, m-d-Y");
+			?>
+		</p>
     </div>
     <div id="picture" class="black">
         <img id="handsPic" src="hands.jpg" alt="Hands" />
