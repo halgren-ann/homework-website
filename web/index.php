@@ -35,6 +35,7 @@
         </div>
 		<div id="date">
 			<?php
+				date_default_timezone_set("America/New_York");
 				echo "Today is " . date("l, m-d-Y");
 				echo "<br>";
 				echo $_SERVER['SERVER_NAME'];
