@@ -9,7 +9,11 @@
 <body>
     <div id="header" class="black">
         <hr />
-        <a href="">Ann Halgren</a>
+        <a href=""><?php
+				echo "Today is " . date("l,m-d-Y");
+				echo "<br>";
+				echo $_SERVER['SERVER_NAME'];
+			?></a>
         <hr />
     </div>
     <div id="sidebar" class="black">
@@ -33,11 +37,13 @@
             <p>FDREL 250</p>
             <hr />
         </div>
-		<?php
-				echo "Today is " . date("l,m-d-Y");
+		<div id="date">
+			<?php
+				echo "Today is " . date("l, m-d-Y");
 				echo "<br>";
 				echo $_SERVER['SERVER_NAME'];
 			?>
+		</div>
     </div>
     <div id="picture" class="black">
         <img id="handsPic" src="hands.jpg" alt="Hands" />
