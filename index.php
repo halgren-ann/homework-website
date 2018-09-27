@@ -33,11 +33,11 @@
             <p>FDREL 250</p>
             <hr />
         </div>
-		<p id="date"> Today is Wednesday
-			<?php
-				echo "Today is " . date("l, m-d-Y");
+		<?php
+				echo "Today is " . date("l,m-d-Y");
+				echo "<br>";
+				echo $_SERVER['SERVER_NAME'];
 			?>
-		</p>
     </div>
     <div id="picture" class="black">
         <img id="handsPic" src="hands.jpg" alt="Hands" />
