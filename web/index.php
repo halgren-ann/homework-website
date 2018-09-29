@@ -26,7 +26,7 @@
             <hr />
             <a href = "/CS313/cs313.html" >CS 313</a >
             <hr />
-            <p>CS 261</p>
+            <a href="../CIT261/cit261.html">CIT 261</a>
             <hr />
             <p>CS 364</p>
             <hr />
