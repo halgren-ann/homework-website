@@ -13,6 +13,11 @@ function getFileFromServer() {
 
 function parseItems(items) {
     var itemsArray = JSON.parse(items);
-    var index = itemsArray.indexOf('fabric');
+    var index;
+    for(var i=0; i<itemsArray.count(); i++) {
+        if(itemsArray[i].name = "fabric") {
+            index = i;
+        }
+    }
     alert("gotcha" + index);
 }
