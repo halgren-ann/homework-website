@@ -15,7 +15,7 @@ function parseItems(items) {
     var itemsArray = JSON.parse(items);
     var index;
     for(var i=0; i<itemsArray.count(); i++) {
-        if(itemsArray[i].name = "fabric") {
+        if(itemsArray[i].name == "fabric") {
             index = i;
         }
     }
