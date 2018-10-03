@@ -13,7 +13,7 @@
   <body>
     <h1>Welcome to the sewing shop :)</h1>
     <p>Take a look around. We hope you find something you like!</p>
-    <button onclick=getFileFromServer()>Click me</button>
+    <button onclick="getFileFromServer('mat')">Click me</button>
 
   </body>
 </html>
