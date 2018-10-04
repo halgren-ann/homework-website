@@ -23,6 +23,27 @@
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
             </td>
+            <td>
+                <img src="mat.jpg"/>
+                <br/>
+                <button onclick="addToCart('mat')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('mat')">Item Details</button>
+            </td>
+            <td>
+                <img src="cutter.png"/>
+                <br/>
+                <button onclick="addToCart('rotary')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('rotary')">Item Details</button>
+            </td>
+            <td>
+                <img src="ruler.jpg"/>
+                <br/>
+                <button onclick="addToCart('ruler')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('ruler')">Item Details</button>
+            </td>
         </tr>
     </table>
 
