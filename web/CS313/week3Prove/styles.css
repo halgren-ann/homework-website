@@ -2,3 +2,8 @@ body {
     background-image: url('dark-triangles.png');
     color: white;
 }
+
+.centered {
+    display:table; 
+    margin:0 auto;
+}

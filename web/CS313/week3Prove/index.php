@@ -11,9 +11,18 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <h1>Welcome to the sewing shop :)</h1>
-    <p>Take a look around. We hope you find something you like!</p>
-    <button onclick="getFileFromServer('mat')">Click me</button>
+    <h1 class="centered">Welcome to the sewing shop :)</h1>
+    <p class="centered">Take a look around. We hope you find something you like!</p>
+    <br/><br/><br/>
+    <table>
+        <tr>
+            <td>
+                <img src="fabric.jpg"/>
+                <button onclick="addToCart('fabric')">Add to Cart</button>
+                <button onclick="getDetails('fabric')">Item Details</button>
+            </td>
+        </tr>
+    </table>
 
   </body>
 </html>

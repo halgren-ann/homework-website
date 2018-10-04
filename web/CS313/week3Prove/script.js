@@ -1,9 +1,18 @@
-function getFileFromServer(item) {
+function getDetails(item) {
+    var itemsStr = getFileFromServer();
+    var itemsArray = parseItems(itemsStr);
+    var index = getItem(itemsArray, item);
+    if(index != -1) {
+        presentDetails(itemsArray, index);
+    }
+}
+
+function getFileFromServer() {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var items = xmlhttp.responseText;
-            parseItems(items, item);
+            var itemsStr = xmlhttp.responseText;
+            return itemsStr;
         }
     }
 
@@ -11,13 +20,21 @@ function getFileFromServer(item) {
     xmlhttp.send();
 }
 
-function parseItems(items, item) {
-    var itemsArray = JSON.parse(items);
+function parseItems(itemsStr) {
+    var itemsArray = JSON.parse(itemsStr);
+    return itemsArray;
+}
+
+function getItem(itemsArray, item) {
     var index;
     for(i in itemsArray) {
         if(itemsArray[i].name == item) {
             index = i;
         }
     }
-    alert("gotcha" + index);
+    return index;
+}
+
+function presentDetails(itemsArray, index) {
+    alert("Our " + itemsArray[index].name + " comes brand new. It costs $" + itemsArray[index].cost + " and ships free!")
 }
