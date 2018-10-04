@@ -61,7 +61,7 @@
                 <button onclick="getDetails('needles')">Item Details</button>
             </td>
             <td class="col3">
-                <img src="pins.png"/>
+                <img src="pins.jpg"/>
                 <br/>
                 <button onclick="addToCart('pins')">Add to Cart</button>
                 <br/>
