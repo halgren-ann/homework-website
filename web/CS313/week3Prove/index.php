@@ -18,7 +18,9 @@
         <tr>
             <td>
                 <img src="fabric.jpg"/>
+                <br/>
                 <button onclick="addToCart('fabric')">Add to Cart</button>
+                <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
             </td>
         </tr>
