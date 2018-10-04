@@ -12,6 +12,10 @@ td {
     width: 25%;
 }
 
+img {
+    width: auto;
+}
+
 button {
     width: 100%;
 }
