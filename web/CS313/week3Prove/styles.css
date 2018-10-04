@@ -8,10 +8,10 @@ body {
     margin:0 auto;
 }
 
-img {
+td {
     width: 25%;
 }
 
 button {
-    width: max-content;
+    width: 100%;
 }
