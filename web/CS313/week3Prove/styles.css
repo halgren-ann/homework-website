@@ -39,7 +39,7 @@ table, td, tr {
     margin:0 auto;
 }
 
-#viewCartButton {
+#viewCartButton, #returnToShopping {
     text-decoration: none;
     color: white;
     background-color: forestgreen;
@@ -50,4 +50,5 @@ table, td, tr {
 
     display:table; 
     margin:0 auto;
+    width: 25%;
 }
