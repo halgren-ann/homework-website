@@ -20,7 +20,7 @@ function getFileFromServer() {
             var itemsArray = parseItems(itemsStr);
             var index = getItem(itemsArray, item);
             if(index != -1) {
-                presentDetails(itemsArray, index);
+                alert("Our " + itemsArray[index].name + " comes brand new. It costs $" + itemsArray[index].price + " and ships free!");
             }
         }
     }
