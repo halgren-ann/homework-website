@@ -9,21 +9,26 @@ function addToCart(item) {
                     index = i;
                 }
             }
+            if(index != -1) {
+                //$_SESSION[itemsArray[index].name] = itemsArray[index].price;
+                var userName = "Shekhar Shete";
+                '<%Session["UserName"] = "' + userName + '"; %>';
+                alert('<%=Session["UserName"] %>');
+        
+                // Get the snackbar DIV
+                var x = document.getElementById("snackbar");
+        
+                // Add the "show" class to DIV
+                x.className = "show";
+        
+                // After 3 seconds, remove the show class from DIV
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);   
+            }
         }
     }
 
     xmlhttp.open("GET", "items.json", true);
     xmlhttp.send();
-    if(index != -1) {
-        // Get the snackbar DIV
-        var x = document.getElementById("snackbar");
-
-        // Add the "show" class to DIV
-        x.className = "show";
-
-        // After 3 seconds, remove the show class from DIV
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);   
-    }
 }
 
 function getDetails(item) {
