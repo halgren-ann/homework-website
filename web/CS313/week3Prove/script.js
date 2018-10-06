@@ -1,7 +1,6 @@
 function addToCart(item) {
     var itemsStr = getFileFromServer();
-    var itemsArray = new Object();
-    itemsArray = parseItems(itemsStr);
+    var itemsArray = parseItems(itemsStr);
     var index = getItem(itemsArray, item);
     if(index != -1) {
         $_SESSION[itemsArray[index].name] = itemsArray[index].price;   
@@ -10,11 +9,7 @@ function addToCart(item) {
 
 function getDetails(item) {
     var itemsStr = getFileFromServer();
-    var itemsArray = parseItems(itemsStr);
-    var index = getItem(itemsArray, item);
-    if(index != -1) {
-        presentDetails(itemsArray, index);
-    }
+    
 }
 
 function getFileFromServer() {
@@ -22,7 +17,11 @@ function getFileFromServer() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var itemsStr = xmlhttp.responseText;
-            return itemsStr;
+            var itemsArray = parseItems(itemsStr);
+            var index = getItem(itemsArray, item);
+            if(index != -1) {
+                presentDetails(itemsArray, index);
+            }
         }
     }
 
