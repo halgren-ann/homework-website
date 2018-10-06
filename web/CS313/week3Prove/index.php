@@ -1,5 +1,5 @@
 <?php
-
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +71,8 @@
     
     <br/><br/><br/>
 
-    
+    <img src="cart.png" id="cartImage"/>
+    <button id="viewCartButton">View Cart</button>
 
   </body>
 </html>

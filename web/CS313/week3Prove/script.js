@@ -1,3 +1,12 @@
+function addToCart(item) {
+    var itemsStr = getFileFromServer();
+    var itemsArray = parseItems(itemsStr);
+    var index = getItem(itemsArray, item);
+    if(index != -1) {
+        $_SESSION[item.name] = item.price;   
+    }
+}
+
 function getDetails(item) {
     var itemsStr = getFileFromServer();
     var itemsArray = parseItems(itemsStr);
@@ -36,5 +45,5 @@ function getItem(itemsArray, item) {
 }
 
 function presentDetails(itemsArray, index) {
-    alert("Our " + itemsArray[index].name + " comes brand new. It costs $" + itemsArray[index].cost + " and ships free!")
+    alert("Our " + itemsArray[index].name + " comes brand new. It costs $" + itemsArray[index].price + " and ships free!");
 }

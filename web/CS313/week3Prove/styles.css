@@ -31,3 +31,23 @@ table, td, tr {
     border-width: thick;
     border: 3px solid gray;
 }
+
+#cartImage {
+    display: block;
+    width: 15%;
+    display:table; 
+    margin:0 auto;
+}
+
+#viewCartButton {
+    text-decoration: none;
+    color: white;
+    background-color: forestgreen;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px;
+
+    display:table; 
+    margin:0 auto;
+}
