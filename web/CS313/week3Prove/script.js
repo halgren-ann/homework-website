@@ -11,11 +11,15 @@ function getDetails(item) {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var itemsStr = xmlhttp.responseText;
-            var itemsArray = parseItems(itemsStr);
-            var index = getItem(itemsArray, item);
+            var itemsArray = JSON.parse(xmlhttp.responseText);
+            var index;
+            for(i in itemsArray) {
+                if(itemsArray[i].name == item) {
+                    index = i;
+                }
+            }
             if(index != -1) {
-                presentDetails(itemsArray, index);
+                alert("Our " + itemsArray[index].name + " comes brand new. It costs $" + itemsArray[index].price + " and ships free!");
             }
         }
     }
