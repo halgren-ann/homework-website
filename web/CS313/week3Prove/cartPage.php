@@ -15,7 +15,7 @@
     <p class="centered">Did you get everything?</p>
     <br/><br/>
 
-    <a id="returnToShopping" href="index.php"><= Shop More</a>
+    <a id="returnToShopping" href="index.php">Shop More</a>
     <br/><br/>
 
     <?php

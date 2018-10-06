@@ -15,8 +15,9 @@ function addToCart(item) {
     xmlhttp.open("GET", "items.json", true);
     xmlhttp.send();
     if(index != -1) {
-        $_SESSION[itemsArray[index].name] = itemsArray[index].price;
-        
+        //$_SESSION[itemsArray[index].name] = itemsArray[index].price;
+        sessionStorage.setItem(itemsArray[index].name, itemsArray[index].price);
+
         // Get the snackbar DIV
         var x = document.getElementById("snackbar");
 
