@@ -3,7 +3,7 @@ function addToCart(item) {
     var itemsArray = parseItems(itemsStr);
     var index = getItem(itemsArray, item);
     if(index != -1) {
-        $_SESSION[item.name] = item.price;   
+        $_SESSION[itemsArray[index].name] = itemsArray[index].price;   
     }
 }
 

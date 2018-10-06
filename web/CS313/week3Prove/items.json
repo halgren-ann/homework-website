@@ -1,10 +1,33 @@
-[
-    {"name":"fabric","price":7.99},
-    {"name":"ruler","price":12.99},
-    {"name":"rotary","price":5.99},
-    {"name":"mat","price":8.99},
-    {"name":"pins","price":2.99},
-    {"name":"batting","price":17.99},
-    {"name":"machine","price":144.99},
-    {"name":"needles","price":9.99}
+[{
+    "name": "fabric",
+    "price": 7.99
+},
+{
+    "name": "ruler",
+    "price": 12.99
+},
+{
+    "name": "rotary",
+    "price": 5.99
+},
+{
+    "name": "mat",
+    "price": 8.99
+},
+{
+    "name": "pins",
+    "price": 2.99
+},
+{
+    "name": "batting",
+    "price": 17.99
+},
+{
+    "name": "machine",
+    "price": 144.99
+},
+{
+    "name": "needles",
+    "price": 9.99
+}
 ]
