@@ -1,6 +1,7 @@
 function addToCart(item) {
     var itemsStr = getFileFromServer();
-    var itemsArray = parseItems(itemsStr);
+    var itemsArray = new Object();
+    itemsArray = parseItems(itemsStr);
     var index = getItem(itemsArray, item);
     if(index != -1) {
         $_SESSION[itemsArray[index].name] = itemsArray[index].price;   
