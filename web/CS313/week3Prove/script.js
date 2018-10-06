@@ -9,12 +9,7 @@ function addToCart(item) {
                     index = i;
                 }
             }
-            if(index != -1) {
-                //$_SESSION[itemsArray[index].name] = itemsArray[index].price;
-                var userName = "Shekhar Shete";
-                '<%Session["UserName"] = "' + userName + '"; %>';
-                alert('<%=Session["UserName"] %>');
-        
+            if(index != -1) {        
                 // Get the snackbar DIV
                 var x = document.getElementById("snackbar");
         
@@ -22,7 +17,10 @@ function addToCart(item) {
                 x.className = "show";
         
                 // After 3 seconds, remove the show class from DIV
-                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);   
+                setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+                
+                //Add the item to the session
+                return itemsArray[index].price;
             }
         }
     }
