@@ -72,7 +72,7 @@
     <br/><br/><br/>
 
     <img src="cart.png" id="cartImage"/>
-    <button id="viewCartButton" onclick="cartPage.php">View Cart</button>
+    <a id="viewCartButton" href="cartPage.php">View Cart</a>
 
     <br/><br/>
 

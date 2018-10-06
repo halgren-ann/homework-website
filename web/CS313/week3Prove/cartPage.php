@@ -14,7 +14,7 @@
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
 
-    <button id="returnToShopping" onclick="index.php"><= Shop More</button>
+    <a id="returnToShopping" href="index.php"><= Shop More</a>
     <br/><br/>
 
     <?php
