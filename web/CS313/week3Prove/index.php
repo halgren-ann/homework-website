@@ -75,6 +75,7 @@
     <a id="viewCartButton" href="cartPage.php">View Cart</a>
 
     <br/><br/>
+    <div id="snackbar">This item was added to your cart</div>
 
   </body>
 </html>

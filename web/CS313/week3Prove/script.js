@@ -15,7 +15,16 @@ function addToCart(item) {
     xmlhttp.open("GET", "items.json", true);
     xmlhttp.send();
     if(index != -1) {
-        $_SESSION[itemsArray[index].name] = itemsArray[index].price;   
+        $_SESSION[itemsArray[index].name] = itemsArray[index].price;
+        
+        // Get the snackbar DIV
+        var x = document.getElementById("snackbar");
+
+        // Add the "show" class to DIV
+        x.className = "show";
+
+        // After 3 seconds, remove the show class from DIV
+        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);   
     }
 }
 
