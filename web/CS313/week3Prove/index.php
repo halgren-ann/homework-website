@@ -24,7 +24,6 @@
             </td>
             <td class="col2">
                 <img src="mat.jpg"/>
-                <br/>
                 <button onclick="addToCart('mat')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('mat')">Item Details</button>
@@ -70,7 +69,9 @@
         </tr>
     </table>
     
+    <br/><br/><br/>
 
+    
 
   </body>
 </html>
