@@ -18,9 +18,6 @@ function addToCart(item) {
         
                 // After 3 seconds, remove the show class from DIV
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-                
-                //Add the item to the session
-                return itemsArray[index].price;
             }
         }
     }
