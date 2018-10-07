@@ -18,7 +18,7 @@
         <tr>
             <td class="col1">
                 <img src="fabric.jpg"/>
-                <button action = "<?php $_SESSION["fabric"] = hello(); ?>" onclick="addToCart('fabric')">Add to Cart</button>
+                <button action = "<?php $_SESSION["fabric"] = echo "<script> hello(); </script>"; ?>" onclick="addToCart('fabric')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
             </td>
