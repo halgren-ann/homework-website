@@ -1,3 +1,7 @@
+function hello() {
+    return 7.99;
+}
+
 function addToCart(item) {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function() {
