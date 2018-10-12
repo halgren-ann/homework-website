@@ -21,7 +21,7 @@
     <?php
         print_r($_SESSION);
 
-        foreach($item in $_SESSION["item"]) {
+        foreach($item in $_SESSION["items"]) {
           echo key($item);
           echo $item;
         }

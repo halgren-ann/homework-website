@@ -1,11 +1,13 @@
 <?php
     session_start();
-    if isset($_POST["item"]) {
+    if (isset($_POST["item"])) {
         $name = $_POST["item"];
-        if isset($_SESSION["item"][$name]) {
-            $_SESSION["item"][$name]++;
+        if (isset($_SESSION["items"][$name])) {
+            $_SESSION["items"][$name]++;
         }
-        else $_SESSION["item"][$name] = 1;
+        else {
+            $_SESSION["items"][$name] = 1;
+        }
     }
 ?>
 
