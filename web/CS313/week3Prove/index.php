@@ -18,13 +18,13 @@
         <tr>
             <td class="col1">
                 <img src="fabric.jpg"/>
-                <button onclick = "<?php $_SESSION["fabric"] = 7.99; ?>">Add to Cart</button>
+                <button action = "<?php $_SESSION["fabric"] = 7.99; ?>" onclick="addToCart('fabric')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
             </td>
             <td class="col2">
                 <img src="mat.jpg"/>
-                <button  onclick = "<?php $_SESSION["mat"] = 8.99; ?>">Add to Cart</button>
+                <button  action = "<?php $_SESSION["mat"] = 8.99; ?>" onclick="addToCart('mat')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('mat')">Item Details</button>
             </td>
