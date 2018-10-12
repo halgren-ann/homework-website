@@ -26,6 +26,5 @@ CREATE TABLE public.subtask
 	user_id INT NOT NULL REFERENCES public.user(id),
     task_id INT NOT NULL REFERENCES public.task(id),
 	task_text TEXT NOT NULL,
-    date_added DATE NOT NULL,
     is_complete BOOLEAN NOT NULL
 );
