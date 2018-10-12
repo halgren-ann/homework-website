@@ -20,6 +20,12 @@
 
     <?php
         print_r($_SESSION);
+
+        foreach($item in $_SESSION["item"]) {
+          echo key($item);
+          echo $item;
+        }
+
     ?>
 
     <br/><br/>
