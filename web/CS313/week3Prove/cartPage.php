@@ -21,9 +21,11 @@
     <?php
         print_r($_SESSION);
 
-        foreach($item in $_SESSION["items"]) {
-          echo key($item);
-          echo $item;
+        if (isset($_SESSION["items"])) {
+            foreach($item in $_SESSION["items"]) {
+            echo key($item);
+            echo $item;
+          }
         }
 
     ?>
