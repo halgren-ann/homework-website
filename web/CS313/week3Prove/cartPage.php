@@ -22,7 +22,7 @@
         print_r($_SESSION);
 
         if (isset($_SESSION["items"])) {
-            foreach($item in $_SESSION["items"]) {
+            foreach ($item in ($_SESSION["items"])) {
             echo key($item);
             echo $item;
           }

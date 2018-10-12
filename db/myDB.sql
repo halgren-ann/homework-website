@@ -8,8 +8,6 @@ CREATE TABLE public.user
     display_color VARCHAR(100)
 );
 
-
-
 CREATE TABLE public.task
 (
 	id SERIAL NOT NULL PRIMARY KEY,
@@ -18,5 +16,16 @@ CREATE TABLE public.task
     date_added DATE NOT NULL,
     date_due DATE,
     classification VARCHAR(100) NOT NULL,
-    difficulty VARCHAR(100) NOT NULL
+    difficulty VARCHAR(100) NOT NULL,
+    is_complete BOOLEAN NOT NULL
+);
+
+CREATE TABLE public.subtask
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	user_id INT NOT NULL REFERENCES public.user(id),
+    task_id INT NOT NULL REFERENCES public.task(id),
+	task_text TEXT NOT NULL,
+    date_added DATE NOT NULL,
+    is_complete BOOLEAN NOT NULL
 );
