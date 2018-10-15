@@ -29,6 +29,9 @@
 
     <?php
         if (isset($_SESSION["items"])) {
+          $totalItems = 0;
+          $totalPrice = 0.00;
+
           echo "<table>
                   <tr><td><h2><i>Item</i></h2></td>
                       <td><h2><i>Price</i></h2></td>
@@ -46,13 +49,15 @@
                         //see the json to php decoder here: http://freeonlinetools24.com/json-decode
                         if ($value['name'] == $item_name) {
                           echo $value['price'];
+                          $totalPrice = $totalPrice + ($value['price'] * $item_quantity);
                         }
                       } 
                     
                     echo "</td>
-                    <td>$item_quantity</td>
+                    <td>$item_quantity</td>";
+                    $totalItems = $totalItems + $item_quantity;
 
-                    <td>
+                    echo "<td>
                       <form action='cartPage.php' method='post'>
                       <button type='submit' name='item' value='$item_name'>Remove one item</button>
                       </form>
@@ -60,7 +65,15 @@
                   </tr>";
           }
 
-          echo "</table>";
+          echo "<tr>
+                <td><h2><i>Totals</i></h2></td>
+                <td><h2><i>\$$totalPrice</i></h2></td>
+                <td><h2><i>$totalItems</i></h2></td>
+                <td>
+                  <button>Proceed to checkout</button>
+                </td>
+              </tr>
+            </table>";
         }
 
     ?>
