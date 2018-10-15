@@ -29,7 +29,7 @@
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
             echo "<tr>
                     <td>$item_name</td>
-                    <td>\$";
+                    <td>\$" . "document.onload='getItemPrice($item_name)'";
                       $str = file_get_contents('http://example.com/example.json/');
                       $json = json_decode($str, true); // decode the JSON into an associative array
                       foreach ($json as $key => $value) {
