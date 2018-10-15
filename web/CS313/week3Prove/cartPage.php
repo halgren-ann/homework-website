@@ -26,6 +26,7 @@
                   <tr><td><h2><i>Item</i></h2></td>
                       <td><h2><i>Price</i></h2></td>
                       <td><h2><i>Quantity</i></h2></td>
+                      <td><h2><i>Got too many?</i></h2></td>
                   </tr>";
 
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
@@ -38,14 +39,14 @@
                         //see the json to php decoder here: http://freeonlinetools24.com/json-decode
                         if ($value['name'] == $item_name) {
                           echo $value['price'];
-                          $totalPrice += $value['price'] * $item_quantity;
+                          $totalPrice += ($value['price'] * $item_quantity);
                         }
                       } 
                     
-            echo "          
-                    </td>
+                    echo "</td>
                     <td>$item_quantity</td>
                     $totalItems += $item_quantity;
+                    
                   </tr>";
           }
 
