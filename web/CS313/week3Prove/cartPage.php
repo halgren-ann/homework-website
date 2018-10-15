@@ -29,8 +29,8 @@
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
             echo "<tr>
                     <td>$item_name</td>
-                    <td>\$" . "document.onload='getItemPrice($item_name)'";
-                      $str = file_get_contents('http://example.com/example.json/');
+                    <td>\$";
+                      $str = file_get_contents('items.json');
                       $json = json_decode($str, true); // decode the JSON into an associative array
                       foreach ($json as $key => $value) {
                         //see the json to php decoder here: http://freeonlinetools24.com/json-decode
