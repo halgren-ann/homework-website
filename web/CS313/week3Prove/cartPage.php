@@ -22,9 +22,9 @@
         print_r($_SESSION);
 
         if (isset($_SESSION["items"])) {
-            foreach ($_SESSION["items"] as $item) {
-            echo $key($item);
-            echo $item;
+            foreach ($_SESSION["items"] as $item_name => $item_quantity) {
+            echo $item_name;
+            echo $item_quantity;
           }
         }
 
