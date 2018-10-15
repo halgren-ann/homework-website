@@ -60,3 +60,24 @@ function getDetails(item) {
     xmlhttp.open("GET", "items.json", true);
     xmlhttp.send();
 }
+
+function getItemPrice(item) {
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var itemsArray = JSON.parse(xmlhttp.responseText);
+            var index;
+            for(i in itemsArray) {
+                if(itemsArray[i].name == item) {
+                    index = i;
+                }
+            }
+            if(index != -1) {
+                return itemsArray[index].price;
+            }
+        }
+    }
+
+    xmlhttp.open("GET", "items.json", true);
+    xmlhttp.send();
+}

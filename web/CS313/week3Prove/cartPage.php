@@ -19,13 +19,24 @@
     <br/><br/>
 
     <?php
-        print_r($_SESSION);
-
         if (isset($_SESSION["items"])) {
-            foreach ($_SESSION["items"] as $item_name => $item_quantity) {
-            echo $item_name;
-            echo $item_quantity;
+          echo "<table>
+                  <tr><td>Item</td>
+                      <td>Price</td>
+                      <td>Quantity</td>
+                  </tr>";
+
+          foreach ($_SESSION["items"] as $item_name => $item_quantity) {
+          echo "
+            <tr>
+              <td>$item_name</td>
+              <td>\$getItemPrice('$item_name')</td>
+              <td>$item_quantity</td>
+            </tr>
+          "
           }
+
+          echo "</table>";
         }
 
     ?>
