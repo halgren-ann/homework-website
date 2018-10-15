@@ -29,7 +29,7 @@
             <tr>
                 <td class="col1">
                     <img src="fabric.jpg"/>
-                    <button onclick="addToCart('fabric')" name="item" value="fabric" type="submit">Add to Cart</button>
+                    <button name="item" value="fabric" type="submit" onclick="addToCart('fabric')">Add to Cart</button>
                     <br/>
                     <button onclick="getDetails('fabric')">Item Details</button>
                 </td>

@@ -8,7 +8,7 @@ function addToCart(item) {
                 if(itemsArray[i].name == item) {
                     index = i;
                 }
-            }
+            }9
             if(index != -1) {        
                 // Get the snackbar DIV
                 var x = document.getElementById("snackbar");
@@ -22,7 +22,7 @@ function addToCart(item) {
         }
     }
 
-    xmlhttp.open("GET", "items.json", true);
+    xmlhttp.open("POST", "index.php", true);
     xmlhttp.send();
 }
 
