@@ -39,7 +39,7 @@ table, td, tr {
     margin:0 auto;
 }
 
-#viewCartButton, #returnToShopping {
+#viewCartButton, #returnToShopping, #proceedToCheckout {
     text-align: center;
     text-decoration: none;
     color: white;
