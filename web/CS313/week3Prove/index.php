@@ -24,12 +24,12 @@
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
     <br/><br/><br/>
-    
+    <form action="index.php" method="post">
         <table>
             <tr>
                 <td class="col1">
                     <img src="fabric.jpg"/>
-                    <button name="item" value="fabric" onclick="addToCart('fabric')">Add to Cart</button>
+                    <button name="item" value="fabric" type="submit" onclick="addToCart('fabric')">Add to Cart</button>
                     <br/>
                     <button onclick="getDetails('fabric')">Item Details</button>
                 </td>
@@ -79,7 +79,7 @@
                 </td>
             </tr>
         </table>
-    
+    </form>
     
     <br/><br/><br/>
 
