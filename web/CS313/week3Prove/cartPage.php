@@ -29,9 +29,16 @@
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
             echo "<tr>
                     <td>$item_name</td>
-                    <td>\$ + (function () {
-                                  getItemPrice($item_name);      // I will invoke myself
-                              })();
+                    <td>\$";
+                      $str = file_get_contents('http://example.com/example.json/');
+                      $json = json_decode($str, true); // decode the JSON into an associative array
+                      foreach ($json as $name => $price) {
+                        if ($name == $item_name) {
+                          echo $price;
+                        }
+                      } 
+                    
+            echo "          
                     </td>
                     <td>$item_quantity</td>
                   </tr>";
