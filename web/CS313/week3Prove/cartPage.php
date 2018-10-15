@@ -32,6 +32,7 @@
                     <td>\$";
                       $str = file_get_contents('http://example.com/example.json/');
                       $json = json_decode($str, true); // decode the JSON into an associative array
+                      echo '<pre>' . print_r($json) . '</pre>';
                       foreach ($json as $name => $price) {
                         if ($name == $item_name) {
                           echo $price;
