@@ -27,13 +27,11 @@
                   </tr>";
 
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
-            echo "
-              <tr>
-                <td>$item_name</td>
-                <td></td>
-                <td>$item_quantity</td>
-              </tr>
-            "
+            echo "<tr>
+                    <td>$item_name</td>
+                    <td>\$getItemPrice($item_name)</td>
+                    <td>$item_quantity</td>
+                  </tr>";
           }
 
           echo "</table>";
