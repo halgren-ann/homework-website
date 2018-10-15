@@ -15,63 +15,60 @@
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
     <br/><br/><br/>
-    
-        <table>
-            <tr>
-                <td class="col1">
-                    <img src="fabric.jpg"/>
-                    <button onclick="addToCart('fabric')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('fabric')">Item Details</button>
-                </td>
-                <td class="col2">
-                    <img src="mat.jpg"/>
-                    <button  action = "<?php $_SESSION["mat"] = 8.99; ?>" onclick="addToCart('mat')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('mat')">Item Details</button>
-                </td>
-                <td class="col3">
-                    <img src="cutter.png"/>
-                    <button  action = "<?php $_SESSION["rotary"] = 5.99; ?>" onclick="addToCart('rotary')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('rotary')">Item Details</button>
-                </td>
-                <td class="col4">
-                    <img src="ruler.jpg"/>
-                    <button  action = "<?php $_SESSION["ruler"] = 12.99; ?>" onclick="addToCart('ruler')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('ruler')">Item Details</button>
-                </td>
-            </tr>
-            <tr>
-                <td class="col1">
-                    <img src="batting.png"/>
-                    <button  action = "<?php $_SESSION["batting"] = 17.99; ?>" onclick="addToCart('batting')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('batting')">Item Details</button>
-                </td>
-                <td class="col2">
-                    <img src="needles.jpg"/>
-                    <button  action = "<?php $_SESSION["needles"] = 9.99; ?>" onclick="addToCart('needles')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('needles')">Item Details</button>
-                </td>
-                <td class="col3">
-                    <img src="pins.jpg"/>
-                    <button  action = "<?php $_SESSION["pins"] = 2.99; ?>" onclick="addToCart('pins')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('pins')">Item Details</button>
-                </td>
-                <td class="col4">
-                    <img src="machine.jpg"/>
-                    <button  action = "<?php $_SESSION["machine"] = 144.99; ?>" onclick="addToCart('machine')">Add to Cart</button>
-                    <br/>
-                    <button onclick="getDetails('machine')">Item Details</button>
-                </td>
-            </tr>
-        </table>
-    
-    
+    <table>
+        <tr>
+            <td class="col1">
+                <img src="fabric.jpg"/>
+                <button onclick="addToCart('fabric')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('fabric')">Item Details</button>
+            </td>
+            <td class="col2">
+                <img src="mat.jpg"/>
+                <button onclick="addToCart('mat')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('mat')">Item Details</button>
+            </td>
+            <td class="col3">
+                <img src="cutter.png"/>
+                <button onclick="addToCart('rotary')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('rotary')">Item Details</button>
+            </td>
+            <td class="col4">
+                <img src="ruler.jpg"/>
+                <button onclick="addToCart('ruler')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('ruler')">Item Details</button>
+            </td>
+        </tr>
+        <tr>
+            <td class="col1">
+                <img src="batting.png"/>
+                <button onclick="addToCart('batting')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('batting')">Item Details</button>
+            </td>
+            <td class="col2">
+                <img src="needles.jpg"/>
+                <button onclick="addToCart('needles')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('needles')">Item Details</button>
+            </td>
+            <td class="col3">
+                <img src="pins.jpg"/>
+                <button onclick="addToCart('pins')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('pins')">Item Details</button>
+            </td>
+            <td class="col4">
+                <img src="machine.jpg"/>
+                <button onclick="addToCart('machine')">Add to Cart</button>
+                <br/>
+                <button onclick="getDetails('machine')">Item Details</button>
+            </td>
+        </tr>
+    </table>    
     <br/><br/><br/>
 
     <img src="cart.png" id="cartImage"/>
