@@ -53,7 +53,7 @@
                     <td>$item_quantity</td>
 
                     <td>
-                      <form action='cartPage.php'>
+                      <form action='cartPage.php' method='post'>
                       <button type='submit' name='item' value='$item_name'>Remove one item</button>
                       </form>
                     </td>
