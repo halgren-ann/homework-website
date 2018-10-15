@@ -29,7 +29,10 @@
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
             echo "<tr>
                     <td>$item_name</td>
-                    <td>\$getItemPrice($item_name)</td>
+                    <td>\$ + (function () {
+                                  getItemPrice($item_name);      // I will invoke myself
+                              })();
+                    </td>
                     <td>$item_quantity</td>
                   </tr>";
           }
