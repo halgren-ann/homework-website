@@ -70,7 +70,7 @@
                 <td><h2><i>\$$totalPrice</i></h2></td>
                 <td><h2><i>$totalItems</i></h2></td>
                 <td>
-                  <button id='proceedToCheckout' width='100%'>Proceed to checkout</button>
+                  <button id='proceedToCheckout'>Proceed to checkout</button>
                 </td>
               </tr>
             </table>";
