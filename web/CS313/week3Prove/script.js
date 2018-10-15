@@ -20,11 +20,23 @@ function addToCart(item) {
                 setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
                 
                 //Now add the item to the session
+                addToCartSession(item);
             }
         }
     }
 
     xmlhttp.open("GET", "items.json", true);
+    xmlhttp.send();
+}
+
+function addToCartSession(item) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var doINeedThis = this.responseText;
+        }
+    };
+    xmlhttp.open("GET", "addToCartSession.php?q=" + item, true);
     xmlhttp.send();
 }
 

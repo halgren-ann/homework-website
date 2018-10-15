@@ -1,14 +1,5 @@
 <?php
-    session_start();
-    if (isset($_POST["item"])) {
-        $name = $_POST["item"];
-        if (isset($_SESSION["items"][$name])) {
-            $_SESSION["items"][$name]++;
-        }
-        else {
-            $_SESSION["items"][$name] = 1;
-        }
-    }
+    seesion_start();
 ?>
 
 <!DOCTYPE html>
@@ -24,12 +15,12 @@
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
     <br/><br/><br/>
-    <form action="index.php" method="post">
+    
         <table>
             <tr>
                 <td class="col1">
                     <img src="fabric.jpg"/>
-                    <button name="item" value="fabric" type="submit" onclick="addToCart('fabric')">Add to Cart</button>
+                    <button onclick="addToCart('fabric')">Add to Cart</button>
                     <br/>
                     <button onclick="getDetails('fabric')">Item Details</button>
                 </td>
@@ -79,7 +70,7 @@
                 </td>
             </tr>
         </table>
-    </form>
+    
     
     <br/><br/><br/>
 
