@@ -23,7 +23,7 @@
 
         if (isset($_SESSION["items"])) {
             foreach ($_SESSION["items"] as $item) {
-            echo key($item);
+            echo $key($item);
             echo $item;
           }
         }
