@@ -1,0 +1,9 @@
+General Notes:
+
+JS:Whenever the user presses any of either the “Add to Cart” or “Get details” buttons, Javascript functions, with parameters, are called. In both cases, Javascript is used to begin an AJAX interaction (which receives a JSON file from the server). When the response text is received back from the server, Javascript parses the information and stores it in a Javascript associative array. Then, loops, conditional statements, and variables are used to isolate the item requested. If details about the item were requested, the details are displayed by an alert box to the user. If adding to the cart was requested, the Javascript is used to manipulate the class of a hidden <div> inside the html page to briefly show it as a toast message, stating that the item was added to the cart successfully.
+
+JSON:
+
+AJAX:
+
+CSS3 Transitions and Animations triggered with JS:
