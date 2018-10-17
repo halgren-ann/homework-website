@@ -1,10 +1,11 @@
 body {
-    background-image: url('fruit.jpg');
+    background-image: url(fruit.jpg);
 }
 
 .centered {
     display:table; 
     margin:0 auto;
+    text-align: center;
 }
 
 div {
