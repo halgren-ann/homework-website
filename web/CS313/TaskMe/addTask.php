@@ -10,11 +10,11 @@
 <body>
     <div class="centered">
         <br><br><br><br><br><br>
-        <input width="50%" type="text" name="task" placeholder="Enter the main task here" required><br><br>
-        <input type="text" name="subtask1" placeholder="Enter optional subtask or step"><br><br>
-        <input type="text" name="subtask2" placeholder="Enter optional subtask or step"><br><br>
-        <input type="text" name="subtask3" placeholder="Enter optional subtask or step"><br><br>
-        <input type="text" name="subtask4" placeholder="Enter optional subtask or step"><br><br>
+        <input size="50%" type="text" name="task" placeholder="Enter the main task here" required><br><br>
+        <input size="50%" type="text" name="subtask1" placeholder="Enter optional subtask or step"><br><br>
+        <input size="50%" type="text" name="subtask2" placeholder="Enter optional subtask or step"><br><br>
+        <input size="50%" type="text" name="subtask3" placeholder="Enter optional subtask or step"><br><br>
+        <input size="50%" type="text" name="subtask4" placeholder="Enter optional subtask or step"><br><br>
         <select class="dropdown">
             <option value="default">Choose category</option>
             <option value="urgent">This is urgent</option>
