@@ -21,11 +21,6 @@ body {
     text-align: center;
 }
 
-.centered img {
-    width: 150px;
-    border-radius: 30%;
-}
-
 button {
 	width: 100%;
     background-color: lightgray;
