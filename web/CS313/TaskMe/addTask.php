@@ -10,7 +10,7 @@
 <body>
     <div class="centered">
         <br><br><br><br><br><br>
-        <input size="50%" type="text" name="task" placeholder="Enter the main task here" required><br><br>
+        <input size="75%" type="text" name="task" placeholder="Enter the main task here" required><br><br>
         <input size="50%" type="text" name="subtask1" placeholder="Enter optional subtask or step"><br><br>
         <input size="50%" type="text" name="subtask2" placeholder="Enter optional subtask or step"><br><br>
         <input size="50%" type="text" name="subtask3" placeholder="Enter optional subtask or step"><br><br>
