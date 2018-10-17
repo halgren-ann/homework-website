@@ -2,10 +2,10 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="script.js" type="text/javascript"></script>
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
-    <script src="script.js"></script>
 </head>
 <body>
 
@@ -52,8 +52,6 @@
 <div class="titleArea">
   <h1><span style="font-family: 'Caveat', cursive;">Hello, Ann - </span>TaskMe</h1>
 </div>
- 
-
-
+     
 </body>
 </html> 
