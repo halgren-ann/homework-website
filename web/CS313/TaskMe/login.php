@@ -11,9 +11,9 @@
     <div class="centered">
         <br><br><br><br><br><br>
         <label>Username:</label><br>
-        <input type="text" name="username" placeholder="Enter username" maxlength=16 required><br>
+        <input type="text" name="username" placeholder="Enter username" maxlength=16 required><br><br><br>
         <label>Password:</label><br>
-        <input type="text" name="user_password" placeholder="Enter password" maxlength=16 required><br>
+        <input type="text" name="user_password" placeholder="Enter password" maxlength=16 required><br><br><br>
         <input type="submit" style="width:100%">
     </div>
     <div class="titleArea">
