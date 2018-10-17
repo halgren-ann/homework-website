@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
 <link href="styles.css" rel="stylesheet">
+<script src="script.js"></script>
 </head>
 <body>
 
