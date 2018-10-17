@@ -1,0 +1,33 @@
+div.centered {
+    display:table; 
+    margin:0 auto;
+    width: 50%;
+}
+
+#waldo {
+    background-color: aquamarine;
+}
+
+#banana {
+    background-color: yellow;
+}
+
+#cherry {
+    background-color: red;
+}
+
+#grape {
+    background-color: purple;
+}
+
+#kiwi {
+    background-color: green;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#blueberry {
+    background-color: blue;
+}
