@@ -1,7 +1,11 @@
-div.centered {
+div, centered {
     display:table; 
     margin:0 auto;
     width: 50%;
+}
+
+button {
+    width: 100%;
 }
 
 #waldo {
