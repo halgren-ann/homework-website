@@ -1,6 +1,13 @@
-div, centered {
+body {
+    background-image: url('fruit.jpg');
+}
+
+.centered {
     display:table; 
     margin:0 auto;
+}
+
+div {
     width: 50%;
 }
 
