@@ -5,7 +5,7 @@
     <title>TaskMe</title>
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-    <link href="styles.css" rel="stylesheet">
+    <link href="split-styles.css" rel="stylesheet">
 </head>
 <body>
 
