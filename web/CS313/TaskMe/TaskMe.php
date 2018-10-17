@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>TaskMe</title>
-    <script type="text/javascript" src="script.js"></script>
+    <script language="javascript" src="script.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
     <link href="styles.css" rel="stylesheet">
@@ -34,7 +34,11 @@
   </div>
 </div>
 
-<ul>
+<div class="split right">
+  <div class="bordered">
+    <h2>Recently added tasks:</h2>
+    <hr>
+    <ul id="myUL">
         <li>Hit the gym</li>
         <li>Pay bills</li>
         <li>Meet George</li>
@@ -43,6 +47,8 @@
         <li>Organize office</li>
     </ul>
     
+  </div>
+</div>
 
 <div class="titleArea">
   <h1><span style="font-family: 'Caveat', cursive;">Hello, Ann - </span>TaskMe</h1>
