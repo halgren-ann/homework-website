@@ -7,8 +7,8 @@
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
   </head>
   <body>
-        <br><br><br><button><a href="TaskMe.php">Home</a></button>
-        <br><br><button><a href="addTask.php">Add Task</a></button>
+        <br><br><br><br><button><a href="TaskMe.php">Home</a></button>
+        <br><br><a href="addTask.php"><button>Add Task</button></a><br><br>
 
         <ul>
             <li>Hit the gym - Due Date</li>
