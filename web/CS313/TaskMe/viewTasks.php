@@ -10,7 +10,7 @@
   <body>
         <div class="split left">
             <div class="centered">
-                <br><br><button><a href="TaskMe.php">Home</a></button><br><br><br>
+                <button><a href="TaskMe.php">Home</a></button><br><br><br>
                 <ul>
                     <li>Hit the gym - Due Date</li>
                     <li>Pay bills</li>
@@ -21,7 +21,7 @@
             
         <div class="split right">
             <div class="centered">
-                <br><br><button><a href="addTask.php">Add Task</a></button><br><br><br>
+                <button><a href="addTask.php">Add Task</a></button><br><br><br>
                 <ul>
                     <li>Buy eggs</li>
                     <li>Read a book</li>
