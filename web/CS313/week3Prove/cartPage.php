@@ -65,7 +65,8 @@
                   </tr>";
           }
 
-          
+          $_SESSION["numItems"] = $totalItems;
+          $_SESSION["totalPrice"] = $totalPrice;
 
           echo "<tr>
                 <td><h2><i>Totals</i></h2></td>
