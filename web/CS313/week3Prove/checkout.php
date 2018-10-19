@@ -12,7 +12,7 @@
 <body>
     <div class='centered'>
         <form action='confirmation.php' method='post'>
-            <h2>Please enter your address below</h2><br><br><br>
+            <h2>Please enter your address below</h2><br>
             <label>Apartment or home number:</label><br>
             <input type='text' name='apt' placeholder='example: 443' maxlength=8 required><br><br><br>
             <label>Street name:</label><br>
@@ -24,7 +24,7 @@
             <label>Zip code:</label><br>
             <input type='text' name='zip' placeholder='example: 55555' maxlength=10 required><br><br><br>
             <h2>You are about to buy " . $_SESSION["numItems"] . " items for \$" . $_SESSION["totalPrice"] . ".</h2>
-            <br><br><br>
+            <br>
             <input type='button' value='Return to Cart' onclick='history.back(-1)' />
             <input type='submit'>
         </form>

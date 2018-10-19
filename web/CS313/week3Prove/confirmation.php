@@ -19,8 +19,8 @@
           $totalPrice = 0.00;
           echo "
                 <h2>The items below will be sent to the following address:</h2><br><br>
-                <p>$_POST['apt'] $_POST['street']</p><br>
-                <p>$_POST['city'], $_POST['state'] $_POST['zip']</p>
+                <p>" . $_POST["apt"] . $_POST["street"] . "</p><br>
+                <p>" . $_POST["city"] . ", " . $_POST["state"] . $_POST["zip"] . "</p>
                 ";
 
           echo "<table>
@@ -52,9 +52,6 @@
                 <td><h2><i>Totals</i></h2></td>
                 <td><h2><i>\$$totalPrice</i></h2></td>
                 <td><h2><i>$totalItems</i></h2></td>
-                <td>
-                  <button id='proceedToCheckout'>Proceed to checkout</button>
-                </td>
               </tr>
             </table>";
         }
