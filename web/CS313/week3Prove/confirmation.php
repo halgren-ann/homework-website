@@ -1,5 +1,22 @@
 <?php
     session_start();
+    // define variables and set to empty values
+    $apt = $street = $city = $state = $zip = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $apt = test_input($_POST["apt"]);
+      $street = test_input($_POST["street"]);
+      $city = test_input($_POST["city"]);
+      $state = test_input($_POST["state"]);
+      $zip = test_input($_POST["zip"]);
+    }
+
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +35,8 @@
           $totalItems = 0;
           $totalPrice = 0.00;
           echo "
-                <h2>The items below will be sent to the following address:</h2><br><br>
-                <p>" . $_POST["apt"] . $_POST["street"] . "</p>
+                <h2>The items below will be sent to the following address:</h2>
+                <p>" . $apt . " " . $_POST["street"] . "</p>
                 <p>" . $_POST["city"] . ", " . $_POST["state"] . " " . $_POST["zip"] . "</p>
                 ";
 
