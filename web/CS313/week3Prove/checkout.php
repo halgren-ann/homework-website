@@ -26,7 +26,7 @@
             <h2>You are about to buy " . $_SESSION["numItems"] . " items for \$" . $_SESSION["totalPrice"] . ".</h2>
             <br>
             <input type='button' value='Return to Cart' onclick='history.back(-1)' />
-            <input type='submit'>
+            <input type='submit'><br><br><br>
         </form>
     </div>
      
