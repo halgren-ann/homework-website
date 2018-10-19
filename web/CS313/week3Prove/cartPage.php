@@ -73,7 +73,7 @@
                 <td><h2><i>\$$totalPrice</i></h2></td>
                 <td><h2><i>$totalItems</i></h2></td>
                 <td>
-                  <button id='proceedToCheckout'>Proceed to checkout</button>
+                  <a href='checkout.php'><button id='proceedToCheckout'>Proceed to checkout</button></a>
                 </td>
               </tr>
             </table>";
