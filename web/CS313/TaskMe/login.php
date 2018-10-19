@@ -45,25 +45,8 @@
     <script>
         function verifyLogin(username, user_password) {
             <?php
-                // define variables and set to empty values
-                $username = $user_password = "";
-
-                $username = test_input(echo "username";);
-                $user_password = test_input(echo "user_password";);
-
-                function test_input($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-                }
-
                 //Queries
-                foreach ($db->query('SELECT username, user_password FROM public.user') as $row) {
-                    echo 'user: ' . $row['username'];
-                    echo ' password: ' . $row['password'];
-                    echo '<br/>';
-                }
+                
             ?>
         }
     </script>
