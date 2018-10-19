@@ -1,14 +1,5 @@
 <?php
     session_start();
-    if (isset($_POST["item"])) {
-      $name = $_POST["item"];
-      if (isset($_SESSION["items"][$name])) {
-        $_SESSION["items"][$name]--;
-        if ($_SESSION["items"][$name] == 0) {
-          unset($_SESSION["items"][$name]);
-        }
-      }
-    }
 ?>
 
 <!DOCTYPE html>
@@ -20,23 +11,22 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <h1 class="centered">Your Cart</h1>
-    <p class="centered">Did you get everything?</p>
-    <br/><br/>
-
-    <a id="returnToShopping" href="index.php">Shop More</a>
-    <br/><br/>
+    <h1 class="centered">Confirmation Page</h1>
 
     <?php
         if (isset($_SESSION["items"])) {
           $totalItems = 0;
           $totalPrice = 0.00;
+          echo "
+                <h2>The items below will be sent to the following address:</h2><br><br>
+                <p>$_POST['apt'] $_POST['street']</p><br>
+                <p>$_POST['city'], $_POST['state'] $_POST['zip']</p>
+                ";
 
           echo "<table>
                   <tr><td><h2><i>Item</i></h2></td>
                       <td><h2><i>Price</i></h2></td>
                       <td><h2><i>Quantity</i></h2></td>
-                      <td><h2><i>Got Too Many?</i></h2></td>
                   </tr>";
 
           foreach ($_SESSION["items"] as $item_name => $item_quantity) {
@@ -56,17 +46,7 @@
                     echo "</td>
                     <td>$item_quantity</td>";
                     $totalItems = $totalItems + $item_quantity;
-
-                    echo "<td>
-                      <form action='cartPage.php' method='post'>
-                      <button type='submit' name='item' value='$item_name'>Remove one item</button>
-                      </form>
-                    </td>
-                  </tr>";
           }
-
-          $_SESSION['numItems'] = $totalItems;
-          $_SESSION['totalPrice'] = $totalPrice;
 
           echo "<tr>
                 <td><h2><i>Totals</i></h2></td>

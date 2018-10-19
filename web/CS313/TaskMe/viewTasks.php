@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Yesteryear" rel="stylesheet">
   </head>
   <body>
-        <br><br><br><br><button><a href="TaskMe.php">Home</a></button>
+        <br><br><br><br><a href="TaskMe.php"><button>Home</button></a>
         <br><br><a href="addTask.php"><button>Add Task</button></a><br><br>
 
         <ul>

@@ -11,9 +11,9 @@
 
 <div class="split left">
   <div class="centered">
-    <button><a href="">Add Task</a></button>
-    <button><a href="">See tasks due in the next 7 days</a></button>
-    <button><a href="">See all tasks</a></button>
+    <a href="addTask.php"><button>Add Task</button></a>
+    <a href="viewTasks.php"><button>See tasks due in the next 7 days</button></a>
+    <a href="viewTasks.php"><button>See all tasks</button></a>
     <br><br>
     <p>Filter to view tasks:</p>
    	<select class="dropdown">
