@@ -24,7 +24,7 @@
             <input type='text' name='state' placeholder='example: CA or California' maxlength=16 required><br><br><br>
             <label>Zip code:</label><br>
             <input type='text' name='zip' placeholder='example: 55555' maxlength=10 required><br><br><br>
-            <h2>You are about to buy ' . $_SESSION["numItems"] . ' items for \$' . $_SESSION["totalPrice"] . '.</h2><br><br><br>
+            <h2>You are about to buy " . $_SESSION["numItems"] . " items for \$" . $_SESSION["totalPrice"] . ".</h2><br><br><br>
             <br><br><br>
             <a href='cartPage.php'><button>Return to Cart</button><a>
             <input type='submit' style='width:100%'>
