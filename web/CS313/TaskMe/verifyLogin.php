@@ -19,9 +19,11 @@
         die();
     }
 
-    foreach ($db->query('SELECT username, user_password FROM public.user') as $row) {
-        echo 'user: ' . $row['username'];
-        echo ' password: ' . $row['user_password'];
-        echo '<br/>';
-    }
+    //Prepared statements
+    $stmt = $db->prepare('SELECT id FROM table WHERE username=:username AND user_password=:user_password');
+    $stmt->bindValue(':username', $_POST["username"], PDO::PARAM_INT);
+    $stmt->bindValue(':user_password', $_POST["user_password"], PDO::PARAM_STR);
+    $stmt->execute();
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    echo 'id: ' . $rows['id'];
 ?>
