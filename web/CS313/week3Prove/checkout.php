@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class='centered'>
-        <form method='post' action='htmlspecialchars(" . $_SERVER["PHP_SELF"] . ");'>
+        <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"] . ");'>
             <h2>Please enter your address below</h2><br>
             <label>Apartment or home number:</label><br>
             <input type='text' name='apt' placeholder='example: 443' maxlength=8 required><br><br><br>
