@@ -36,8 +36,8 @@
           $totalPrice = 0.00;
           echo "
                 <h2>The items below will be sent to the following address:</h2>
-                <p>" . $apt . " " . $_POST["street"] . "</p>
-                <p>" . $_POST["city"] . ", " . $_POST["state"] . " " . $_POST["zip"] . "</p>
+                <p>" . $apt . " " . $street . "</p>
+                <p>" . $city . ", " . $state . " " . $zip . "</p>
                 ";
 
           echo "<table>
