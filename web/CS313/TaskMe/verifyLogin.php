@@ -47,9 +47,8 @@
     
 
     //Prepared statements
-    $stmt = $db->prepare('SELECT id, username, user_password FROM public.user WHERE username=:username AND user_password=:user_password');
-    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmt->bindValue(':user_password', $user_password, PDO::PARAM_STR);
+    $stmt = $db->prepare('SELECT id, username, user_password FROM public.user WHERE username=:username');
+    $stmt->bindValue(':username', $username, PDO::PARAM_VARCHAR);
     $stmt->execute();
     $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
     echo $row['id'];
