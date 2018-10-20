@@ -45,6 +45,7 @@
     }
 
     //Queries
+    $row = array();
     foreach ($db->query('SELECT id, username, user_password FROM public.user WHERE username = ' . $username) as $row) {
         if(!empty($row)) {
             if($user_password == $row['user_password']) {
