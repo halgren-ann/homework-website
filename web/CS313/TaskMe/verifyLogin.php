@@ -59,7 +59,7 @@
             window.location = 'login.php';</script>";
         }
     }
-    if(!$anyResults) {
+    if($anyResults == false) {
         echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
         window.location = 'login.php';</script>";
     }
