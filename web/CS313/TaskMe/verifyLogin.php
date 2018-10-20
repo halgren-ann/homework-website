@@ -45,9 +45,7 @@
     }
 
     //Queries
-    $anyResults = false;
     foreach ($db->query('SELECT id, username, user_password FROM public.user WHERE username = ' . $username) as $row) {
-        $anyResults = true;
         if($user_password == $row['user_password']) {
             //Then they check out with the database
 
@@ -59,10 +57,8 @@
             window.location = 'login.php';</script>";
         }
     }
-    if($anyResults == false) {
-        echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
-        window.location = 'login.php';</script>";
-    }
+    echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
+    window.location = 'login.php';</script>";
 
     //Prepared statements
     $stmt = $db->prepare('SELECT id, username, user_password FROM public.user WHERE username=:username AND user_password=:user_password');
