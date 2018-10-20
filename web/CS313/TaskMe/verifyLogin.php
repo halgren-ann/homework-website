@@ -8,7 +8,7 @@
 <body>
 
 <?php
-     try {
+    try {
         $dbUrl = getenv('DATABASE_URL');
 
         $dbOpts = parse_url($dbUrl);
@@ -59,7 +59,7 @@
             }
         }
     }
-    catch {
+    catch() {
         echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
         window.location = 'login.php';</script>";
     }
