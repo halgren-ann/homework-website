@@ -47,7 +47,7 @@
     //Queries
     $row = array();
     foreach ($db->query('SELECT id, username, user_password FROM public.user WHERE username = ' . $username) as $row) {
-        if($row != null) {
+        if($username == $row['username']) {
             if($user_password == $row['user_password']) {
                 //Then they check out with the database
 
