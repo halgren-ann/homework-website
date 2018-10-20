@@ -47,6 +47,7 @@
     </ul>
     
   </div>
+  <p>Click on a task when it is completed and it will be removed when the page is reloaded.</p>
 </div>
 
 <div class="titleArea">
