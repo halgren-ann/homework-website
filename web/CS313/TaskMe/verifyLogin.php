@@ -45,16 +45,16 @@
         if($username == $row['username']) {
             if($user_password == $row['user_password']) {
                 //Then they check out with the database, move on to the home page
-                window.location = "homework-website.herokuapp.com/CS313/TAskMe/TaskMe.php";
+                echo "<script type='text/javascript'>window.location = 'homework-website.herokuapp.com/CS313/TaskMe/TaskMe.php';</script>";
             }
             else {
-                echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');</script>";
-                window.location = "homework-website.herokuapp.com/CS313/TAskMe/login.php";
+                echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');
+                window.location = 'homework-website.herokuapp.com/CS313/TaskMe/login.php';</script>";
             }
         }
         else {
-            echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');</script>";
-            window.location = "homework-website.herokuapp.com/CS313/TAskMe/login.php";
+            echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
+            window.location = 'homework-website.herokuapp.com/CS313/TaskMe/login.php';</script>";
         }
     }
 ?>
