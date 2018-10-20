@@ -45,23 +45,23 @@
     }
 
     //Queries
+    $anyResults = false;
     foreach ($db->query('SELECT id, username, user_password FROM public.user WHERE username = ' . $username) as $row) {
-        if($username == $row['username']) {
-            if($user_password == $row['user_password']) {
-                //Then they check out with the database
+        $anyResults = true;
+        if($user_password == $row['user_password']) {
+            //Then they check out with the database
 
-                //Move on to the home page
-                echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
-            }
-            else {
-                echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');
-                window.location = 'login.php';</script>";
-            }
+            //Move on to the home page
+            echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
         }
         else {
-            echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
+            echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');
             window.location = 'login.php';</script>";
         }
+    }
+    if(!$anyResults) {
+        echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
+        window.location = 'login.php';</script>";
     }
 
     //Prepared statements
