@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
 <?php
      try {
         $dbUrl = getenv('DATABASE_URL');
@@ -37,8 +42,22 @@
 
     //Queries
     foreach ($db->query('SELECT username, user_password FROM public.user') as $row) {
-        echo 'user: ' . $row['username'];
-        echo ' password: ' . $row['password'];
-        echo '<br/>';
+        if($username == $row['username']) {
+            if($user_password == $row['user_password']) {
+                //Then they check out with the database, move on to the home page
+                window.location = "homework-website.herokuapp.com/CS313/TAskMe/TaskMe.php";
+            }
+            else {
+                echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');</script>";
+                window.location = "homework-website.herokuapp.com/CS313/TAskMe/login.php";
+            }
+        }
+        else {
+            echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');</script>";
+            window.location = "homework-website.herokuapp.com/CS313/TAskMe/login.php";
+        }
     }
 ?>
+
+</body>
+</html>
