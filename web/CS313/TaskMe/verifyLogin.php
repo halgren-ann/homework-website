@@ -50,6 +50,8 @@
 
     if ($rows[0]) {
         //Then they check out in the database
+        $_SESSION["user"] = $rows[0]["id"];
+        echo "<script type='text/javascript'>alert('The user id is " . $rows[0]["id"] . "');</script>";
         //Move on to the home page
         echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
     }
