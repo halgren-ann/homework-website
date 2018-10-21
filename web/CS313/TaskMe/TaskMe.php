@@ -43,7 +43,36 @@
     <h2>Recently added tasks:</h2>
     <hr>
     <ul>
-        
+        <?php 
+            //Get the 5 most recently added tasks
+            $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id ORDER BY date_added DESC LIMIT 5;');
+            $stmt->execute(array(':user_id' => $_SESSION["user_id"]));
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if ($rows[0]) {
+                foreach ($rows as $row) {
+                    //For each task
+                    echo "<li>" . $row["task_text"];
+                    //check if there is a due date
+                    if ($row["date_due"] != NULL) {
+                        echo " - Due " . $row["date_due"];
+                    }       
+                    //check for subtasks associated with this task
+                    $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                    $stmt->execute(array(':task_id' => $row["id"]));
+                    $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($subrows[0]) {
+                        echo "<ul>";
+                        foreach ($subrows as $subrow) {
+                            //For each subtask
+                            echo "<li>" . $subrow["task_text"] . "</li>";
+                        }
+                        echo "</ul>";
+                    }
+                    
+                    echo "</li>";
+                }
+            }
+        ?>
         <li>Hit the gym - Due Date</li>
         <li>Pay bills</li>
         <li>Meet George - Due Date</li>
