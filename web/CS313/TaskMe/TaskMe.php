@@ -51,7 +51,14 @@
     </div>
 
 <div class="titleArea">
-  <h1><span style="font-family: 'Caveat', cursive;">Hello, Ann - </span>TaskMe</h1>
+  <h1><span style="font-family: 'Caveat', cursive;">Hello, 
+  <?php  
+    $stmt = $db->prepare('SELECT * FROM public.user WHERE id = :id');
+    $stmt->execute(array(':id' => $_SESSION["user_id"]));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($rows[0]) echo $rows[0]["first_name"];
+  ?> 
+  - </span>TaskMe</h1>
 </div>
 
 

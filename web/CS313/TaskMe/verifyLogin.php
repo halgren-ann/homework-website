@@ -8,6 +8,7 @@
 <body>
 
 <?php
+    //connect to the database
      try {
         $dbUrl = getenv('DATABASE_URL');
 
@@ -28,10 +29,11 @@
         die();
     }
 
-    // define variables and set to empty values
+    // define variables
     $username = $_POST["username"];
     $user_password = $_POST["user_password"];
 
+    //test for malicious injection
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = test_input($_POST["username"]);
         $user_password = test_input($_POST["user_password"]);
@@ -44,30 +46,22 @@
         return $data;
     }
 
+    //check the login information
     $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
     $stmt->execute(array(':username' => $_POST["username"], ':user_password' => $_POST["user_password"]));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($rows[0]) {
         //Then they check out in the database
-        $_SESSION["user"] = $rows[0]["id"];
-        echo "<script type='text/javascript'>alert('The user id is " . $rows[0]["id"] . "');</script>";
+        $_SESSION["user_id"] = $rows[0]["id"];
         //Move on to the home page
         echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
     }
     else {
+        //some login info was incorrect
         echo "<script type='text/javascript'>alert('Sorry, the username or password is incorrect');
         window.location = 'login.php';</script>";
     }
-
-
-    //Prepared statements
-    $stmt = $db->prepare('SELECT id, username, user_password FROM public.user WHERE username=:username AND user_password=:user_password');
-    $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmt->bindValue(':user_password', $user_password, PDO::PARAM_STR);
-    $stmt->execute();
-    $row = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    echo $row['id'];
 ?>
 
 </body>
