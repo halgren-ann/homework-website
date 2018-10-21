@@ -44,21 +44,20 @@
         return $data;
     }
 
-    //Queries
-    foreach ($db->query('SELECT id, username, user_password FROM public.user WHERE username = ' . $username) as $row) {
-        if($user_password == $row['user_password']) {
-            //Then they check out with the database
-            
-            //Move on to the home page
-            echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
-        }
-        else {
-            echo "<script type='text/javascript'>alert('Sorry, the password is incorrect');
-            window.location = 'login.php';</script>";
-        }
+    $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
+    $stmt->execute(array(':username' => $_POST["username"], ':user_password' => $_POST["user_password"]));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if ($rows[0]) {
+        //Then they check out in the database
+        //Move on to the home page
+        echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
     }
-    echo "<script type='text/javascript'>alert('Sorry, the username is incorrect. Please either enter a different username or go back to the previous page and click Sign Up');
-    window.location = 'login.php';</script>";
+    else {
+        echo "<script type='text/javascript'>alert('Sorry, the username or password is incorrect');
+        window.location = 'login.php';</script>";
+    }
+
 
     //Prepared statements
     $stmt = $db->prepare('SELECT id, username, user_password FROM public.user WHERE username=:username AND user_password=:user_password');
