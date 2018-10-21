@@ -40,11 +40,7 @@
     <h2>Recently added tasks:</h2>
     <hr>
     <ul>
-        <?php
-            $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
-            $stmt->execute(array(':username' => $_POST["username"], ':user_password' => $_POST["user_password"]));
-            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        ?>
+        
         <li>Hit the gym - Due Date</li>
         <li>Pay bills</li>
         <li>Meet George - Due Date</li>
