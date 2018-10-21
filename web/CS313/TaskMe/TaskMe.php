@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,6 +40,11 @@
     <h2>Recently added tasks:</h2>
     <hr>
     <ul>
+        <?php
+            $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
+            $stmt->execute(array(':username' => $_POST["username"], ':user_password' => $_POST["user_password"]));
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        ?>
         <li>Hit the gym - Due Date</li>
         <li>Pay bills</li>
         <li>Meet George - Due Date</li>
@@ -56,7 +63,9 @@
     $stmt = $db->prepare('SELECT * FROM public.user WHERE id = :id');
     $stmt->execute(array(':id' => $_SESSION["user_id"]));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    if ($rows[0]) echo $rows[0]["first_name"];
+    if ($rows[0]) {
+        echo $rows[0]["first_name"];
+    }
   ?> 
   - </span>TaskMe</h1>
 </div>
