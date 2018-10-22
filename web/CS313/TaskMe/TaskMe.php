@@ -17,24 +17,32 @@
 <div class="split left">
   <div class="centered">
     <a href="addTask.php"><button>Add Task</button></a>
-    <a href="viewTasks.php"><button>See tasks due in the next 7 days</button></a>
-    <a href="viewTasks.php"><button>See all tasks</button></a>
+    <form action="viewTasks.php" method="POST">
+        <input type="hidden" name="callType" value="dueIn7">
+        <button type="submit">See tasks due in the next 7 days</button>
+    </form>
+    <form action="viewTasks.php" method="POST">
+        <input type="hidden" name="callType" value="seeAll">
+        <button type="submit">See all tasks</button>
+    </form>
     <br><br>
     <p>Filter to view tasks:</p>
-   	<select class="dropdown">
-      <option value="default">Choose category</option>
-      <option value="urgent">This is urgent</option>
-      <option value="regular">Regular task</option>
-      <option value="goal">This is a goal</option>
-	</select>
-    <select class="dropdown">
-      <option value="default">Choose difficulty</option>
-      <option value="easy">Easy</option>
-      <option value="medium">Medium</option>
-      <option value="hard">Hard</option>
-	</select>
-    <br><br>
-    <button type="submit">Go</button>
+    <form action="viewTasks.php" method="POST">
+        <select class="dropdown">
+            <option name="classification" value="default">Choose category</option>
+            <option name="classification" value="urgent">This is urgent</option>
+            <option name="classification" value="regular">Regular task</option>
+            <option name="classification" value="goal">This is a goal</option>
+        </select>
+        <select class="dropdown">
+            <option name="difficulty" value="default">Choose difficulty</option>
+            <option name="difficulty" value="easy">Easy</option>
+            <option name="difficulty" value="medium">Medium</option>
+            <option name="difficulty" value="hard">Hard</option>
+        </select>
+        <br><br>
+        <button type="submit">Go</button>
+    </form>
   </div>
 </div>
 

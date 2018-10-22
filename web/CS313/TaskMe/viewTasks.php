@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    include 'dbConnect.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,6 +14,29 @@
   <body>
         <br><br><br><br><a href="TaskMe.php"><button>Home</button></a>
         <br><br><a href="addTask.php"><button>Add Task</button></a><br><br>
+
+        <?php
+            if ($_POST["callType"] != NULL) { 
+                if ($_POST["callType"] == "dueIn7") {
+                    //If I got here because they want to view tasks due in the next 7 days
+                }
+                else if ($_POST["callType"] == "seeAll") {
+                    //I got here because they want to view all the tasks they have
+                }
+                else {
+                    //something weird is going on
+                }
+            }
+            else if ($_POST["classification"] != NULL) {
+
+            }
+            else if ($_POST["difficulty"] != NULL) {
+
+            }
+            else {
+                //go home
+            }
+        ?>
 
         <ul>
             <li>Hit the gym - Due Date</li>
