@@ -44,6 +44,15 @@ CREATE TABLE public.subtask
 
 /*Insert some dummy data for testing purposes*/
 INSERT into public.user(username, user_password, first_name, last_name, display_color) VALUES ('username', 'password', 'Ann', 'Halgren', 'coral');
+
 INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) VALUES (1, 'I have to complete this assignment', current_timestamp, '2018-10-20', 'urgent', 'hard', false);
 INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 1, 'Insert values into my database', false);
 INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 1, 'Get items from my database with php', false);
+
+INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) VALUES (1, 'I have to pay bills', current_timestamp, '2018-10-24', 'urgent', 'medium', false);
+INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 2, 'Internet', false);
+INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 2, 'Water', false);
+INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 2, 'Electricity', false);
+INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 2, 'Waste Management', false);
+
+INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) VALUES (1, 'Exercise!', current_timestamp, NULL, 'goal', 'hard', false);

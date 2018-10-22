@@ -80,6 +80,9 @@
                     echo "</li>";
                 }
             }
+            else {
+                echo "<li>There are no tasks due in the next 7 days</li>";
+            }
         ?>
     </ul>
     

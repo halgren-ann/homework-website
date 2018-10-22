@@ -15,10 +15,41 @@
         <br><br><br><br><a href="TaskMe.php"><button>Home</button></a>
         <br><br><a href="addTask.php"><button>Add Task</button></a><br><br>
 
+        <ul>
         <?php
             if ($_POST["callType"] != NULL) { 
                 if ($_POST["callType"] == "dueIn7") {
                     //If I got here because they want to view tasks due in the next 7 days
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id AND date_due >= :today ORDER BY date_due ASC;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':today' => date('Y-m-d')));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        foreach ($rows as $row) {
+                            //For each task
+                            echo "<li>" . $row["task_text"];
+                            //check if there is a due date
+                            if ($row["date_due"] != NULL) {
+                                echo " - Due " . $row["date_due"];
+                            }       
+                            //check for subtasks associated with this task
+                            $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                            $stmt->execute(array(':task_id' => $row["id"]));
+                            $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            if ($subrows[0]) {
+                                echo "<ul>";
+                                foreach ($subrows as $subrow) {
+                                    //For each subtask
+                                    echo "<li>" . $subrow["task_text"] . "</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            
+                            echo "</li>";
+                        }
+                    }
+                    else {
+                        echo "<li>There are no tasks due in the next 7 days</li>";
+                    }
                 }
                 else if ($_POST["callType"] == "seeAll") {
                     //I got here because they want to view all the tasks they have
@@ -37,6 +68,7 @@
                 //go home
             }
         ?>
+        </ul>
 
         <ul>
             <li>Hit the gym - Due Date</li>
