@@ -73,12 +73,6 @@
                 }
             }
         ?>
-        <li>Hit the gym - Due Date</li>
-        <li>Pay bills</li>
-        <li>Meet George - Due Date</li>
-        <li>Buy eggs</li>
-        <li>Read a book</li>
-        <li>Organize office</li>
     </ul>
     
     </div>
