@@ -27,7 +27,7 @@
 
     //Insert into the database
     $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
-        VALUES (:username, :user_password, :first_name, :last_name, :display_color) RETURNING id;');
+        VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':user_password', $user_password, PDO::PARAM_STR);
     $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
@@ -43,20 +43,4 @@
     //redirect the page to TaskMe.php
     header("Location: TaskMe.php");
     die();
-
-    //PREPARE fooplan (int, text, bool, numeric) AS
-    //INSERT INTO foo VALUES($1, $2, $3, $4);
-    //EXECUTE fooplan(1, 'Hunter Valley', 't', 200.00);
-
-    /*
-    //now insert the values into the database
-    $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
-        VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
-    $stmt->execute(array(':username' => $username, ':user_password' => $user_password, ':first_name' => $first_name, ':last_name' => $last_name, ':display_color' => $display_color);
-    //also capture the user's id for use in this session
-    $_SESSION["user_id"] = $pdo->lastInsertId('public.user_id_seq');
-    //redirect the page to TaskMe.php
-    header(‘Location: TaskMe.php’);
-    die();
-    */
 ?>
