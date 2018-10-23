@@ -28,7 +28,7 @@
     <br><br>
     <p>Filter to view tasks:</p>
     <form action="viewTasks.php" method="POST">
-        <select name="classification class="dropdown">
+        <select name="classification" class="dropdown">
             <option value="default">Choose category</option>
             <option value="urgent">This is urgent</option>
             <option value="regular">Regular task</option>
