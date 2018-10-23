@@ -19,7 +19,7 @@
             <input type="text" name="username" placeholder="Enter new username" maxlength=16 required><br><br><br>
             <label>Password:</label><br>
             <input type="text" name="user_password" placeholder="Enter new password" maxlength=16 required><br><br><br>
-            <select name="display_color class="dropdown">
+            <select name="display_color" class="dropdown">
                 <option value="default">Choose background display color</option>
                 <option value="default">Keep this color</option>
                 <option value="aqua">Aqua</option>
