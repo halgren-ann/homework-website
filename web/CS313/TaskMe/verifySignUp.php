@@ -41,8 +41,8 @@
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["user_id"] = $rows[0]["id"];
     //redirect the page to TaskMe.php
-    //header(‘Location: TaskMe.php’);
-    //die();
+    header("Location: TaskMe.php");
+    die();
 
     //PREPARE fooplan (int, text, bool, numeric) AS
     //INSERT INTO foo VALUES($1, $2, $3, $4);
