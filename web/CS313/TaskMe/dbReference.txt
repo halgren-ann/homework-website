@@ -12,6 +12,9 @@
         $dbName = ltrim($dbOpts["path"],'/');
 
         $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
+        
+        //makes the prepared statements REAL and not emulates so that malicious injection is stopped:
+        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
