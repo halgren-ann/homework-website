@@ -41,7 +41,7 @@
     $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
     $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
     $stmt->bindValue(':date_added', date('Y-m-d'), PDO::PARAM_STR);
-    $stmt->bindValue(':date_due', echo '' . $date_due_year . "-" . $date_due_month . "-" . $date_due_day . '', PDO::PARAM_STR);
+    $stmt->bindValue(':date_due', date(echo '' . $date_due_year . "-" . $date_due_month . "-" . $date_due_day . ''), PDO::PARAM_STR);
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
     $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
