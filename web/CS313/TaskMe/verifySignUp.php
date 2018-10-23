@@ -25,17 +25,11 @@
         return $data;
     }
 
+    echo "$first_name\n$last_name\n$username\n$user_password\n$display_color";
+
     //PREPARE fooplan (int, text, bool, numeric) AS
     //INSERT INTO foo VALUES($1, $2, $3, $4);
     //EXECUTE fooplan(1, 'Hunter Valley', 't', 200.00);
 
-    //now insert the values into the database
-    $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
-        VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
-    $stmt->execute(array(':username' => $username, ':user_password' => $user_password, ':first_name' => $first_name, ':last_name' => $last_name, ':display_color' => $display_color);
-    //also capture the user's id for use in this session
-    $_SESSION["user_id"] = $pdo->lastInsertId('public.user_id_seq');
-    //redirect the page to TaskMe.php
-    header(‘Location: TaskMe.php’);
-    die();
+    
 ?>
