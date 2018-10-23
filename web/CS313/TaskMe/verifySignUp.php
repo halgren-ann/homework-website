@@ -39,7 +39,7 @@
     $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
     $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    //$_SESSION["user_id"] = $rows[0]["id"];
+    $_SESSION["user_id"] = $rows[0]["id"];
     //redirect the page to TaskMe.php
     //header(‘Location: TaskMe.php’);
     //die();
