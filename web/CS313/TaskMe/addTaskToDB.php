@@ -16,8 +16,6 @@
         $date_due_year = test_input($_POST["date_due_year"]);
     }
 
-    echo $task . $subtask1 . $subtask2 . $subtask3 . $subtask4 . $classification . $difficulty . $date_due_month . $date_due_day . $date_due_year;
-
     function test_input($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -26,14 +24,14 @@
     }
 
     //Insert the main task into the database
-    //$stmt = $db->prepare('INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) 
-    //    VALUES (:user_id, :task_text, :date_added, :date_due, :classification, :difficulty, :is_complete);');
-    //$stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
-    //$stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
-    //$stmt->bindValue(':date_added', current_timestamp, PDO::PARAM_DATE);
-    //$stmt->bindValue(':date_due', echo $date_due_year . "-" . $date_due_month . "-" . $date_due_day, PDO::PARAM_DATE);
-    //$stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
-    //$stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
-    //$stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
-    //$stmt->execute();
+    $stmt = $db->prepare('INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) 
+        VALUES (:user_id, :task_text, :date_added, :date_due, :classification, :difficulty, :is_complete);');
+    $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
+    $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
+    $stmt->bindValue(':date_added', current_timestamp, PDO::PARAM_DATE);
+    $stmt->bindValue(':date_due', echo $date_due_year . "-" . $date_due_month . "-" . $date_due_day, PDO::PARAM_DATE);
+    $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
+    $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
+    $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
+    $stmt->execute();
 ?>
