@@ -30,7 +30,7 @@
 
     //check the login information
     $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
-    $stmt->execute(array(':username' => $_POST["username"], ':user_password' => $_POST["user_password"]));
+    $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($rows[0]) {

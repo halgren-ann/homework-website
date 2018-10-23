@@ -27,7 +27,7 @@
 
     //Insert into the database
     $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
-        VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
+        VALUES (:username, :user_password, :first_name, :last_name, :display_color) RETURNING id;');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
     $stmt->bindValue(':user_password', $user_password, PDO::PARAM_STR);
     $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
@@ -36,7 +36,10 @@
     $stmt->execute();
 
     //also capture the user's id for use in this session
-    $_SESSION["user_id"] = $pdo->lastInsertId('public.user_id_seq');
+    $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
+    $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $_SESSION["user_id"] = $rows[0]["id"];
     //redirect the page to TaskMe.php
     header(‘Location: TaskMe.php’);
     die();
