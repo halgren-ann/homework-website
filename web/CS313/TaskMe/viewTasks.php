@@ -24,7 +24,28 @@
                     $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':today' => date('Y-m-d')));
                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     if ($rows[0]) {
-                        showQueryResults($rows);
+                        foreach ($rows as $row) {
+                            //For each task
+                            echo "<li>" . $row["task_text"];
+                            //check if there is a due date
+                            if ($row["date_due"] != NULL) {
+                                echo " - Due " . $row["date_due"];
+                            }       
+                            //check for subtasks associated with this task
+                            $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                            $stmt->execute(array(':task_id' => $row["id"]));
+                            $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            if ($subrows[0]) {
+                                echo "<ul>";
+                                foreach ($subrows as $subrow) {
+                                    //For each subtask
+                                    echo "<li>" . $subrow["task_text"] . "</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            
+                            echo "</li>";
+                        }
                     }
                     else {
                         echo "<li>There are no tasks due in the next 7 days</li>";
