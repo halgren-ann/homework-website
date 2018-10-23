@@ -19,71 +19,112 @@
         <?php
             if ($_POST["callType"] != NULL) { 
                 if ($_POST["callType"] == "dueIn7") {
-                    //If I got here because they want to view tasks due in the next 7 days
+                    //I got here because they want to view tasks due in the next 7 days
                     $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id AND date_due >= :today ORDER BY date_due ASC;');
                     $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':today' => date('Y-m-d')));
                     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     if ($rows[0]) {
-                        foreach ($rows as $row) {
-                            //For each task
-                            echo "<li>" . $row["task_text"];
-                            //check if there is a due date
-                            if ($row["date_due"] != NULL) {
-                                echo " - Due " . $row["date_due"];
-                            }       
-                            //check for subtasks associated with this task
-                            $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
-                            $stmt->execute(array(':task_id' => $row["id"]));
-                            $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                            if ($subrows[0]) {
-                                echo "<ul>";
-                                foreach ($subrows as $subrow) {
-                                    //For each subtask
-                                    echo "<li>" . $subrow["task_text"] . "</li>";
-                                }
-                                echo "</ul>";
-                            }
-                            
-                            echo "</li>";
-                        }
+                        showQueryResults($rows);
                     }
                     else {
                         echo "<li>There are no tasks due in the next 7 days</li>";
                     }
                 }
                 else if ($_POST["callType"] == "seeAll") {
-                    //I got here because they want to view all the tasks they have
+                    seeAll();
                 }
                 else {
-                    //something weird is going on
+                    //something weird is going on, go home
+                    echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
                 }
             }
             else if ($_POST["classification"] != NULL) {
-
-            }
-            else if ($_POST["difficulty"] != NULL) {
+                //I got here because the "Go" button was pressed
+                if ($_POST["classification"] == "default" && $_POST["difficulty"] == "default") {
+                    //Scenario 1: Values were not chosen on either drop-down menu. So just show all tasks.
+                    seeAll();
+                }
+                else if ($_POST["classification"] != "default" && $_POST["difficulty"] == "default") {
+                    //Scenario 2: A value was chosen for classification, but not for difficulty
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id AND classification = :classification;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':classification' => $_POST["classification"]));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        showQueryResults($rows);
+                    }
+                    else {
+                        echo "<li>You currently have no tasks in that category.</li>";
+                    }
+                }
+                else if ($_POST["classification"] == "default" && $_POST["difficulty"] != "default") {
+                    //Scenario 2: A value was  chosen for difficulty, but not for classification
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id AND difficulty = :difficulty;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':difficulty' => $_POST["difficulty"]));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        showQueryResults($rows);
+                    }
+                    else {
+                        echo "<li>You currently have no tasks in that category.</li>";
+                    }
+                }
+                else {
+                    //Scenario 4: Both classification and difficulty were selected
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id AND difficulty = :difficulty AND classification = :classification;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"], ':difficulty' => $_POST["difficulty"], 'classification' => $_POST["classification"]));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        showQueryResults($rows);
+                    }
+                    else {
+                        echo "<li>You currently have no tasks in that make those criteria.</li>";
+                    }
+                }
 
             }
             else {
                 //go home
+                echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
+            }
+
+            function seeAll() {
+                //I got here because they want to view all the tasks they have
+                $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id;');
+                $stmt->execute(array(':user_id' => $_SESSION["user_id"]));
+                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                if ($rows[0]) {
+                    showQueryResults($rows);
+                }
+                else {
+                    echo "<li>You currently have no tasks!</li>";
+                }
+            }
+
+            function showQueryResults($rows) {
+                foreach ($rows as $row) {
+                    //For each task
+                    echo "<li>" . $row["task_text"];
+                    //check if there is a due date
+                    if ($row["date_due"] != NULL) {
+                        echo " - Due " . $row["date_due"];
+                    }       
+                    //check for subtasks associated with this task
+                    $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                    $stmt->execute(array(':task_id' => $row["id"]));
+                    $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($subrows[0]) {
+                        echo "<ul>";
+                        foreach ($subrows as $subrow) {
+                            //For each subtask
+                            echo "<li>" . $subrow["task_text"] . "</li>";
+                        }
+                        echo "</ul>";
+                    }
+                    
+                    echo "</li>";
+                }
             }
         ?>
-        </ul>
-
-        <ul>
-            <li>Hit the gym - Due Date</li>
-            <li>Pay bills
-                <ul>
-                    <li>Internet</li>
-                    <li>Waste Management</li>
-                    <li>Water</li>
-                    <li>Electricity</li>
-                </ul> 
-            </li>
-            <li>Meet George - Due Date</li>
-            <li>Buy eggs</li>
-            <li>Read a book</li>
-            <li>Organize office</li>
         </ul>
             
         <div class="titleArea">
