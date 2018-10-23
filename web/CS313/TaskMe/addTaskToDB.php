@@ -5,8 +5,7 @@
     //test for malicious injection
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $task = test_input($_POST["task"]);
-        //if (isset($_POST["subtask1"])) {$subtask1 = test_input($_POST["subtask1"]);}
-        $subtask1 = test_input($_POST["subtask1"]);
+        if (isset($_POST["subtask1"])) {$subtask1 = test_input($_POST["subtask1"]);}
         //if (isset($_POST["subtask2"])) {$subtask2 = test_input($_POST["subtask2"]);}
         $subtask2 = test_input($_POST["subtask2"]);
         //if (isset($_POST["subtask3"])) {$subtask3 = test_input($_POST["subtask3"]);}
