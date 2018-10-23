@@ -42,8 +42,8 @@
     $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
     $stmt->bindValue(':date_added', '2018-10-23', PDO::PARAM_STR);
     $stmt->bindValue(':date_due', '2018-10-30', PDO::PARAM_STR);
-    $stmt->bindValue(':classification', 'regular', PDO::PARAM_STR);
-    $stmt->bindValue(':difficulty', 'medium', PDO::PARAM_STR);
+    $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
+    $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
     $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
     $stmt->execute();
 ?>
