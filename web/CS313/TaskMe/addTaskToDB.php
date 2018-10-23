@@ -40,7 +40,7 @@
         VALUES (:user_id, :task_text, :date_added, :date_due, :classification, :difficulty, :is_complete);');
     $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
     $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
-    $stmt->bindValue(':date_added', current_timestamp, PDO::PARAM_STR);
+    $stmt->bindValue(':date_added', date('Y-m-d'), PDO::PARAM_STR);
     $stmt->bindValue(':date_due', '2018-10-30', PDO::PARAM_STR);
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
