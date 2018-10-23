@@ -25,8 +25,7 @@
         return $data;
     }
 
-    echo "$first_name\n$last_name\n$username\n$user_password\n$display_color";
-
+    //Insert into the database
     $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
         VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
@@ -35,6 +34,12 @@
     $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
     $stmt->bindValue(':display_color', $display_color, PDO::PARAM_STR);
     $stmt->execute();
+
+    //also capture the user's id for use in this session
+    $_SESSION["user_id"] = $pdo->lastInsertId('public.user_id_seq');
+    //redirect the page to TaskMe.php
+    header(‘Location: TaskMe.php’);
+    die();
 
     //PREPARE fooplan (int, text, bool, numeric) AS
     //INSERT INTO foo VALUES($1, $2, $3, $4);
