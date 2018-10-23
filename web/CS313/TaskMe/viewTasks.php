@@ -52,7 +52,37 @@
                     }
                 }
                 else if ($_POST["callType"] == "seeAll") {
-                    seeAll();
+                    //I got here because they want to view all the tasks they have
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"]));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        foreach ($rows as $row) {
+                            //For each task
+                            echo "<li>" . $row["task_text"];
+                            //check if there is a due date
+                            if ($row["date_due"] != NULL) {
+                                echo " - Due " . $row["date_due"];
+                            }       
+                            //check for subtasks associated with this task
+                            $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                            $stmt->execute(array(':task_id' => $row["id"]));
+                            $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            if ($subrows[0]) {
+                                echo "<ul>";
+                                foreach ($subrows as $subrow) {
+                                    //For each subtask
+                                    echo "<li>" . $subrow["task_text"] . "</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            
+                            echo "</li>";
+                        }
+                    }
+                    else {
+                        echo "<li>You currently have no tasks!</li>";
+                    }
                 }
                 else {
                     //something weird is going on, go home
@@ -63,7 +93,37 @@
                 //I got here because the "Go" button was pressed
                 if ($_POST["classification"] == "default" && $_POST["difficulty"] == "default") {
                     //Scenario 1: Values were not chosen on either drop-down menu. So just show all tasks.
-                    seeAll();
+                    //I got here because they want to view all the tasks they have
+                    $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id;');
+                    $stmt->execute(array(':user_id' => $_SESSION["user_id"]));
+                    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    if ($rows[0]) {
+                        foreach ($rows as $row) {
+                            //For each task
+                            echo "<li>" . $row["task_text"];
+                            //check if there is a due date
+                            if ($row["date_due"] != NULL) {
+                                echo " - Due " . $row["date_due"];
+                            }       
+                            //check for subtasks associated with this task
+                            $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
+                            $stmt->execute(array(':task_id' => $row["id"]));
+                            $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                            if ($subrows[0]) {
+                                echo "<ul>";
+                                foreach ($subrows as $subrow) {
+                                    //For each subtask
+                                    echo "<li>" . $subrow["task_text"] . "</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            
+                            echo "</li>";
+                        }
+                    }
+                    else {
+                        echo "<li>You currently have no tasks!</li>";
+                    }
                 }
                 else if ($_POST["classification"] != "default" && $_POST["difficulty"] == "default") {
                     //Scenario 2: A value was chosen for classification, but not for difficulty
@@ -169,40 +229,6 @@
             else {
                 //go home
                 echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
-            }
-
-            function seeAll() {
-                //I got here because they want to view all the tasks they have
-                $stmt = $db->prepare('SELECT * FROM public.task WHERE user_id = :user_id;');
-                $stmt->execute(array(':user_id' => $_SESSION["user_id"]));
-                $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                if ($rows[0]) {
-                    foreach ($rows as $row) {
-                        //For each task
-                        echo "<li>" . $row["task_text"];
-                        //check if there is a due date
-                        if ($row["date_due"] != NULL) {
-                            echo " - Due " . $row["date_due"];
-                        }       
-                        //check for subtasks associated with this task
-                        $stmt = $db->prepare('SELECT * FROM public.subtask WHERE task_id = :task_id');
-                        $stmt->execute(array(':task_id' => $row["id"]));
-                        $subrows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                        if ($subrows[0]) {
-                            echo "<ul>";
-                            foreach ($subrows as $subrow) {
-                                //For each subtask
-                                echo "<li>" . $subrow["task_text"] . "</li>";
-                            }
-                            echo "</ul>";
-                        }
-                        
-                        echo "</li>";
-                    }
-                }
-                else {
-                    echo "<li>You currently have no tasks!</li>";
-                }
             }
         ?>
         </ul>
