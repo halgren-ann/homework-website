@@ -87,6 +87,7 @@
                 else {
                     //something weird is going on, go home
                     echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
+                    die();
                 }
             }
             else if ($_POST["classification"] != NULL) {
@@ -229,6 +230,7 @@
             else {
                 //go home
                 echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
+                die();
             }
         ?>
         </ul>

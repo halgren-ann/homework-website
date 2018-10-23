@@ -38,11 +38,13 @@
         $_SESSION["user_id"] = $rows[0]["id"];
         //Move on to the home page
         echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
+        die();
     }
     else {
         //some login info was incorrect
         echo "<script type='text/javascript'>alert('Sorry, the username or password is incorrect');
         window.location = 'login.php';</script>";
+        die();
     }
 ?>
 
