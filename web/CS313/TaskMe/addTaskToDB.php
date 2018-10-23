@@ -5,15 +5,15 @@
     //test for malicious injection
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $task = test_input($_POST["task"]);
-        if (isset($_POST["subtask1"])) {$subtask1 = test_input($_POST["subtask1"]);}
-        if (isset($_POST["subtask2"])) {$subtask2 = test_input($_POST["subtask2"]);}
-        if (isset($_POST["subtask3"])) {$subtask3 = test_input($_POST["subtask3"]);}
-        if (isset($_POST["subtask4"])) {$subtask4 = test_input($_POST["subtask4"]);}
+        $subtask1 = test_input($_POST["subtask1"]);
+        $subtask2 = test_input($_POST["subtask2"]);
+        $subtask3 = test_input($_POST["subtask3"]);
+        $subtask4 = test_input($_POST["subtask4"]);
         $classification = test_input($_POST["classification"]);
         $difficulty = test_input($_POST["difficulty"]);
-        if (isset($_POST["date_due_month"])) {$date_due_month = test_input($_POST["date_due_month"]);}
-        if (isset($_POST["date_due_day"])) {$date_due_day = test_input($_POST["date_due_day"]);}
-        if (isset($_POST["date_due_year"])) {$date_due_year = test_input($_POST["date_due_year"]);}
+        $date_due_month = test_input($_POST["date_due_month"]);
+        $date_due_day = test_input($_POST["date_due_day"]);
+        $date_due_year = test_input($_POST["date_due_year"]);
     }
 
     echo $task . $subtask1 . $subtask2 . $subtask3 . $subtask4 . $classification . $difficulty . $date_due_month . $date_due_day . $date_due_year;

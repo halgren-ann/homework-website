@@ -23,7 +23,7 @@
                 <option value="goal">This is a goal</option>
             </select>
             <br><br>
-            <select name="difficuly" class="dropdown">
+            <select name="difficulty" class="dropdown">
                 <option value="default">Choose difficulty</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
