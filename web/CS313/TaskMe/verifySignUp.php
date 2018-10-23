@@ -30,8 +30,7 @@
         VALUES (username=:username, user_password=:user_password, first_name=:first_name, last_name=:last_name, display_color=:display_color);');
     $stmt->execute(array(':username' => $username, ':user_password' => $user_password, ':first_name' => $first_name, ':last_name' => $last_name, ':display_color' => $display_color);
     //also capture the user's id for use in this session
-    $_SESSION["user_id"] = $db->lastInsertId('public.user_id_seq');
+    $_SESSION["user_id"] = $pdo->lastInsertId('user_id_seq');
     //redirect the page to TaskMe.php
-    header(‘Location: TaskMe.php’);
-    die();
+    
 ?>
