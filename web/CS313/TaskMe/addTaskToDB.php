@@ -38,8 +38,8 @@
     //test
     $stmt = $db->prepare('INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) 
         VALUES (:user_id, :task_text, :date_added, :date_due, :classification, :difficulty, :is_complete);');
-    $stmt->bindValue(':user_id', '2', PDO::PARAM_STR);
-    $stmt->bindValue(':task_text', 'hi', PDO::PARAM_STR);
+    $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
+    $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
     $stmt->bindValue(':date_added', '2018-10-23', PDO::PARAM_STR);
     $stmt->bindValue(':date_due', '2018-10-30', PDO::PARAM_STR);
     $stmt->bindValue(':classification', 'regular', PDO::PARAM_STR);
