@@ -46,7 +46,7 @@
     $task_id = $db->lastInsertId('task_id_seq');
 
     //insert any subtasks
-    if (isset($_POST["subtask1"])) {
+    if ($subtask1 != "") {
         $stmt = $db->prepare('INSERT into public.subtask(user_id, task_id, task_text, is_complete) 
             VALUES (:user_id, :task_id, :task_text, :is_complete);');
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
