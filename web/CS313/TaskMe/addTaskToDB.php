@@ -23,12 +23,7 @@
         return $data;
     }
 
-    if ($date_due_year == NULL) {
-        $totalDate = NULL;
-    }
-    else {
-        $totalDate = $date_due_year . "-" . $date_due_month . "-" . $date_due_day;
-    }
+    $totalDate = $date_due_year . "-" . $date_due_month . "-" . $date_due_day;
 
     //insert the main task
     $stmt = $db->prepare('INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) 
@@ -36,7 +31,12 @@
     $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
     $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
     $stmt->bindValue(':date_added', date('Y-m-d'), PDO::PARAM_STR);
-    $stmt->bindValue(':date_due', date('Y-m-d', strtotime($totalDate)), PDO::PARAM_STR);
+    if ($date_due_year != "") {
+        $stmt->bindValue(':date_due', date_format(strtotime($totalDate), 'Y-m-d'), PDO::PARAM_STR);
+    }
+    else {
+        $stmt->bindValue(':date_added', NULL, PDO::PARAM_STR);
+    }
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
     $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
@@ -55,7 +55,7 @@
         $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
-    if (isset($_POST["subtask2"])) {
+    if ($subtask2 != "") {
         $stmt = $db->prepare('INSERT into public.subtask(user_id, task_id, task_text, is_complete) 
             VALUES (:user_id, :task_id, :task_text, :is_complete);');
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
@@ -64,7 +64,7 @@
         $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
-    if (isset($_POST["subtask3"])) {
+    if ($subtask3 != "") {
         $stmt = $db->prepare('INSERT into public.subtask(user_id, task_id, task_text, is_complete) 
             VALUES (:user_id, :task_id, :task_text, :is_complete);');
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
@@ -73,7 +73,7 @@
         $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
-    if (isset($_POST["subtask4"])) {
+    if ($subtask4 != "") {
         $stmt = $db->prepare('INSERT into public.subtask(user_id, task_id, task_text, is_complete) 
             VALUES (:user_id, :task_id, :task_text, :is_complete);');
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
