@@ -2,3 +2,20 @@ img {
     display: block;
     width: 100%;
 }
+
+td {
+    width: 15%;
+    background-color: blueviolet;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+table, td, tr {
+    border-color: gray;
+    border-width: thick;
+    border: 3px solid gray;
+}
+    
