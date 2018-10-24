@@ -31,7 +31,7 @@
     $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
     $stmt->bindValue(':task_text', $task, PDO::PARAM_STR);
     $stmt->bindValue(':date_added', date('Y-m-d'), PDO::PARAM_STR);
-    $stmt->bindValue(':date_due', date_format('Y-m-d', strtotime($totalDate)), PDO::PARAM_STR);
+    $stmt->bindValue(':date_due', date('Y-m-d', strtotime($totalDate)), PDO::PARAM_STR);
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
     $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
