@@ -35,7 +35,7 @@
         $stmt->bindValue(':date_due', date_format(strtotime($totalDate), 'Y-m-d'), PDO::PARAM_STR);
     }
     else {
-        $stmt->bindValue(':date_added', NULL, PDO::PARAM_STR);
+        $stmt->bindValue(':date_added', 'NULL', PDO::PARAM_STR);
     }
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
