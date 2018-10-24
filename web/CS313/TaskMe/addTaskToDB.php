@@ -38,7 +38,7 @@
     $stmt->execute();
 
     //capture this task_id
-    $task_id = $db->lastInsertId('id');
+    $task_id = $db->lastInsertId('task_id_seq');
     echo $task_id;
 
     //insert any subtasks
