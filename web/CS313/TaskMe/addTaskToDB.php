@@ -23,7 +23,12 @@
         return $data;
     }
 
-    $totalDate = $date_due_year . "-" . $date_due_month . "-" . $date_due_day;
+    if ($date_due_year == NULL) {
+        $totalDate = NULL;
+    }
+    else {
+        $totalDate = $date_due_year . "-" . $date_due_month . "-" . $date_due_day;
+    }
 
     //insert the main task
     $stmt = $db->prepare('INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) 
