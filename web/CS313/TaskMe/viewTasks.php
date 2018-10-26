@@ -248,6 +248,7 @@
                     ev.target.classList.toggle('checked');
                     //change the database item is_complete with this information
                     if (ev.target.classList.contains('checked')) {
+                        alert(ev.target.value);
                         isChecked(ev.target.value);
                     }
                     else {
