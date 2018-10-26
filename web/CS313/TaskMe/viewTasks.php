@@ -245,45 +245,15 @@
             var list = document.querySelector('ul');
             list.addEventListener('click', function(ev) {
                 if (ev.target.tagName === 'LI') {
-                    ev.target.classList.toggle('checked');
+                    ev.target.classList.add('checked');
                     //change the database item is_complete with this information
-                    if (ev.target.classList.contains('checked')) {
-                        <?php
-                            $task_text = echo "<script>ev.target.textContent</script>";
-                            $stmt = $db->prepare('UPDATE public.task SET is_complete = :is_complete WHERE task_text = :task_text');
-                            $stmt->bindValue(':is_complete', true);
-                            $stmt->bindValue(':task_text', $task_text, PDO::PARAM_STR);
-                            $stmt->execute();
-                        
-                            $stmt = $db->prepare('UPDATE public.subtask SET is_complete = :is_complete WHERE task_text = :task_text');
-                            $stmt->bindValue(':is_complete', true);
-                            $stmt->bindValue(':task_text', $task_text, PDO::PARAM_STR);
-                            $stmt->execute();
-                        ?>
-                    }
-                    else {
-                        isNotChecked(ev.target.textContent);
-                    }
+                    isChecked(ev.target.textContent);
                 }
             }, false);
 
             function isChecked(task_text) {
                 var httpc = new XMLHttpRequest(); // simplified for clarity
                 var url = "isChecked.php";
-                httpc.open("POST", url, true); // sending as POST
-
-                httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-                httpc.setRequestHeader("Content-Length", task_text.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
-
-                httpc.onreadystatechange = function() { //Call a function when the state changes.
-                    if(httpc.readyState == 4 && httpc.status == 200) { }
-                }
-                httpc.send(task_text);
-            }
-
-            function isNotChecked(task_text) {
-                var httpc = new XMLHttpRequest(); // simplified for clarity
-                var url = "isNotChecked.php";
                 httpc.open("POST", url, true); // sending as POST
 
                 httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
