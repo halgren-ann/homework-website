@@ -248,7 +248,18 @@
                     ev.target.classList.toggle('checked');
                     //change the database item is_complete with this information
                     if (ev.target.classList.contains('checked')) {
-                        isChecked(ev.target.textContent);
+                        <?php
+                            $task_text = echo "<script>ev.target.textContent</script>";
+                            $stmt = $db->prepare('UPDATE public.task SET is_complete = :is_complete WHERE task_text = :task_text');
+                            $stmt->bindValue(':is_complete', true);
+                            $stmt->bindValue(':task_text', $task_text, PDO::PARAM_STR);
+                            $stmt->execute();
+                        
+                            $stmt = $db->prepare('UPDATE public.subtask SET is_complete = :is_complete WHERE task_text = :task_text');
+                            $stmt->bindValue(':is_complete', true);
+                            $stmt->bindValue(':task_text', $task_text, PDO::PARAM_STR);
+                            $stmt->execute();
+                        ?>
                     }
                     else {
                         isNotChecked(ev.target.textContent);
