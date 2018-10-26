@@ -1,5 +1,5 @@
 <?php
-    $task_text = $HTTP_RAW_POST_DATA;
+    $task_text = file_get_contents('php://input');
     include 'dbConnect.php';
 
     $stmt = $db->prepare('UPDATE public.subtask SET is_complete = :is_complete WHERE task_text = :task_text');
