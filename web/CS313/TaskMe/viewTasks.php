@@ -265,7 +265,7 @@
 
                 httpc.onreadystatechange = function() { //Call a function when the state changes.
                 if(httpc.readyState == 4 && httpc.status == 200) { // complete and no errors
-                    alert(httpc.responseText);
+                    
                 }
                 httpc.send(task_text);
             }
