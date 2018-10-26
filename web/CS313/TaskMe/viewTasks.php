@@ -247,7 +247,12 @@
                 if (ev.target.tagName === 'LI') {
                     ev.target.classList.toggle('checked');
                     //change the database item is_complete with this information
-                    alert("hi");
+                    if (ev.target.classList.contains('checked')) {
+                        isChecked(ev.target.textContent);
+                    }
+                    else {
+                        isNotChecked(ev.target.textContent);
+                    }
                 }
             }, false);
 
