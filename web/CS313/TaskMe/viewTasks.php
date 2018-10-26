@@ -1,6 +1,7 @@
 <?php
     session_start();
     include 'dbConnect.php';
+    include 'cleanupDB.php';
 ?>
 
 <!DOCTYPE html>
