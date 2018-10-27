@@ -59,7 +59,7 @@ var greenArray = document.getElementsByClassName("green");
 for (var i=0; i<greenArray.length; i++) {
     var one = greenArray[i];
     var ctx = one.getContext("2d");
-    ctx.fillStyle = "forestgreen";
+    ctx.fillStyle = rgb(210,105,30);
     ctx.fillRect(0, 0, 80, 100);
 }
 
