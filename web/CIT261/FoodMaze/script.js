@@ -75,15 +75,14 @@ function drawCheckeredBackground(can, nRow, nCol) {
     ctx.fill();
 }
 
-document.write("Hello, you made it to JS!");
-window.onload = function() { 
+
     var canvas = document.getElementById("canvas");
     //var ctx = canvas.getContext("2d");
     //ctx.fillStyle = "#228B22";
     //ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawCheckeredBackground(canvas, nRow, noCol);
-}
+
 
 
 
