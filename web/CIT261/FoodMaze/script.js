@@ -55,6 +55,7 @@ Coffee.locations = [
 
 document.write("Hello, you made it to JS!");
 
+window.onload=function() {
 var greenArray = document.getElementsByClassName("green");
 for (var i=0; i<greenArray.length; i++) {
     var one = greenArray[i];
@@ -69,4 +70,6 @@ for (var i=0; i<brownArray.length; i++) {
     var ctx = one.getContext("2d");
     ctx.fillStyle = rgb(210,105,30);
     ctx.fillRect(100, 100, 80, 100);
+}
+
 }
