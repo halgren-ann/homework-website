@@ -15,14 +15,17 @@
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    foreach($rows as $row) {
-        $task_id = $row["id"];
-        $stmt = $db->prepare('DELETE public.subtask WHERE task_id = :task_id AND user_id = :user_id');
-        $stmt->bindValue(':task_id', $task_id);
-        $stmt->bindValue(':user_id', $user_id);
-        $stmt->execute();
+    if($rows[0]) {
+        foreach($rows as $row) {
+            $task_id = $row["id"];
+            $stmt = $db->prepare('DELETE public.subtask WHERE task_id = :task_id AND user_id = :user_id');
+            $stmt->bindValue(':task_id', $task_id);
+            $stmt->bindValue(':user_id', $user_id);
+            $stmt->execute();
+        }
     }
     
+    //Delete a regular task
     $stmt = $db->prepare('DELETE FROM public.task WHERE is_complete = :is_complete AND user_id = :user_id');
     $stmt->bindValue(':is_complete', true);
     $stmt->bindValue(':user_id', $user_id);
