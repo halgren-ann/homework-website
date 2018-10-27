@@ -82,7 +82,7 @@ Coffee.locations = [
 
 var newImage = document.createElement("IMG");
     newImage.src = "broccoli.png";
-    STYLE="position:absolute; TOP:100px; LEFT:100px; WIDTH:100px; HEIGHT:100px"; 
+    newImage.STYLE="position:absolute; TOP:100px; LEFT:100px; WIDTH:100px; HEIGHT:100px"; 
     var element = document.getElementById("gameboard");
     element.appendChild(newImage);
 
