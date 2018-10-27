@@ -88,9 +88,9 @@ Coffee.locations = [
 
 document.getElementById("gameboard").innerHTML = "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
 
-var broccoli = new Broccoli();
-document.write("The width of broccoli is:"+broccoli.width);
-document.write("The first location of Broccoli is:"+broccoli.locations[0].x+" "+broccoli.locations[0].y);
+//var broccoli = new Broccoli();
+//document.write("The width of broccoli is:"+broccoli.width);
+//document.write("The first location of Broccoli is:"+broccoli.locations[0].x+" "+broccoli.locations[0].y);
 /*
 //make the array of food objects
 var foodArray;
