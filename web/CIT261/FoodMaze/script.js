@@ -86,7 +86,7 @@ Coffee.locations = [
 //var element = document.getElementById("gameboard");
 //element.appendChild(newImage);
 
-document.getElementById("gameboard").innerHTML += "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
+document.getElementById("gameboard").innerHTML = "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
 
 var broccoli = new Broccoli();
 document.write("The width of broccoli is:"+broccoli.width);
