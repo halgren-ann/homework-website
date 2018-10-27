@@ -60,7 +60,7 @@ var greenArray = document.getElementsByClassName("green");
 for (var i=0; i<greenArray.length; i++) {
     var one = greenArray[i];
     var ctx = one.getContext("2d");
-    ctx.fillStyle = rgb(210,105,30);
+    ctx.fillStyle = "#228B22";
     ctx.fillRect(0, 0, 80, 100);
 }
 
@@ -68,8 +68,7 @@ var brownArray = document.getElementsByClassName("brown");
 for (var i=0; i<brownArray.length; i++) {
     var one = brownArray[i];
     var ctx = one.getContext("2d");
-    ctx.fillStyle = rgb(210,105,30);
+    ctx.fillStyle = "#D2691E";
     ctx.fillRect(100, 100, 80, 100);
 }
-
 }
