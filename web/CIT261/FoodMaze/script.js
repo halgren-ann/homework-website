@@ -3,6 +3,8 @@ var cell_height = 40;
 var x_offset = 40;
 var y_offset = 40;
 
+
+/*
 function Coordinate(x, y) {
     this.x = x;
     this.y = y;
@@ -49,6 +51,7 @@ Coffee.locations = [
     new Coordinate(x_offset + (5*cell_width), y_offset + (2*cell_width)),
     new Coordinate(x_offset + (2*cell_width), y_offset + (3*cell_height))
 ];
+*/
 
 var greenArray = document.getElementsByClassName("green");
     for (var i=0; i<greenArray.length; i++) {
