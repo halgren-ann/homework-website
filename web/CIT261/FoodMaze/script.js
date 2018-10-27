@@ -58,9 +58,9 @@ Coffee.locations = [
 document.write("Hello, you made it to JS!");
 window.onload = function() { 
     var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#228B22";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    //var ctx = canvas.getContext("2d");
+    //ctx.fillStyle = "#228B22";
+    //ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     drawCheckeredBackground(canvas, nRow, noCol);
 }
@@ -82,7 +82,7 @@ function drawCheckeredBackground(can, nRow, nCol) {
         }
     }
 
-    ctx.fillStyle = "#D2691E";
+    //ctx.fillStyle = "#D2691E";
     ctx.fill();
 }
 
