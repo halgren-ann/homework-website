@@ -18,7 +18,7 @@
     if($rows[0]) {
         foreach($rows as $row) {
             $task_id = $row["id"];
-            $stmt = $db->prepare('DELETE public.subtask WHERE task_id = :task_id AND user_id = :user_id');
+            $stmt = $db->prepare('DELETE FROM public.subtask WHERE task_id = :task_id AND user_id = :user_id');
             $stmt->bindValue(':task_id', $task_id);
             $stmt->bindValue(':user_id', $user_id);
             $stmt->execute();
