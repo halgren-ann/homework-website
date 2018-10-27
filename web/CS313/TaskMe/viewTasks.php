@@ -229,7 +229,7 @@
                 if (ev.target.tagName === 'LI') {
                     ev.target.classList.add('checked');
                     //change the database item is_complete with this information
-                    isChecked(ev.target.textContent);
+                    isChecked(ev.target.childNodes[0].textContent);
                 }
             }, false);
 
