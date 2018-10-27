@@ -53,6 +53,8 @@ Coffee.locations = [
 ];
 */
 
+document.write("Hello, you made it to JS!");
+
 var greenArray = document.getElementsByClassName("green");
     for (var i=0; i<greenArray.length; i++) {
     var one = greenArray[i];
