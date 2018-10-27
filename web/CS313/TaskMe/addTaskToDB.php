@@ -39,7 +39,7 @@
     }
     $stmt->bindValue(':classification', $classification, PDO::PARAM_STR);
     $stmt->bindValue(':difficulty', $difficulty, PDO::PARAM_STR);
-    $stmt->bindValue(':is_complete', false, PDO::PARAM_STR);
+    $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
     $stmt->execute();
 
     //capture this task_id
@@ -52,7 +52,7 @@
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
         $stmt->bindValue(':task_id', $task_id, PDO::PARAM_STR);
         $stmt->bindValue(':task_text', $subtask1, PDO::PARAM_STR);
-        $stmt->bindValue(':is_complete', false, PDO::PARAM_STR);
+        $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
     if ($subtask2 != "") {
@@ -61,7 +61,7 @@
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
         $stmt->bindValue(':task_id', $task_id, PDO::PARAM_STR);
         $stmt->bindValue(':task_text', $subtask2, PDO::PARAM_STR);
-        $stmt->bindValue(':is_complete', false, PDO::PARAM_STR);
+        $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
     if ($subtask3 != "") {
@@ -70,7 +70,7 @@
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
         $stmt->bindValue(':task_id', $task_id, PDO::PARAM_STR);
         $stmt->bindValue(':task_text', $subtask3, PDO::PARAM_STR);
-        $stmt->bindValue(':is_complete', false, PDO::PARAM_STR);
+        $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
     if ($subtask4 != "") {
@@ -79,7 +79,7 @@
         $stmt->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_STR);
         $stmt->bindValue(':task_id', $task_id, PDO::PARAM_STR);
         $stmt->bindValue(':task_text', $subtask4, PDO::PARAM_STR);
-        $stmt->bindValue(':is_complete', false, PDO::PARAM_STR);
+        $stmt->bindValue(':is_complete', 'false', PDO::PARAM_STR);
         $stmt->execute();
     }
 
