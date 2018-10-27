@@ -80,11 +80,12 @@ Coffee.locations = [
 ];
 */
 
-var newImage = document.createElement("IMG");
-    newImage.src = "broccoli.png";
-    newImage.STYLE="position:absolute; TOP:100px; LEFT:100px; WIDTH:100px; HEIGHT:100px"; 
-    var element = document.getElementById("gameboard");
-    element.appendChild(newImage);
+//var newImage = document.createElement("IMG");
+//newImage.src = "broccoli.png";
+//newImage.STYLE="position:absolute; TOP:100px; LEFT:100px; WIDTH:100px; HEIGHT:100px"; 
+//var element = document.getElementById("gameboard");
+//element.appendChild(newImage);
+document.getElementById("gameboard").innerHTML = "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
 
 /*
 //make the array of food objects
