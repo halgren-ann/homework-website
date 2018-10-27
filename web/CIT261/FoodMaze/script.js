@@ -2,6 +2,8 @@ var cell_width = 40;
 var cell_height = 40;
 var x_offset = 40;
 var y_offset = 40;
+var nRow = 4;
+var nCol = 6;
 
 
 /*
@@ -54,21 +56,52 @@ Coffee.locations = [
 */
 
 document.write("Hello, you made it to JS!");
-
-window.onload=function() {
-var greenArray = document.getElementsByClassName("green");
-for (var i=0; i<greenArray.length; i++) {
-    var one = greenArray[i];
-    var ctx = one.getContext("2d");
+window.onload = function() { 
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
     ctx.fillStyle = "#228B22";
-    ctx.fillRect(0, 0, 80, 100);
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    drawCheckeredBackground(canvas, nRow, noCol);
 }
 
-var brownArray = document.getElementsByClassName("brown");
-for (var i=0; i<brownArray.length; i++) {
-    var one = brownArray[i];
-    var ctx = one.getContext("2d");
+function drawCheckeredBackground(can, nRow, nCol) {
+    var ctx = can.getContext("2d");
+    var w = can.width;
+    var h = can.height;
+
+    nRow = nRow || 8;    // default number of rows
+    nCol = nCol || 8;    // default number of columns
+
+    w /= nCol;            // width of a block
+    h /= nRow;            // height of a block
+
+    for (var i = 0; i < nRow; ++i) {
+        for (var j = 0, col = nCol / 2; j < col; ++j) {
+            ctx.rect(2 * j * w + (i % 2 ? 0 : w), i * h, w, h);
+        }
+    }
+
     ctx.fillStyle = "#D2691E";
-    ctx.fillRect(100, 100, 80, 100);
+    ctx.fill();
+}
+
+/*
+window.onload=function() {
+    var greenArray = document.getElementsByClassName("green");
+    for (var i=0; i<greenArray.length; i++) {
+        var one = greenArray[i];
+        var ctx = one.getContext("2d");
+        ctx.fillStyle = "#228B22";
+        ctx.fillRect(0, 0, 80, 100);
+    }
+
+    var brownArray = document.getElementsByClassName("brown");
+    for (var i=0; i<brownArray.length; i++) {
+        var one = brownArray[i];
+        var ctx = one.getContext("2d");
+        ctx.fillStyle = "#D2691E";
+        ctx.fillRect(100, 100, 80, 100);
 }
 }
+*/
