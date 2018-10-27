@@ -24,7 +24,7 @@ ctx.fillStyle = "#228B22";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 drawCheckeredBackground(canvas, 4, 6);
 
-/*
+
 var cell_width = 100;
 var cell_height = 100;
 var x_offset = 100;
@@ -78,15 +78,19 @@ Coffee.locations = [
     new Coordinate(x_offset + (5*cell_width), y_offset + (2*cell_width)),
     new Coordinate(x_offset + (2*cell_width), y_offset + (3*cell_height))
 ];
-*/
+
 
 //var newImage = document.createElement("IMG");
 //newImage.src = "broccoli.png";
 //newImage.STYLE="position:absolute; TOP:100px; LEFT:100px; WIDTH:100px; HEIGHT:100px"; 
 //var element = document.getElementById("gameboard");
 //element.appendChild(newImage);
-document.getElementById("gameboard").innerHTML = "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
 
+document.getElementById("gameboard").innerHTML += "<IMG STYLE='position:absolute; TOP:35px; LEFT:170px; WIDTH:50px; HEIGHT:50px' SRC='broccoli.png'>";
+
+var broccoli = new Broccoli();
+document.write("The width of broccoli is:"+broccoli.width);
+document.write("The first location of Broccoli is:"+broccoli.locations[0].x+" "+broccoli.locations[0].y);
 /*
 //make the array of food objects
 var foodArray;
