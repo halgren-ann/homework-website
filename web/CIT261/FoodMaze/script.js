@@ -68,5 +68,5 @@ for (var i=0; i<brownArray.length; i++) {
     var one = brownArray[i];
     var ctx = one.getContext("2d");
     ctx.fillStyle = "#D2691E";
-    ctx.fillRect(0, 0, 80, 100);
+    ctx.fillRect(100, 100, 80, 100);
 }
