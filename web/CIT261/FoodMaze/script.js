@@ -1,10 +1,38 @@
+function drawCheckeredBackground(can, nRow, nCol) {
+    var ctx = can.getContext("2d");
+    var w = can.width;
+    var h = can.height;
+
+    nRow = nRow || 8;    // default number of rows
+    nCol = nCol || 8;    // default number of columns
+
+    w /= nCol;            // width of a block
+    h /= nRow;            // height of a block
+
+    for (var i = 0; i < nRow; ++i) {
+        for (var j = 0, col = nCol / 2; j < col; ++j) {
+            ctx.rect(2 * j * w + (i % 2 ? 0 : w), i * h, w, h);
+        }
+    }
+		ctx.fillStyle ="#D2691E";
+    ctx.fill();
+}
+
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#228B22";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+drawCheckeredBackground(canvas, 4, 6);
+
+/*
+
 var cell_width = 40;
 var cell_height = 40;
 var x_offset = 40;
 var y_offset = 40;
 var nRow = 4;
 var nCol = 6;
-
+*/
 
 /*
 function Coordinate(x, y) {
@@ -54,6 +82,8 @@ Coffee.locations = [
     new Coordinate(x_offset + (2*cell_width), y_offset + (3*cell_height))
 ];
 */
+
+/*
 function drawCheckeredBackground(can, nRow, nCol) {
     var ctx = can.getContext("2d");
     var w = can.width;
@@ -84,7 +114,7 @@ function drawCheckeredBackground(can, nRow, nCol) {
     drawCheckeredBackground(canvas, nRow, noCol);
 
 
-
+*/
 
 /*
 window.onload=function() {
