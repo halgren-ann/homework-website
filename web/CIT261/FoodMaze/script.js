@@ -25,29 +25,43 @@ ctx.fillRect(0, 0, canvas.width, canvas.height);
 drawCheckeredBackground(canvas, 4, 6);
 
 
-//Moving the gamepiece
+//Moving the gamepiece and label
 document.onkeydown = checkKey;
 
 function checkKey(e) {
 
     e = e || window.event;
+    currentTop = parseInt(document.getElementById("gamepiece").style.top, 10);
+    currentLeft = parseInt(document.getElementById("gamepiece").style.left, 10);
 
     if (e.keyCode == '38') {
         // up arrow
-        if (parseInt(document.getElementById("gamepiece").style.top, 10) > 50) {
-            document.getElementById("gamepiece").style.top = (parseInt(document.getElementById("gamepiece").style.top, 10) - 100) + "px";
+        if (currentTop > 50) {
+            document.getElementById("gamepiece").style.top = (currentTop - 100) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop - 100) + "px";
         }
     }
     else if (e.keyCode == '40') {
         // down arrow
+        if (currentTop < 250) {
+            document.getElementById("gamepiece").style.top = (currentTop + 100) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop + 100) + "px";
+        }
     }
     else if (e.keyCode == '37') {
-       // left arrow
+        // left arrow
+        if (currentLeft > 50) {
+            document.getElementById("gamepiece").style.left = (currentLeft - 100) + "px";
+            document.getElementById("youAreHere").style.left = (currentLeft - 100) + "px";
+        }
     }
     else if (e.keyCode == '39') {
-       // right arrow
+        // right arrow
+        if (currentLeft < 450) {
+            document.getElementById("gamepiece").style.left = (currentLeft + 100) + "px";
+            document.getElementById("youAreHere").style.left = (currentLeft + 100) + "px";
+        }
     }
-
 }
 
 /*
