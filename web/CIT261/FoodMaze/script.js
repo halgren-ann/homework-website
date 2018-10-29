@@ -104,6 +104,7 @@ function checkKey(e) {
     checkLocation();
 }
 
+//See if you just ate a food
 function checkLocation() {
     var gamepiece = document.getElementById("gamepiece");
     for (var i=0; i<foodArray.length; i++) {
@@ -113,11 +114,12 @@ function checkLocation() {
                 //Turn colors and scale
                 if (foodArray[i].isGood) {
                     gamepiece.classList.add("changeGreen");
-                    
+                    document.getElementById(foodArray[i].audioFile).play();
                     setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeGreen", ""); }, 1000);
                 }
                 else {
                     gamepiece.classList.add("changeRed");
+                    document.getElementById(foodArray[i].audioFile).play();
                     setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeRed", ""); }, 1000);
                 }
                 //hide this image
