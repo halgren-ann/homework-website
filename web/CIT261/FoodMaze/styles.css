@@ -21,7 +21,7 @@ img {
     border-radius: 50%;
     
     transition-property: background;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
     transition-timing-function: ease-out;
 
     -webkit-animation: neonCircle 1s ease-in-out infinite alternate;
