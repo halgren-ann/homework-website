@@ -30,7 +30,7 @@ function Coordinate(top, left) {
     this.left = left;
 }
 
-function Brocolli(top, left, name) {
+function Broccoli(top, left, name) {
     this.location = new Coordinate(top, left);
     this.isGood = true;
     this.audioFile = "blip.wav";
