@@ -23,6 +23,10 @@ img {
     transition-property: background;
     transition-duration: 1.5s;
     transition-timing-function: ease-out;
+
+    -webkit-animation: neonCircle 1s ease-in-out infinite alternate;
+    -moz-animation: neonCircle 1s ease-in-out infinite alternate;
+    animation: neonCircle 1s ease-in-out infinite alternate;
 }
 
 #gamepiece.changeGreen {
@@ -35,21 +39,30 @@ img {
   transform: scale(0.8, 0.8);
 }
 
-#youAreHere, #gamepiece {
+#youAreHere{
     position: absolute;
     font-size: 50px;
     color: #228DFF;
     font-family: Algerian;
-    -webkit-animation: neon2 1s ease-in-out infinite alternate;
-    -moz-animation: neon2 1s ease-in-out infinite alternate;
-    animation: neon2 1s ease-in-out infinite alternate;
+    -webkit-animation: neonWords 1s ease-in-out infinite alternate;
+    -moz-animation: neonWords 1s ease-in-out infinite alternate;
+    animation: neonWords 1s ease-in-out infinite alternate;
   }
   
-  @-webkit-keyframes neon2 {
+  @-webkit-keyframes neonWords {
     from {
       text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
     }
     to {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    }
+  }
+
+  @-webkit-keyframes neonCircle {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    }
+    to {
+      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
     }
   }
