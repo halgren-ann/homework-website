@@ -34,8 +34,8 @@ function checkKey(e) {
 
     if (e.keyCode == '38') {
         // up arrow
-        if (document.getElementById("gamepiece").style.top > 50) {
-            document.getElementById("gamepiece").style.top -= 100;
+        if (document.getElementById("gamepiece").offsetTop > 50) {
+            document.getElementById("gamepiece").offsetTop -= 100; ;
         }
     }
     else if (e.keyCode == '40') {
