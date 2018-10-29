@@ -24,6 +24,32 @@ ctx.fillStyle = "#FFFF00";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 drawCheckeredBackground(canvas, 4, 6);
 
+
+//Moving the gamepiece
+document.onkeydown = checkKey;
+
+function checkKey(e) {
+
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+        // up arrow
+        if (document.getElementById("gamepiece").style.top > 50) {
+            document.getElementById("gamepiece").style.top -= 100;
+        }
+    }
+    else if (e.keyCode == '40') {
+        // down arrow
+    }
+    else if (e.keyCode == '37') {
+       // left arrow
+    }
+    else if (e.keyCode == '39') {
+       // right arrow
+    }
+
+}
+
 /*
 var gamepiece = document.getElementById("gamepiece");
 
