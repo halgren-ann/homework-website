@@ -35,7 +35,7 @@ img {
   transform: scale(0.8, 0.8);
 }
 
-#youAreHere {
+#youAreHere, #gamepiece {
     position: absolute;
     font-size: 50px;
     color: #228DFF;
