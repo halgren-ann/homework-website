@@ -35,7 +35,7 @@ function checkKey(e) {
     if (e.keyCode == '38') {
         // up arrow
         if (parseInt(document.getElementById("gamepiece").style.top, 10) > 50) {
-            document.getElementById("gamepiece").style.top = parseInt(document.getElementById("gamepiece").style.top, 10) - 100; ;
+            document.getElementById("gamepiece").style.top = (parseInt(document.getElementById("gamepiece").style.top, 10) - 100) + "px";
         }
     }
     else if (e.keyCode == '40') {
