@@ -33,21 +33,21 @@ function Coordinate(top, left) {
 function Broccoli(top, left, name) {
     this.location = new Coordinate(top, left);
     this.isGood = true;
-    this.audioFile = "blip.wav";
+    this.audioFile = "blip";
     this.name = name;
 }
 
 function Bread(top,left, name) {
     this.location = new Coordinate(top, left);
     this.isGood = true;
-    this.audioFile = "blip.wav";
+    this.audioFile = "blip";
     this.name = name;
 }
 
 function Coffee(top, left, name) {
     this.location = new Coordinate(top, left);
     this.isGood = false;
-    this.audioFile = "buzzer.wav";
+    this.audioFile = "buzzer";
     this.name = name;
 }
 
@@ -55,8 +55,13 @@ function Coffee(top, left, name) {
 var foodArray = new Array();
 foodArray.push(new Broccoli(8, 508, "broccoli1"));
 foodArray.push(new Broccoli(108, 308, "broccoli2"));
-//finish.....
-
+foodArray.push(new Broccoli(208, 108, "broccoli3"));
+foodArray.push(new Bread(8, 208, "bread1"));
+foodArray.push(new Bread(208, 408, "bread2"));
+foodArray.push(new Bread(308, 8, "bread3"));
+foodArray.push(new Coffee(8, 108, "coffee1"));
+foodArray.push(new Coffee(208, 508, "coffee2"));
+foodArray.push(new Coffee(308, 208, "coffee3"));
 
 //Moving the gamepiece and label
 document.onkeydown = checkKey;
