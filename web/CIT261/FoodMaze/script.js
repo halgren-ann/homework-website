@@ -24,6 +24,12 @@ ctx.fillStyle = "#FFFF00";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 drawCheckeredBackground(canvas, 4, 6);
 
+//Create the food object arrays
+function Coordinate(x, y) {
+    this.x = x;
+    this.y = y;
+}
+
 
 //Moving the gamepiece and label
 document.onkeydown = checkKey;
@@ -38,7 +44,7 @@ function checkKey(e) {
         // up arrow
         if (currentTop > 50) {
             document.getElementById("gamepiece").style.top = (currentTop - 100) + "px";
-            document.getElementById("youAreHere").style.top = (currentTop - 118) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop - 82) + "px";
             gamepiece.classList.add("changeRed");
             setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeRed", ""); }, 1000);            
         }
@@ -47,7 +53,7 @@ function checkKey(e) {
         // down arrow
         if (currentTop < 250) {
             document.getElementById("gamepiece").style.top = (currentTop + 100) + "px";
-            document.getElementById("youAreHere").style.top = (currentTop + 82) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop + 118) + "px";
             gamepiece.classList.add("changeGreen");
             setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeGreen", ""); }, 1000);
         }
