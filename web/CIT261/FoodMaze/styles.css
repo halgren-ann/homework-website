@@ -18,4 +18,18 @@ img {
     height:100px;
     background-color: skyblue;
     border-radius: 50%;
+    
+    transition-property: background;
+    transition-duration: 1.5s;
+    transition-timing-function: ease-out;
+}
+
+#gamepiece.changeGreen {
+  background-color: green;
+  transform: scale(1.2, 1.2);  
+}
+
+#gamepiece.changeRed {
+  background-color: red;
+  transform: scale(0.8, 0.8);
 }

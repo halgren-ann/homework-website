@@ -20,10 +20,21 @@ function drawCheckeredBackground(can, nRow, nCol) {
 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-ctx.fillStyle = "#228B22";
+ctx.fillStyle = "#FFFF00";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 drawCheckeredBackground(canvas, 4, 6);
 
+/*
+var gamepiece = document.getElementById("gamepiece");
+
+
+gamepiece.classList.add("changeGreen");
+setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeGreen", ""); }, 3000);
+
+
+gamepiece.classList.add("changeRed");
+setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeRed", ""); }, 3000);
+*/
 
 
 
