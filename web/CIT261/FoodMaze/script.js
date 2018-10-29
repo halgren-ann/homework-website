@@ -39,6 +39,8 @@ function checkKey(e) {
         if (currentTop > 50) {
             document.getElementById("gamepiece").style.top = (currentTop - 100) + "px";
             document.getElementById("youAreHere").style.top = (currentTop - 100) + "px";
+            gamepiece.classList.add("changeRed");
+            setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeRed", ""); }, 3000);            
         }
     }
     else if (e.keyCode == '40') {
@@ -46,20 +48,22 @@ function checkKey(e) {
         if (currentTop < 250) {
             document.getElementById("gamepiece").style.top = (currentTop + 100) + "px";
             document.getElementById("youAreHere").style.top = (currentTop + 100) + "px";
+            gamepiece.classList.add("changeGreen");
+            setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeGreen", ""); }, 3000);
         }
     }
     else if (e.keyCode == '37') {
         // left arrow
         if (currentLeft > 50) {
             document.getElementById("gamepiece").style.left = (currentLeft - 100) + "px";
-            document.getElementById("youAreHere").style.left = (currentLeft - 100) + "px";
+            document.getElementById("youAreHere").style.left = currentLeft + "px";
         }
     }
     else if (e.keyCode == '39') {
         // right arrow
         if (currentLeft < 450) {
             document.getElementById("gamepiece").style.left = (currentLeft + 100) + "px";
-            document.getElementById("youAreHere").style.left = (currentLeft + 100) + "px";
+            document.getElementById("youAreHere").style.left = (currentLeft + 200) + "px";
         }
     }
 }
