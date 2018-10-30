@@ -88,5 +88,10 @@ button {
 
 #instructionsVid {
     display: table;
-    margin: auto 0;
+    margin: 0 auto;
+    top: 8px;
+    left: 618px;
+    height: 30px;
+    background-color: skyblue;
+    font-weight: bold;
 }
