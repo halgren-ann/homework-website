@@ -85,3 +85,8 @@ img {
 button {
     position: fixed;
 }
+
+#instructionsVid {
+    display: table;
+    margin: auto 0;
+}
