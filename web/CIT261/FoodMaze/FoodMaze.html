@@ -20,7 +20,7 @@
             <img id="coffee2" class="coffee" style="top:208px; left:508px" src='coffee.png'>
             <img id="coffee3" class="coffee" style="top:308px; left:208px" src='coffee.png'>
         </div>
-        
+
         <div id="gamepiece" style="top:308px; left:508px"></div>
         <div id="youAreHere" style="top:326px; left:608px">You are here</div>
 
@@ -30,6 +30,15 @@
         <audio id="blip" class="hidden">
             <source src="blip.wav" type="audio/mpeg">
         </audio>
+
+        <div id="overlay" style="display:none" onclick="off()">
+            <video width="320" height="240" autoplay>
+                <source src="instructions.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <button style="top:8px; left:608px" onclick="on()">View Game Instructions</button>
         
     </body>
     <footer>

@@ -133,17 +133,13 @@ function checkLocation() {
     }
 }
 
-/*
-var gamepiece = document.getElementById("gamepiece");
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
 
-
-gamepiece.classList.add("changeGreen");
-setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeGreen", ""); }, 1000);
-
-
-gamepiece.classList.add("changeRed");
-setTimeout(function(){ gamepiece.className = gamepiece.className.replace("changeRed", ""); }, 1000);
-*/
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
 
 
 
