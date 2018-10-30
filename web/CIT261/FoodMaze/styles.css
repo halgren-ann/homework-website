@@ -84,14 +84,14 @@ img {
 
 button {
     position: fixed;
-}
-
-#instructionsVid {
-    display: table;
-    margin: 0 auto;
     top: 8px;
     left: 618px;
     height: 30px;
     background-color: skyblue;
     font-weight: bold;
+}
+
+#instructionsVid {
+    display: table;
+    margin: 0 auto;
 }
