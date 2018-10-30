@@ -145,7 +145,7 @@ function off() {
 
 //Allowing for touch screen to move the game piece
 window.addEventListener('load', function(){
-    var el = document.getElementById("gameboard");
+    var el = document.getElementById("touchOverlay");
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             if (swipedir == 'up') {

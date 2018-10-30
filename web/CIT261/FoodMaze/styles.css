@@ -96,3 +96,12 @@ button {
     margin: 0 auto;
     width: 600px;
 }
+
+#touchOverlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 600px; /* Full width (cover the whole page) */
+    height: 400px; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    background-color: rgba(0, 0, 0, 0); /* Black background with opacity */
+}
