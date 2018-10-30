@@ -89,9 +89,11 @@ button {
     height: 30px;
     background-color: skyblue;
     font-weight: bold;
+    font-size: 50px;
 }
 
 #instructionsVid {
     display: table;
     margin: 0 auto;
+    width: 600px;
 }
