@@ -145,7 +145,7 @@ function off() {
 
 //Allowing for touch screen to move the game piece
 window.addEventListener('load', function(){
-    var el = window;
+    var el = document.getElementById("gameboard");
     swipedetect(el, function(swipedir){
         if (swipedir != 'none'){
             if (swipedir == 'up') {
@@ -248,36 +248,7 @@ function actOnDirection(code) {
     checkLocation();
 }
 
-/*
-function lock(e) {};
-
-function move(e) {};
-
-_C.addEventListener('mousedown', lock, false);
-_C.addEventListener('touchstart', lock, false);
-
-_C.addEventListener('mouseup', move, false);
-_C.addEventListener('touchend', move, false);
-
-function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
-
-let x0 = null;
-
-function lock(e) { x0 = unify(e).clientX };
-
-let i = 0;
-
-function move(e) {
-  if(x0 || x0 === 0) {
-    let dx = unify(e).clientX - x0, s = Math.sign(dx);
-  
-    if((i > 0 || s < 0) && (i < N - 1 || s > 0))
-      _C.style.setProperty('--i', i -= s);
-	
-    x0 = null
-  }
-};
-*/
+//Large amount of swipe code copied from http://www.javascriptkit.com/javatutors/touchevents2.shtml
 
 
 
