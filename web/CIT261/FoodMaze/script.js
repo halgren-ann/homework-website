@@ -143,6 +143,142 @@ function off() {
     document.getElementById("instructionsVid").pause();
 }
 
+//Experimenting with touch screen moving the gamepiece
+window.addEventListener('load', function(){
+    var el = document.getElementById('gamepiece')
+    swipedetect(el, function(swipedir){
+        if (swipedir != 'none'){
+            if (swipedir == 'up') {
+                actOnDirection('38');
+            }
+            else if (swipedir == 'down') {
+                actOnDirection('40');
+            }
+            else if (swipedir == 'left') {
+                actOnDirection('37');
+            }
+            else if (swipedir == 'right') {
+                actOnDirection('39');
+            }
+        }
+    })
+}, false)
+
+function swipedetect(el, callback){
+  
+    var touchsurface = el,
+    swipedir,
+    startX,
+    startY,
+    distX,
+    distY,
+    threshold = 150, //required min distance traveled to be considered swipe
+    restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+    allowedTime = 300, // maximum time allowed to travel that distance
+    elapsedTime,
+    startTime,
+    handleswipe = callback || function(swipedir){}
+  
+    touchsurface.addEventListener('touchstart', function(e){
+        var touchobj = e.changedTouches[0]
+        swipedir = 'none'
+        dist = 0
+        startX = touchobj.pageX
+        startY = touchobj.pageY
+        startTime = new Date().getTime() // record time when finger first makes contact with surface
+        e.preventDefault()
+    }, false)
+  
+    touchsurface.addEventListener('touchmove', function(e){
+        e.preventDefault() // prevent scrolling when inside DIV
+    }, false)
+  
+    touchsurface.addEventListener('touchend', function(e){
+        var touchobj = e.changedTouches[0]
+        distX = touchobj.pageX - startX // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime // get time elapsed
+        if (elapsedTime <= allowedTime){ // first condition for awipe met
+            if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){ // 2nd condition for horizontal swipe met
+                swipedir = (distX < 0)? 'left' : 'right' // if dist traveled is negative, it indicates left swipe
+            }
+            else if (Math.abs(distY) >= threshold && Math.abs(distX) <= restraint){ // 2nd condition for vertical swipe met
+                swipedir = (distY < 0)? 'up' : 'down' // if dist traveled is negative, it indicates up swipe
+            }
+        }
+        handleswipe(swipedir)
+        e.preventDefault()
+    }, false)
+}
+
+function actOnDirection(code) {
+
+    currentTop = parseInt(document.getElementById("gamepiece").style.top, 10);
+    currentLeft = parseInt(document.getElementById("gamepiece").style.left, 10);
+
+    if (code == '38') {
+        // up arrow
+        if (currentTop > 50) {
+            document.getElementById("gamepiece").style.top = (currentTop - 100) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop - 82) + "px";            
+        }
+    }
+    else if (code == '40') {
+        // down arrow
+        if (currentTop < 250) {
+            document.getElementById("gamepiece").style.top = (currentTop + 100) + "px";
+            document.getElementById("youAreHere").style.top = (currentTop + 118) + "px";
+        }
+    }
+    else if (code == '37') {
+        // left arrow
+        if (currentLeft > 50) {
+            document.getElementById("gamepiece").style.left = (currentLeft - 100) + "px";
+            document.getElementById("youAreHere").style.left = currentLeft + "px";
+        }
+    }
+    else if (code == '39') {
+        // right arrow
+        if (currentLeft < 450) {
+            document.getElementById("gamepiece").style.left = (currentLeft + 100) + "px";
+            document.getElementById("youAreHere").style.left = (currentLeft + 200) + "px";
+        }
+    }
+
+    checkLocation();
+}
+
+/*
+function lock(e) {};
+
+function move(e) {};
+
+_C.addEventListener('mousedown', lock, false);
+_C.addEventListener('touchstart', lock, false);
+
+_C.addEventListener('mouseup', move, false);
+_C.addEventListener('touchend', move, false);
+
+function unify(e) { return e.changedTouches ? e.changedTouches[0] : e };
+
+let x0 = null;
+
+function lock(e) { x0 = unify(e).clientX };
+
+let i = 0;
+
+function move(e) {
+  if(x0 || x0 === 0) {
+    let dx = unify(e).clientX - x0, s = Math.sign(dx);
+  
+    if((i > 0 || s < 0) && (i < N - 1 || s > 0))
+      _C.style.setProperty('--i', i -= s);
+	
+    x0 = null
+  }
+};
+*/
+
 
 
 
