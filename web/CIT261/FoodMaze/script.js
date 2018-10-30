@@ -135,10 +135,12 @@ function checkLocation() {
 
 function on() {
     document.getElementById("overlay").style.display = "block";
+    document.getElementById("instructionsVid").play();
 }
 
 function off() {
     document.getElementById("overlay").style.display = "none";
+    document.getElementById("instructionsVid").pause();
 }
 
 
