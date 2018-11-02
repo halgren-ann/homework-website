@@ -1,3 +1,6 @@
+//Preload audio
+audio.preload = 'auto';
+
 function drawCheckeredBackground(can, nRow, nCol) {
     var ctx = can.getContext("2d");
     var w = can.width;
