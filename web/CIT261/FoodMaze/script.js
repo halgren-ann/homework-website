@@ -1,5 +1,6 @@
 //Preload audio
-audio.preload = 'auto';
+document.getElementById("buzzer").preload = 'auto';
+document.getElementById("blip").preload = 'auto';
 
 function drawCheckeredBackground(can, nRow, nCol) {
     var ctx = can.getContext("2d");
