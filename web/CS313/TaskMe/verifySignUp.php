@@ -2,7 +2,14 @@
     session_start();
     include 'dbConnect.php';
     //require 'password.php';
+?>
 
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+
+<?php
     // define variables
     $first_name = $_POST["first_name"];
     $last_name = $_POST["last_name"];
@@ -26,6 +33,17 @@
         return $data;
     }
 
+    //check for username uniqueness
+    $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username');
+    $stmt->execute(array(':username' => $username));
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if ($rows[0]) {
+        //this username already exists in the database
+        echo "<script type='text/javascript'>alert('Sorry, that username is already taken by another user');
+        window.location = 'signUp.php';</script>";
+        die();
+    }
+
     //Insert into the database
     $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
         VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
@@ -45,3 +63,6 @@
     header("Location: TaskMe.php");
     die();
 ?>
+
+</body>
+</html>
