@@ -30,16 +30,25 @@
     }
 
     //check the login information
-    $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
-    $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
+    $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username');
+    $stmt->execute(array(':username' => $username));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     if ($rows[0]) {
-        //Then they check out in the database
-        $_SESSION["user_id"] = $rows[0]["id"];
-        //Move on to the home page
-        echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
-        die();
+        //check against the hashed password now
+        if (password_verify($user_password, $rows[0]["user_password"])) {
+            //Then they check out in the database
+            $_SESSION["user_id"] = $rows[0]["id"];
+            //Move on to the home page
+            echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
+            die();
+        }
+        else {
+            //some login info was incorrect
+            echo "<script type='text/javascript'>alert('Sorry, the username or password is incorrect');
+            window.location = 'login.php';</script>";
+            die();
+        }
     }
     else {
         //some login info was incorrect
