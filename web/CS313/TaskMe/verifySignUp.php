@@ -1,7 +1,7 @@
 <?php
     session_start();
     include 'dbConnect.php';
-    require("password.php");
+    require 'password.php';
 
     // define variables
     $first_name = $_POST["first_name"];
@@ -41,7 +41,7 @@
 
     //also capture the user's id for use in this session
     $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
-    $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
+    $stmt->execute(array(':username' => $username, ':user_password' => $hashedPassword));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["user_id"] = $rows[0]["id"];
     //redirect the page to TaskMe.php
