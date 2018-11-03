@@ -10,7 +10,7 @@
 <?php
     //connect to the database
     include 'dbConnect.php';
-    //require 'password.php';
+    require 'password.php';
 
     // define variables
     $username = $_POST["username"];

@@ -1,7 +1,7 @@
 <?php
     session_start();
     include 'dbConnect.php';
-    //require 'password.php';
+    require 'password.php';
 ?>
 
 <!DOCTYPE html>
