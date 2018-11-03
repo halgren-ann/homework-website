@@ -1,7 +1,7 @@
 <?php
     session_start();
     include 'dbConnect.php';
-    require 'password.php';
+    //require 'password.php';
 
     // define variables
     $first_name = $_POST["first_name"];
@@ -25,15 +25,12 @@
         $data = htmlspecialchars($data);
         return $data;
     }
-    
-    // Get the hashed password.
-    $hashedPassword = password_hash($user_password, PASSWORD_DEFAULT);
 
     //Insert into the database
     $stmt = $db->prepare('INSERT into public.user(username, user_password, first_name, last_name, display_color) 
         VALUES (:username, :user_password, :first_name, :last_name, :display_color);');
     $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-    $stmt->bindValue(':user_password', $hashedPassword, PDO::PARAM_STR);
+    $stmt->bindValue(':user_password', $user_password, PDO::PARAM_STR);
     $stmt->bindValue(':first_name', $first_name, PDO::PARAM_STR);
     $stmt->bindValue(':last_name', $last_name, PDO::PARAM_STR);
     $stmt->bindValue(':display_color', $display_color, PDO::PARAM_STR);
@@ -41,7 +38,7 @@
 
     //also capture the user's id for use in this session
     $stmt = $db->prepare('SELECT * FROM public.user WHERE username = :username AND user_password = :user_password');
-    $stmt->execute(array(':username' => $username, ':user_password' => $hashedPassword));
+    $stmt->execute(array(':username' => $username, ':user_password' => $user_password));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["user_id"] = $rows[0]["id"];
     //redirect the page to TaskMe.php
