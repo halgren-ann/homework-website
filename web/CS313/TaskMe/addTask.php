@@ -46,7 +46,8 @@
     </div>
 
     <script>
-        document.body.style.background-color = "<?php echo $_SESSION['color'];?>";
+        var color = <?php echo $_SESSION['color'];?>;
+        document.body.style.background-color = color;
     </script>
      
 </body>
