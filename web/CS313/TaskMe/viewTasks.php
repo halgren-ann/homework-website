@@ -211,7 +211,7 @@
                         }
                     }
                     else {
-                        echo "<li>You currently have no tasks in that make those criteria.</li>";
+                        echo "<li>You currently have no tasks in that meet those criteria.</li>";
                     }
                 }
 
