@@ -106,6 +106,7 @@
   ?> 
   - </span>TaskMe</h1>
 </div>
+<a href="logout.php"><button id="logout">Log Out</button></a>
 
 
 <script>
