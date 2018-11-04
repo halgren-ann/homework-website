@@ -44,6 +44,11 @@
         die();
     }
 
+    //Fix display_color
+    if ($display_color == "default") {
+        $display_color = "#257";
+    }
+
     //prepare hashed password
     $passwordHash = password_hash($user_password, PASSWORD_DEFAULT);
 

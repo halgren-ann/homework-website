@@ -44,6 +44,10 @@
     <div class="titleArea">
         <h1>TaskMe</h1>
     </div>
+
+    <script>
+        document.body.style.background-color = "<?php echo $_SESSION['color'];?>";
+    </script>
      
 </body>
 </html> 
