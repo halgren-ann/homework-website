@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $color = $_SESSION["color"];
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@
     </div>
 
     <script>
-        alert("hi");
+        alert("<?php echo $color;?>");
     </script>
      
 </body>
