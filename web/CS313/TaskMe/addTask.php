@@ -47,7 +47,7 @@
 
     <script>
         var color = <?php echo $_SESSION['color'];?>;
-        document.body.style.background-color = color;
+        document.body.style.background = color;
     </script>
      
 </body>
