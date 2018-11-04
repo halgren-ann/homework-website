@@ -1,5 +1,6 @@
 <?php   
     session_start(); 
+    $color = $_SESSION["color"];
     include 'dbConnect.php';
     include 'cleanupDB.php';
 ?>
