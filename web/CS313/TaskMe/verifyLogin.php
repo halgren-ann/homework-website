@@ -39,6 +39,7 @@
         if (password_verify($user_password, $rows[0]["user_password"])) {
             //Then they check out in the database
             $_SESSION["user_id"] = $rows[0]["id"];
+            
             //Move on to the home page
             echo "<script type='text/javascript'>window.location = 'TaskMe.php';</script>";
             die();
