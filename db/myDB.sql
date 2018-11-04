@@ -1,16 +1,3 @@
-/*A few helpful things to be aware of:
-
-1. Don’t forget `;` at the end of your line.
-
-2. `\q` will quit and get you back to the regular command line.
-
-3. `\dt` will list all the tables in your current database.
-
-psql postgres://mswvtmwuakblzn:3d807e9b9a0cab27b2a3a786ff97e2f2b24bf1a2f57b8840ea45a1d57600d790@ec2-174-129-32-37.compute-1.amazonaws.com:5432/dedvidl0uucsbs
-
-5432 port
-p4*/
-
 CREATE TABLE public.user
 (
 	id SERIAL NOT NULL PRIMARY KEY,
