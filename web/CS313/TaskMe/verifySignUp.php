@@ -67,6 +67,7 @@
     $stmt->execute(array(':username' => $username, ':user_password' => $passwordHash));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $_SESSION["user_id"] = $rows[0]["id"];
+    $_SESSION["color"] = $rows[0]["display_color"];
     //redirect the page to TaskMe.php
     header("Location: TaskMe.php");
     die();
