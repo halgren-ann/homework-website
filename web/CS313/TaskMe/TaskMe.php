@@ -104,7 +104,7 @@
 
 
 <script>
-    document.body.backgroundColor = <?php echo $color;?>;
+    document.body.style.backgroundColor = "<?php echo $color;?>";
 
     // Add a "checked" symbol when clicking on a list item
     var list = document.querySelector('ul');
