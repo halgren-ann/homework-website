@@ -116,7 +116,7 @@
     var list = document.querySelector('ul');
     list.addEventListener('click', function(ev) {
         if (ev.target.tagName === 'LI') {
-            ev.target.classList.toggle('checked');
+            ev.target.classList.add('checked');
             //change the database item is_complete with this information
             isChecked(ev.target.childNodes[0].textContent);
         }
