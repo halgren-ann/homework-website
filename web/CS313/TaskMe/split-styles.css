@@ -137,4 +137,5 @@ ul li.checked::before {
     top: 15px;
     right: 25px;
     width: 100px;
+    z-index: 2;
 }
