@@ -41,9 +41,9 @@
             </select>
             <br><br>
             <label>Optional: Due Date</label><br>
-            <input type="number" name="date_due_month" style="width:30%" placeholder="Enter month MM" minlength=2 maxlength=2 pattern="[0-9]{2}" min="01" max="12">
-            <input type="number" name="date_due_day" style="width:30%" placeholder="Enter day DD" minlength=2 maxlength=2 pattern="[0-9]{2}" min="01" max="31">
-            <input type="number" name="date_due_year" style="width:30%" placeholder="Enter year YYYY" minlength=4 maxlength=4 pattern="[0-9]{4}"><br><br>
+            <input type="number" name="date_due_month" style="width:30%" placeholder="Enter month MM" maxlength=2 pattern="[0-9]{2}" min="01" max="12">
+            <input type="number" name="date_due_day" style="width:30%" placeholder="Enter day DD" maxlength=2 pattern="[0-9]{2}" min="01" max="31">
+            <input type="number" name="date_due_year" style="width:30%" placeholder="Enter year YYYY" maxlength=4 pattern="[0-9]{4}"><br><br>
             <input type="submit" style="width:100%">
         </form>
     </div>
