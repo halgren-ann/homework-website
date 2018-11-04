@@ -135,6 +135,6 @@ ul li.checked::before {
 #logout {
     position: fixed;
     top: 15px;
-    right: 125px;
+    right: 25px;
     width: 100px;
 }
