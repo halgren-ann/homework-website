@@ -47,7 +47,7 @@
     </div>
 
     <script>
-        alert("<?php echo $color;?>");
+        document.body.background-color = <?php echo $color;?>;
     </script>
      
 </body>
