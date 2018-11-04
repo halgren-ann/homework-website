@@ -1,5 +1,10 @@
 <?php
     session_start();
+    if (!isset($_SESSION["user_id"])) {
+        //redirect to the index page
+        header('Location: index.html');
+        die();
+    }
     $color = $_SESSION["color"];
 ?>
 
