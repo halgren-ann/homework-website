@@ -12,7 +12,7 @@
         <br><br><br><br><br><br>
         <form action="verifySignUp.php" method="POST">
             <label>First Name:</label><br>
-            <input type="text" name="first_name" placeholder="Enter first name" maxlength=16 required><br><br><br>
+            <input type="text" name="first_name" placeholder="Enter first name" maxlength=16 required autofocus><br><br><br>
             <label>Last Name:</label><br>
             <input type="text" name="last_name" placeholder="Enter last name" maxlength=16 required><br><br><br>
             <label>Username:</label><br>

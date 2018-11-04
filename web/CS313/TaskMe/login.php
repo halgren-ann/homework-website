@@ -12,7 +12,7 @@
         <br><br><br><br><br><br>
         <form action="verifyLogin.php" method="post">
             <label>Username:</label><br>
-            <input type="text" name="username" placeholder="Enter username" maxlength=16 required><br><br><br>
+            <input type="text" name="username" placeholder="Enter username" maxlength=16 required autofocus><br><br><br>
             <label>Password:</label><br>
             <input type="password" name="user_password" placeholder="Enter password" maxlength=20 required><br><br><br>
             <input type="submit" style="width:100%">
