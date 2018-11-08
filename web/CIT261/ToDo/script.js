@@ -82,12 +82,12 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
     //tell localStorage whether this item is checked or not
-    /*var text = ev.target.textContent;
+    var text = ev.target.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     if(array[text] == "checked") array[text] = "unchecked";
     else array[text] = "checked";
-    localStorage.setItem("taskArray", JSON.stringify(array));*/
+    localStorage.setItem("taskArray", JSON.stringify(array));
   }
 }, false);
 
