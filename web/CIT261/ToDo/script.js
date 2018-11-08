@@ -1,3 +1,117 @@
+var arrayObj = new Array();
+
+//test storage
+var obj = new object();
+obj.key = "Hit the gym";
+obj.value = "unchecked";
+arrayObj.push(obj);
+obj.key = "Pay Bills";
+obj.value = "checked";
+arrayObj.push(obj);
+localStorage.setItem("taskArray", JSON.stringify(arrayObj));
+
+//Load previous tasks
+function loadStorage() {
+    arrayObj = JSON.parse(localStorage["taskArray"]);
+    for (var item in arrayObj) {
+        var li = document.createElement("li");
+        var inputValue = item.key;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (inputValue === '') {
+            alert("You must write something!");
+        } else {
+            if (item.value == "checked") {
+                li.classList.add("checked");
+            }
+            document.getElementById("myUL").appendChild(li);
+        }
+        document.getElementById("myInput").value = "";
+    
+        var span = document.createElement("SPAN");
+        var txt = document.createTextNode("\u00D7");
+        span.className = "close";
+        span.appendChild(txt);
+        li.appendChild(span);
+    
+        for (i = 0; i < close.length; i++) {
+            close[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+            }
+        }
+    }
+  }
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+// Add a "checked" symbol when clicking on a list item
+var list = document.querySelector('ul');
+list.addEventListener('click', function(ev) {
+  if (ev.target.tagName === 'LI') {
+    ev.target.classList.toggle('checked');
+  }
+}, false);
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
 function loadStorage() {
     //first, remove all the existinig elements
     document.getElementById("myUL").innerHTML = "";
@@ -14,7 +128,7 @@ function loadStorage() {
         if (arrayObj.value == "checked") {
             li.classList.add("checked");
         }
-        /*document.getElementById("myInput").value = "";
+        document.getElementById("myInput").value = "";
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span.className = "close";
@@ -26,7 +140,7 @@ function loadStorage() {
             var div = this.parentElement;
             div.style.display = "none";
             }
-        }*/
+        }
     }
 }
 
@@ -63,11 +177,11 @@ for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     //remove this item from localStorage
-    /*var text = div.textContent;
+    var text = div.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     delete array[text];
-    localStorage.setItem("taskArray", JSON.stringify(array));*/
+    localStorage.setItem("taskArray", JSON.stringify(array));
     //stop displaying this item on the webpage
     div.style.display = "none";
   }
@@ -127,3 +241,5 @@ function newElement() {
     }
   }
 }
+
+*/
