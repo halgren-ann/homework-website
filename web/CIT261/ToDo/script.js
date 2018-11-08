@@ -100,8 +100,10 @@ function newElement() {
     //add to localStorage
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
-    array.inputValue = "unchecked";
-    localStorage.setItem("taskArray", JSON.stringify(array));
+    array.key = inputValue;
+    array.value = "unchecked";
+    var string = JSON.stringify(array);
+    localStorage.setItem("taskArray", string);
   }
   document.getElementById("myInput").value = "";
 
