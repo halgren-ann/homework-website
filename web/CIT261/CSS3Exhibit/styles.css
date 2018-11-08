@@ -1,0 +1,123 @@
+section {
+    width: 100%;
+    margin: auto;
+}
+
+.container {
+    float: left;
+    margin: 5px;
+    border-radius: 25px;
+    background: grey;
+    padding: 20px; 
+    width: 25%;
+    height: 240px;
+}
+
+.comboContainer {
+    clear: both;
+    margin: 5px auto;
+    border-radius: 25px;
+    background: grey;
+    padding: 20px; 
+    width: 25%;
+    height: 240px;
+}
+
+select, button {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.object {
+    border: 0px solid black;
+    width: 75%;
+    margin: auto;
+    height: 150px;
+    border-radius: 10px;
+    background: green;
+}
+
+.a {
+    transform: translate(0px,100px);
+}
+
+.b {
+    transform: scale(0.25,2);
+}
+
+.c {
+    transform: rotate(20deg);
+}
+
+.d {
+    transform:skew(30deg,30deg);
+}
+
+.e {
+    transition: background 2s;
+}
+
+.e:hover {
+    background: aqua;
+}
+
+.f {
+    transition: border 2s;
+}
+
+.f:hover {
+    border: 5px solid black;
+}
+
+.g {
+    transition: border-radius 2s;
+}
+
+.g:hover {
+    border-radius: 60px;
+}
+
+.h {
+    transition: box-shadow 2s;
+}
+
+.h:hover {
+    box-shadow:10px 10px 10px black;
+}
+
+.i {
+    transition: opacity 2s;
+}
+
+.i:hover {
+    opacity: 0.15;
+}
+
+.j {
+    animation: backgroundImage 3s infinite;
+}
+
+@keyframes backgroundImage {
+    from {background-image: none;}
+    to {background-image: url("https://www.quertime.com/wp-content/uploads/2012/06/best_free_website_building_tools.jpg");
+    background-size: contain;}
+}
+
+.k {
+    animation: circleMove 3s linear infinite;
+}
+
+@keyframes circleMove {
+    25% {transform: translate(100px,100px);}
+    50% {transform: translate(0px,200px);}
+    75% {transform: translate(-100px,100px);}
+    100% {transform: translate(0px,0px);}
+}
+
+.l {
+    animation: flip 3s linear infinite;
+}
+
+@keyframes flip {
+    50% {transform: scaleX(-1);}
+}

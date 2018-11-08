@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>CSS3 Exhibit</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+    </head>
+    <body>
+        <header>
+            <h1>CSS3 Exhibit</h1>
+            <h3>Select the options below for transformations, transitions, and animations. The transformation will show automatically, the transition will only activate when you hover over the rectangle, and the animation will repeat on a loop. All changes have a 2 second duration. With any combination of transform, transition, and animation selected, try the "Play Combination" button. This will show the rectangle experiencing all of the changes at once. Have fun!</h3>
+        </header>
+        <section>
+            <div class="container">
+            	<select onchange="changeTransformation(this.value)" class="dropdown">
+                    <option value="">Select Transform</option>
+                    <option value="a">translate(0px,100px)</option>
+                    <option value="b">scale(0.25,2)</option>
+                    <option value="c">rotate(20deg)</option>
+                    <option value="d">skew(30deg,30deg)</option>
+                </select>
+                <div id="transformation" class="object"></div>
+            </div>
+            <div class="container">
+            	<select onchange="changeTransition(this.value)" class="dropdown">
+                    <option value="">Select Transition</option>
+                    <option value="e">background 2s</option>
+                    <option value="f">border 2s</option>
+                    <option value="g">border-radius 2s</option>
+                    <option value="h">box-shadow 2s</option>
+                    <option value="i">opacity 2s</option>
+                </select>
+                <div id="transition" class="object"></div>
+            </div>
+            <div class="container">
+            	<select  onchange="changeAnimation(this.value)" class="dropdown">
+                    <option value="">Select Animation</option>
+                    <option value="j">background-image 2s infinite</option>
+                    <option value="k">diamond translate 2s infinite</option>
+                    <option value="l">flip image 2s infinite</option>
+                </select>
+                <div id="animation" class="object"></div>
+            </div>
+        </section>
+        <section>
+        	<div class="comboContainer">
+            	<button onclick="playCombo()">Play Combination</button>
+                <div id="combo" class="object"></div>
+            </div>
+        </section>
+        
+    </body>
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</html>
