@@ -3,8 +3,7 @@ function loadStorage() {
     document.getElementById("myUL").innerHTML = "";
 
     //test localStorage understanding
-    var testArray["This is some task text"] = "unchecked";
-    testArray["This is a task that has been checked off"] = "checked";
+    var testArray = {"This is some task text":"unchecked","This is a task that has been checked off":"checked"};
     localStorage.setItem("taskArray", JSON.stringify(testArray));
 
     //then, loop through LocalStorage to add the existing elements
