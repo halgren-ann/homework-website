@@ -2,8 +2,6 @@ function loadStorage() {
     //first, remove all the existinig elements
     document.getElementById("myUL").innerHTML = "";
 
-    
-
     //then, loop through LocalStorage to add the existing elements
     var array = JSON.parse(localStorage["taskArray"]);
     for (var i=0; i<array.length; i++) {
@@ -28,6 +26,21 @@ function loadStorage() {
         }
     }
 }
+
+//let the user hit "Enter" to add a task
+// Get the input field
+var input = document.getElementById("myInput");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});
 
 // Create a "close" button and append it to each list item
 var myNodelist = document.getElementsByTagName("LI");
