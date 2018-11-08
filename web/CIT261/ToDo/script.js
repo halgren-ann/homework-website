@@ -17,7 +17,7 @@ function loadStorage() {
         if (array[key] == "checked") {
             li.classList.add("checked");
         }
-        document.getElementById("myInput").value = "";
+        /*document.getElementById("myInput").value = "";
         var span = document.createElement("SPAN");
         var txt = document.createTextNode("\u00D7");
         span.className = "close";
@@ -29,7 +29,7 @@ function loadStorage() {
             var div = this.parentElement;
             div.style.display = "none";
             }
-        }
+        }*/
     }
 }
 
@@ -82,7 +82,7 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
     //tell localStorage whether this item is checked or not
-    var text = ev.target.textContent;
+    var text = ev.target.childNodes[0];
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     if(array[text] == "checked") array[text] = "unchecked";
