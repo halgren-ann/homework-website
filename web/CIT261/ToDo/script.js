@@ -2,20 +2,15 @@ function loadStorage() {
     //first, remove all the existinig elements
     document.getElementById("myUL").innerHTML = "";
 
-    var miniarray;
-    miniarray.key = "Task text";
-    miniarray.value = "unchecked";
-
     //then, loop through LocalStorage to add the existing elements
-    var array = JSON.parse(localStorage["taskArray"]);
-    alert(array.length);
-    for (var key in array) {
+    var arrayObj = JSON.parse(localStorage["taskArray"]);
+    for (var item in arrayObj) {
         var li = document.createElement("li");
-        var inputValue = key;
+        var inputValue = item.key;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
         document.getElementById("myUL").appendChild(li);
-        if (array[key] == "checked") {
+        if (arrayObj.value == "checked") {
             li.classList.add("checked");
         }
         /*document.getElementById("myInput").value = "";
@@ -84,10 +79,14 @@ list.addEventListener('click', function(ev) {
     ev.target.classList.toggle('checked');
     //tell localStorage whether this item is checked or not
     var text = ev.target.childNodes[0].textContent;
-    var array = JSON.parse(localStorage["taskArray"]);
+    var arrayObj = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
-    if(array[text] == "checked") array[text] = "unchecked";
-    else array[text] = "checked";
+    for (var item in arrayObj) {
+        if(arrayObj.key == text) {
+            if(arrayObj.value == "checked") array.value = "unchecked";
+            else array.value = "checked";
+        }
+    }
     localStorage.setItem("taskArray", JSON.stringify(array));
   }
 }, false);
@@ -103,11 +102,13 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
     //add to localStorage
-    var array = JSON.parse(localStorage["taskArray"]);
+    var arrayObj = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
-    array.key = inputValue;
-    array.value = "unchecked";
-    var string = JSON.stringify(array);
+    var newItem;
+    newItem.key = inputValue;
+    newItem.value = "unchecked";
+    arrayObj.push(newItem);
+    var string = JSON.stringify(arrayObj);
     localStorage.setItem("taskArray", string);
   }
   document.getElementById("myInput").value = "";
