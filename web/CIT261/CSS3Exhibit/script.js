@@ -21,7 +21,9 @@ function changeAnimation(letterValue) {
 
 function playCombo() {
     var element = document.getElementById("combo");
-     element.classList.add(document.getElementById("transformation").classList.item(1));
+    element.className = "";
+    element.classList.add("object");
+    element.classList.add(document.getElementById("transformation").classList.item(1));
     element.classList.add(document.getElementById("transition").classList.item(1));
     element.classList.add(document.getElementById("animation").classList.item(1));
 }
