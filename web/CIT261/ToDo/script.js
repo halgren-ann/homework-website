@@ -62,11 +62,11 @@ for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     //remove this item from localStorage
-    var text = div.textContent;
+    /*var text = div.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     delete array[text];
-    localStorage.setItem("taskArray", JSON.stringify(array));
+    localStorage.setItem("taskArray", JSON.stringify(array));*/
     //stop displaying this item on the webpage
     div.style.display = "none";
   }
@@ -78,12 +78,12 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
     //tell localStorage whether this item is checked or not
-    var text = ev.target.textContent;
+    /*var text = ev.target.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     if(array[text] == "checked") array[text] = "unchecked";
     else array[text] = "checked";
-    localStorage.setItem("taskArray", JSON.stringify(array));
+    localStorage.setItem("taskArray", JSON.stringify(array));*/
   }
 }, false);
 
@@ -98,11 +98,11 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
     //add to localStorage
-    var text = li.textContent;
+    /*var text = li.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     array[text] = "unchecked";
-    localStorage.setItem("taskArray", JSON.stringify(array));
+    localStorage.setItem("taskArray", JSON.stringify(array));*/
   }
   document.getElementById("myInput").value = "";
 
