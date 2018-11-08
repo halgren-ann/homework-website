@@ -4,6 +4,7 @@ function loadStorage() {
 
     //then, loop through LocalStorage to add the existing elements
     var array = JSON.parse(localStorage["taskArray"]);
+    alert(array.length);
     for (var key in array) {
         var li = document.createElement("li");
         var inputValue = key;
