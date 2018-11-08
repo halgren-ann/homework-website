@@ -1,6 +1,7 @@
 function loadStorage() {
     //first, remove all the existinig elements
     document.getElementById("myUL").innerHTML = "";
+    alert(localStorage["taskArray"]);
 
     //then, loop through LocalStorage to add the existing elements
     var arrayObj = JSON.parse(localStorage["taskArray"]);
