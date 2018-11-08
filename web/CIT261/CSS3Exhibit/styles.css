@@ -36,7 +36,7 @@ select, button {
 }
 
 .b {
-    transform: scale(0.25,2);
+    transform: scale(2,0.25);
 }
 
 .c {
