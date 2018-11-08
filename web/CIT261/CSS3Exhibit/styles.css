@@ -1,3 +1,7 @@
+body {
+    background-image: url("background.png");
+}
+
 section {
     width: 100%;
     margin: auto;
@@ -9,17 +13,7 @@ section {
     border-radius: 25px;
     background: grey;
     padding: 20px; 
-    width: 30%;
-    height: 240px;
-}
-
-.comboContainer {
-    clear: both;
-    margin: 5px auto;
-    border-radius: 25px;
-    background: grey;
-    padding: 20px; 
-    width: 30%;
+    width: 25%;
     height: 240px;
 }
 
