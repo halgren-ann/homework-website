@@ -82,7 +82,7 @@ list.addEventListener('click', function(ev) {
   if (ev.target.tagName === 'LI') {
     ev.target.classList.toggle('checked');
     //tell localStorage whether this item is checked or not
-    var text = ev.target.childNodes[0].text;
+    var text = ev.target.childNodes[0].textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     if(array[text] == "checked") array[text] = "unchecked";
