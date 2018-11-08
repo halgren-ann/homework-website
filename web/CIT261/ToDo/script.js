@@ -2,8 +2,6 @@ function loadStorage() {
     //first, remove all the existinig elements
     document.getElementById("myUL").innerHTML = "";
 
-    localStorage.removeItem("taskArray");
-
     //then, loop through LocalStorage to add the existing elements
     var array = JSON.parse(localStorage["taskArray"]);
     for (var key in array) {
@@ -100,11 +98,11 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
     //add to localStorage
-    /*var text = li.textContent;
+    var text = li.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
     array[text] = "unchecked";
-    localStorage.setItem("taskArray", JSON.stringify(array));*/
+    localStorage.setItem("taskArray", JSON.stringify(array));
   }
   document.getElementById("myInput").value = "";
 
