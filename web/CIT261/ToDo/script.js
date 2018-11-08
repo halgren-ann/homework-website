@@ -98,10 +98,9 @@ function newElement() {
   } else {
     document.getElementById("myUL").appendChild(li);
     //add to localStorage
-    var text = li.textContent;
     var array = JSON.parse(localStorage["taskArray"]);
     localStorage.removeItem("taskArray");
-    array[text] = "unchecked";
+    array[inputValue] = "unchecked";
     localStorage.setItem("taskArray", JSON.stringify(array));
   }
   document.getElementById("myInput").value = "";
