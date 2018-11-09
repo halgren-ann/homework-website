@@ -1,5 +1,11 @@
 //Load LocalStorage stuff
 function loadStorage() {
+    if (localStorage.getItem("items") === null) {
+        var array = new Array();
+        array.push("Type in what you are grateful for");
+        localStorage.setItem("items", JSON.stringify(array));
+    }
+
     var array = new Array();
     array = JSON.parse(localStorage["items"]);
 
@@ -22,7 +28,7 @@ function addtoStorage(text) {
     var array = new Array();
     array = JSON.parse(localStorage["items"]);
     array.push(string);
-    localStorage.setItem("items", array);
+    localStorage.setItem("items", JSON.stringify(array));
 }
 
 // Create a new list item when clicking on the "Add" button
