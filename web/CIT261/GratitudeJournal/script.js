@@ -27,7 +27,7 @@ function loadStorage() {
 function addtoStorage(text) {
     var array = new Array();
     array = JSON.parse(localStorage["items"]);
-    array.push(string);
+    array.push(text);
     localStorage.setItem("items", JSON.stringify(array));
 }
 
