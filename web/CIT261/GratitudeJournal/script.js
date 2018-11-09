@@ -60,3 +60,7 @@ function newElement() {
       document.getElementById("addBtn").click();
     }
   });
+
+  function clearAll() {
+      localStorage.clear();
+  }

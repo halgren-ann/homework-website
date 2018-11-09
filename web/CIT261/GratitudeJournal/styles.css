@@ -78,3 +78,10 @@ input {
 #addBtn:hover {
     background-color: #bbb;
 }
+
+#clear {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: grey;
+}
