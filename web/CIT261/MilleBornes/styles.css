@@ -1,0 +1,15 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+}
+
+.userTopLeftCard {
+    position: fixed;
+    top: 12.5vh;
+    left: 4vw;
+    width: 10vw;
+    height: 25vh;
+    border-radius: 20%;
+    border: 5px solid white;
+}
