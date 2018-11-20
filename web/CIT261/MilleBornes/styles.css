@@ -64,6 +64,63 @@ button {
     width: 72%;
     height: 50%;
     z-index: -1;
-    background-color:rgba(255, 99, 71, 0.8);
-    border: 5px solid brown;
+    background-color:rgba(60, 179, 113, 0.8);
+    border: 5px solid rgb(4, 105, 67);
+}
+
+.PCCard1 {
+    top: 16%;
+    left: 32%;
+    z-index: 1;
+}
+
+.PCCard2 {
+    top: 16%;
+    left: 35%;
+    z-index: 2;
+}
+
+.PCCard3 {
+    top: 16%;
+    left: 38%;
+    z-index: 3;
+}
+
+.PCCard4 {
+    top: 16%;
+    left: 41%;
+    z-index: 4;
+}
+
+.PCCard5 {
+    top: 16%;
+    left: 44%;
+    z-index: 5;
+}
+
+.PCCard6 {
+    top: 16%;
+    left: 47%;
+    z-index: 6;
+}
+
+.PCCard7 {
+    top: 16%;
+    left: 50%;
+    z-index: 7;
+}
+
+.PCDrive {
+    top: 16%;
+    left: 64%;
+}
+
+.PCSpeed {
+    top: 16%;
+    left: 76%;
+}
+
+.PCMiles {
+    top: 16%;
+    left: 88%;
 }
