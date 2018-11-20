@@ -69,6 +69,13 @@ button {
     border: 5px solid rgb(4, 105, 67);
 }
 
+#PCheading {
+    position: fixed;
+    top: 3%;
+    font-size: 6%;
+    font-weight: bold;
+}
+
 .PCCard1 {
     top: 16%;
     left: 32%;
@@ -124,6 +131,13 @@ button {
 .PCMiles {
     top: 16%;
     left: 88%;
+}
+
+#PCScore {
+    position: fixed;
+    top: 16%;
+    left: 88%;
+    font-size: 6%;
 }
 
 /*Info for the User's play area*/
@@ -192,4 +206,11 @@ button {
 .UserMiles {
     top: 66%;
     left: 88%;
+}
+
+#UserScore {
+    position: fixed;
+    top: 66%;
+    left: 88%;
+    font-size: 6%;
 }
