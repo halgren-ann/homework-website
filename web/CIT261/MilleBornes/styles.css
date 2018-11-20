@@ -17,7 +17,7 @@ body {
     top: 0%;
     left: 0%;
     width: 32.5%;
-    background-color: rgb(255, 99, 71, 0.8);
+    background: rgb(255, 99, 71, 0.8);
 }
 
 .userTopLeftCard {
