@@ -12,6 +12,13 @@ body {
     border: 5px solid white;
 }
 
+.userCards {
+    top: 0%;
+    left: 0%;
+    width: 32.5%;
+    background-color: rgb(255, 99, 71, 0.8);
+}
+
 .userTopLeftCard {
     top: 12.5%;
     left: 5.5%;
@@ -23,21 +30,21 @@ body {
 }
 
 .userMiddleLeftCard {
-    top: 40%;
+    top: 42.5%;
     left: 5.5%;
 }
 
 .userMiddleRightCard {
-    top: 40%;
+    top: 42.5%;
     left: 19%;
 }
 
 .userBottomLeftCard {
-    top: 67.5%;
+    top: 72.5%;
     left: 5.5%;
 }
 
 .userBottomRightCard {
-    top: 67.5%;
+    top: 72.5%;
     left: 19%;
 }
