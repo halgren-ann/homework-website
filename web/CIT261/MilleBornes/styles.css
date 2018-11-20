@@ -69,59 +69,59 @@ button {
     border: 5px solid rgb(4, 105, 67);
 }
 
-.UserCard1 {
+.PCCard1 {
     top: 16%;
     left: 32%;
     z-index: 1;
 }
 
-.UserCard2 {
+.PCCard2 {
     top: 16%;
     left: 35%;
     z-index: 2;
 }
 
-.UserCard3 {
+.PCCard3 {
     top: 16%;
     left: 38%;
     z-index: 3;
 }
 
-.UserCard4 {
+.PCCard4 {
     top: 16%;
     left: 41%;
     z-index: 4;
 }
 
-.UserCard5 {
+.PCCard5 {
     top: 16%;
     left: 44%;
     z-index: 5;
 }
 
-.UserCard6 {
+.PCCard6 {
     top: 16%;
     left: 47%;
     z-index: 6;
 }
 
-.UserCard7 {
+.PCCard7 {
     top: 16%;
     left: 50%;
     z-index: 7;
 }
 
-.UserDrive {
+.PCDrive {
     top: 16%;
     left: 64%;
 }
 
-.UserSpeed {
+.PCSpeed {
     top: 16%;
     left: 76%;
 }
 
-.UserMiles {
+.PCMiles {
     top: 16%;
     left: 88%;
 }
@@ -138,59 +138,59 @@ button {
     border: 5px solid black;
 }
 
-.PCCard1 {
+.UserCard1 {
     top: 66%;
     left: 2%;
     z-index: 1;
 }
 
-.PCCard2 {
+.UserCard2 {
     top: 66%;
     left: 10%;
     z-index: 2;
 }
 
-.PCCard3 {
+.UserCard3 {
     top: 66%;
     left: 18%;
     z-index: 3;
 }
 
-.PCCard4 {
+.UserCard4 {
     top: 66%;
     left: 26%;
     z-index: 4;
 }
 
-.PCCard5 {
+.UserCard5 {
     top: 66%;
     left: 34%;
     z-index: 5;
 }
 
-.PCCard6 {
+.UserCard6 {
     top: 66%;
     left: 42%;
     z-index: 6;
 }
 
-.PCCard7 {
+.UserCard7 {
     top: 66%;
     left: 50%;
     z-index: 7;
 }
 
-.PCDrive {
+.UserDrive {
     top: 66%;
     left: 64%;
 }
 
-.PCSpeed {
+.UserSpeed {
     top: 66%;
     left: 76%;
 }
 
-.PCMiles {
+.UserMiles {
     top: 66%;
     left: 88%;
 }
