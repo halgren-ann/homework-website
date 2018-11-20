@@ -71,10 +71,11 @@ button {
 
 #PCheading {
     position: fixed;
-    top: 3%;
+    top: 0%;
     left: 32%;
     font-size: 30px;
     font-weight: bold;
+    padding: none;
 }
 
 .PCCard1 {
@@ -137,8 +138,9 @@ button {
 #PCScore {
     position: fixed;
     top: 3%;
-    left: 88%;
+    left: 80%;
     font-size: 30px;
+    font-weight: bold;
 }
 
 /*Info for the User's play area*/
@@ -219,12 +221,13 @@ button {
 #UserScore {
     position: fixed;
     top: 53%;
-    left: 88%;
+    left: 80%;
     font-size: 30px;
+    font-weight: bold;
 }
 
 /*Effects*/
 .UserCard1:hover, .UserCard2:hover, .UserCard3:hover, .UserCard4:hover, .UserCard5:hover, .UserCard6:hover, .UserCard7:hover {
     transform: translate(0%, -11%); 
-    box-shadow: 6px 6px 3px white;    
+    box-shadow: 6px -6px 3px white;    
 }
