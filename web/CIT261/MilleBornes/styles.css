@@ -36,14 +36,14 @@ button {
     top: 3%;
     left: 2%;
     width: 10%;
-    height: 10%;
+    height: 6%;
 }
 
 #instructions {
     top: 3%;
     left: 16%;
     width: 10%;
-    height: 10%;
+    height: 6%;
 }
 
 .drawPile {
@@ -135,7 +135,6 @@ button {
     height: 50%;
     z-index: -1;
     background-color:rgba(106, 90, 205, 0.8);
-    border: 5px solid rgba(50, 63, 243, 0.815);
 }
 
 .UserCard1 {
