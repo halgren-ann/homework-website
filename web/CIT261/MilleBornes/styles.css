@@ -1,3 +1,4 @@
+/*Info relevant across the page*/
 body {
     width: 100%;
     height: 100%;
@@ -12,21 +13,22 @@ body {
     border: 3px solid white;
 }
 
-#drawPileSection {
+button {
+    position: fixed;
+    border: 3px solid white;
+    background-color: lightblue;
+}
+
+/*Info for the draw pile area*/
+#drawPileArea {
     position: fixed;
     top: 0%;
     left: 0%;
     width: 28%;
     height: 50%;
     z-index: -1;
-    background-color: red;
+    background-color:rgba(255, 99, 71, 0.8);
     border: 5px solid brown;
-}
-
-button {
-    position: fixed;
-    border: 3px solid white;
-    background-color: lightblue;
 }
 
 #newGame {
@@ -54,22 +56,14 @@ button {
     left: 16%;
 }
 
-.userMiddleLeftCard {
-    top: 42.5%;
-    left: 5.5%;
-}
-
-.userMiddleRightCard {
-    top: 42.5%;
-    left: 19%;
-}
-
-.userBottomLeftCard {
-    top: 72.5%;
-    left: 5.5%;
-}
-
-.userBottomRightCard {
-    top: 72.5%;
-    left: 19%;
+/*Info for the PC's play area*/
+.PCPlayArea {
+    position: fixed;
+    top: 0%;
+    left: 28%;
+    width: 72%;
+    height: 50%;
+    z-index: -1;
+    background-color:rgba(255, 99, 71, 0.8);
+    border: 5px solid brown;
 }
