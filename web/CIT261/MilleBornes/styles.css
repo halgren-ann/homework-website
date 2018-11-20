@@ -4,6 +4,33 @@ body {
     background-color: black;
 }
 
+#drawPileSection {
+    position: fixed;
+    z-index: -1;
+    background-color: red;
+    border: 5px solid brown;
+}
+
+button {
+    position: fixed;
+    border: 2px solid white;
+    background-color: lightblue;
+}
+
+#newGame {
+    top: 3%;
+    left: 2%;
+    width: 10%;
+    height: 10%;
+}
+
+#instructions {
+    top: 3%;
+    left: 16%;
+    width: 10%;
+    height: 10%;
+}
+
 .card {
     position: fixed;
     width: 10%;
@@ -13,13 +40,14 @@ body {
 }
 
 .drawPile {
-    top: 12.5%;
-    left: 5.5%;
+    top: 15.5%;
+    left: 1.5%;
+    box-shadow: 6px white;
 }
 
-.userTopRightCard {
-    top: 12.5%;
-    left: 19%;
+.discardPile {
+    top: 16%;
+    left: 16%;
 }
 
 .userMiddleLeftCard {

@@ -1,0 +1,7 @@
+function newGame) {
+
+}
+
+function getInstructions() {
+    
+}
