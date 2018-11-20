@@ -4,8 +4,20 @@ body {
     background-color: black;
 }
 
+.card {
+    position: fixed;
+    width: 10%;
+    height: 31%;
+    border-radius: 20%;
+    border: 3px solid white;
+}
+
 #drawPileSection {
     position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 28%;
+    height: 50%;
     z-index: -1;
     background-color: red;
     border: 5px solid brown;
@@ -13,7 +25,7 @@ body {
 
 button {
     position: fixed;
-    border: 2px solid white;
+    border: 3px solid white;
     background-color: lightblue;
 }
 
@@ -31,18 +43,10 @@ button {
     height: 10%;
 }
 
-.card {
-    position: fixed;
-    width: 10%;
-    height: 31%;
-    border-radius: 20%;
-    border: 4px solid white;
-}
-
 .drawPile {
     top: 15.5%;
     left: 1.5%;
-    box-shadow: 6px white;
+    box-shadow: 6px 6px white;
 }
 
 .discardPile {
