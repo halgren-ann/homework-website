@@ -154,6 +154,15 @@ button {
     background-color:rgba(106, 90, 205, 0.8);
 }
 
+#Userheading {
+    position: fixed;
+    top: 50%;
+    left: 2%;
+    font-size: 30px;
+    font-weight: bold;
+    padding: none;
+}
+
 .UserCard1 {
     top: 66%;
     left: 2%;
@@ -229,5 +238,5 @@ button {
 /*Effects*/
 .UserCard1:hover, .UserCard2:hover, .UserCard3:hover, .UserCard4:hover, .UserCard5:hover, .UserCard6:hover, .UserCard7:hover {
     transform: translate(0%, -13%); 
-    box-shadow: 3px -6px 6px white;    
+    box-shadow: 2px -6px 5px white;    
 }
