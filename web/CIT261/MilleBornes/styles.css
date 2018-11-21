@@ -228,6 +228,6 @@ button {
 
 /*Effects*/
 .UserCard1:hover, .UserCard2:hover, .UserCard3:hover, .UserCard4:hover, .UserCard5:hover, .UserCard6:hover, .UserCard7:hover {
-    transform: translate(0%, -11%); 
-    box-shadow: 6px -6px 3px white;    
+    transform: translate(0%, -13%); 
+    box-shadow: 3px -6px 6px white;    
 }
