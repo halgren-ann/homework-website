@@ -268,7 +268,7 @@ button {
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg) translate(30px, 30px);
+    transform: rotateY(180deg) translate(-130px, 130px);
   }
   
   /* Position the front and back side */
