@@ -20,6 +20,19 @@ button {
     background-color: lightblue;
 }
 
+/*Images for cards*/
+/* I need to do the flip front back thing for these cards
+#_1 #_2 #_3 #_4 #_5 #_6 #_7 #_8 #_9 #_10 {
+    background-image: url("25.png");
+    background-size: contain;
+}
+
+#_11 #_12 #_13 #_14 #_15 #_16 #_17 #_18 #_19 #_20 {
+    background-image: url("50.png");
+    background-size: contain;
+}
+*/
+
 /*Info for the draw pile area*/
 #drawPileArea {
     position: fixed;
