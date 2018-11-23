@@ -1,4 +1,5 @@
 function newGame() {
+    location.reload();
     //generate the random card stack
     var cardArray = new Array(); //cardArray is the draw deck
     cardArray = makeArray();
