@@ -21,7 +21,7 @@ button {
 }
 
 img {
-    position: fixed;
+    z-index: inherit;
     width: 100%;
     height: 100%;
     border-radius: 20%;
@@ -282,13 +282,9 @@ img {
   
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
-    background-color: #bbb;
-    color: black;
     transform: rotateY(180deg);
   }
   
   /* Style the back side */
-  .flip-card-back {
-    background-color: dodgerblue;
-    color: white;
-  }
+  /*.flip-card-back {
+  }*/
