@@ -18,8 +18,7 @@ function makeGame() {
     for (var i=1; i<=6; i++) {
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
-        document.getElementById(cardArray[cardArray.length-1].id).classList.toggle("flip");
-        document.getElementById(cardArray[cardArray.length-1].id).childNodes[0].classList.toggle("flip");
+        document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard" + i);
         cardArray.pop();
     }
