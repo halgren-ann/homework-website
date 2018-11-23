@@ -5,16 +5,21 @@ function newGame() {
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
-        //document.getElementById(cardArray[i].id).style = "z-index:" + i;
-        document.getElementById(cardArray[i].id).setAttribute("style", "z-index: "+i);
+        document.getElementById(cardArray[i].id).style = "z-index:" + i;
+        //document.getElementById(cardArray[i].id).setAttribute("style", "z-index: "+i);
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
-        //document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
+        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
-        cardArray[cardArray.length-1].availableToDraw = false; //do I need this?
-        cardArray[cardArray.length-1].location_class = "PCCard" + i;
+        cardArray.pop();
+    }
+    //populate the User's hand
+    for (var i=1; i<=6; i++) {
+        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard" + i);
         cardArray.pop();
     }
 }
@@ -29,89 +34,87 @@ function getInstructions() {
 //type: attack, remedy, mile
 //location_class: relevant css classes (eg. UserCard1)
 //availableToDraw: true, false
-function card(idNum, name, type, location_class, availableToDraw) {
+function card(idNum, name, type) {
     this.id = "_" + idNum;
     this.name = name;
     this.type = type;
-    this.location_class = location_class;
-    this.availableToDraw = availableToDraw;
 }
 
 function makeArray() {
     var cardArray = new Array();
     var j=1;
     for (var i=0; i<10; i++) {
-        newCard = new card(j, "25", "mile", "drawPile", true);
+        newCard = new card(j, "25", "mile");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<10; i++) {
-        newCard = new card(j, "50", "mile", "drawPile", true);
+        newCard = new card(j, "50", "mile");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<10; i++) {
-        newCard = new card(j, "75", "mile", "drawPile", true);
+        newCard = new card(j, "75", "mile");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<12; i++) {
-        newCard = new card(j, "100", "mile", "drawPile", true);
+        newCard = new card(j, "100", "mile");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<4; i++) {
-        newCard = new card(j, "200", "mile", "drawPile", true);
+        newCard = new card(j, "200", "mile");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<14; i++) {
-        newCard = new card(j, "Drive", "remedy", "drawPile", true);
+        newCard = new card(j, "Drive", "remedy");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<5; i++) {
-        newCard = new card(j, "Stop", "attack", "drawPile", true);
+        newCard = new card(j, "Stop", "attack");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<6; i++) {
-        newCard = new card(j, "Gas", "remedy", "drawPile", true);
+        newCard = new card(j, "Gas", "remedy");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<3; i++) {
-        newCard = new card(j, "OutOfFuel", "attack", "drawPile", true);
+        newCard = new card(j, "OutOfFuel", "attack");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<6; i++) {
-        newCard = new card(j, "SpareTire", "remedy", "drawPile", true);
+        newCard = new card(j, "SpareTire", "remedy");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<3; i++) {
-        newCard = new card(j, "FlatTire", "attack", "drawPile", true);
+        newCard = new card(j, "FlatTire", "attack");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<6; i++) {
-        newCard = new card(j, "EndSpeedLimit", "remedy", "drawPile", true);
+        newCard = new card(j, "EndSpeedLimit", "remedy");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<4; i++) {
-        newCard = new card(j, "SpeedLimit", "attack", "drawPile", true);
+        newCard = new card(j, "SpeedLimit", "attack");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<6; i++) {
-        newCard = new card(j, "Repairs", "remedy", "drawPile", true);
+        newCard = new card(j, "Repairs", "remedy");
         cardArray.push(newCard);
         j++;
     }
     for (var i=0; i<3; i++) {
-        newCard = new card(j, "Accident", "attack", "drawPile", true);
+        newCard = new card(j, "Accident", "attack");
         cardArray.push(newCard);
         j++;
     }
