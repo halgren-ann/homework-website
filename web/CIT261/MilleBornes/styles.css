@@ -90,6 +90,7 @@ img {
 }
 
 .PCCard1 {
+    position: fixed;
     top: 16%;
     left: 32%;
     z-index: 1;
