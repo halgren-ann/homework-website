@@ -7,7 +7,7 @@ body {
 
 .card {
     position: fixed;
-    /*background-color: gray;*/
+    background-color: gray;
     width: 10%;
     height: 31%;
     border-radius: 20%;
