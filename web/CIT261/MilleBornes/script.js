@@ -9,10 +9,11 @@ function newGame() {
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {
-        document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
         cardArray[cardArray.length-1].availableToDraw = false; //do I need this?
         cardArray[cardArray.length-1].location_class = "PCCard" + i;
+        cardArray.pop();
     }
 }
 
