@@ -232,6 +232,10 @@ img {
     box-shadow: 2px -6px 5px white;    
 }
 
+.flip {
+    transform: rotateY(180deg);
+}
+
 
 
 /* The flip card container - set the width and height to whatever you want. (remove perspective if you don't want the 3D effect */
