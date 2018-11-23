@@ -261,12 +261,8 @@ button {
 /* The flip card container - set the width and height to whatever you want. (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
-    width: 300px;
-    height: 200px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     position: fixed;
-    top: 100px;
-    left: 100px;
   }
   
   /* This container is needed to position the front and back side */
