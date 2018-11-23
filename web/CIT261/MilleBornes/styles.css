@@ -7,15 +7,15 @@ body {
 
 .card {
     position: fixed;
-    background-color: gray;
+    /*background-color: gray;*/
     width: 10%;
     height: 31%;
     border-radius: 20%;
-    border: 3px solid white;
+    /*border: 3px solid white;*/
 }
 
 div {
-    position: fixed;
+    position: fixed
 }
 
 button {
@@ -287,8 +287,10 @@ img {
   /* Style the front side (fallback if image is missing) */
   .flip-card-front {
     transform: rotateY(180deg);
+    border: 3px solid white;
   }
   
   /* Style the back side */
-  /*.flip-card-back {
-  }*/
+  .flip-card-back {
+    border: 3px solid white;
+  }
