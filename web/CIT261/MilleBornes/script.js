@@ -1,12 +1,11 @@
 function newGame() {
     //generate the random card stack
-    var cardArray = new Array(); //cardArray is the deck
+    var cardArray = new Array(); //cardArray is the draw deck
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + i;
-        //document.getElementById(cardArray[i].id).setAttribute("style", "z-index: "+i);
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {

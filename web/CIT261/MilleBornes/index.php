@@ -14,13 +14,6 @@
 
     <div id="PCPlayArea"></div>
     <p id="PCheading">PC PLAYER AREA</p>
-    <div class="card PCCard1"></div>
-    <div class="card PCCard2"></div>
-    <div class="card PCCard3"></div>
-    <div class="card PCCard4"></div>
-    <div class="card PCCard5"></div>
-    <div class="card PCCard6"></div>
-    <div class="card PCCard7"></div>
     <div class="card PCDrive"></div>
     <div class="card PCSpeed"></div>
     <div class="card PCMiles"></div>
@@ -28,13 +21,6 @@
 
     <div id="UserPlayArea"></div>
     <p id="Userheading">USER PLAYER AREA</p>
-    <div class="card UserCard1"></div>
-    <div class="card UserCard2"></div>
-    <div class="card UserCard3"></div>
-    <div class="card UserCard4"></div>
-    <div class="card UserCard5"></div>
-    <div class="card UserCard6"></div>
-    <div class="card UserCard7"></div>
     <div class="card UserDrive"></div>
     <div class="card UserSpeed"></div>
     <div class="card UserMiles"></div>
