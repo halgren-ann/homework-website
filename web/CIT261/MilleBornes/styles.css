@@ -296,11 +296,11 @@ button {
   .flip-card-front {
     background-color: #bbb;
     color: black;
+    transform: rotateY(180deg);
   }
   
   /* Style the back side */
   .flip-card-back {
     background-color: dodgerblue;
     color: white;
-    transform: rotateY(180deg);
   }
