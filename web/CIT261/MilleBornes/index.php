@@ -5,7 +5,7 @@
     <title>Mille Bornes</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="newGame()">
+<body onload="makeGame()">
     <div id="drawPileArea"></div>
     <button onclick="newGame()" id="newGame">New Game</button>
     <button onclick="getInstructions()" id="instructions">Instructions</button>

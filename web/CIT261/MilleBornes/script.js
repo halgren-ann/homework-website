@@ -1,5 +1,4 @@
-function newGame() {
-    location.reload();
+function makeGame() {
     //generate the random card stack
     var cardArray = new Array(); //cardArray is the draw deck
     cardArray = makeArray();
@@ -22,6 +21,11 @@ function newGame() {
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard" + i);
         cardArray.pop();
     }
+}
+
+function newGame() {
+    location.reload();
+    makeGame();
 }
 
 function getInstructions() {
