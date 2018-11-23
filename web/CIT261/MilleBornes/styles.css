@@ -288,9 +288,13 @@ img {
   .flip-card-front {
     transform: rotateY(180deg);
     border: 3px solid white;
+    border-radius: 20%;
+    z-index: inherit;
   }
   
   /* Style the back side */
   .flip-card-back {
     border: 3px solid white;
+    border-radius: 20%;
+    z-index: inherit;
   }
