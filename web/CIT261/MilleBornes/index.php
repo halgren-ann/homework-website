@@ -43,7 +43,7 @@
     <?php
         for ($i=1; $i <= 10; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="25.png">
@@ -58,7 +58,7 @@
 
         for ($i=11; $i <= 20; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card  card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="50.png">
@@ -73,7 +73,7 @@
 
         for ($i=21; $i <= 30; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="75.png">
@@ -88,7 +88,7 @@
 
         for ($i=31; $i <= 42; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="100.png">
@@ -103,7 +103,7 @@
 
         for ($i=43; $i <= 46; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="200.png">
@@ -118,7 +118,7 @@
 
         for ($i=47; $i <= 60; $i++) {
             echo '
-            <div id="_' . $i . '" class="flip-card card drawPile">
+            <div id="_' . $i . '" class="flip-card drawPile">
                 <div class="flip-card-inner">
                     <div class="flip-card-front card">
                         <img src="drive.png">
@@ -135,10 +135,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="stop.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -150,10 +150,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="gas.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -165,10 +165,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="outOfGas.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -180,10 +180,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="spareTire.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -195,10 +195,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="flatTire.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -210,10 +210,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="endSpeedLimit.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -225,10 +225,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="speedLimit.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -240,10 +240,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="repairs.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>
@@ -255,10 +255,10 @@
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
                 <div class="flip-card-inner">
-                    <div class="flip-card-front">
+                    <div class="flip-card-front card">
                         <img src="accident.png">
                     </div>
-                    <div class="flip-card-back">
+                    <div class="flip-card-back card">
                         <img src="cardBack.png">
                     </div>
                 </div>

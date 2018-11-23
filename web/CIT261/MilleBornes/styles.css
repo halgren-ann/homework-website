@@ -21,7 +21,7 @@ button {
 }
 
 img {
-    z-index: inherit;
+    z-index: initial;
     width: 100%;
     height: 100%;
     border-radius: 20%;
