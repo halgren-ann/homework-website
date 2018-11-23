@@ -8,7 +8,7 @@ function newGame() {
         document.getElementById(cardArray[i].id).style = "z-index:" + i;
     }
     //populate the PC's hand
-    for (var i=6; i>=1; i--) {
+    for (var i=1; i<=6; i++) {
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         //document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 0;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
