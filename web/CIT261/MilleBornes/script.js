@@ -9,7 +9,7 @@ function newGame() {
     }
     
     for (var i=0; i<cardArray.length; i++) {
-        console.log(cardArray[i].name + " " + document.getElementById(cardArray[i].id).style.z-index + "\n");
+        console.log(cardArray[i].name + "\n");
     }
 }
 
