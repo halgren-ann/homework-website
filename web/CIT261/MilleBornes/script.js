@@ -1,14 +1,18 @@
 function newGame() {
     //generate the random card stack
-    var cardArray = new Array();
+    var cardArray = new Array(); //cardArray is the deck
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + i;
     }
-    for (var i=0; i<cardArray.length; i++) {
-        console.log(cardArray[i].name + "\n");
+    //populate the PC's hand
+    for (var i=1; i<=6; i++) {
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
+        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        cardArray[cardArray.length-1].availableToDraw = false; //do I need this?
+        cardArray[cardArray.length-1].location_class = "PCCard" + i;
     }
 }
 
