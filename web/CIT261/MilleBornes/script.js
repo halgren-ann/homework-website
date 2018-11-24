@@ -1,6 +1,8 @@
+//cardArray is the draw deck
+var cardArray = new Array(); 
+
 function makeGame() {
     //generate the random card stack
-    var cardArray = new Array(); //cardArray is the draw deck
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
@@ -22,6 +24,9 @@ function makeGame() {
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard" + i);
         cardArray.pop();
     }
+
+    //for testing purposes, have the computer take a turn
+    takeTurnPC();
 }
 
 function newGame() {
@@ -29,6 +34,41 @@ function newGame() {
 }
 
 function getInstructions() {
+
+}
+
+//items relevant to game play logic
+var PCDriveArray = new Array();
+var UserDriveArray = new Array();
+var PCSpeedArray = new Array();
+var UserSpeedArray = new Array();
+var PCMilesArray = new Array();
+var UserMilesArray = new Array();
+var discardPileArray = new Array();
+var isUserTurn = false;
+
+function takeTurnPC() {
+    //draw from drawPile
+    document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+    document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
+    document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard7");
+    cardArray.pop();
+    //if no drive yet, play drive card if can
+    if (PCDriveArray.length == 0) {
+        for (var i=1; i<=7; i++) {
+            var card = document.getElementsByClassName("PCCard"+i)[0];
+            if (card.name == "Drive") {
+                //Play Drive Card
+                card.classList.remove("PCCard"+i);
+                card.style.zIndex = PCDriveArray.length + 1;
+                PCDriveArray.push(card);
+                card.classList.add("PCDrive");
+                card.childNodes[1].classList.toggle("flip");
+                isUserTurn = true;
+                break;
+            }
+        }
+    }
 
 }
 
