@@ -1,5 +1,16 @@
 //cardArray is the draw deck
 var cardArray = new Array(); 
+//items relevant to game play logic
+var PCHandArray = new Array();
+var UserHandArray = new Array();
+var PCDriveArray = new Array();
+var UserDriveArray = new Array();
+var PCSpeedArray = new Array();
+var UserSpeedArray = new Array();
+var PCMilesArray = new Array();
+var UserMilesArray = new Array();
+var discardPileArray = new Array();
+var isUserTurn = false;
 
 function makeGame() {
     //generate the random card stack
@@ -11,11 +22,12 @@ function makeGame() {
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {
+        console.log("PCCard" + i + ": " + cardArray[cardArray.length-1].name);
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
+        PCHandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
-        console.log("PCCard" + i + ": " + document.getElementById(cardArray[cardArray.length-1].id).name);
     }
     //populate the User's hand
     for (var i=1; i<=6; i++) {
@@ -23,6 +35,7 @@ function makeGame() {
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard" + i);
+        UserHandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
     }
 
@@ -38,35 +51,30 @@ function getInstructions() {
 
 }
 
-//items relevant to game play logic
-var PCDriveArray = new Array();
-var UserDriveArray = new Array();
-var PCSpeedArray = new Array();
-var UserSpeedArray = new Array();
-var PCMilesArray = new Array();
-var UserMilesArray = new Array();
-var discardPileArray = new Array();
-var isUserTurn = false;
-
 function takeTurnPC() {
     //draw from drawPile
     document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
     document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
     document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard7");
+    PCHandArray.push(cardArray[cardArray.length-1]);
     cardArray.pop();
     //if no drive yet, play drive card if can
-    if (PCDriveArray == null) {
+    if (!PCDriveArray[0]) {
         console.log("Arrived inside the PCDriveArray == null");
         for (var i=1; i<=7; i++) {
-            var card = document.getElementsByClassName("PCCard"+i)[0];
+            //look at each card in the PC hand
+            var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+            var card = PCHandArray[i-1];
+            //now I've found the card and can see what it is
             if (card.name == "Drive") {
                 console.log("found the Drive card");
                 //Play Drive Card
-                card.classList.remove("PCCard"+i);
-                card.style.zIndex = 1;
-                card.classList.add("PCDrive");
-                card.childNodes[1].classList.toggle("flip");
+                cardElement.classList.remove("PCCard"+i);
+                cardElement.style.zIndex = 1;
+                cardElement.classList.add("PCDrive");
+                cardElement.childNodes[1].classList.toggle("flip");
                 PCDriveArray.push(card);
+                PCHandArray.splice(i-1,1);
                 isUserTurn = true;
                 break;
             }
