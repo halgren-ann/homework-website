@@ -198,10 +198,12 @@ function takeTurnPC() {
     //discarding will happen randomly
     //generate a random number between 1 and 7, inclusive
     var x = Math.floor((Math.random() * 7) + 1);
-    playCard("Pc", x, document.getElementsByClassName("PCCard"+x)[0], PCHandArray[x-1], "discardPile");
+    playCard("PC", x, document.getElementsByClassName("PCCard"+x)[0], PCHandArray[x-1], "discardPile");
 }
 
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
+    //if it's the PC's turn, add a 1s transition delay to this card so we can see the turn happening
+    if (who == "PC") cardElement.style.transitionDelay = "1s";
     //remove the current class
     cardElement.classList.remove(who+"Card"+cardNumInHand);
     //arrange the new z-index and add the new class
@@ -291,13 +293,19 @@ function updateScore(who) {
             total += Number(PCMilesArray[i].name);
         }
         document.getElementById("PCScore").innerHTML = "Score: " + total;
+        if (total >= 1000) endGame("PC");
     }
     else if (who == "User") {
         for (var i=0; i < UserMilesArray.length; i++) {
             total += Number(UserMilesArray[i].name);
         }
         document.getElementById("UserScore").innerHTML = "Score: " + total;
+        if (total >= 1000) endGame("User");
     }
+}
+
+function endGame(winner) {
+
 }
 
 //Make the card object
