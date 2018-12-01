@@ -65,16 +65,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "Drive") {
-                //Play Drive Card
-                cardElement.classList.remove("PCCard"+i);
-                cardElement.style.zIndex = 1;
-                cardElement.classList.add("PCDrive");
-                cardElement.childNodes[1].classList.toggle("flip");
-                PCDriveArray.push(card);
-                PCHandArray.splice(i-1,1);
-                //End the turn and shift the cards in hand left
-                shiftCards("PC", i);
-                isUserTurn = true;
+                playCard("PC", i, cardElement, card, "PCDrive");
                 return;
             }
         }
@@ -88,16 +79,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.type == "attack" && card.name != "SpeedLimit") {
-                //Play Attack Card
-                cardElement.classList.remove("PCCard"+i);
-                cardElement.style.zIndex = UserDriveArray.length + 1;
-                cardElement.classList.add("UserDrive");
-                cardElement.childNodes[1].classList.toggle("flip");
-                UserDriveArray.push(card);
-                PCHandArray.splice(i-1,1);
-                //End the turn and shift the cards in hand left
-                shiftCards("PC", i);
-                isUserTurn = true;
+                playCard("PC", i, cardElement, card, "UserDrive");
                 return;
             }
         }
@@ -110,21 +92,77 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "SpeedLimit") {
-                //Play Attack Card
-                cardElement.classList.remove("PCCard"+i);
-                cardElement.style.zIndex = UserDriveArray.length + 1;
-                cardElement.classList.add("UserSpeed");
-                cardElement.childNodes[1].classList.toggle("flip");
-                UserSpeedArray.push(card);
-                PCHandArray.splice(i-1,1);
-                //End the turn and shift the cards in hand left
-                shiftCards("PC", i);
-                isUserTurn = true;
+                playCard("PC", i, cardElement, card, "UserSpeed");
                 return;
             }
         }
     }
 
+}
+
+function playCard(who, cardNumInHand, cardElement, card, whereTo) {
+    //remove the current class
+    cardElement.classList.remove(who+"Card"+cardNumInHand);
+    //arrange the new z-index and add the new class
+    if(whereTo == "PCDrive") {
+        if (!PCDriveArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCDriveArray.length + 1;
+        PCDriveArray.push(card);
+    }
+    else if (whereTo == "PCSpeed") {
+        if (!PCSpeedArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCSpeedArray.length + 1;
+        PCSpeedArray.push(card);
+    }
+    else if (whereTo == "PCMiles") {
+        if (!PCMilesArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCMilesArray.length + 1;
+        PCMilesArray.push(card);
+    }
+    else if (whereTo == "UserDrive") {
+        if (!UserDriveArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserDriveArray.length + 1;
+        UserDriveArray.push(card);
+    }
+    else if (whereTo == "UserSpeed") {
+        if (!UserSpeedArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserSpeedArray.length + 1;
+        UserSpeedArray.push(card);
+    }
+    else if (whereTo == "UserMiles") {
+        if (!UserMilesArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserMilesArray.length + 1;
+        UserMilesArray.push(card);
+    }
+
+    //add the new class
+    cardElement.classList.add(whereTo);
+    //flip the card if it's coming from the PC hand and remove the card from the hand array
+    if (who == "PC") {
+        cardElement.childNodes[1].classList.toggle("flip");
+        PCHandArray.splice(cardNumInHand-1,1);
+        //End the turn and shift the cards in hand left
+        shiftCards("PC", cardNumInHand);
+        isUserTurn = true;
+    }
+    else {
+        UserHandArray.splice(cardNumInHand-1,1);
+        //End the turn and shift the cards in hand left
+        shiftCards("User", cardNumInHand);
+        isUserTurn = false;
+    }
 }
 
 function shiftCards(who, cardNum) {

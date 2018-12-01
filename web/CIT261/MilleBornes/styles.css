@@ -165,42 +165,49 @@ img {
 .UserCard1 {
     top: 66%;
     left: 2%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard2 {
     top: 66%;
     left: 10%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard3 {
     top: 66%;
     left: 18%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard4 {
     top: 66%;
     left: 26%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard5 {
     top: 66%;
     left: 34%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard6 {
     top: 66%;
     left: 42%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard7 {
     top: 66%;
     left: 50%;
+    transition-delay: 1s;
     transition: 0.5s;
 }
 
