@@ -97,7 +97,94 @@ function takeTurnPC() {
             }
         }
     }
+    //if can remedy self, remedy
+    //check the drive pile for current attacks
+    if (PCDriveArray[0] && PCDriveArray[PCDriveArray-1].type == "attack") {
+        //Find out what the attack card is and then check my hand for the remedy
+        if (PCDriveArray[PCDriveArray-1].name == "Stop") {
+            for (var i=1; i<=7; i++) {
+                //look at each card in the PC hand
+                var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+                var card = PCHandArray[i-1];
+                if (card.name == "Drive") {
+                    playCard("PC", i, cardElement, card, "PCDrive");
+                    return;
+                }
+            }
+        }
+        else if (PCDriveArray[PCDriveArray-1].name == "OutOfFuel") {
+            for (var i=1; i<=7; i++) {
+                //look at each card in the PC hand
+                var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+                var card = PCHandArray[i-1];
+                if (card.name == "Gas") {
+                    playCard("PC", i, cardElement, card, "PCDrive");
+                    return;
+                }
+            }
+        }
+        else if (PCDriveArray[PCDriveArray-1].name == "FlatTire") {
+            for (var i=1; i<=7; i++) {
+                //look at each card in the PC hand
+                var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+                var card = PCHandArray[i-1];
+                if (card.name == "SpareTire") {
+                    playCard("PC", i, cardElement, card, "PCDrive");
+                    return;
+                }
+            }
+        }
+        else if (PCDriveArray[PCDriveArray-1].name == "Accident") {
+            for (var i=1; i<=7; i++) {
+                //look at each card in the PC hand
+                var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+                var card = PCHandArray[i-1];
+                if (card.name == "Repairs") {
+                    playCard("PC", i, cardElement, card, "PCDrive");
+                    return;
+                }
+            }
+        }
+    }
+    //check the speed pile for a current attack
+    if (PCSpeedArray[0] && PCSpeedArray[PCSpeedArray-1].type == "attack") {
+        //See if I have any remedy cards for the speed pile
+        for (var i=1; i<=7; i++) {
+            //look at each card in the PC hand
+            var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+            var card = PCHandArray[i-1];
+            if (card.name == "EndSpeedLimit") {
+                playCard("PC", i, cardElement, card, "PCSpeed");
+                return;
+            }
+        }
+    }
+    //if I have a mile card, play my highest mile card
+    var highest = 0;
+    var location = -1;
+    for (var i=1; i<=7; i++) {
+        //look at each card in the PC hand
+        var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+        var card = PCHandArray[i-1];
+        if (card.type == "mile") {
+            if (Number(card.name) > highest) {
+                //this card is the new highest
+                highest = Number(card.name);
+                location = i;
+            }
+        }
+    }
+    //if I found the highest mile card, play it
+    if (highest > 0) {
+        playCard("PC", location, document.getElementsByClassName("PCCard"+location)[0], PCHandArray[location-1], "PCMiles");
+        return;
+    }
 
+    //If I still haven't done anything, I need to discard a card
+    //discarding will happen randomly
+    //generate a random number between 1 and 7, inclusive
+    var x = Math.floor((Math.random() * 7) + 1);
+    playCard("Pc", x, document.getElementsByClassName("PCCard"+x)[0], PCHandArray[x-1], "discardPile");
 }
 
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
@@ -124,6 +211,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         }
         else cardElement.style.zIndex = PCMilesArray.length + 1;
         PCMilesArray.push(card);
+        updateScore("PC");
     }
     else if (whereTo == "UserDrive") {
         if (!UserDriveArray[0]) {
@@ -145,6 +233,14 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         }
         else cardElement.style.zIndex = UserMilesArray.length + 1;
         UserMilesArray.push(card);
+        updateScore("User");
+    }
+    else if(whereTo == "discardPile") {
+        if (!discardPileArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = discardPileArray.length + 1;
+        discardPileArray.push(card);
     }
 
     //add the new class
@@ -174,12 +270,14 @@ function shiftCards(who, cardNum) {
     }
 }
 
+function updateScore(who) {
+
+}
+
 //Make the card object
 //Valid values are as follows:
 //name: 25, 50, 75, 100, 200, Drive, Stop, Gas, OutOfFuel, SpareTire, FlatTire, EndSpeedLimit, SpeedLimit, Repairs, Accident
 //type: attack, remedy, mile
-//location_class: relevant css classes (eg. UserCard1)
-//availableToDraw: true, false
 function card(idNum, name, type) {
     this.id = "_" + idNum;
     this.name = name;
