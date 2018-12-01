@@ -26,6 +26,7 @@ function makeGame() {
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
         PCHandArray.push(cardArray[cardArray.length-1]);
+        console.log("PCCard"+i+": "+ cardArray[cardArray.length-1].name);
         cardArray.pop();
     }
     //populate the User's hand
@@ -39,7 +40,7 @@ function makeGame() {
     }
 
     //for testing purposes, have the computer take a turn
-    takeTurnPC();
+    setTimeout(takeTurnPC, 1500);
 }
 
 function newGame() {
@@ -78,7 +79,51 @@ function takeTurnPC() {
             }
         }
     }
-    //if ()
+    //if can attack the other player, do so
+    //first, check the drive pile (a drive must have been played first)
+    if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].type == "remedy") {
+        //See if I have any attack cards for the drive pile
+        for (var i=1; i<=7; i++) {
+            //look at each card in the PC hand
+            var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+            var card = PCHandArray[i-1];
+            if (card.type == "attack" && card.name != "SpeedLimit") {
+                //Play Attack Card
+                cardElement.classList.remove("PCCard"+i);
+                cardElement.style.zIndex = UserDriveArray.length + 1;
+                cardElement.classList.add("UserDrive");
+                cardElement.childNodes[1].classList.toggle("flip");
+                UserDriveArray.push(card);
+                PCHandArray.splice(i-1,1);
+                //End the turn and shift the cards in hand left
+                shiftCards("PC", i);
+                isUserTurn = true;
+                return;
+            }
+        }
+    }
+    //now check the speed limit pile
+    if (!UserSpeedArray[0] || UserSpeedArray[UserSpeedArray-1].type == "remedy") {
+        //See if I have any attack cards for the speed pile
+        for (var i=1; i<=7; i++) {
+            //look at each card in the PC hand
+            var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+            var card = PCHandArray[i-1];
+            if (card.name == "SpeedLimit") {
+                //Play Attack Card
+                cardElement.classList.remove("PCCard"+i);
+                cardElement.style.zIndex = UserDriveArray.length + 1;
+                cardElement.classList.add("UserSpeed");
+                cardElement.childNodes[1].classList.toggle("flip");
+                UserSpeedArray.push(card);
+                PCHandArray.splice(i-1,1);
+                //End the turn and shift the cards in hand left
+                shiftCards("PC", i);
+                isUserTurn = true;
+                return;
+            }
+        }
+    }
 
 }
 
