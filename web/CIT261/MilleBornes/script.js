@@ -40,7 +40,7 @@ function makeGame() {
     }
 
     //for testing purposes, have the computer take a turn
-    setTimeout(takeTurnPC, 1500);
+    setTimeout(takeTurnPC, 1000);
 }
 
 function newGame() {
@@ -202,17 +202,21 @@ function takeTurnPC() {
 }
 
 function sleep(milliseconds) {
+    console.log("entering");
     var start = new Date().getTime();
     for (var i = 0; i < 1e7; i++) {
       if ((new Date().getTime() - start) > milliseconds){
         break;
       }
     }
+    console.log("exiting");
   }
 
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     //if it's the PC's turn, add a 1s transition delay to this card so we can see the turn happening
-    if (who == "PC") sleep(1000);
+    if (who == "PC") {
+        sleep(1000);
+    }
     //remove the current class
     cardElement.classList.remove(who+"Card"+cardNumInHand);
     //arrange the new z-index and add the new class
