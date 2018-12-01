@@ -22,7 +22,6 @@ function makeGame() {
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {
-        console.log("PCCard" + i + ": " + cardArray[cardArray.length-1].name);
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
@@ -60,14 +59,11 @@ function takeTurnPC() {
     cardArray.pop();
     //if no drive yet, play drive card if can
     if (!PCDriveArray[0]) {
-        console.log("Arrived inside the PCDriveArray == null");
         for (var i=1; i<=7; i++) {
             //look at each card in the PC hand
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
-            //now I've found the card and can see what it is
             if (card.name == "Drive") {
-                console.log("found the Drive card");
                 //Play Drive Card
                 cardElement.classList.remove("PCCard"+i);
                 cardElement.style.zIndex = 1;
@@ -75,12 +71,24 @@ function takeTurnPC() {
                 cardElement.childNodes[1].classList.toggle("flip");
                 PCDriveArray.push(card);
                 PCHandArray.splice(i-1,1);
+                //End the turn and shift the cards in hand left
+                shiftCards("PC", i);
                 isUserTurn = true;
-                break;
+                return;
             }
         }
     }
+    //if ()
 
+}
+
+function shiftCards(who, cardNum) {
+    for (var i=cardNum+1; i<=7; i++) {
+        var cardElement = document.getElementsByClassName(who+"Card"+i)[0];
+        cardElement.classList.remove(who+"Card"+i);
+        cardElement.classList.add(who+"Card"+(i-1));
+        cardElement.zIndex = i-1;
+    }
 }
 
 //Make the card object
