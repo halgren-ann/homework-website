@@ -69,7 +69,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "Drive") {
-                setTimeout(doNothing, 1000);
+                setTimeout(doNothing, 2000);
                 playCard("PC", i, cardElement, card, "PCDrive");
                 return;
             }
