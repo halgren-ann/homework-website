@@ -40,7 +40,7 @@ function makeGame() {
     }
 
     //for testing purposes, have the computer take a turn
-    takeTurnPC();
+    setTimeout(takeTurnPC, 1000);
 }
 
 function newGame() {
@@ -69,8 +69,8 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "Drive") {
-                setTimeout(doNothing, 2000);
-                playCard("PC", i, cardElement, card, "PCDrive");
+                setTimeout(playCard, 2000, "PC", i, cardElement, card, "PCDrive");
+                //playCard("PC", i, cardElement, card, "PCDrive");
                 return;
             }
         }
