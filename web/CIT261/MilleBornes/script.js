@@ -15,6 +15,7 @@ function makeGame() {
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
         cardArray.pop();
+        console.log("PCCard" + i + ": " + document.getElementById(cardArray[cardArray.length-1].id).name);
     }
     //populate the User's hand
     for (var i=1; i<=6; i++) {
@@ -55,9 +56,11 @@ function takeTurnPC() {
     cardArray.pop();
     //if no drive yet, play drive card if can
     if (PCDriveArray == null) {
+        console.log("Arrived inside the PCDriveArray == null");
         for (var i=1; i<=7; i++) {
             var card = document.getElementsByClassName("PCCard"+i)[0];
             if (card.name == "Drive") {
+                console.log("found the Drive card");
                 //Play Drive Card
                 card.classList.remove("PCCard"+i);
                 card.style.zIndex = 1;
