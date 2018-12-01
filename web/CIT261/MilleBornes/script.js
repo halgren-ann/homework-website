@@ -40,7 +40,7 @@ function makeGame() {
     }
 
     //for testing purposes, have the computer take a turn
-    setTimeout(takeTurnPC, 1000);
+    takeTurnPC();
 }
 
 function newGame() {
