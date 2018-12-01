@@ -160,24 +160,38 @@ function takeTurnPC() {
         }
     }
     //if I have a mile card, play my highest mile card
-    var highest = 0;
-    var location = -1;
-    for (var i=1; i<=7; i++) {
-        //look at each card in the PC hand
-        var cardElement = document.getElementsByClassName("PCCard"+i)[0];
-        var card = PCHandArray[i-1];
-        if (card.type == "mile") {
-            if (Number(card.name) > highest) {
-                //this card is the new highest
-                highest = Number(card.name);
-                location = i;
+    //can only do this if I have a drive card down
+    //can only do this if my drive pile is not attacked
+    //can only go up to 50 if I have a speed limit on me
+    if (PCDriveArray[0] && PCDriveArray[PCDriveArray.length-1].type != "attack") {
+        var highest = 0;
+        var location = -1;
+        for (var i=1; i<=7; i++) {
+            //look at each card in the PC hand
+            var cardElement = document.getElementsByClassName("PCCard"+i)[0];
+            var card = PCHandArray[i-1];
+            if (card.type == "mile") {
+                //check if I have a speed limit on me
+                if (PCSpeedArray[0] && PCSpeedArray[PCSpeedArray.length-1].type == "attack") {
+                    //can go a maximum of 50
+                    if (Number(card.name) > highest && Number(card.name) <= 50) {
+                        //this card is the new highest
+                        highest = Number(card.name);
+                        location = i;
+                    }
+                }
+                else if (Number(card.name) > highest) {
+                    //this card is the new highest
+                    highest = Number(card.name);
+                    location = i;
+                }
             }
         }
-    }
-    //if I found the highest mile card, play it
-    if (highest > 0) {
-        playCard("PC", location, document.getElementsByClassName("PCCard"+location)[0], PCHandArray[location-1], "PCMiles");
-        return;
+        //if I found the highest mile card, play it
+        if (highest > 0) {
+            playCard("PC", location, document.getElementsByClassName("PCCard"+location)[0], PCHandArray[location-1], "PCMiles");
+            return;
+        }
     }
 
     //If I still haven't done anything, I need to discard a card
@@ -271,7 +285,19 @@ function shiftCards(who, cardNum) {
 }
 
 function updateScore(who) {
-
+    var total = 0;
+    if (who == "PC") {
+        for (var i=0; i < PCMilesArray.length; i++) {
+            total += Number(PCMilesArray[i].name);
+        }
+        document.getElementById("PCScore").innerHTML = "Score: " + total;
+    }
+    else if (who == "User") {
+        for (var i=0; i < UserMilesArray.length; i++) {
+            total += Number(UserMilesArray[i].name);
+        }
+        document.getElementById("UserScore").innerHTML = "Score: " + total;
+    }
 }
 
 //Make the card object

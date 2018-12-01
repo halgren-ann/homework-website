@@ -87,36 +87,43 @@ img {
 .PCCard1 {
     top: 16%;
     left: 32%;
+    transition-delay: 1s;
 }
 
 .PCCard2 {
     top: 16%;
     left: 35%;
+    transition-delay: 1s;
 }
 
 .PCCard3 {
     top: 16%;
     left: 38%;
+    transition-delay: 1s;
 }
 
 .PCCard4 {
     top: 16%;
     left: 41%;
+    transition-delay: 1s;
 }
 
 .PCCard5 {
     top: 16%;
     left: 44%;
+    transition-delay: 1s;
 }
 
 .PCCard6 {
     top: 16%;
     left: 47%;
+    transition-delay: 1s;
 }
 
 .PCCard7 {
     top: 16%;
     left: 50%;
+    transition-delay: 1s;
 }
 
 .PCDrive {
@@ -165,49 +172,42 @@ img {
 .UserCard1 {
     top: 66%;
     left: 2%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard2 {
     top: 66%;
     left: 10%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard3 {
     top: 66%;
     left: 18%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard4 {
     top: 66%;
     left: 26%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard5 {
     top: 66%;
     left: 34%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard6 {
     top: 66%;
     left: 42%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
 .UserCard7 {
     top: 66%;
     left: 50%;
-    transition-delay: 1s;
     transition: 0.5s;
 }
 
