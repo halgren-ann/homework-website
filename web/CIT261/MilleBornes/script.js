@@ -54,16 +54,16 @@ function takeTurnPC() {
     document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard7");
     cardArray.pop();
     //if no drive yet, play drive card if can
-    if (PCDriveArray.length == 0) {
+    if (PCDriveArray == null) {
         for (var i=1; i<=7; i++) {
             var card = document.getElementsByClassName("PCCard"+i)[0];
             if (card.name == "Drive") {
                 //Play Drive Card
                 card.classList.remove("PCCard"+i);
-                card.style.zIndex = PCDriveArray.length + 1;
-                PCDriveArray.push(card);
+                card.style.zIndex = 1;
                 card.classList.add("PCDrive");
                 card.childNodes[1].classList.toggle("flip");
+                PCDriveArray.push(card);
                 isUserTurn = true;
                 break;
             }
