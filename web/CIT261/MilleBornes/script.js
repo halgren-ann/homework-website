@@ -58,21 +58,50 @@ function getInstructions() {
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
     e.preventDefault();
-    if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard4")) selectCard(4);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard5")) selectCard(5);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard6")) selectCard(6);
-    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
+    if (e.target.tagName == "img" && haveDrawn) {
+        if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard4")) selectCard(4);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard5")) selectCard(5);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard6")) selectCard(6);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
+    }
 }
 
 function clickDrawPile() {
-
+    if (isUserTurn && !haveDrawn) {
+        //draw a card
+        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard7");
+        UserHandArray.push(cardArray[cardArray.length-1]);
+        cardArray.pop();
+        haveDrawn = true;
+    }
 }
 
 function clickDiscardPile() {
-
+    //check for the scenario where the user is trying to draw from the DiscardPile
+    if (isUserTurn && !haveDrawn) {
+        //draw a card
+        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard7");
+        UserHandArray.push(cardArray[cardArray.length-1]);
+        cardArray.pop();
+        haveDrawn = true;
+    }
+    else if (isUserTurn && haveDrawn) {
+        playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, "discardPile");
+        //clear out and reset
+        selectedCard = null;
+        unhighlightValidMoves();
+        haveDrawn = false;
+        validArray = [];
+        isUserTurn = false;
+        takeTurnPC();
+    }
 }
 
 function clickOverlay(location) {
@@ -82,7 +111,7 @@ function clickOverlay(location) {
         //move the card to take the turn
         playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
         //clear selectedCard
-        selectCard = null;
+        selectedCard = null;
         //clear out validArray
         validArray = [];
         //clear haveDrawn
