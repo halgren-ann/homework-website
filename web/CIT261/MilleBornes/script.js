@@ -57,6 +57,7 @@ function getInstructions() {
 //SECTION FOR USER PLAY LOGIC
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
+    console.log("got imto handle");
     e.preventDefault();
     let variable = e.target;
     if (variable.classList.contains("UserCard1")) {
