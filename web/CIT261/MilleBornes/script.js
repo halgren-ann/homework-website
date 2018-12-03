@@ -1,6 +1,5 @@
 //cardArray is the draw deck
 var cardArray = new Array(); 
-//items relevant to game play logic
 var PCHandArray = new Array();
 var UserHandArray = new Array();
 var PCDriveArray = new Array();
@@ -10,7 +9,11 @@ var UserSpeedArray = new Array();
 var PCMilesArray = new Array();
 var UserMilesArray = new Array();
 var discardPileArray = new Array();
+//items relevant to game play logic
 var isUserTurn = false;
+var haveDrawn = false;
+var selectedCard = null;
+var validArray = new Array();
 
 function makeGame() {
     //generate the random card stack
@@ -39,7 +42,7 @@ function makeGame() {
         cardArray.pop();
     }
 
-    //for testing purposes, have the computer take a turn
+    //Have the computer take the first turn
     setTimeout(takeTurnPC, 1000);
 }
 
@@ -48,6 +51,106 @@ function newGame() {
 }
 
 function getInstructions() {
+
+}
+
+//SECTION FOR USER PLAY LOGIC
+//set an onclick listener for each user card
+document.getElementsByClassName("UserCard1")[0].addEventListener('click', function() {
+    selectCard(1);
+});
+document.getElementsByClassName("UserCard2")[0].addEventListener('click', function() {
+    selectCard(2);
+});
+document.getElementsByClassName("UserCard3")[0].addEventListener('click', function() {
+    selectCard(3);
+});
+document.getElementsByClassName("UserCard4")[0].addEventListener('click', function() {
+    selectCard(4);
+});
+document.getElementsByClassName("UserCard5")[0].addEventListener('click', function() {
+    selectCard(5);
+});
+document.getElementsByClassName("UserCard6")[0].addEventListener('click', function() {
+    selectCard(6);
+});
+document.getElementsByClassName("UserCard7")[0].addEventListener('click', function() {
+    selectCard(7);
+});
+
+function selectCard(cardNum) {
+    //Select this card
+    selectedCard = UserHandArray[cardNum-1];
+    //Clear out valid array
+    validArray = [];
+    //check for all valid options
+    findValidMoves();
+    //highlight valid options
+    highlightValidMoves();
+}
+
+function findValidMoves() {
+    if (selectedCard.name == "SpeedLimit") {
+        if (!PCSpeedArray[0] || PCSpeedArray[PCSpeedArray.length-1].name == "EndSpeedLimit") {
+            validArray.push("PCSpeed");
+        }
+    }
+    else if (selectedCard.type == "attack") {
+        if (PCDriveArray[0] && PCDriveArray[PCDriveArray.length-1].type == "remedy") {
+            validArray.push("PCDrive");
+        }
+    }
+    else if (selectedCard.name == "EndSpeedLimit") {
+        if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].name == "SpeedLimit") {
+            validArray.push("UserSpeed");
+        }
+    }
+    else if (selectedCard.type == "remedy") {
+        if (selectCard.name == "Drive") {
+            //can play if either the User drive pile is empty or has a stop on it
+            if (!UserDriveArray[0] || UserDriveArray[UserDriveArray.length-1].name == "Stop") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectedCard.name == "Repairs") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "Accident") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectCard.name == "SpareTire") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "FlatTire") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectedCard.name == "Gas") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "OutOfFuel") {
+                validArray.push("UserDrive");
+            }
+        }
+    }
+    else if (selectedCard.type == "mile") {
+        //check to make sure it's 50 or less if there is a speed limit on the user
+        if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
+            if (Number(selectedCard.name) <= 50) {
+                validArray.push("UserMiles");
+            }
+        }
+        else {
+            validArray.push("UserMiles");
+        }
+    }
+
+    //The discard pile is always valid
+    validArray.push("discardPile");
+
+    //for testing purposes only
+    console.log("ValidArray items:");
+    for (var i=0; i<validArray.length; i++) {
+        console.log(validArray[i]);
+    }
+}
+
+function highlightValidMoves() {
 
 }
 

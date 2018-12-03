@@ -6,6 +6,15 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body onload="makeGame()">
+    <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
+    <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>
+    <div id="PCDrive" class="card PCDrive overlay" onclick="clickPCDrive()"></div>
+    <div id="PCSpeed" class="card PCSpeed overlay" onclick="clickPCSpeed()"></div>
+    <div id="PCMiles" class="card PCMiles overlay" onclick="clickPCMiles()"></div>
+    <div id="UserDrive" class="card UserDrive overlay" onclick="clickUserDrive()"></div>
+    <div id="UserSpeed" class="card UserSpeed overlay" onclick="clickUserSpeed()"></div>
+    <div id="UserMiles" class="card UserMiles overlay" onclick="clickUserMiles()"></div>
+
     <div id="drawPileArea"></div>
     <button onclick="newGame()" id="newGame">New Game</button>
     <button onclick="getInstructions()" id="instructions">Instructions</button>

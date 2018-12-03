@@ -26,6 +26,12 @@ img {
     border-radius: 20%;
 }
 
+.overlay {
+    z-index: 105;
+    color: white;
+    opacity: 0;
+}
+
 /*Info for the draw pile area*/
 #drawPileArea {
     position: fixed;
