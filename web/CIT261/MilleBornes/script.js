@@ -60,12 +60,12 @@ function handleClick(e) {
     if (e.target.classList.contains("UserCard1")) {
         selectCard(1);
     }
-    else if (target.classList.contains("UserCard2")) selectCard(2);
+    /*else if (target.classList.contains("UserCard2")) selectCard(2);
     else if (target.classList.contains("UserCard3")) selectCard(3);
     else if (target.classList.contains("UserCard4")) selectCard(4);
     else if (target.classList.contains("UserCard5")) selectCard(5);
     else if (target.classList.contains("UserCard6")) selectCard(6);
-    else if (target.classList.contains("UserCard7")) selectCard(7);
+    else if (target.classList.contains("UserCard7")) selectCard(7);*/
 }
 /*
 //set an onclick listener for each user card
