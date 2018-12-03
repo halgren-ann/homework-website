@@ -58,7 +58,8 @@ function getInstructions() {
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
     e.preventDefault();
-    if (e.target.tagName == "img" && haveDrawn) {
+    if (haveDrawn) {
+        if(!e.target.parentElement || !e.target.parentElement.parentElement || !e.target.parentElement.parentElement.parentElement) return;
         if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
         else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
         else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
@@ -83,13 +84,13 @@ function clickDrawPile() {
 
 function clickDiscardPile() {
     //check for the scenario where the user is trying to draw from the DiscardPile
-    if (isUserTurn && !haveDrawn) {
+    if (isUserTurn && !haveDrawn && discardPileArray[0]) {
         //draw a card
-        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
-        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
-        document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard7");
-        UserHandArray.push(cardArray[cardArray.length-1]);
-        cardArray.pop();
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).style.zIndex = 7;
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add("UserCard7");
+        UserHandArray.push(discardPileArray[discardPileArray.length-1]);
+        discardPileArray.pop();
         haveDrawn = true;
     }
     else if (isUserTurn && haveDrawn) {
