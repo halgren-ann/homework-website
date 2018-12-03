@@ -441,7 +441,7 @@ function shiftCards(who, cardNumInHand) {
         cardElement.classList.remove(who+"Card"+i);
         var cardNumMinus1 = i-1;
         cardElement.classList.add(who+"Card"+cardNumMinus1);
-        cardElement.zIndex = cardNumMinus1;
+        cardElement.style.zIndex = cardNumMinus1;
     }
 }
 
