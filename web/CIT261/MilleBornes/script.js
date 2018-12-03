@@ -20,7 +20,7 @@ function makeGame() {
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
-    for (var i=0; i<cardArray.length; i++) {
+    for (var i=1; i<=cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + i;
     }
     //populate the PC's hand
@@ -94,7 +94,8 @@ function clickDiscardPile() {
         discardPileArray.pop();
         haveDrawn = true;
     }
-    else if (isUserTurn && haveDrawn) {
+    else if (isUserTurn && haveDrawn && selectedCard != null) {
+        //The user is discarding
         playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, "discardPile");
         //clear out and reset
         selectedCard = null;
@@ -422,19 +423,19 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         cardElement.childNodes[1].classList.toggle("flip");
         PCHandArray.splice(cardNumInHand-1,1);
         //End the turn and shift the cards in hand left
-        shiftCards("PC", cardNumInHand);
+        shiftCards("PC", cardNumInHand-1);
         isUserTurn = true;
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);
         //End the turn and shift the cards in hand left
-        shiftCards("User", cardNumInHand);
+        shiftCards("User", cardNumInHand-1);
         isUserTurn = false;
     }
 }
 
 function shiftCards(who, cardNum) {
-    for (var i=cardNum+1; i<=7; i++) {
+    for (var i=(cardNum+1); i<=7; i++) {
         var cardElement = document.getElementsByClassName(who+"Card"+i)[0];
         cardElement.classList.remove(who+"Card"+i);
         cardElement.classList.add(who+"Card"+(i-1));
