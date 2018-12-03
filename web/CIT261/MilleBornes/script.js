@@ -20,8 +20,8 @@ function makeGame() {
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
     //populate the draw pile
-    for (var i=1; i<=cardArray.length; i++) {
-        document.getElementById(cardArray[i].id).style = "z-index:" + i;
+    for (var i=0; i<cardArray.length; i++) {
+        document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
     }
     //populate the PC's hand
     for (var i=1; i<=6; i++) {
@@ -29,7 +29,6 @@ function makeGame() {
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("PCCard" + i);
         PCHandArray.push(cardArray[cardArray.length-1]);
-        console.log("PCCard"+i+": "+ cardArray[cardArray.length-1].name);
         cardArray.pop();
     }
     //populate the User's hand
@@ -127,7 +126,6 @@ function clickOverlay(location) {
 }
 
 function selectCard(cardNum) {
-    console.log("got into selectCard function");
     //Select this card
     selectedCard = UserHandArray[cardNum-1];
     //Clear out valid array
@@ -194,12 +192,6 @@ function findValidMoves() {
 
     //The discard pile is always valid
     validArray.push("discardPile");
-
-    //for testing purposes only
-    console.log("ValidArray items:");
-    for (var i=0; i<validArray.length; i++) {
-        console.log(validArray[i]);
-    }
 }
 
 function highlightValidMoves() {
