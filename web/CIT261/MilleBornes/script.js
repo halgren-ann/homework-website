@@ -58,40 +58,14 @@ function getInstructions() {
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
     e.preventDefault();
-    if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) {
-        selectCard(1);
-    }
-    /*else if (target.classList.contains("UserCard2")) selectCard(2);
-    else if (target.classList.contains("UserCard3")) selectCard(3);
-    else if (target.classList.contains("UserCard4")) selectCard(4);
-    else if (target.classList.contains("UserCard5")) selectCard(5);
-    else if (target.classList.contains("UserCard6")) selectCard(6);
-    else if (target.classList.contains("UserCard7")) selectCard(7);*/
+    if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard4")) selectCard(4);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard5")) selectCard(5);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard6")) selectCard(6);
+    else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
 }
-/*
-//set an onclick listener for each user card
-document.getElementsByClassName("UserCard1")[0].addEventListener('click', function() {
-    selectCard(1);
-});
-document.getElementsByClassName("UserCard2")[0].addEventListener('click', function() {
-    selectCard(2);
-});
-document.getElementsByClassName("UserCard3")[0].addEventListener('click', function() {
-    selectCard(3);
-});
-document.getElementsByClassName("UserCard4")[0].addEventListener('click', function() {
-    selectCard(4);
-});
-document.getElementsByClassName("UserCard5")[0].addEventListener('click', function() {
-    selectCard(5);
-});
-document.getElementsByClassName("UserCard6")[0].addEventListener('click', function() {
-    selectCard(6);
-});
-document.getElementsByClassName("UserCard7")[0].addEventListener('click', function() {
-    selectCard(7);
-});
-*/
 
 function selectCard(cardNum) {
     console.log("got into selectCard function");
@@ -122,7 +96,7 @@ function findValidMoves() {
         }
     }
     else if (selectedCard.type == "remedy") {
-        if (selectCard.name == "Drive") {
+        if (selectedCard.name == "Drive") {
             //can play if either the User drive pile is empty or has a stop on it
             if (!UserDriveArray[0] || UserDriveArray[UserDriveArray.length-1].name == "Stop") {
                 validArray.push("UserDrive");
@@ -133,7 +107,7 @@ function findValidMoves() {
                 validArray.push("UserDrive");
             }
         }
-        else if (selectCard.name == "SpareTire") {
+        else if (selectedCard.name == "SpareTire") {
             if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "FlatTire") {
                 validArray.push("UserDrive");
             }
@@ -145,14 +119,17 @@ function findValidMoves() {
         }
     }
     else if (selectedCard.type == "mile") {
-        //check to make sure it's 50 or less if there is a speed limit on the user
-        if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
-            if (Number(selectedCard.name) <= 50) {
+        //there must be a drive card down first
+        if (UserDriveArray[0]) {
+            //check to make sure it's 50 or less if there is a speed limit on the user
+            if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
+                if (Number(selectedCard.name) <= 50) {
+                    validArray.push("UserMiles");
+                }
+            }
+            else {
                 validArray.push("UserMiles");
             }
-        }
-        else {
-            validArray.push("UserMiles");
         }
     }
 
