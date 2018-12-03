@@ -415,23 +415,23 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         cardElement.childNodes[1].classList.toggle("flip");
         PCHandArray.splice(cardNumInHand-1,1);
         //End the turn and shift the cards in hand left
-        shiftCards("PC", cardNumInHand-1);
+        shiftCards("PC", cardNumInHand);
         isUserTurn = true;
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);
         //End the turn and shift the cards in hand left
-        shiftCards("User", cardNumInHand-1);
+        shiftCards("User", cardNumInHand);
         isUserTurn = false;
     }
 }
 
-function shiftCards(who, cardNum) {
-    for (var i=(cardNum+1); i<=7; i++) {
-        var cardElement = document.getElementsByClassName(who+"Card"+i)[0];
-        cardElement.classList.remove(who+"Card"+i);
-        cardElement.classList.add(who+"Card"+(i-1));
-        cardElement.zIndex = i-1;
+function shiftCards(who, cardNumInHand) {
+    for (var i=cardNumInHand; i<7; i++) {
+        var cardElement = document.getElementsByClassName(who+"Card"+i+1)[0];
+        cardElement.classList.remove(who+"Card"+i+1);
+        cardElement.classList.add(who+"Card"+i);
+        cardElement.zIndex = i;
     }
 }
 
