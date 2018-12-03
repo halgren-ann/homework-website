@@ -57,7 +57,9 @@ function getInstructions() {
 //SECTION FOR USER PLAY LOGIC
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
-    if (e.srcElement.classList.contains("UserCard1")) {
+    e.preventDefault();
+    let variable = e.target;
+    if (variable.classList.contains("UserCard1")) {
         selectCard(1);
     }
     /*else if (target.classList.contains("UserCard2")) selectCard(2);
