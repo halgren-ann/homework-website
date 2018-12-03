@@ -176,8 +176,8 @@ function findValidMoves() {
         }
     }
     else if (selectedCard.type == "mile") {
-        //there must be a drive card down first
-        if (UserDriveArray[0]) {
+        //there must be a drive card down first and there cannot be an attack card on the user
+        if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].type == "remedy") {
             //check to make sure it's 50 or less if there is a speed limit on the user
             if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
                 if (Number(selectedCard.name) <= 50) {
