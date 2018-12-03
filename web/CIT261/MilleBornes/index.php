@@ -5,9 +5,7 @@
     <title>Mille Bornes</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="makeGame()">
-    <div id="UserCard1" class="card UserCard1 overlay" onclick="clickUserCard1()"></div>
-    
+<body onload="makeGame()" onclick="handleClick(event)">
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
     <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>
     <div id="PCDrive" class="card PCDrive overlay" onclick="clickPCDrive()"></div>

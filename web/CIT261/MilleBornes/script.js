@@ -56,11 +56,8 @@ function getInstructions() {
 
 //SECTION FOR USER PLAY LOGIC
 //Add a click event listener to handle the clickable areas
-document.addEventListener('click', function(e) {
-    e = e || window.event;
-    var target = e.target || e.srcElement;
-    
-    if (target.classList.contains("UserCard1")) {
+function handleClick(e) {    
+    if (e.target.classList.contains("UserCard1")) {
         selectCard(1);
     }
     else if (target.classList.contains("UserCard2")) selectCard(2);
@@ -69,7 +66,7 @@ document.addEventListener('click', function(e) {
     else if (target.classList.contains("UserCard5")) selectCard(5);
     else if (target.classList.contains("UserCard6")) selectCard(6);
     else if (target.classList.contains("UserCard7")) selectCard(7);
-}, false);
+}
 /*
 //set an onclick listener for each user card
 document.getElementsByClassName("UserCard1")[0].addEventListener('click', function() {
