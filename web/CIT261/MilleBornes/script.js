@@ -67,6 +67,33 @@ function handleClick(e) {
     else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
 }
 
+function clickDrawPile() {
+
+}
+
+function clickDiscardPile() {
+
+}
+
+function clickOverlay(location) {
+    if (validArray[0] && validArray.includes(location)) {
+        //stop highlighting items
+        unhighlightValidMoves();
+        //move the card to take the turn
+        playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
+        //clear selectedCard
+        selectCard = null;
+        //clear out validArray
+        validArray = [];
+        //clear haveDrawn
+        haveDrawn = false;
+        //stop the user's turn
+        isUserTurn = false;
+        //turn the turn over to the PC
+        takeTurnPC();
+    }
+}
+
 function selectCard(cardNum) {
     console.log("got into selectCard function");
     //Select this card
@@ -144,6 +171,10 @@ function findValidMoves() {
 }
 
 function highlightValidMoves() {
+
+}
+
+function unhighlightValidMoves() {
 
 }
 
