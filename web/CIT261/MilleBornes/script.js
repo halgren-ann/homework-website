@@ -75,6 +75,7 @@ function clickDrawPile() {
         //draw a card
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
+        document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("UserCard7");
         UserHandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
@@ -101,7 +102,7 @@ function clickDiscardPile() {
         haveDrawn = false;
         validArray = [];
         isUserTurn = false;
-        takeTurnPC();
+        setTimeout(takeTurnPC, 1000);
     }
 }
 
@@ -120,7 +121,7 @@ function clickOverlay(location) {
         //stop the user's turn
         isUserTurn = false;
         //turn the turn over to the PC
-        takeTurnPC();
+        setTimeout(takeTurnPC, 1000);
     }
 }
 
