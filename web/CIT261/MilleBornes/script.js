@@ -417,6 +417,15 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("PC", cardNumInHand);
         isUserTurn = true;
+        //for testing purposes, report all the z indexes:
+        console.log("computer z-indexes:");
+        for(var i=0; i<6; i++) {
+            console.log(document.getElementById(PCHandArray[i].id).style.zIndex);
+        }
+        console.log("user z-indexes:");
+        for(var i=0; i<6; i++) {
+            console.log(document.getElementById(UserHandArray[i].id).style.zIndex);
+        }
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);
