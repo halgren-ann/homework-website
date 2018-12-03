@@ -58,6 +58,7 @@ function getInstructions() {
 //Add a click event listener to handle the clickable areas
 function handleClick(e) {    
     console.log("got imto handle");
+    console.log(e.target);
     e.preventDefault();
     let variable = e.target;
     if (variable.classList.contains("UserCard1")) {
