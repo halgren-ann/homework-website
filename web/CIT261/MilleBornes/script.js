@@ -243,7 +243,7 @@ function takeTurnPC() {
         }
     }
     //now check the speed limit pile
-    if (!UserSpeedArray[0] || UserSpeedArray[UserSpeedArray-1].type == "remedy") {
+    if (!UserSpeedArray[0] || UserSpeedArray[UserSpeedArray.length-1].type == "remedy") {
         //See if I have any attack cards for the speed pile
         for (var i=1; i<=7; i++) {
             //look at each card in the PC hand
@@ -257,9 +257,9 @@ function takeTurnPC() {
     }
     //if can remedy self, remedy
     //check the drive pile for current attacks
-    if (PCDriveArray[0] && PCDriveArray[PCDriveArray-1].type == "attack") {
+    if (PCDriveArray[0] && PCDriveArray[PCDriveArray.length-1].type == "attack") {
         //Find out what the attack card is and then check my hand for the remedy
-        if (PCDriveArray[PCDriveArray-1].name == "Stop") {
+        if (PCDriveArray[PCDriveArray.length-1].name == "Stop") {
             for (var i=1; i<=7; i++) {
                 //look at each card in the PC hand
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
@@ -270,7 +270,7 @@ function takeTurnPC() {
                 }
             }
         }
-        else if (PCDriveArray[PCDriveArray-1].name == "OutOfFuel") {
+        else if (PCDriveArray[PCDriveArray.length-1].name == "OutOfFuel") {
             for (var i=1; i<=7; i++) {
                 //look at each card in the PC hand
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
@@ -281,7 +281,7 @@ function takeTurnPC() {
                 }
             }
         }
-        else if (PCDriveArray[PCDriveArray-1].name == "FlatTire") {
+        else if (PCDriveArray[PCDriveArray.length-1].name == "FlatTire") {
             for (var i=1; i<=7; i++) {
                 //look at each card in the PC hand
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
@@ -292,7 +292,7 @@ function takeTurnPC() {
                 }
             }
         }
-        else if (PCDriveArray[PCDriveArray-1].name == "Accident") {
+        else if (PCDriveArray[PCDriveArray.length-1].name == "Accident") {
             for (var i=1; i<=7; i++) {
                 //look at each card in the PC hand
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
@@ -305,7 +305,7 @@ function takeTurnPC() {
         }
     }
     //check the speed pile for a current attack
-    if (PCSpeedArray[0] && PCSpeedArray[PCSpeedArray-1].type == "attack") {
+    if (PCSpeedArray[0] && PCSpeedArray[PCSpeedArray.length-1].type == "attack") {
         //See if I have any remedy cards for the speed pile
         for (var i=1; i<=7; i++) {
             //look at each card in the PC hand
