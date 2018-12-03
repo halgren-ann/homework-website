@@ -56,7 +56,7 @@ function getInstructions() {
 
 //SECTION FOR USER PLAY LOGIC
 //set an onclick listener for each user card
-document.getElementsByClassName("UserCard1").addEventListener('click', function() {
+(document.getElementsByClassName("UserCard1")[0]).addEventListener('click', function() {
     selectCard(1);
 });
 document.getElementsByClassName("UserCard2")[0].addEventListener('click', function() {
