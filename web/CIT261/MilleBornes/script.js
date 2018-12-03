@@ -427,7 +427,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
 }
 
 function shiftCards(who, cardNumInHand) {
-    for (var i=cardNumInHand+1; i<7; i++) {
+    for (var i=cardNumInHand+1; i<=7; i++) {
         var cardElement = document.getElementsByClassName(who+"Card"+i)[0];
         cardElement.classList.remove(who+"Card"+i);
         cardElement.classList.add(who+"Card"+(i-1));
