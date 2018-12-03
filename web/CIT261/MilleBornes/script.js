@@ -60,7 +60,9 @@ document.addEventListener('click', function(e) {
     e = e || window.event;
     var target = e.target || e.srcElement;
     
-    if (target.classList.contains("UserCard1")) selectCard(1);
+    if (target.classList.contains("UserCard1")) {
+        selectCard(1);
+    }
     else if (target.classList.contains("UserCard2")) selectCard(2);
     else if (target.classList.contains("UserCard3")) selectCard(3);
     else if (target.classList.contains("UserCard4")) selectCard(4);
@@ -94,6 +96,7 @@ document.getElementsByClassName("UserCard7")[0].addEventListener('click', functi
 */
 
 function selectCard(cardNum) {
+    console.log("got into selectCard function");
     //Select this card
     selectedCard = UserHandArray[cardNum-1];
     //Clear out valid array
