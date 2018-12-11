@@ -249,6 +249,11 @@ img {
 }
 
 /*Effects*/
+.hoverSim {
+    transform: translate(0%, -13%); 
+    box-shadow: 2px -6px 5px white;
+}
+
 .UserCard1:hover, .UserCard2:hover, .UserCard3:hover, .UserCard4:hover, .UserCard5:hover, .UserCard6:hover, .UserCard7:hover {
     transform: translate(0%, -13%); 
     box-shadow: 2px -6px 5px white;    

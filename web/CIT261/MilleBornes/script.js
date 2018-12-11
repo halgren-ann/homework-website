@@ -197,9 +197,12 @@ function findValidMoves() {
 }
 
 function highlightValidMoves() {
-    //first, select the currently selected card and have it stay up
+    /*
+    //first, select the currently selected card
     document.getElementById(selectedCard.id).classList.add("backlit");
     document.getElementById(selectedCard.id).style.transform = "translate(0%, -13%)";
+    */
+    document.getElementById(selectedCard.id).classList.add("hoverSim");
     //Then highlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[1].classList.add("backlit");
@@ -207,6 +210,7 @@ function highlightValidMoves() {
 }
 
 function unhighlightValidMoves() {
+    document.getElementById(selectedCard.id).classList.remove("hoverSim");
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
