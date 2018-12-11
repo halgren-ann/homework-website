@@ -9,7 +9,7 @@
 <body onload="makeGame()" onclick="handleClick(event)">
 
     <div id="endGameOverlay" style="display:none" onclick="off()">
-        <canvas id="canvas"></canvas>
+        <canvas id="canvas" style="width:100%;height:100%;"></canvas>
         <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
         <button id="overlayNewGame" onclick="newGame()">New Game</button>
         <button id="overlayContinue" onclick="off()">Continue</button>

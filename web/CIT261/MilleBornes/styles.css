@@ -276,6 +276,7 @@ img {
 
 .victory {
     animation: grow 1s ease-out;
+    z-index: 201;
 }
 
 @-webkit-keyframes grow{
@@ -312,7 +313,7 @@ img {
 #overlayNewGame {
     position: fixed;
     top: 60%;
-    left: 48%;
+    left: 38%;
     width: 5%;
     height: 10%;
 }
