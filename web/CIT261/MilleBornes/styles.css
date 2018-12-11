@@ -33,13 +33,9 @@ img {
 }
 
 .backlit {
-    background-color: yellow;
-    z-index: 100;
-    /*
     -webkit-animation: light 1.5s ease-in-out infinite alternate;
     -moz-animation: light 1.5s ease-in-out infinite alternate;
     animation: light 1.5s ease-in-out infinite alternate;
-    */
 }
 
 @-webkit-keyframes light {

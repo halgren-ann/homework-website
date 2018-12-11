@@ -196,17 +196,13 @@ function findValidMoves() {
 
 function highlightValidMoves() {
     for (var i=0; i<validArray.length; i++) {
-        console.log(validArray.length);
-        console.log(validArray[i]);
-        var temp = document.getElementsByClassName(validArray[i])[1];
-        console.log(temp);
-        temp.classList.add("backlit");
+        document.getElementsByClassName(validArray[i])[1].classList.toggle("backlit");
     }
 }
 
 function unhighlightValidMoves() {
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[0].classList.toggle("backlit");
+        document.getElementsByClassName(validArray[i])[1].classList.toggle("backlit");
     }
 }
 
