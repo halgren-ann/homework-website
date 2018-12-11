@@ -200,7 +200,6 @@ function highlightValidMoves() {
     /*
     //first, select the currently selected card
     document.getElementById(selectedCard.id).classList.add("backlit");
-    document.getElementById(selectedCard.id).style.transform = "translate(0%, -13%)";
     */
     document.getElementById(selectedCard.id).classList.add("hoverSim");
     //Then highlight the possible options
@@ -210,7 +209,7 @@ function highlightValidMoves() {
 }
 
 function unhighlightValidMoves() {
-    document.getElementById(selectedCard.id).classList.remove("hoverSim");
+    document.getElementsByClassName("hoverSim")[0].classList.remove("hoverSim");
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
@@ -432,6 +431,8 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("PC", cardNumInHand);
         isUserTurn = true;
+        //highlight the draw piles that are relavent
+        
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);
