@@ -10,7 +10,7 @@
 
     <div id="endGameOverlay" style="display:block" onclick="off()">
         <canvas id="canvas"></canvas>
-        <p id="winbanner" class="backlit winbanner">YOU WON!</p>
+        <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
     </div>
 
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
