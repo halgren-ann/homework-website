@@ -274,7 +274,17 @@ img {
     color: gold;
 }
 
-.victory {
+.lossbanner {
+    position: fixed;
+    top: 15%;
+    left: 27%;
+    font-size: 100px; 
+    transform: scale(0);
+    font-family: 'Sigmar One', cursive;
+    color: rgb(50, 50, 184);
+}
+
+.winner {
     animation: grow 1s ease-out;
     z-index: 201;
 }

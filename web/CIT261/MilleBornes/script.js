@@ -488,7 +488,7 @@ function endGame(winner) {
     afterGame = true;
     document.getElementById("endGameOverlay").style.display = "block";
     if(winner == "User") {
-        document.getElementById("winbanner").classList.add("victory");
+        document.getElementById("winbanner").classList.add("winner");
         animate();
     }
 }

@@ -11,6 +11,7 @@
     <div id="endGameOverlay" style="display:none" onclick="off()">
         <canvas id="canvas" style="width:100%;height:100%;"></canvas>
         <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
+        <p id="lossbanner" class="lossbanner">YOU LOST</p>
         <button id="overlayNewGame" onclick="newGame()">New Game</button>
         <button id="overlayContinue" onclick="off()">Continue</button>
     </div>
