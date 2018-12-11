@@ -46,6 +46,18 @@ function makeGame() {
     setTimeout(takeTurnPC, 1000);
 }
 
+function reshuffle() {
+    cardArray = shuffleArray(discardPileArray);
+    discardPileArray = [];
+    //populate the draw pile
+    for (var i=0; i<cardArray.length; i++) {
+        document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
+        document.getElementById(cardArray[i].id).classList.remove("discardPile");
+        document.getElementById(cardArray[i].id).classList.add("drawPile");
+    }
+
+}
+
 function newGame() {
     location.reload();
 }
