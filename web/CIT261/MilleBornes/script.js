@@ -79,7 +79,8 @@ function clickDrawPile() {
         UserHandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
         haveDrawn = true;
-        document.getElementById("drawPileArea").classList.remove("drawPileBackLit");
+        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
     }
 }
 
@@ -93,7 +94,8 @@ function clickDiscardPile() {
         UserHandArray.push(discardPileArray[discardPileArray.length-1]);
         discardPileArray.pop();
         haveDrawn = true;
-        document.getElementById("drawPileArea").classList.remove("drawPileBackLit");
+        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
     }
     else if (isUserTurn && haveDrawn && selectedCard != null) {
         //The user is discarding
@@ -220,19 +222,10 @@ function unhighlightValidMoves() {
     }
 }
 
-function prepPCTurn() {
-    //unhighlight the User section of the page
-    document.getElementById("UserPlayArea").classList.remove("UserTurnBackLit");
-    //highlight the green PC section of the page
-    document.getElementById("PCPlayArea").classList.add("PCTurnBackLit");
-}
-
 function prepUserTurn() {
-    //unhighlight the PC area
-    document.getElementById("PCPlayArea").classList.remove("PCTurnBackLit");
-    //highlight the draw piles and also the user section of the page
-    document.getElementById("UserPlayArea").classList.add("UserTurnBackLit");
-    document.getElementById("drawPileArea").classList.add("drawPileBackLit");
+    //highlight the draw pile
+    document.getElementsByClassName("discardPile")[1].classList.add("backlit");
+    document.getElementsByClassName("drawPile")[1].classList.add("backlit");
 }
 
 function takeTurnPC() {
@@ -459,8 +452,6 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("User", cardNumInHand);
         isUserTurn = false;
-        //highlight appropriate sections
-        prepPCTurn();
     }
 }
 
