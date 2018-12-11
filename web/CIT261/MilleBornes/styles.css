@@ -250,7 +250,7 @@ img {
 }
 
 .winbanner {
-    position: relative;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%); 
     transform: scale(1);
