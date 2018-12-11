@@ -266,8 +266,8 @@ img {
 
 .winbanner {
     position: fixed;
-    top: 25%;
-    left: 30%;
+    top: 15%;
+    left: 27%;
     font-size: 100px; 
     transform: scale(1);
     font-family: 'Sigmar One', cursive;
