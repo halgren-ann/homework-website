@@ -250,6 +250,9 @@ img {
 }
 
 .winbanner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%); 
     transform: scale(1);
     font-family: 'Sigmar One', cursive;
     color: gold;
