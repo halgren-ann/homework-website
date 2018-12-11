@@ -272,6 +272,7 @@ img {
     transform: scale(0);
     font-family: 'Sigmar One', cursive;
     color: gold;
+    transition: 1s;
 }
 
 .lossbanner {
@@ -282,20 +283,12 @@ img {
     transform: scale(0);
     font-family: 'Sigmar One', cursive;
     color: rgb(50, 50, 184);
+    transition: 1s;
 }
 
 .winner {
-    animation: grow 1s ease-out;
+    transform: scale(1);
     z-index: 201;
-}
-
-@-webkit-keyframes grow{
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
 }
 
 #endGameOverlay {
@@ -316,16 +309,16 @@ img {
     position: fixed;
     top: 60%;
     left: 52%;
-    width: 5%;
-    height: 10%;
+    width: 10%;
+    height: 5%;
 }
 
 #overlayNewGame {
     position: fixed;
     top: 60%;
     left: 38%;
-    width: 5%;
-    height: 10%;
+    width:10%;
+    height: 5%;
 }
 
 .hoverSim {
