@@ -199,6 +199,7 @@ function highlightValidMoves() {
         console.log(validArray.length);
         console.log(validArray[i]);
         var temp = document.getElementsByClassName(validArray[i])[0];
+        console.log(temp);
         temp.classList.add("backlit");
     }
 }
