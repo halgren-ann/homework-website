@@ -224,12 +224,12 @@ function prepPCTurn() {
     //unhighlight the User section of the page
     document.getElementById("UserPlayArea").classList.remove("UserTurnBackLit");
     //highlight the green PC section of the page
-    document.getElementById("PCPlayArea").classList.add("PCTurnBacklit");
+    document.getElementById("PCPlayArea").classList.add("PCTurnBackLit");
 }
 
 function prepUserTurn() {
     //unhighlight the PC area
-    document.getElementById("PCPlayArea").classList.remove("PCTurnBacklit");
+    document.getElementById("PCPlayArea").classList.remove("PCTurnBackLit");
     //highlight the draw piles and also the user section of the page
     document.getElementById("UserPlayArea").classList.add("UserTurnBackLit");
     document.getElementById("drawPileArea").classList.add("drawPileBackLit");

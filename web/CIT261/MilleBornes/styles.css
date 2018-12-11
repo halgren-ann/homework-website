@@ -271,10 +271,10 @@ img {
 
 @-webkit-keyframes neon1 {
     from {
-        box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF1177, 0 0 70px #FF1177, 0 0 80px #FF1177, 0 0 100px #FF1177, 0 0 150px #FF1177;
+        background-color: #FF1177;
     }
     to {
-        box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+        background-color: rgb(182, 5, 81);
     }
 }
 
@@ -286,10 +286,10 @@ img {
 
 @-webkit-keyframes neon2 {
     from {
-      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+        background-color: #228DFF;
     }
     to {
-      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+        background-color: rgb(19, 108, 202);
     }
 }
 
@@ -301,10 +301,10 @@ img {
 
 @-webkit-keyframes neon4 {
     from {
-      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px rgb(4, 105, 67), 0 0 70px rgb(4, 105, 67), 0 0 80px rgb(4, 105, 67), 0 0 100px rgb(4, 105, 67), 0 0 150px rgb(4, 105, 67);
+        background-color: rgb(4, 105, 67);
     }
     to {
-      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px rgb(4, 105, 67), 0 0 35px rgb(4, 105, 67), 0 0 40px rgb(4, 105, 67), 0 0 50px rgb(4, 105, 67), 0 0 75px rgb(4, 105, 67);
+        background-color: rgb(20, 173, 115);
     }
 }
 
