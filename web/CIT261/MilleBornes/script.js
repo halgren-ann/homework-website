@@ -196,7 +196,9 @@ function findValidMoves() {
 
 function highlightValidMoves() {
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[0].classList.toggle("backlit");
+        console.log(validArray.length);
+        console.log(validArray[i]);
+        document.getElementsByClassName(validArray[i])[0].classList.add("backlit");
     }
 }
 
