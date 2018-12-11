@@ -32,21 +32,6 @@ img {
     opacity: 0;
 }
 
-.backlit {
-    -webkit-animation: light 1s ease-in-out infinite alternate;
-    -moz-animation: light 1s ease-in-out infinite alternate;
-    animation: light 1s ease-in-out infinite alternate;
-}
-
-@-webkit-keyframes light {
-    from {
-      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
-    }
-    to {
-      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
-    }
-  }
-
 /*Info for the draw pile area*/
 #drawPileArea {
     position: fixed;
@@ -249,6 +234,45 @@ img {
 }
 
 /*Effects*/
+.backlit {
+    -webkit-animation: light 1s ease-in-out infinite alternate;
+    -moz-animation: light 1s ease-in-out infinite alternate;
+    animation: light 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes light {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+}
+
+.winbanner {
+    transform: scale(1);
+    font-family: 'Sigmar One', cursive;
+    color: gold;
+}
+
+.victory {
+    
+}
+
+#endGameOverlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
 .hoverSim {
     transform: translate(0%, -13%); 
     box-shadow: 2px -6px 5px white;

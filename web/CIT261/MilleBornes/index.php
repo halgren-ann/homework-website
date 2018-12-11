@@ -4,8 +4,15 @@
     <meta charset="utf-8">
     <title>Mille Bornes</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
 </head>
 <body onload="makeGame()" onclick="handleClick(event)">
+
+    <div id="endGameOverlay" style="display:block" onclick="off()">
+        <canvas id="canvas"></canvas>
+        <p id="winbanner" class="backlit winbanner">YOU WON!</p>
+    </div>
+
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
     <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>
     <div id="PCDrive" class="card PCDrive overlay" onclick="clickOverlay('PCDrive')"></div>
