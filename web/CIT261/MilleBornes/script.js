@@ -119,6 +119,9 @@ function clickDiscardPile() {
         haveDrawn = false;
         validArray = [];
         isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
         setTimeout(takeTurnPC, 1000);
     }
 }
@@ -137,6 +140,9 @@ function clickOverlay(location) {
         haveDrawn = false;
         //stop the user's turn
         isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
         //turn the turn over to the PC
         setTimeout(takeTurnPC, 1000);
     }
@@ -456,6 +462,9 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("PC", cardNumInHand);
         isUserTurn = true;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }    
         //highlight the draw piles that are relevant
         prepUserTurn();
         
@@ -465,6 +474,9 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("User", cardNumInHand);
         isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
     }
 }
 
