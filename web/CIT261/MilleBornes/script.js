@@ -14,6 +14,7 @@ var isUserTurn = false;
 var haveDrawn = false;
 var selectedCard = null;
 var afterGame = false;
+var validArray = new Array();
 
 function makeGame() {
     //generate the random card stack
