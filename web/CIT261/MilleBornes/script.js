@@ -79,6 +79,7 @@ function clickDrawPile() {
         UserHandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
         haveDrawn = true;
+        document.getElementById("drawPileArea").classList.remove("drawPileBackLit");
     }
 }
 
@@ -92,6 +93,7 @@ function clickDiscardPile() {
         UserHandArray.push(discardPileArray[discardPileArray.length-1]);
         discardPileArray.pop();
         haveDrawn = true;
+        document.getElementById("drawPileArea").classList.remove("drawPileBackLit");
     }
     else if (isUserTurn && haveDrawn && selectedCard != null) {
         //The user is discarding
@@ -219,11 +221,18 @@ function unhighlightValidMoves() {
 }
 
 function prepPCTurn() {
-
+    //unhighlight the User section of the page
+    document.getElementById("UserPlayArea").classList.remove("UserTurnBackLit");
+    //highlight the green PC section of the page
+    document.getElementById("PCPlayArea").classList.add("PCTurnBacklit");
 }
 
 function prepUserTurn() {
-    
+    //unhighlight the PC area
+    document.getElementById("PCPlayArea").classList.remove("PCTurnBacklit");
+    //highlight the draw piles and also the user section of the page
+    document.getElementById("UserPlayArea").classList.add("UserTurnBackLit");
+    document.getElementById("drawPileArea").classList.add("drawPileBackLit");
 }
 
 function takeTurnPC() {
