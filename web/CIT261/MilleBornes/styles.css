@@ -269,13 +269,22 @@ img {
     top: 15%;
     left: 27%;
     font-size: 100px; 
-    transform: scale(1);
+    transform: scale(0);
     font-family: 'Sigmar One', cursive;
     color: gold;
 }
 
 .victory {
-    
+    animation: grow 1s ease-out;
+}
+
+@-webkit-keyframes grow{
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
 }
 
 #endGameOverlay {
@@ -287,9 +296,25 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
     z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlayContinue {
+    position: fixed;
+    top: 60%;
+    left: 52%;
+    width: 5%;
+    height: 10%;
+}
+
+#overlayNewGame {
+    position: fixed;
+    top: 60%;
+    left: 48%;
+    width: 5%;
+    height: 10%;
 }
 
 .hoverSim {

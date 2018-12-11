@@ -13,7 +13,7 @@ var discardPileArray = new Array();
 var isUserTurn = false;
 var haveDrawn = false;
 var selectedCard = null;
-var validArray = new Array();
+var afterGame = false;
 
 function makeGame() {
     //generate the random card stack
@@ -472,20 +472,20 @@ function updateScore(who) {
             total += Number(PCMilesArray[i].name);
         }
         document.getElementById("PCScore").innerHTML = "Score: " + total;
-        if (total >= 1000) endGame("PC");
+        if (!afterGame && total >= 1000) endGame("PC");
     }
     else if (who == "User") {
         for (var i=0; i < UserMilesArray.length; i++) {
             total += Number(UserMilesArray[i].name);
         }
         document.getElementById("UserScore").innerHTML = "Score: " + total;
-        if (total >= 1000) endGame("User");
+        if (!afterGame && total >= 1000) endGame("User");
     }
 }
 
 function endGame(winner) {
+    afterGame = true;
     document.getElementById("endGameOverlay").style.display = "block";
-
     if(winner == "User") {
         document.getElementById("winbanner").classList.add("victory");
         animate();

@@ -8,9 +8,11 @@
 </head>
 <body onload="makeGame()" onclick="handleClick(event)">
 
-    <div id="endGameOverlay" style="display:block" onclick="off()">
+    <div id="endGameOverlay" style="display:none" onclick="off()">
         <canvas id="canvas"></canvas>
         <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
+        <button id="overlayNewGame" onclick="newGame()">New Game</button>
+        <button id="overlayContinue" onclick="off()">Continue</button>
     </div>
 
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
