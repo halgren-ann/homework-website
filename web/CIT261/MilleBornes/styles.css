@@ -33,9 +33,9 @@ img {
 }
 
 .backlit {
-    -webkit-animation: light 1.5s ease-in-out infinite alternate;
-    -moz-animation: light 1.5s ease-in-out infinite alternate;
-    animation: light 1.5s ease-in-out infinite alternate;
+    -webkit-animation: light 0.5s ease-in-out infinite alternate;
+    -moz-animation: light 0.5s ease-in-out infinite alternate;
+    animation: light 0.5s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes light {

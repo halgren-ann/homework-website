@@ -128,6 +128,8 @@ function clickOverlay(location) {
 function selectCard(cardNum) {
     //Select this card
     selectedCard = UserHandArray[cardNum-1];
+    //unhighlight anything that is still highlighted
+    unhighlightValidMoves();
     //Clear out valid array
     validArray = [];
     //check for all valid options
@@ -195,14 +197,19 @@ function findValidMoves() {
 }
 
 function highlightValidMoves() {
+    //first, select the currently selected card and have it stay up
+    document.getElementById(selectedCard.id).classList.add("backlit");
+    document.getElementById(selectedCard.id).style.transform = "translate(0%, -13%)";
+    //Then highlight the possible options
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[1].classList.toggle("backlit");
+        document.getElementsByClassName(validArray[i])[1].classList.add("backlit");
     }
 }
 
 function unhighlightValidMoves() {
+    //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[1].classList.toggle("backlit");
+        document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
     }
 }
 
