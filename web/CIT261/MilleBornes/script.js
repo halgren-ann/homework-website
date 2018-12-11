@@ -491,6 +491,9 @@ function endGame(winner) {
         document.getElementById("winbanner").classList.add("winner");
         animate();
     }
+    else {
+        document.getElementById("lossbanner").classList.add("winner");
+    }
 }
 
 function off() {
