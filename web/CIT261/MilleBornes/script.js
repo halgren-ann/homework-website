@@ -209,11 +209,21 @@ function highlightValidMoves() {
 }
 
 function unhighlightValidMoves() {
-    document.getElementsByClassName("hoverSim")[0].classList.remove("hoverSim");
+    if(document.getElementsByClassName("hoverSim")[0]) {
+        document.getElementsByClassName("hoverSim")[0].classList.remove("hoverSim");
+    }
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
     }
+}
+
+function prepPCTurn() {
+
+}
+
+function prepUserTurn() {
+    
 }
 
 function takeTurnPC() {
@@ -431,7 +441,8 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("PC", cardNumInHand);
         isUserTurn = true;
-        //highlight the draw piles that are relavent
+        //highlight the draw piles that are relevant
+        prepUserTurn();
         
     }
     else {
@@ -439,6 +450,8 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //End the turn and shift the cards in hand left
         shiftCards("User", cardNumInHand);
         isUserTurn = false;
+        //highlight appropriate sections
+        prepPCTurn();
     }
 }
 
