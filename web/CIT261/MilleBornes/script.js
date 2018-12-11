@@ -42,7 +42,7 @@ function makeGame() {
     }
 
     //Have the computer take the first turn
-    setTimeout(takeTurnPC, 500);
+    setTimeout(takeTurnPC, 1000);
 }
 
 function newGame() {
@@ -102,7 +102,7 @@ function clickDiscardPile() {
         haveDrawn = false;
         validArray = [];
         isUserTurn = false;
-        setTimeout(takeTurnPC, 500);
+        setTimeout(takeTurnPC, 1000);
     }
 }
 
@@ -121,7 +121,7 @@ function clickOverlay(location) {
         //stop the user's turn
         isUserTurn = false;
         //turn the turn over to the PC
-        setTimeout(takeTurnPC, 500);
+        setTimeout(takeTurnPC, 1000);
     }
 }
 
@@ -195,11 +195,15 @@ function findValidMoves() {
 }
 
 function highlightValidMoves() {
-
+    for (var i=0; i<validArray.length; i++) {
+        document.getElementById(validArray[0].id).classList.toggle("backlit");
+    }
 }
 
 function unhighlightValidMoves() {
-
+    for (var i=0; i<validArray.length; i++) {
+        document.getElementById(validArray[0].id).classList.toggle("backlit");
+    }
 }
 
 function takeTurnPC() {
@@ -216,7 +220,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "Drive") {
-                setTimeout(playCard, 500, "PC", i, cardElement, card, "PCDrive");
+                setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCDrive");
                 return;
             }
         }
@@ -230,7 +234,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.type == "attack" && card.name != "SpeedLimit") {
-                setTimeout(playCard, 500, "PC", i, cardElement, card, "UserDrive");
+                setTimeout(playCard, 1000, "PC", i, cardElement, card, "UserDrive");
                 return;
             }
         }
@@ -243,7 +247,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "SpeedLimit") {
-                setTimeout(playCard, 500, "PC", i, cardElement, card, "UserSpeed");
+                setTimeout(playCard, 1000, "PC", i, cardElement, card, "UserSpeed");
                 return;
             }
         }
@@ -258,7 +262,7 @@ function takeTurnPC() {
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
                 var card = PCHandArray[i-1];
                 if (card.name == "Drive") {
-                    setTimeout(playCard, 500, "PC", i, cardElement, card, "PCDrive");
+                    setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCDrive");
                     return;
                 }
             }
@@ -269,7 +273,7 @@ function takeTurnPC() {
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
                 var card = PCHandArray[i-1];
                 if (card.name == "Gas") {
-                    setTimeout(playCard, 500, "PC", i, cardElement, card, "PCDrive");
+                    setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCDrive");
                     return;
                 }
             }
@@ -280,7 +284,7 @@ function takeTurnPC() {
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
                 var card = PCHandArray[i-1];
                 if (card.name == "SpareTire") {
-                    setTimeout(playCard, 500, "PC", i, cardElement, card, "PCDrive");
+                    setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCDrive");
                     return;
                 }
             }
@@ -291,7 +295,7 @@ function takeTurnPC() {
                 var cardElement = document.getElementsByClassName("PCCard"+i)[0];
                 var card = PCHandArray[i-1];
                 if (card.name == "Repairs") {
-                    setTimeout(playCard, 500, "PC", i, cardElement, card, "PCDrive");
+                    setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCDrive");
                     return;
                 }
             }
@@ -305,7 +309,7 @@ function takeTurnPC() {
             var cardElement = document.getElementsByClassName("PCCard"+i)[0];
             var card = PCHandArray[i-1];
             if (card.name == "EndSpeedLimit") {
-                setTimeout(playCard, 500, "PC", i, cardElement, card, "PCSpeed");
+                setTimeout(playCard, 1000, "PC", i, cardElement, card, "PCSpeed");
                 return;
             }
         }
@@ -340,7 +344,7 @@ function takeTurnPC() {
         }
         //if I found the highest mile card, play it
         if (highest > 0) {
-            setTimeout(playCard, 500, "PC", location, document.getElementsByClassName("PCCard"+location)[0], PCHandArray[location-1], "PCMiles");
+            setTimeout(playCard, 1000, "PC", location, document.getElementsByClassName("PCCard"+location)[0], PCHandArray[location-1], "PCMiles");
             return;
         }
     }
@@ -349,7 +353,7 @@ function takeTurnPC() {
     //discarding will happen randomly
     //generate a random number between 1 and 7, inclusive
     var x = Math.floor((Math.random() * 7) + 1);
-    setTimeout(playCard, 500, "PC", x, document.getElementsByClassName("PCCard"+x)[0], PCHandArray[x-1], "discardPile");
+    setTimeout(playCard, 1000, "PC", x, document.getElementsByClassName("PCCard"+x)[0], PCHandArray[x-1], "discardPile");
 }
 
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
