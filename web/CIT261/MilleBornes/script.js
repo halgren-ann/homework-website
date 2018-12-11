@@ -53,6 +53,7 @@ function reshuffle() {
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
         document.getElementById(cardArray[i].id).classList.remove("discardPile");
+        document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[i].id).classList.add("drawPile");
     }
 
