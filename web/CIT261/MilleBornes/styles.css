@@ -268,7 +268,7 @@ img {
     position: fixed;
     top: 15%;
     left: 27%;
-    font-size: 100px; 
+    font-size: 1px; 
     transform: scale(0);
     font-family: 'Sigmar One', cursive;
     color: gold;
@@ -279,7 +279,7 @@ img {
     position: fixed;
     top: 15%;
     left: 27%;
-    font-size: 100px; 
+    font-size: 1px; 
     transform: scale(0);
     font-family: 'Sigmar One', cursive;
     color: rgb(50, 50, 184);
@@ -287,7 +287,7 @@ img {
 }
 
 .winner {
-    transform: scale(1);
+    transform: scale(100);
     z-index: 201;
 }
 
