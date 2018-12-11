@@ -33,12 +33,12 @@ img {
 }
 
 .backlit {
-    -webkit-animation: backlit 1.5s ease-in-out infinite alternate;
-    -moz-animation: backlit 1.5s ease-in-out infinite alternate;
-    animation: backlit 1.5s ease-in-out infinite alternate;
+    -webkit-animation: light 1.5s ease-in-out infinite alternate;
+    -moz-animation: light 1.5s ease-in-out infinite alternate;
+    animation: light 1.5s ease-in-out infinite alternate;
 }
 
-@-webkit-keyframes backlit {
+@-webkit-keyframes light {
     from {
       box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
     }
