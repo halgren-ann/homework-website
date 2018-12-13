@@ -7,9 +7,6 @@ body {
 
 .card {
     color: white;
-    padding: 20px 20px 20px 20px;
-    font-weight: bold;
-    white-space: pre-wrap;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -344,7 +341,10 @@ img {
 
 #instructionsSheet {
     position: fixed;
-    background-color: white;
+    padding: 20px 20px 20px 20px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    background-color: lightgreen;
     left: 25%;
     top: 0%;
     width: 50%;
