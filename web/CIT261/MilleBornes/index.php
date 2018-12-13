@@ -15,6 +15,9 @@
         <button id="overlayNewGame" onclick="newGame()">New Game</button>
         <button id="overlayContinue" onclick="off()">Continue</button>
     </div>
+    <div id="instructionsOverlay" style="display:none" onclick="off()">
+        <div id="instructionsSheet"></div>
+    </div>
 
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
     <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>

@@ -68,8 +68,9 @@ function getInstructions() {
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var instructions = JSON.parse(xmlhttp.responseText);
+            var instructions = xmlhttp.responseText;
             console.log(instructions);
+            document.getElementById("instructionsSheet").textContent = instructions;
         }
     }
 
@@ -479,7 +480,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
             reshuffle();
         }    
         //highlight the draw piles that are relevant
-        setTimeout(prepUserTurn, 1111); 
+        setTimeout(prepUserTurn, 1000); 
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);
