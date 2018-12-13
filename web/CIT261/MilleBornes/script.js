@@ -64,7 +64,17 @@ function newGame() {
 }
 
 function getInstructions() {
+    //WITH AJAX
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var instructions = JSON.parse(xmlhttp.responseText);
+            console.log(instructions);
+        }
+    }
 
+    xmlhttp.open("GET", "instructions.txt");
+    xmlhttp.send();
 }
 
 //SECTION FOR USER PLAY LOGIC
@@ -95,6 +105,7 @@ function clickDrawPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        selectCard(7);
     }
 }
 
@@ -110,6 +121,7 @@ function clickDiscardPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        selectCard(7);
     }
     else if (isUserTurn && haveDrawn && selectedCard != null) {
         //The user is discarding
@@ -467,8 +479,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
             reshuffle();
         }    
         //highlight the draw piles that are relevant
-        prepUserTurn();
-        
+        setTimeout(prepUserTurn, 1111); 
     }
     else {
         UserHandArray.splice(cardNumInHand-1,1);

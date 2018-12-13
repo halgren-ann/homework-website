@@ -33,16 +33,16 @@
 
     <div id="PCPlayArea"></div>
     <p id="PCheading">PC PLAYER AREA</p>
-    <div class="card PCDrive"></div>
-    <div class="card PCSpeed"></div>
-    <div class="card PCMiles"></div>
+    <div class="card PCDrive">PC Drive Pile</div>
+    <div class="card PCSpeed">PC Speed Pile</div>
+    <div class="card PCMiles">PC Miles Pile</div>
     <label id="PCScore">Score: -</label>
 
     <div id="UserPlayArea"></div>
     <p id="Userheading">USER PLAYER AREA</p>
-    <div class="card UserDrive"></div>
-    <div class="card UserSpeed"></div>
-    <div class="card UserMiles"></div>
+    <div class="card UserDrive">Your Drive Pile</div>
+    <div class="card UserSpeed">Your Speed Pile</div>
+    <div class="card UserMiles">Your Miles Pile</div>
     <label id="UserScore">Score: -</label>
 
     <?php

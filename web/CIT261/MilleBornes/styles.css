@@ -6,6 +6,7 @@ body {
 }
 
 .card {
+    color: white;
     position: fixed;
     background-color: gray;
     width: 10%;
@@ -59,7 +60,7 @@ img {
 }
 
 .drawPile {
-    top: 15.5%;
+    top: 16%;
     left: 1.5%;
     box-shadow: 6px 6px white;
 }
