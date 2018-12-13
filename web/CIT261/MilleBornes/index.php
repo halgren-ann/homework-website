@@ -16,7 +16,7 @@
         <button id="overlayContinue" onclick="off()">Continue</button>
     </div>
     <div id="instructionsOverlay" style="display:none" onclick="off()">
-        <div id="instructionsSheet"></div>
+        <div><pre id="instructionsSheet"></pre></div>
     </div>
 
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>

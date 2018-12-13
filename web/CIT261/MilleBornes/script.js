@@ -106,7 +106,7 @@ function clickDrawPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
-        selectCard(7);
+        setTimeout(selectCard, 300, 7);
     }
 }
 
@@ -122,7 +122,7 @@ function clickDiscardPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
-        selectCard(7);
+        setTimeout(selectCard, 300, 7);
     }
     else if (isUserTurn && haveDrawn && selectedCard != null) {
         //The user is discarding
