@@ -4,7 +4,7 @@ You are on a cross country drive. The goal of the game is to drive 1000 miles be
 
 You will be playing against the computer. Each of you have 6 cards in your hand and 3 piles beside you - the Drive Pile, the Speed Pile, and the Miles Pile. There are also 3 types of cards - attack cards are red, remedy cards are green, and mile cards are blue. You play attack cards on your opponent's piles and remedy and mile cards on your own piles.
 
-At the beginning of your turn, you draw a card from either the draw pile or the discard pile. You then either PLAY a card or DISCARD a card and return to having 6 cards in hand. Your turn is over. Valid moves for the card you select from your hand will be highlighted in yellow.
+At the beginning of your turn, you draw a card from either the draw pile or the discard pile. The card you draw will automatically be selected. You can select a different card by clicking on the card of your choice. You then either PLAY a card or DISCARD a card and return to having 6 cards in hand. Your turn is over. Valid moves for the card you select from your hand will be highlighted in yellow.
 
 The first card played on the Drive Pile must be a DRIVE card. A DRIVE card MUST be played on your Drive Pile before you will be allowed to play any mile cards. After you get the first DRIVE card down, you are free to lay down mile cards as long as your drive pile is green. But look out! If your opponent plays an attack card on your drive pile, you will be unable to drive any more miles until you play the corresponding remedy on your drive pile so it is green again. Only one attack card can exist on top of the pile at a time.
 
