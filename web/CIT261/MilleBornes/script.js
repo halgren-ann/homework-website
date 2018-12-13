@@ -64,12 +64,12 @@ function newGame() {
 }
 
 function getInstructions() {
+    document.getElementById("instructionsOverlay").style.display = "block";
     //WITH AJAX
     var xmlhttp = new XMLHttpRequest ();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var instructions = xmlhttp.responseText;
-            console.log(instructions);
             document.getElementById("instructionsSheet").textContent = instructions;
         }
     }
