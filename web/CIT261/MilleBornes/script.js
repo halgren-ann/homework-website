@@ -17,14 +17,13 @@ var afterGame = false;
 var validArray = new Array();
 
 function makeGame() {
-    localStorage.clear();
     //If this is their first time playing, initialize the localStorage
-    /*if (!localStorage["wins"]) {
+    if (!localStorage["wins"]) {
         localStorage["wins"] = 0;
         localStorage["losses"] = 0;document.getElementById("winslosses").innerHTML = "Wins: " + localStorage["wins"] + "   Losses: " + localStorage["losses"];
         //because this is their first time to the site, show them the instructions
         document.getElementById("instructions").click();
-    }*/
+    }
     //generate the random card stack
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
