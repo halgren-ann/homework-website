@@ -325,6 +325,18 @@ img {
     height: 5%;
 }
 
+.winslosses {
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    width: 20%;
+    height: 7%;
+    color: white;
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
+}
+
 #instructionsOverlay {
     position: fixed; /* Sit on top of the page content */
     display: none; /* Hidden by default */

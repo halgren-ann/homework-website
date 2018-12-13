@@ -9,6 +9,7 @@
 <body onload="makeGame()" onclick="handleClick(event)">
 
     <div id="endGameOverlay" style="display:none" onclick="off()">
+        <div class="winslosses" id="winslosses">Wins: 0   Losses: 0</div>
         <canvas id="canvas" style="width:100%;height:100%;"></canvas>
         <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
         <p id="lossbanner" class="lossbanner">YOU LOST</p>

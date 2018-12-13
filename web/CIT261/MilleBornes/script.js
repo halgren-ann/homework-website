@@ -17,6 +17,11 @@ var afterGame = false;
 var validArray = new Array();
 
 function makeGame() {
+    //If this is their first time playing, initialize the localStorage
+    if (!localStorage["wins"]) {
+        localStorage["wins"] = 0;
+        localStorage["losses"] = 0;
+    }
     //generate the random card stack
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
@@ -527,10 +532,14 @@ function endGame(winner) {
     if(winner == "User") {
         document.getElementById("winbanner").classList.add("winner");
         animate();
+        //tally the wins and losses
+        localStorage["wins"] = Number(localStorage["wins"]) + 1;
     }
     else {
         document.getElementById("lossbanner").classList.add("winner");
+        localStorage["losses"] = Number(localStorage["losses"]) + 1;
     }
+    document.getElementById("winslosses").innerHTML = "Wins: " + localStorage["wins"] + "   Losses: " + localStorage["losses"];
 }
 
 function off() {
