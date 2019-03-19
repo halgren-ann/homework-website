@@ -30,11 +30,17 @@ hr {
     color: white;
 }
 
+#cartImage {
+    float: left;
+}
+
 #cartDiv {
     position: fixed;
     width: 30%;
     top: 0%;
     left: 70%;
+    background-color: white;
+    border-radius: 15px;
 }
 
 table {
