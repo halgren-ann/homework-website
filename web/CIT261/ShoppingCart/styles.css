@@ -30,15 +30,23 @@ hr {
     color: white;
 }
 
+#logo {
+    position: fixed;
+    width: 15%;
+    left: 8%;
+    top: 0%;
+    border-radius: 15px;
+}
+
 #cartImage {
     float: left;
 }
 
 #cartDiv {
     position: fixed;
-    width: 30%;
+    width: 15%;
     top: 0%;
-    left: 70%;
+    left: 77%;
     background-color: white;
     border-radius: 15px;
 }

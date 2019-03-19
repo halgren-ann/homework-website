@@ -101,6 +101,8 @@
         <a id="viewCartButton" href="cartPage.php">View Cart</a>
     </div>
 
+    <img src="logo.jpg" id="logo"/>
+
     <br/><br/>
     <div id="snackbar">This item was added to your cart</div>
 
