@@ -14,68 +14,82 @@
 
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
-    <br/><br/><br/>
+    <br/><br/>
     <table>
         <tr>
             <td class="col1">
-                <div>
+            <div>
                 <h2 class="centered">Fabric</h2>
-                <img src="fabric.jpg"/>
+                <img src="fabric.jpg"/> <br/>
                 <button onclick="addToCart('fabric')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
-                </div>
+            </div>
             </td>
             <td class="col2">
+            <div>
                 <h2>Cutting Mat</h2>
                 <img src="mat.jpg"/>
                 <button onclick="addToCart('mat')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('mat')">Item Details</button>
+            </div>
             </td>
             <td class="col3">
+            <div>
                 <h2>Rotary Cutter</h2>
                 <img src="cutter.png"/>
                 <button onclick="addToCart('rotary')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('rotary')">Item Details</button>
+            </div>
             </td>
             <td class="col4">
+            <div>
                 <h2>Ruler</h2>
                 <img src="ruler.jpg"/>
                 <button onclick="addToCart('ruler')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('ruler')">Item Details</button>
+            </div>
             </td>
         </tr>
         <tr>
             <td class="col1">
+            <div>
                 <h2>Batting</h2>
                 <img src="batting.png"/>
                 <button onclick="addToCart('batting')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('batting')">Item Details</button>
+            </div>
             </td>
             <td class="col2">
+            <div>
                 <h2>Needles</h2>
                 <img src="needles.jpg"/>
                 <button onclick="addToCart('needles')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('needles')">Item Details</button>
+            </div>
             </td>
             <td class="col3">
+            <div>
                 <h2>Pins</h2>
                 <img src="pins.jpg"/>
                 <button onclick="addToCart('pins')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('pins')">Item Details</button>
+            </div>
             </td>
             <td class="col4">
+            <div>
                 <h2>Sewing Machine</h2>
                 <img src="machine.jpg"/>
                 <button onclick="addToCart('machine')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('machine')">Item Details</button>
+            </div>
             </td>
         </tr>
     </table>    

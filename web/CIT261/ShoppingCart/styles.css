@@ -3,10 +3,6 @@ body {
     color: white;
 }
 
-div {
-    border-radius: 15px;
-}
-
 .centered {
     display:table; 
     margin:0 auto;
@@ -19,6 +15,7 @@ div {
 img {
     display: block;
     width: 100%;
+    border-radius: 20px;
 }
 
 button {
