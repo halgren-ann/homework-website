@@ -14,11 +14,11 @@ body {
 
 img {
     display: block;
-    width: 100%;
+    width: 60%;
 }
 
 button {
-    width: 100%;
+    width: 60%;
 }
 
 table {
@@ -27,7 +27,7 @@ table {
 }
 
 th, td {
-    padding: 20%;
+    padding: 5%;
 }
 
 table, td, tr {
