@@ -22,8 +22,12 @@ button {
     border-color: white;
     border-radius: 15px;
     border-width: 2px;
-    background-color: greenyellow;
+    background-color: burlywood;
     width: 100%;
+}
+
+#cartDiv {
+    display: none;
 }
 
 table {
@@ -32,7 +36,7 @@ table {
 }
 
 th, td {
-    padding: 5%;
+    padding: 2% 5% 2% 5%;
 }
 
 #cartImage {

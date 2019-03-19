@@ -94,8 +94,10 @@
     </table>    
     <br/><br/><br/>
 
-    <img src="cart.png" id="cartImage"/>
-    <a id="viewCartButton" href="cartPage.php">View Cart</a>
+    <div id="cartDiv">
+        <img src="cart.png" id="cartImage"/>
+        <a id="viewCartButton" href="cartPage.php">View Cart</a>
+    </div>
 
     <br/><br/>
     <div id="snackbar">This item was added to your cart</div>
