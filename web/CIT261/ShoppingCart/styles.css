@@ -14,11 +14,11 @@ body {
 
 img {
     display: block;
-    width: 60%;
+    width: 100%;
 }
 
 button {
-    width: 60%;
+    width: 100%;
 }
 
 table {
