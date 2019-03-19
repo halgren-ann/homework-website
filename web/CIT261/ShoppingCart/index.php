@@ -20,7 +20,7 @@
             <td class="col1">
             <div>
                 <h2 class="centered">Fabric</h2>
-                <img src="fabric.jpg"/> <br/>
+                <img src="fabric.jpg"/>
                 <button onclick="addToCart('fabric')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
@@ -29,7 +29,7 @@
             <td class="col2">
             <div>
                 <h2>Cutting Mat</h2>
-                <img src="mat.jpg"/>
+                <img src="mat.jpg"/><br/>
                 <button onclick="addToCart('mat')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('mat')">Item Details</button>

@@ -19,6 +19,9 @@ img {
 }
 
 button {
+    border-color: white:
+    border-radius: 15px;
+    background-color: green;
     width: 100%;
 }
 
