@@ -18,6 +18,16 @@ img {
     border-radius: 20px;
 }
 
+.nothing {
+    border: none;
+}
+
+table, td, tr {
+    border-color: gray;
+    border-width: thick;
+    border: 3px solid gray;
+}
+
 button {
     border-color: white;
     border-radius: 15px;
@@ -62,22 +72,6 @@ th, td {
     width: 30%;
     display:table; 
     margin:0 auto;
-}
-
-#viewCartButton {
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    background-color: forestgreen;
-    border-style: inset;
-    border-radius: 10px;
-    border-color: white;
-    padding: 10px;
-
-    display:table; 
-    margin:0 auto;
-    width: 70%;
-    height: 30%;
 }
 
 #returnToShopping, #proceedToCheckout {

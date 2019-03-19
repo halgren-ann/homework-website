@@ -15,7 +15,7 @@
     <h1 class="centered">Welcome to the sewing shop :)</h1>
     <p class="centered">Take a look around. We hope you find something you like!</p>
     <br/><hr>
-    <table>
+    <table class="nothing">
         <tr>
             <td class="col1">
             <div>
