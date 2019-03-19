@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+div {
+    border-radius: 15px;
+}
+
 .centered {
     display:table; 
     margin:0 auto;

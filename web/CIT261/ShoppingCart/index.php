@@ -18,11 +18,13 @@
     <table>
         <tr>
             <td class="col1">
-                <h2>Fabric</h2>
+                <div>
+                <h2 class="centered">Fabric</h2>
                 <img src="fabric.jpg"/>
                 <button onclick="addToCart('fabric')">Add to Cart</button>
                 <br/>
                 <button onclick="getDetails('fabric')">Item Details</button>
+                </div>
             </td>
             <td class="col2">
                 <h2>Cutting Mat</h2>
