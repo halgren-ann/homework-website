@@ -22,12 +22,19 @@ button {
     border-color: white;
     border-radius: 15px;
     border-width: 2px;
-    background-color: burlywood;
+    background-color: lightblue;
     width: 100%;
 }
 
+hr {
+    color: white;
+}
+
 #cartDiv {
-    display: none;
+    position: fixed;
+    width: 30%;
+    top: 0%;
+    left: 70%;
 }
 
 table {
@@ -36,7 +43,7 @@ table {
 }
 
 th, td {
-    padding: 2% 5% 2% 5%;
+    padding: 3% 5% 3% 5%;
 }
 
 #cartImage {
