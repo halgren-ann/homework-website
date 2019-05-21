@@ -1,0 +1,20 @@
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#sidebar {
+    background-color: burlywood;
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    width: 25%;
+    height: 100%;
+}
+
+iframe {
+    border: black;
+    --width: 95%;
+    width: var(--width);
+    height: calc(var(--width) * 0.75);
+}
