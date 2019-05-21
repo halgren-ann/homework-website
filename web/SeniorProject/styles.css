@@ -13,7 +13,9 @@ body {
 }
 
 iframe {
+    position: fixed;
     border: black;
-    width: 25%;
-    height: 20%;
+    --width: 95%;
+    width: var(--width);
+    height: calc(var(--width) * 0.75);
 }
