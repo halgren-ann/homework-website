@@ -15,7 +15,6 @@ body {
 iframe {
     position: fixed;
     border: black;
-    --width: 95%;
-    width: var(--width);
-    height: calc(var(--width) * 0.75);
+    width: 95%;
+    height: 20%:
 }
