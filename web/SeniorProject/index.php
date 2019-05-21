@@ -8,7 +8,7 @@
 <body>
 
 <div id="sidebar">
-    <iframe src="https://appr.tc/r/test_1" allow-popups  allow="microphone; camera" name="iframe_vid_1"></iframe>
+    <iframe src="https://appr.tc/r/test_1" allow-popups name="iframe_vid_1"></iframe>
 </div>
 </body>
 <footer>
