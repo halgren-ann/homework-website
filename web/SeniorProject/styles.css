@@ -15,6 +15,6 @@ body {
 iframe {
     position: fixed;
     border: black;
-    width: 95%;
+    width: 25%;
     height: 75vw;
 }
