@@ -13,10 +13,11 @@ body {
 }
 
 iframe {
-    position: absolute;
+    position: relative;
     border: black;
     width: 95%;
-    height: 20%;
-    top: 3%;
-    left: 3%;
+    height: 75vw;
+    top: 1%;
+    left: 1%;
+    float: clear;
 }
