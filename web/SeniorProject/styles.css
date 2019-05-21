@@ -17,8 +17,6 @@ iframe {
     position: relative;
     border: black;
     width: 95%;
-    height: 100%;
-    top: 1%;
-    left: 2%;
+    height: 25%;
     float: clear;
 }
