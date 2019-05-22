@@ -8,10 +8,10 @@
 <body>
 
 <div id="sidebar">
-    <iframe src="https://appr.tc/r/test_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
-    <iframe src="https://appr.tc/r/test_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
-    <iframe src="https://appr.tc/r/test_3" allow-popups allow="microphone; camera" name="iframe_vid_3"></iframe>
-    <iframe src="https://appr.tc/r/test_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>
+    <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
+    <iframe src="https://appr.tc/r/wow_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
+    <iframe src="https://appr.tc/r/wow_3" allow-popups allow="microphone; camera" name="iframe_vid_3"></iframe>
+    <iframe src="https://appr.tc/r/wow_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>
 </div>
 </body>
 <footer>
