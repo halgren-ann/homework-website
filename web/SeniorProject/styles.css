@@ -6,7 +6,7 @@ body {
 }
 
 #sidebar {
-    background-color: burlywood;
+    background-color: black;
     position: fixed;
     top: 0%;
     right: 0%;
@@ -45,7 +45,7 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10%;
-    color: black;
+    color: #ffff99;
 }
 
 .topRightPlayArea {
