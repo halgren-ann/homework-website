@@ -10,7 +10,7 @@ body {
     position: fixed;
     top: 0%;
     right: 0%;
-    width: 30%;
+    width: 28%;
     height: 100%;
     padding-bottom: 75%;
 }
@@ -20,7 +20,7 @@ iframe {
     border: black;
     width: 95%;
     height: 25%;
-    left: 0%;
+    left: 2%;
     float: clear;
 }
 
@@ -39,63 +39,63 @@ iframe {
 
 .topLeftPlayArea {
     position: fixed;
-    top: 0%;
-    left: 0%;
-    width: 35%;
-    height: 33%;
-    border: 2px black;
+    top: 1%;
+    left: 1%;
+    width: 33%;
+    height: 31%;
+    border-radius: 3%;
     background-image: url("blue.png");
 }
 
 .topRightPlayArea {
     position: fixed;
-    top: 0%;
-    left: 35%;
-    width: 35%;
-    height: 33%;
-    border: 2px black;
+    top: 1%;
+    left: 36%;
+    width: 33%;
+    height: 31%;
+    border-radius: 3%;
     background-image: url("blue.png");
 }
 
 .bottomLeftPlayArea {
     position: fixed;
-    top: 33%;
-    left: 0%;
-    width: 35%;
+    top: 34%;
+    left: 1%;
+    width: 33%;
     height: 33%;
-    border: 2px black;
+    border-radius: 3% 3% 0% 0%;
     background-size: 100% 100%;
     background-image: url("greenPlay.png");
 }
 
 .bottomRightPlayArea {
     position: fixed;
-    top: 33%;
-    left: 35%;
-    width: 35%;
-    height: 33%;
-    border: 2px black;
+    top: 34%;
+    left: 36%;
+    width: 33%;
+    height: 31%;
+    border-radius: 3%;
     background-image: url("blue.png");
 }
 
 .playerHandArea {
     position: fixed;
-    top: 66%;
-    left: 0%;
-    width: 48%;
-    height: 34%;
-    border: 2px black;
+    top: 67%;
+    left: 1%;
+    width: 46%;
+    height: 32%;
+    border-radius: 0% 3% 3% 3%;
     background-size: 100% 100%;
     background-image: url("greenHand.png");
 }
 
 .deckArea {
     position: fixed;
-    top: 66%;
-    left: 48%;
-    width: 22%;
-    height: 34%;
-    border: 2px black;
+    top: 67%;
+    left: 49%;
+    width: 20%;
+    height: 32%;
+    border-radius: 3%;
     background-image: url("gold.png");
 }
 
