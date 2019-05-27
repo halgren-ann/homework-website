@@ -7,10 +7,10 @@
 </head>
 <body>
 
-<div class="topLeftPlayArea"></section>
-<div class="topRightPlayArea"></section>
-<div class="bottomLeftPlayArea"></section>
-<div class="bottomRightPlayArea"></section>
+<div class="topLeftPlayArea"></div>
+<div class="topRightPlayArea"></div>
+<div class="bottomLeftPlayArea"></div>
+<div class="bottomRightPlayArea"></div>
 
 <div class="card"></div>
 
