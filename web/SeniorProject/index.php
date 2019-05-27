@@ -7,6 +7,8 @@
 </head>
 <body>
 
+<div class="card"></div>
+
 <div id="sidebar">
     <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
     <iframe src="https://appr.tc/r/wow_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
