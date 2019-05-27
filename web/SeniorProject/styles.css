@@ -10,7 +10,7 @@ body {
     position: fixed;
     top: 0%;
     right: 0%;
-    width: 28%;
+    width: 29%;
     height: 100%;
     padding-bottom: 75%;
 }
@@ -41,7 +41,7 @@ iframe {
     position: fixed;
     top: 1%;
     left: 1%;
-    width: 33%;
+    width: 34%;
     height: 31%;
     border-radius: 3%;
     background-image: url("blue.png");
@@ -51,7 +51,7 @@ iframe {
     position: fixed;
     top: 1%;
     left: 36%;
-    width: 33%;
+    width: 34%;
     height: 31%;
     border-radius: 3%;
     background-image: url("blue.png");
@@ -61,7 +61,7 @@ iframe {
     position: fixed;
     top: 34%;
     left: 1%;
-    width: 33%;
+    width: 34%;
     height: 33%;
     border-radius: 3% 3% 0% 0%;
     background-size: 100% 100%;
@@ -72,7 +72,7 @@ iframe {
     position: fixed;
     top: 34%;
     left: 36%;
-    width: 33%;
+    width: 34%;
     height: 31%;
     border-radius: 3%;
     background-image: url("blue.png");
@@ -82,7 +82,7 @@ iframe {
     position: fixed;
     top: 67%;
     left: 1%;
-    width: 46%;
+    width: 47%;
     height: 32%;
     border-radius: 0% 3% 3% 3%;
     background-size: 100% 100%;
@@ -93,9 +93,10 @@ iframe {
     position: fixed;
     top: 67%;
     left: 49%;
-    width: 20%;
+    width: 21%;
     height: 32%;
     border-radius: 3%;
+    background-size: 100% 100%;
     background-image: url("gold.png");
 }
 
