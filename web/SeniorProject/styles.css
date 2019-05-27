@@ -44,6 +44,7 @@ iframe {
     width: 35%;
     height: 33%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("blue.png");
 }
 
@@ -54,6 +55,7 @@ iframe {
     width: 35%;
     height: 33%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("blue.png");
 }
 
@@ -64,6 +66,7 @@ iframe {
     width: 35%;
     height: 33%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("greenPlay.png");
 }
 
@@ -74,6 +77,7 @@ iframe {
     width: 35%;
     height: 33%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("blue.png");
 }
 
@@ -84,6 +88,7 @@ iframe {
     width: 48%;
     height: 34%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("greenHand.png");
 }
 
@@ -94,11 +99,8 @@ iframe {
     width: 22%;
     height: 34%;
     border: 2px black;
+    background-size: 100% 100%;
     background-image: url("gold.png");
 }
 
-img {
-    max-width: 100%;
-    max-height: 100%;
-}
 
