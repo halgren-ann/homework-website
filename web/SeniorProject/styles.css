@@ -20,7 +20,7 @@ iframe {
     border: black;
     width: 95%;
     height: 25%;
-    left: 2%;
+    left: 0%;
     float: clear;
 }
 
@@ -45,7 +45,7 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10%;
-    background-color: #ffff99;
+    background-image: url("blue.png");
 }
 
 .topRightPlayArea {
@@ -56,7 +56,7 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10%;
-    background-color: #ff6633;
+    background-image: url("blue.png");
 }
 
 .bottomLeftPlayArea {
@@ -67,7 +67,7 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10% 10% 0% 0%;
-    background-color: #33cc33;
+    background-image: url("greenPlay.png");
 }
 
 .bottomRightPlayArea {
@@ -78,7 +78,7 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10%;
-    background-color: #4dd2ff;
+    background-image: url("blue.png");
 }
 
 .playerHandArea {
@@ -89,10 +89,10 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 0% 10% 10% 10%;
-    background-color: #33cc33;
+    background-image: url("greenHand.png");
 }
 
-.playerHandArea {
+.deckArea {
     position: fixed;
     top: 66%;
     left: 48%;
@@ -100,6 +100,6 @@ iframe {
     height: 33%;
     border: 2px black;
     border-radius: 10%;
-    background-color: #bf00ff;
+    background-image: url("gold.png");
 }
 
