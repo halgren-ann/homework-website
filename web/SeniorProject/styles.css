@@ -2,6 +2,7 @@ body {
     width: 100%;
     height: 100%;
     color: black;
+    padding: none;
 }
 
 #sidebar {
@@ -19,6 +20,7 @@ iframe {
     border: black;
     width: 95%;
     height: 25%;
+    left: 2%;
     float: clear;
 }
 
@@ -34,3 +36,59 @@ iframe {
     border-radius: 15%;
     transition: 0.5s;
 }
+
+.topLeftPlayArea {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 35%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 10%;
+    color: black;
+}
+
+.topRightPlayArea {
+    position: fixed;
+    top: 0%;
+    left: 35%;
+    width: 35%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 10%;
+    color: #ff6633;
+}
+
+.bottomLeftPlayArea {
+    position: fixed;
+    top: 33%;
+    left: 0%;
+    width: 35%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 10% 10% 0% 0%;
+    color: #33cc33;
+}
+
+.bottomRightPlayArea {
+    position: fixed;
+    top: 33%;
+    left: 35%;
+    width: 35%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 10%;
+    color: #4dd2ff;
+}
+
+.playerHandArea {
+    position: fixed;
+    top: 66%;
+    left: 0%;
+    width: 48%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 0% 10% 10% 10%;
+    color: #33cc33;
+}
+
