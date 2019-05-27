@@ -18,7 +18,7 @@ body {
 iframe {
     position: relative;
     border: black;
-    width: 100%;
+    width: 95%;
     height: 25%;
     left: 2%;
     float: clear;
@@ -43,9 +43,8 @@ iframe {
     left: 0%;
     width: 35%;
     height: 33%;
-    border-style: inset;
-    border: 5px gray;
-    border-radius: 15% 0%;
+    border: 2px black;
+    border-radius: 10%;
     background-color: #ffff99;
 }
 
@@ -55,9 +54,8 @@ iframe {
     left: 35%;
     width: 35%;
     height: 33%;
-    border-style: inset;
-    border: 5px gray;
-    border-radius: 15% 0%;
+    border: 2px black;
+    border-radius: 10%;
     background-color: #ff6633;
 }
 
@@ -67,9 +65,8 @@ iframe {
     left: 0%;
     width: 35%;
     height: 33%;
-    border-style: inset;
-    border: 5px gray;
-    border-radius: 15% 0% 0% 0%;
+    border: 2px black;
+    border-radius: 10% 10% 0% 0%;
     background-color: #33cc33;
 }
 
@@ -79,9 +76,8 @@ iframe {
     left: 35%;
     width: 35%;
     height: 33%;
-    border-style: inset;
-    border: 5px gray;
-    border-radius: 15% 0%;
+    border: 2px black;
+    border-radius: 10%;
     background-color: #4dd2ff;
 }
 
@@ -91,9 +87,19 @@ iframe {
     left: 0%;
     width: 48%;
     height: 33%;
-    border-style: inset;
-    border: 5px gray;
-    border-radius: 0% 0% 15% 0%;
+    border: 2px black;
+    border-radius: 0% 10% 10% 10%;
     background-color: #33cc33;
+}
+
+.playerHandArea {
+    position: fixed;
+    top: 66%;
+    left: 48%;
+    width: 22%;
+    height: 33%;
+    border: 2px black;
+    border-radius: 10%;
+    background-color: #bf00ff;
 }
 

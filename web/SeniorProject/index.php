@@ -12,6 +12,7 @@
 <div class="bottomLeftPlayArea"></div>
 <div class="bottomRightPlayArea"></div>
 <div class="playerHandArea"></div>
+<div class="deckArea"></div>
 
 <div class="card"></div>
 
