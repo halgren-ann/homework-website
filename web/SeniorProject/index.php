@@ -7,6 +7,11 @@
 </head>
 <body>
 
+<section class="topLeftPlayArea"></section>
+<section class="topRightPlayArea"></section>
+<section class="bottomLeftPlayArea"></section>
+<section class="bottomRightPlayArea"></section>
+
 <div class="card"></div>
 
 <div id="sidebar">
