@@ -7,12 +7,34 @@
 </head>
 <body>
 
-<div class="topLeftPlayArea"></div>
-<div class="topRightPlayArea"></div>
-<div class="bottomLeftPlayArea"></div>
-<div class="bottomRightPlayArea"></div>
-<div class="playerHandArea"></div>
-<div class="deckArea"></div>
+<div id="nonSidebar"></div>
+
+<div class="topLeftPlayerDrive card"></div>
+<div class="topLeftPlayerSpeed card"></div>
+<div class="topLeftPlayerMiles card"></div>
+
+<div class="topRightPlayerDrive card"></div>
+<div class="topRightPlayerSpeed card"></div>
+<div class="topRightPlayerMiles card"></div>
+
+<div class="bottomLeftPlayerDrive card"></div>
+<div class="bottomLeftPlayerSpeed card"></div>
+<div class="bottomLeftPlayerMiles card"></div>
+
+<div class="bottomRightPlayerDrive card"></div>
+<div class="bottomRightPlayerSpeed card"></div>
+<div class="bottomRightPlayerMiles card"></div>
+
+<div class="playerHand1 card"></div>
+<div class="playerHand2 card"></div>
+<div class="playerHand3 card"></div>
+<div class="playerHand4 card"></div>
+<div class="playerHand5 card"></div>
+<div class="playerHand6 card"></div>
+<div class="playerHand7 card"></div>
+
+<div class="drawPile"></div>
+<div class="discardPile"></div>
 
 <div id="sidebar">
     <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
@@ -22,5 +44,6 @@
 </div>
 </body>
 <footer>
+    <script src="script.js"></script>
 </footer>
 </html>

@@ -15,6 +15,16 @@ body {
     padding-bottom: 75%;
 }
 
+#nonSidebar {
+    background-size: 100% 100%;
+    background-image: url("panel_background.png");
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 71%;
+    height: 100%;
+}
+
 iframe {
     position: relative;
     border: black;
@@ -37,67 +47,36 @@ iframe {
     transition: 0.5s;
 }
 
-.topLeftPlayArea {
-    position: fixed;
-    top: 1%;
-    left: 1%;
-    width: 34%;
-    height: 31%;
-    border-radius: 3%;
-    background-image: url("blue.png");
+.topLeftPlayerDrive {
+    top: 2%;
+    left: 4.5%;
 }
 
-.topRightPlayArea {
-    position: fixed;
-    top: 1%;
-    left: 36%;
-    width: 34%;
-    height: 31%;
-    border-radius: 3%;
-    background-image: url("blue.png");
+.topLeftPlayerSpeed {
+    top: 2%;
+    left: 14.5%;
 }
 
-.bottomLeftPlayArea {
-    position: fixed;
-    top: 34%;
-    left: 1%;
-    width: 34%;
-    height: 33%;
-    border-radius: 3% 3% 0% 0%;
-    background-size: 100% 100%;
-    background-image: url("greenPlay.png");
+.topLeftPlayerMiles {
+    top: 2%;
+    left: 24.5%;
 }
 
-.bottomRightPlayArea {
-    position: fixed;
-    top: 34%;
-    left: 36%;
-    width: 34%;
-    height: 31%;
-    border-radius: 3%;
-    background-image: url("blue.png");
+.topRightPlayerDrive {
+    top: 2%;
+    left: 40.5%;
 }
 
-.playerHandArea {
-    position: fixed;
-    top: 67%;
-    left: 1%;
-    width: 47%;
-    height: 32%;
-    border-radius: 0% 3% 3% 3%;
-    background-size: 100% 100%;
-    background-image: url("greenHand.png");
+.topRightPlayerSpeed {
+    top: 2%;
+    left: 50.5%;
 }
 
-.deckArea {
-    position: fixed;
-    top: 67%;
-    left: 49%;
-    width: 21%;
-    height: 32%;
-    border-radius: 3%;
-    background-size: 100% 100%;
-    background-image: url("gold.png");
+.topRightPlayerMiles {
+    top: 2%;
+    left: 60.5%;
 }
+
+
 
 
