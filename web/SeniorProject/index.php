@@ -33,8 +33,8 @@
 <div class="playerHand6 card"></div>
 <div class="playerHand7 card"></div>
 
-<div class="drawPile"></div>
-<div class="discardPile"></div>
+<div class="drawPile card"></div>
+<div class="discardPile card"></div>
 
 <div id="sidebar">
     <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
