@@ -77,6 +77,77 @@ iframe {
     left: 59%;
 }
 
+.bottomLeftPlayerDrive {
+    top: 35%;
+    left: 4%;
+}
 
+.bottomLeftPlayerSpeed {
+    top: 35%;
+    left: 14%;
+}
 
+.bottomLeftPlayerMiles {
+    top: 35%;
+    left: 24%;
+}
 
+.bottomRightPlayerDrive {
+    top: 35%;
+    left: 39%;
+}
+
+.bottomRightPlayerSpeed {
+    top: 35%;
+    left: 49%;
+}
+
+.bottomRightPlayerMiles {
+    top: 35%;
+    left: 59%;
+}
+
+.playerHand1 {
+    bottom: 2%;
+    left: 3%;
+}
+
+.playerHand2 {
+    bottom: 2%;
+    left: 9%;
+}
+
+.playerHand3 {
+    bottom: 2%;
+    left: 15%;
+}
+
+.playerHand4 {
+    bottom: 2%;
+    left: 21%;
+}
+
+.playerHand5 {
+    bottom: 2%;
+    left: 27%;
+}
+
+.playerHand6 {
+    bottom: 2%;
+    left: 33%;
+}
+
+.playerHand7 {
+    bottom: 2%;
+    left: 39%;
+}
+
+.drawPile {
+    bottom: 2%;
+    left: 51.5%;
+}
+
+.discardPile {
+    bottom: 2%;
+    left: 60%;
+}
