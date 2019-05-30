@@ -9,32 +9,32 @@
 
 <div id="nonSidebar"></div>
 
-<div class="topLeftPlayerDrive card"></div>
-<div class="topLeftPlayerSpeed card"></div>
-<div class="topLeftPlayerMiles card"></div>
+<div class="topLeftPlayerDrive cardOutline"></div>
+<div class="topLeftPlayerSpeed cardOutline"></div>
+<div class="topLeftPlayerMiles cardOutline"></div>
 
-<div class="topRightPlayerDrive card"></div>
-<div class="topRightPlayerSpeed card"></div>
-<div class="topRightPlayerMiles card"></div>
+<div class="topRightPlayerDrive cardOutline"></div>
+<div class="topRightPlayerSpeed cardOutline"></div>
+<div class="topRightPlayerMiles cardOutline"></div>
 
-<div class="bottomLeftPlayerDrive card"></div>
-<div class="bottomLeftPlayerSpeed card"></div>
-<div class="bottomLeftPlayerMiles card"></div>
+<div class="bottomLeftPlayerDrive cardOutline"></div>
+<div class="bottomLeftPlayerSpeed cardOutline"></div>
+<div class="bottomLeftPlayerMiles cardOutline"></div>
 
-<div class="bottomRightPlayerDrive card"></div>
-<div class="bottomRightPlayerSpeed card"></div>
-<div class="bottomRightPlayerMiles card"></div>
+<div class="bottomRightPlayerDrive cardOutline"></div>
+<div class="bottomRightPlayerSpeed cardOutline"></div>
+<div class="bottomRightPlayerMiles cardOutline"></div>
 
-<div class="playerHand1 card"></div>
-<div class="playerHand2 card"></div>
-<div class="playerHand3 card"></div>
-<div class="playerHand4 card"></div>
-<div class="playerHand5 card"></div>
-<div class="playerHand6 card"></div>
-<div class="playerHand7 card"></div>
+<div class="playerHand1 cardOutline"></div>
+<div class="playerHand2 cardOutline"></div>
+<div class="playerHand3 cardOutline"></div>
+<div class="playerHand4 cardOutline"></div>
+<div class="playerHand5 cardOutline"></div>
+<div class="playerHand6 cardOutline"></div>
+<div class="playerHand7 cardOutline"></div>
 
-<div class="drawPile card"></div>
-<div class="discardPile card"></div>
+<div class="drawPile cardOutline"></div>
+<div class="discardPile cardOutline"></div>
 
 <div id="sidebar">
     <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
