@@ -17,7 +17,7 @@
     <div>Blurb</div>
     <p>Keyword instructions</p>
     <label>Keyword:</label>
-    <input id="keyword" type="text">
+    <input id="keyword" type="text" value="">
     <button onclick="assessKeyword()">Enter</button>
     <p>Or, just play by yourself against the PC:</p>
     <button onclick="playPCGame()">Play PC</button>

@@ -155,6 +155,23 @@ function shuffleArray(array) {
     return array;
 }
 
+//Add a click event listener to handle the clickable areas
+function handleClick(e) {    
+    /*
+    e.preventDefault();
+    if (haveDrawn) {
+        if(!e.target.parentElement || !e.target.parentElement.parentElement || !e.target.parentElement.parentElement.parentElement) return;
+        if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard4")) selectCard(4);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard5")) selectCard(5);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard6")) selectCard(6);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
+    }
+    */
+}
+
 ///////////////////////////////////////////END GAME PLANE///////////////////////////////
 
 
@@ -172,7 +189,7 @@ If the keyword is not found in the database:
 */
 function assessKeyword () {
     //TODO make sure the case where a keyword was not entered is accounted for
-    var keyword = document.getElementById("keyword").textContent;
+    var keyword = document.getElementById("keyword").value;
     console.log("Keyword was" + keyword);
     var response = AJAX("assessKeyword.php", keyword); 
     //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
