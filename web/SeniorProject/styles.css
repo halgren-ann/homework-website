@@ -6,7 +6,7 @@ body {
 }
 
 #startPage {
-    z-index: 1000;
+    z-index: 500;
     background-size: 100% 100%;
     background-image: url("greenHand.png");
     position: fixed;
