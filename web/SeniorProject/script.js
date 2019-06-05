@@ -5,6 +5,8 @@ function AJAX(url_var, content_var) {
     httpc.open("POST", url, true); // sending as POST
 
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    console.log("content_var is " + content_var);
+    console.log("content_var length is " + content_var.length);
     httpc.setRequestHeader("Content-Length", content_var.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
 
     httpc.onreadystatechange = function() { //Call a function when the state changes.
@@ -190,7 +192,7 @@ If the keyword is not found in the database:
 function assessKeyword () {
     //TODO make sure the case where a keyword was not entered is accounted for
     var keyword = document.getElementById("keyword").value;
-    console.log("Keyword was" + keyword);
+    console.log("Keyword was " + keyword);
     var response = AJAX("assessKeyword.php", keyword); 
     //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
     //If there were already 4 players when the request was made, the response will be "error"
