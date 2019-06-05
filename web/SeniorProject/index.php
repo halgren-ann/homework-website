@@ -11,14 +11,7 @@
 </head>
 <body onload="makeGame()" onclick="handleClick(event)">
 
-<div id="startPage">
-    <title>Mille Bornes - Group Play</title>
-    <div>Blurb</div>
-    <p>Keyword instructions</p>
-    <label>Keyword:</label>
-    <input name="keyword" type="text">
-    <button>Enter</button>
-<div>
+
 
 <div id="nonSidebar"></div>
 
@@ -274,6 +267,17 @@
             ';
         }
     ?>
+
+
+<div id="startPage">
+    <title>Mille Bornes - Group Play</title>
+    <div>Blurb</div>
+    <p>Keyword instructions</p>
+    <label>Keyword:</label>
+    <input name="keyword" type="text">
+    <button>Enter</button>
+<div>
+
 </body>
 <footer>
     <script src="script.js"></script>
