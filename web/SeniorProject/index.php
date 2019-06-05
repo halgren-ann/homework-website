@@ -1,3 +1,7 @@
+<?php   
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -6,6 +10,15 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body onload="makeGame()" onclick="handleClick(event)">
+
+<div id="startPage">
+    <title>Mille Bornes - Group Play</title>
+    <div>Blurb</div>
+    <p>Keyword instructions</p>
+    <label>Keyword:</label>
+    <input name="keyword" type="text">
+    <button onclick="assessKeyword()">Enter</button>
+<div>
 
 <div id="nonSidebar"></div>
 

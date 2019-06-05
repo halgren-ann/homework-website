@@ -26,6 +26,22 @@ function makeGame() {
     }
 }
 
+function assessKeyword () {
+    var keyword = document.getElementById("keyword").textContent;
+    document.getElementById("startPage").classList.add("hidden");
+    //send the keyword to the server
+}
+
+//Make the card object
+//Valid values are as follows:
+//name: 25, 50, 75, 100, 200, Drive, Stop, Gas, OutOfFuel, SpareTire, FlatTire, EndSpeedLimit, SpeedLimit, Repairs, Accident
+//type: attack, remedy, mile
+function card(idNum, name, type) {
+    this.id = "_" + idNum;
+    this.name = name;
+    this.type = type;
+}
+
 function makeArray() {
     var cardArray = new Array();
     var j=1;
