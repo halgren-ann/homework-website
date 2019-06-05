@@ -17,7 +17,7 @@
     <div>Blurb</div>
     <p>Keyword instructions</p>
     <label>Keyword:</label>
-    <input name="keyword" type="text">
+    <input id="keyword" type="text">
     <button onclick="assessKeyword()">Enter</button>
 </section>
 
