@@ -5,9 +5,6 @@ function AJAX(url_var, content_var) {
     httpc.open("POST", url, true); // sending as POST
 
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    console.log("content_var is " + content_var);
-    console.log("content_var length is " + content_var.length);
-    httpc.setRequestHeader("Content-Length", content_var.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
 
     httpc.onreadystatechange = function() { //Call a function when the state changes.
         if(httpc.readyState == 4 && httpc.status == 200) {
