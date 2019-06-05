@@ -12,36 +12,46 @@
 <body onload="makeGame()" onclick="handleClick(event)">
 
 
+<section id="startPage">
+    <h1>Mille Bornes - Group Play</h1>
+    <div>Blurb</div>
+    <p>Keyword instructions</p>
+    <label>Keyword:</label>
+    <input name="keyword" type="text">
+    <button onclick="assessKeyword()">Enter</button>
+</section>
 
-<div id="nonSidebar"></div>
+<section id="gamePlane">
 
-<div class="topLeftPlayerDrive cardOutline"></div>
-<div class="topLeftPlayerSpeed cardOutline"></div>
-<div class="topLeftPlayerMiles cardOutline"></div>
+    <div id="nonSidebar"></div>
 
-<div class="topRightPlayerDrive cardOutline"></div>
-<div class="topRightPlayerSpeed cardOutline"></div>
-<div class="topRightPlayerMiles cardOutline"></div>
+    <div class="topLeftPlayerDrive cardOutline"></div>
+    <div class="topLeftPlayerSpeed cardOutline"></div>
+    <div class="topLeftPlayerMiles cardOutline"></div>
 
-<div class="bottomLeftPlayerDrive cardOutline"></div>
-<div class="bottomLeftPlayerSpeed cardOutline"></div>
-<div class="bottomLeftPlayerMiles cardOutline"></div>
+    <div class="topRightPlayerDrive cardOutline"></div>
+    <div class="topRightPlayerSpeed cardOutline"></div>
+    <div class="topRightPlayerMiles cardOutline"></div>
 
-<div class="bottomRightPlayerDrive cardOutline"></div>
-<div class="bottomRightPlayerSpeed cardOutline"></div>
-<div class="bottomRightPlayerMiles cardOutline"></div>
+    <div class="bottomLeftPlayerDrive cardOutline"></div>
+    <div class="bottomLeftPlayerSpeed cardOutline"></div>
+    <div class="bottomLeftPlayerMiles cardOutline"></div>
 
-<div class="drawPile cardOutline"></div>
-<div class="discardPile cardOutline"></div>
+    <div class="bottomRightPlayerDrive cardOutline"></div>
+    <div class="bottomRightPlayerSpeed cardOutline"></div>
+    <div class="bottomRightPlayerMiles cardOutline"></div>
 
-<div id="sidebar">
-    <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
-    <iframe src="https://appr.tc/r/wow_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
-    <iframe src="https://appr.tc/r/wow_3" allow-popups allow="microphone; camera" name="iframe_vid_3"></iframe>
-    <iframe src="https://appr.tc/r/wow_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>
-</div>
+    <div class="drawPile cardOutline"></div>
+    <div class="discardPile cardOutline"></div>
 
-<?php
+    <div id="sidebar">
+        <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
+        <iframe src="https://appr.tc/r/wow_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
+        <iframe src="https://appr.tc/r/wow_3" allow-popups allow="microphone; camera" name="iframe_vid_3"></iframe>
+        <iframe src="https://appr.tc/r/wow_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>
+    </div>
+
+    <?php
         for ($i=1; $i <= 10; $i++) {
             echo '
             <div id="_' . $i . '" class="flip-card card drawPile">
@@ -268,15 +278,7 @@
         }
     ?>
 
-
-<div id="startPage">
-    <h1>Mille Bornes - Group Play</h1>
-    <div>Blurb</div>
-    <p>Keyword instructions</p>
-    <label>Keyword:</label>
-    <input name="keyword" type="text">
-    <button onclick="assessKeyword()">Enter</button>
-<div>
+</section>
 
 </body>
 <footer>
