@@ -5,7 +5,7 @@ body {
     padding: none;
 }
 
-title div label input button p {
+title label input button p {
     z-index: inherit;
 }
 
