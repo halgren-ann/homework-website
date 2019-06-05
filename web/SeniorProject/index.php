@@ -17,7 +17,7 @@
     <p>Keyword instructions</p>
     <label>Keyword:</label>
     <input name="keyword" type="text">
-    <button onclick="assessKeyword()">Enter</button>
+    <button>Enter</button>
 <div>
 
 <div id="nonSidebar"></div>

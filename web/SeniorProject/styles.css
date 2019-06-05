@@ -5,6 +5,10 @@ body {
     padding: none;
 }
 
+title div label input button p {
+    z-index: inherit;
+}
+
 #startPage {
     position: fixed;
     left: 0%;
