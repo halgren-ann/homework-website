@@ -1,3 +1,25 @@
+/*General Use AJAX*/
+function AJAX(url_var, content_var) {
+    var httpc = new XMLHttpRequest(); // simplified for clarity
+    var url = url_var;
+    httpc.open("POST", url, true); // sending as POST
+
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    httpc.setRequestHeader("Content-Length", content_var.length); // POST request MUST have a Content-Length header (as per HTTP/1.1)
+
+    httpc.onreadystatechange = function() { //Call a function when the state changes.
+        if(httpc.readyState == 4 && httpc.status == 200) {
+            return xmlhttp.responseText;
+        }
+        else {
+            // What do when the request fails
+            console.log('The request failed!');
+        }
+    }
+    httpc.send(content_var);
+}
+
+///////////////////////////////////GAME PLANE///////////////////////////////////////
 //cardArray is the draw deck
 var cardArray = new Array(); 
 /*var PCHandArray = new Array();
@@ -24,12 +46,6 @@ function makeGame() {
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
     }
-}
-
-function assessKeyword () {
-    var keyword = document.getElementById("keyword").textContent;
-    document.getElementById("startPage").classList.add("hidden");
-    //send the keyword to the server
 }
 
 //Make the card object
@@ -138,3 +154,49 @@ function shuffleArray(array) {
 
     return array;
 }
+
+///////////////////////////////////////////END GAME PLANE///////////////////////////////
+
+
+
+
+
+
+
+/////////////////////////////////////////START PLANE/////////////////////////////////////
+/*
+This function gathers the input keyword. If the keyword is found in the databse:
+    - The player is assigned a number (2-4) and added to that game instance
+If the keyword is not found in the database:
+    - A new instance of the game is created and this player is made the game host
+*/
+function assessKeyword () {
+    //TODO make sure the case where a keyword was not entered is accounted for
+    var keyword = document.getElementById("keyword").textContent;
+    console.log("Keyword was" + keyword);
+    var response = AJAX("assessKeyword.php", keyword); 
+    //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
+    //If there were already 4 players when the request was made, the response will be "error"
+    console.log("This player's number is " + response);
+
+    //document.getElementById("startPage").classList.add("hidden");
+    //send the keyword to the server
+    //document.getElementById("gamePlane").classList.remove("hidden");
+}
+
+//TODO: create function playPCGame that begins a game between the user and the PC
+
+
+//////////////////////////////////////END START PLANE///////////////////////////////////
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////////WAITING PLANE////////////////////////////////
+
+////////////////////////////////////END WAITING PLANE//////////////////////////////////

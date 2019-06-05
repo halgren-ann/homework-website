@@ -6,11 +6,16 @@ body {
 }
 
 #gamePlane {
-    position: absolute;
+    position: fixed;
+    z-index: 0;
+}
+
+#waitingPlane {
+    position: fixed;
     z-index: 1;
 }
 
-#startPage {
+#startPlane {
     position: fixed;
     left: 0%;
     top: 0%;

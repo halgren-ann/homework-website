@@ -45,3 +45,50 @@ INSERT into public.subtask(user_id, task_id, task_text, is_complete) VALUES (1, 
 
 INSERT into public.task(user_id, task_text, date_added, date_due, classification, difficulty, is_complete) VALUES (1, 'Exercise!', current_timestamp, NULL, 'goal', 'hard', false);
 */
+
+
+
+/* Tables for the "Mille Bornes - Group Play" Senior Project */
+CREATE TABLE public.game
+(
+	game_id SERIAL NOT NULL PRIMARY KEY,
+	keyword VARCHAR(100) NOT NULL UNIQUE,
+	num_players INT NOT NULL,
+	game_obsolete BOOLEAN NOT NULL
+);
+
+CREATE TABLE public.player
+(
+	player_id SERIAL NOT NULL PRIMARY KEY,
+	game_id INT NOT NULL REFERENCES public.game(game_id),
+	player_number INT NOT NULL,
+	display_name VARCHAR(100) NOT NULL,
+	is_turn BOOLEAN NOT NULL,
+	score INT NOT NULL
+);
+
+CREATE TABLE public.start_state
+(
+	game_id INT NOT NULL REFERENCES public.game(game_id),
+	card_id VARCHAR NOT NULL,
+	position_in_deck INT NOT NULL
+);
+
+CREATE TABLE moves
+(
+	move_id SERIAL NOT NULL,
+	game_id INT NOT NULL REFERENCES public.game(game_id),
+	player_id INT NOT NULL REFERENCES public.player(player_id),
+	card_id VARCHAR(100) NOT NULL,
+	start_position VARCHAR(100) NOT NULL,
+	end_position VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE update_manager
+(
+	game_id INT NOT NULL REFERENCES public.game(game_id),
+	is_an_update BOOLEAN NOT NULL,
+	player_id INT NOT NULL REFERENCES public.player(player_id),
+	seen BOOLEAN NOT NULL,
+	what VARCHAR(100) NOT NULL
+);
