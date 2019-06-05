@@ -270,12 +270,12 @@
 
 
 <div id="startPage">
-    <title>Mille Bornes - Group Play</title>
+    <h1>Mille Bornes - Group Play</h1>
     <div>Blurb</div>
     <p>Keyword instructions</p>
     <label>Keyword:</label>
     <input name="keyword" type="text">
-    <button>Enter</button>
+    <button onclick="assessKeyword()">Enter</button>
 <div>
 
 </body>
