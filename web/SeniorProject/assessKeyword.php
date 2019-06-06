@@ -6,9 +6,11 @@
         - A new instance of the game is created and this player is made the game host
     In both cases, the player's player_number is returned to them (a number 1-4, with 1 indicating that the player is the game host)
 */
-$inputText = json_decode(file_get_contents('php://input'));
+/*$inputText = json_decode(file_get_contents('php://input'));
 $keyword = $inputText->keyword;
-$display_name = $inputText->display_name;
+$display_name = $inputText->display_name;*/
+$keyword = "happy";
+$display_name = "The Man";
 include 'dbConnect.php';
 session_start();
 
@@ -32,10 +34,10 @@ if ($rows[0]) {
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
         $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-        $player_id = $stmt->execute();
+        /*$player_id = */$stmt->execute();
         //Return the player number and the player id with JSON format
         $player_number = $rows[0].num_players;
-        echo '{"player_id":' . $player_id . ', "player_number":' . $player_number . '}';
+        echo '{"player_id":' . '"1"'. ', "player_number":' . $player_number . '}';
     }
     else {
         //There are already 4 players, return "error"
@@ -50,18 +52,18 @@ else {
     $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
     $stmt->bindValue(':num_players', "1", PDO::PARAM_STR);
     $stmt->bindValue(':game_obsolete', 'false', PDO::PARAM_STR);
-    $game_id = $stmt->execute();
+    /*$game_id = */$stmt->execute();
     //TODO Add the player to the database public.player table
     $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
         VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
-    $stmt->bindValue(':game_id',$rgame_id, PDO::PARAM_STR);
+    $stmt->bindValue(':game_id', '1', PDO::PARAM_STR);
     $stmt->bindValue(':player_number', "1", PDO::PARAM_STR);
     $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
     $stmt->bindValue(':is_turn', 'true', PDO::PARAM_STR);
     $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-    $player_id = $stmt->execute();
+    /*$player_id = */$stmt->execute();
     //Return the information in JSON format
-    echo '{"player_id":' . $player_id . ', "player_number":' . '"1"' . '}';
+    echo '{"player_id":' . '1' . ', "player_number":' . '"1"' . '}';
 }
 
 ?>
