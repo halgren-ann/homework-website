@@ -13,6 +13,7 @@ function AJAX(url_var, content_var) {
         else {
             // What do when the request fails
             console.log('The request failed!');
+            console.log("The http status is " + httpc.status);
         }
     }
     httpc.send(content_var);
