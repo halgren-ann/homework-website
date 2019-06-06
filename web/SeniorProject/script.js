@@ -9,7 +9,8 @@ function AJAX(url_var, content_var) {
     httpc.onreadystatechange = function() { //Call a function when the state changes.
         if(httpc.readyState == 4 && httpc.status == 200) {
             console.log(httpc.responseText);
-            return httpc.responseText;
+            responseText = httpc.responseText;
+            return responseText;
         }
         console.log(httpc.status);
     }
