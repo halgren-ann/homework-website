@@ -32,7 +32,10 @@ if ($rows[0]) {
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
         $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-        $player_id = $stmt->execute();
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $outp = $result->fetch_all(PDO::FETCH_ASSOC);
+        $player_id = $outp[0].player_id;
         //Return the player number and the player id with JSON format
         $player_number = $rows[0].num_players;
         echo '{"player_id":' . $player_id . ', "player_number":' . $player_number . '}';
@@ -59,9 +62,9 @@ else {
     $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
     $stmt->bindValue(':is_turn', 'true', PDO::PARAM_STR);
     $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-    $player_id = $stmt->execute();
+    /*$player_id = */$stmt->execute();
     //Return the information in JSON format
-    echo '{"player_id":' . $player_id . ', "player_number":' . '"1"' . '}';
+    echo '{"player_id":' . '"1"' . ', "player_number":' . '"1"' . '}';
 }
 
 ?>
