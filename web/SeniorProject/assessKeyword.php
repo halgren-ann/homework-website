@@ -7,8 +7,8 @@
     In both cases, the player's player_number is returned to them (a number 1-4, with 1 indicating that the player is the game host)
 */
 $inputText = json_decode(file_get_contents('php://input'));
-$keyword = $inputText["keyword"];
-$display_name = $inputText["display_name"];
+$keyword = $inputText->keyword;
+$display_name = $inputText->display_name;
 include 'dbConnect.php';
 session_start();
 
