@@ -1,5 +1,7 @@
+//TODO protect all inputs against malicious entry with htmlspecialchars etc.
+
 /*General Use AJAX*/
-function AJAX(url_var, content_var) {
+function AJAX(url_var, content_var, callback) {
     var httpc = new XMLHttpRequest(); // simplified for clarity
     var url = url_var;
     httpc.open("POST", url, true); // sending as POST
@@ -8,14 +10,25 @@ function AJAX(url_var, content_var) {
 
     httpc.onreadystatechange = function() { //Call a function when the state changes.
         if(httpc.readyState == 4 && httpc.status == 200) {
-            console.log(httpc.responseText);
-            responseText = httpc.responseText;
-            return responseText;
+            callback(httpc.responseText);
         }
-        console.log(httpc.status);
     }
     httpc.send(content_var);
 }
+
+//Global variables
+var keyword = "";
+var num_players = 0;
+var player_number = "";
+var player_id = "";
+var game_id = "";
+var display_name = "";
+var is_turn = false;
+var score = 0;
+
+
+
+
 
 ///////////////////////////////////GAME PLANE///////////////////////////////////////
 //cardArray is the draw deck
@@ -185,18 +198,26 @@ This function gathers the input keyword. If the keyword is found in the databse:
 If the keyword is not found in the database:
     - A new instance of the game is created and this player is made the game host
 */
-function assessKeyword () {
-    //TODO make sure the case where a keyword was not entered is accounted for
-    var keyword = document.getElementById("keyword").value;
-    console.log("Keyword was " + keyword);
-    var response = AJAX("assessKeyword.php", keyword); 
-    //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
-    //If there were already 4 players when the request was made, the response will be "error"
-    console.log("This player's number is " + response);
+function assessKeyword_part1() {
+    //TODO make sure the case where a keyword or diplay name was not entered is accounted for
+    keyword = document.getElementById("keyword").value;
+    display_name = document.getElementById("display_name").value;
+    AJAX("assessKeyword.php", keyword, "assessKeyword_part2");
+}
 
-    //document.getElementById("startPage").classList.add("hidden");
-    //send the keyword to the server
-    //document.getElementById("gamePlane").classList.remove("hidden");
+//the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
+//If there were already 4 players when the request was made, the response will be "error"
+function assessKeyword_part2(responseText) {
+    if (responseText == "error") {
+        //TODO there are already four players with this keyword. Keep the other info they entered, but prompt for another keyword
+    }
+    else {
+        player_number = responseText;
+        //TODO display success toast
+        document.getElementById("startPage").classList.add("hidden");
+        document.getElementById("waitingPlane").classList.remove("hidden");
+        console.log("Player number: " + player_number);
+    }
 }
 
 //TODO: create function playPCGame that begins a game between the user and the PC

@@ -15,15 +15,17 @@
 <section id="startPlane">
     <h1>Mille Bornes - Group Play</h1>
     <div>Blurb</div>
+    <label>Display name:</label>
+    <input id="display_name" type="text" value="">
     <p>Keyword instructions</p>
     <label>Keyword:</label>
     <input id="keyword" type="text" value="">
-    <button onclick="assessKeyword()">Enter</button>
+    <button onclick="assessKeyword_part1()">Enter</button>
     <p>Or, just play by yourself against the PC:</p>
     <button onclick="playPCGame()">Play PC</button>
 </section>
 
-<section id="waitingPlane">
+<section id="waitingPlane" class="hidden">
     <h1>Waiting Room</h1>
 </section>
 
