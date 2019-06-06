@@ -6,9 +6,9 @@
         - A new instance of the game is created and this player is made the game host
     In both cases, the player's player_number is returned to them (a number 1-4, with 1 indicating that the player is the game host)
 */
-$inputText = json_decode(file_get_contents('php://input'));
-$keyword = $inputText->keyword;
-$display_name = $inputText->display_name;
+/*$inputText = json_decode(file_get_contents('php://input'));*/
+$keyword = "happy";/*$inputText->keyword;*/
+$display_name = "The Man";/*$inputText->display_name;*/
 include 'dbConnect.php';
 session_start();
 
@@ -54,7 +54,7 @@ else {
     //TODO Add the player to the database public.player table
     $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
         VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
-    $stmt->bindValue(':game_id',$game_id, PDO::PARAM_STR);
+    $stmt->bindValue(':game_id', $game_id, PDO::PARAM_STR);
     $stmt->bindValue(':player_number', "1", PDO::PARAM_STR);
     $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
     $stmt->bindValue(':is_turn', 'true', PDO::PARAM_STR);
