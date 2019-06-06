@@ -214,7 +214,7 @@ function assessKeyword_part2(responseText) {
     else {
         player_number = responseText;
         //TODO display success toast
-        document.getElementById("startPage").classList.add("hidden");
+        document.getElementById("startPlane").classList.add("hidden");
         document.getElementById("waitingPlane").classList.remove("hidden");
         console.log("Player number: " + player_number);
     }
