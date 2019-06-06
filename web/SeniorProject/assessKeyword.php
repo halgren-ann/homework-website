@@ -10,9 +10,7 @@ $keyword = file_get_contents('php://input');
 include 'dbConnect.php';
 session_start();
 
-console.log($keyword);
-
-$stmt = $db->prepare('SELECT * FROM public.game WHERE keyword = :keyword');
+$stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
 $stmt->execute(array(':keyword' => $keyword));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
