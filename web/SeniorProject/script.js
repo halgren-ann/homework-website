@@ -202,7 +202,7 @@ function assessKeyword_part1() {
     //TODO make sure the case where a keyword or diplay name was not entered is accounted for
     keyword = document.getElementById("keyword").value;
     display_name = document.getElementById("display_name").value;
-    AJAX("assessKeyword.php", keyword, "assessKeyword_part2");
+    AJAX("assessKeyword.php", keyword, assessKeyword_part2);
 }
 
 //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
