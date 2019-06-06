@@ -202,7 +202,8 @@ function assessKeyword_part1() {
     //TODO make sure the case where a keyword or diplay name was not entered is accounted for
     keyword = document.getElementById("keyword").value;
     display_name = document.getElementById("display_name").value;
-    AJAX("assessKeyword.php", keyword, assessKeyword_part2);
+    var JSONstr = '{"keyword":"' + keyword + '", "display_name": "' + display_name + '"}';
+    AJAX("assessKeyword.php", JSONstr, assessKeyword_part2);
 }
 
 /* the response will be JSON in the form
