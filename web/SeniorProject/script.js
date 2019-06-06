@@ -8,6 +8,7 @@ function AJAX(url_var, content_var) {
 
     httpc.onreadystatechange = function() { //Call a function when the state changes.
         if(httpc.readyState == 4 && httpc.status == 200) {
+            console.log(httpc.responseText);
             return httpc.responseText;
         }
         console.log(httpc.status);
@@ -187,7 +188,7 @@ function assessKeyword () {
     //TODO make sure the case where a keyword was not entered is accounted for
     var keyword = document.getElementById("keyword").value;
     console.log("Keyword was " + keyword);
-    var response = JSON.parse(AJAX("assessKeyword.php", keyword)); 
+    var response = AJAX("assessKeyword.php", keyword); 
     //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
     //If there were already 4 players when the request was made, the response will be "error"
     console.log("This player's number is " + response);
