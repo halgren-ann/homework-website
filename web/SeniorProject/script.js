@@ -8,7 +8,7 @@ function AJAX(url_var, content_var) {
 
     httpc.onreadystatechange = function() { //Call a function when the state changes.
         if(httpc.readyState == 4 && httpc.status == 200) {
-            return xmlhttp.responseText;
+            return httpc.responseText;
         }
     }
     httpc.send(content_var);
