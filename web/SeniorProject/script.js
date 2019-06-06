@@ -205,18 +205,27 @@ function assessKeyword_part1() {
     AJAX("assessKeyword.php", keyword, assessKeyword_part2);
 }
 
+/* the response will be JSON in the form
+{
+"player_id": "x",
+"player_number": "y"
+}
+*/
 //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
-//If there were already 4 players when the request was made, the response will be "error"
+//If there were already 4 players when the request was made, the response will be "error" for both items
 function assessKeyword_part2(responseText) {
-    if (responseText == "error") {
+    responseText = JSON.parse(responseText);
+    if (responseText.player_number == "error") {
         //TODO there are already four players with this keyword. Keep the other info they entered, but prompt for another keyword
     }
     else {
-        player_number = responseText;
+        player_number = responseText.player_number;
+        player_id = responseText.player_id;
         //TODO display success toast
         document.getElementById("startPlane").classList.add("hidden");
         document.getElementById("waitingPlane").classList.remove("hidden");
         console.log("Player number: " + player_number);
+        console.log("Player_id: " + player_id);
     }
 }
 
