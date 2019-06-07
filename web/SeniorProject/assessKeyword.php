@@ -28,7 +28,7 @@ if ($rows[0]) {
         //Add the player to the database public.player table
         $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
-        $stmt->bindValue(':game_id',$rows[0].game_id, PDO::PARAM_STR);
+        $stmt->bindValue(':game_id', $rows[0].game_id, PDO::PARAM_STR);
         $stmt->bindValue(':player_number', $rows[0].num_players, PDO::PARAM_STR);
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
@@ -54,7 +54,7 @@ else {
     $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
     $stmt->bindValue(':num_players', "1", PDO::PARAM_STR);
     $stmt->bindValue(':game_obsolete', 'false', PDO::PARAM_STR);
-    $game_id = $stmt->execute();
+    /*$game_id = */$stmt->execute();
     //TODO Add the player to the database public.player table
     $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
         VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
