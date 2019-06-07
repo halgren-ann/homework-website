@@ -27,7 +27,7 @@ if ($rows[0]) {
         $stmt->execute();
         //Add the player to the database public.player table
         $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
-            VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
+            VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
         $stmt->bindValue(':game_id', $rows[0].game_id, PDO::PARAM_STR);
         $stmt->bindValue(':player_number', $rows[0].num_players, PDO::PARAM_STR);
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
@@ -50,14 +50,14 @@ else {
     //Then this keyword was not in the database and this player becomes the host (player_number = 1)
     //Add a new game instance row to the public.game table
     $stmt = $db->prepare('INSERT into public.game(keyword, num_players, game_obsolete) 
-        VALUES (:keyword, :num_players, :game_obsolete) RETURNING game_id;');
+        VALUES (:keyword, :num_players, :game_obsolete);');
     $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
     $stmt->bindValue(':num_players', "1", PDO::PARAM_STR);
     $stmt->bindValue(':game_obsolete', 'false', PDO::PARAM_STR);
     /*$game_id = */$stmt->execute();
     //TODO Add the player to the database public.player table
     $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
-        VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
+        VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
     $stmt->bindValue(':game_id', $game_id, PDO::PARAM_STR);
     $stmt->bindValue(':player_number', "1", PDO::PARAM_STR);
     $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
