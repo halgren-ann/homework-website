@@ -14,6 +14,30 @@ $display_name = $inputText->display_name;
 include 'dbConnect.php';
 session_start();
 
-echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . '}';
+$stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
+$stmt->execute(array(':keyword' => $keyword));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+if ($rows[0]) {
+    //Then this keyword already exists in the database, and the player is joining that game
+    if ($rows[0].num_players < 4) {
+        //Update the public.game table to reflect the number of players now
+        //Add the player to the database public.player table
+        //Return the information in JSON format
+        echo '{"player_id":' . '"Joining"' . ', "player_number":' . '"Game"' . '}';
+    }
+    else {
+        //There are already 4 players, return "error"
+        //Return the information in JSON format
+        echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . '}';
+    }
+}
+else {
+    //Then this keyword was not in the database and this player becomes the host (player_number = 1)
+    //Add a new game instance row to the public.game table
+    //Add the player to the database public.player table
+    //Return the information in JSON format
+    echo '{"player_id":' . '"Is"' . ', "player_number":' . '"Host"' . '}';
+}
 
 ?>
