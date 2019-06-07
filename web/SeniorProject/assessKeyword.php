@@ -33,12 +33,12 @@ if ($rows[0]) {
         $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
         $stmt->bindValue(':score', '0', PDO::PARAM_STR);
         $stmt->execute();
-        $result = $stmt->get_result();
-        $outp = $result->fetch_all(PDO::FETCH_ASSOC);
-        $player_id = $outp[0].player_id;
+        //$result = $stmt->get_result();
+        //$outp = $result->fetch_all(PDO::FETCH_ASSOC);
+        //$player_id = $outp[0].player_id;
         //Return the player number and the player id with JSON format
         $player_number = $rows[0].num_players;
-        echo '{"player_id":' . $player_id . ', "player_number":' . $player_number . '}';
+        echo '{"player_id":' . '"1"' . ', "player_number":' . $player_number . '}';
     }
     else {
         //There are already 4 players, return "error"
