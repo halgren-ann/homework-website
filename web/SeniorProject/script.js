@@ -200,7 +200,7 @@ If the keyword is not found in the database:
 */
 function assessKeyword_part1() {
     //TODO make sure the case where a keyword or diplay name was not entered is accounted for
-    keyword = document.getElementById("keyword").value;
+    keyword = (document.getElementById("keyword").value).toLowerCase();
     display_name = document.getElementById("display_name").value;
     var JSONstr = '{"keyword":"' + keyword + '", "display_name": "' + display_name + '"}';
     AJAX("assessKeyword.php", JSONstr, assessKeyword_part2);
