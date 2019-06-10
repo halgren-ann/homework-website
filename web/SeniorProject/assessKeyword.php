@@ -9,7 +9,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 $inputText = json_decode(file_get_contents('php://input'), false);
-$keyword = "'" . $inputText->keyword . "'";
+$keyword = $inputText->keyword;
 $display_name = $inputText->display_name;
 include 'dbConnect.php';
 session_start();
@@ -24,9 +24,8 @@ if ($rows[0]) {
         //Update the public.game table to reflect the number of players now
         $num_players = $rows[0].num_players + 1;
         $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword = :keyword;');
-        $stmt->bindValue(':num_players', $num_players);
-        $stmt->bindValue(':keyword', $keyword);
-        $stmt->execute();
+        $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Add the player to the database public.player table
         //Return the information in JSON format
         echo '{"player_id":' . '"Joining"' . ', "player_number":' . $num_players . '}';
