@@ -25,7 +25,7 @@ if ($rows[0]) {
         $one = 1;
         $num_players = $rows[0].num_players;
         $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword =:keyword;');
-        $stmt->bindValue(':num_players', $num_players, PDO::PARAM_STR);
+        $stmt->bindValue(':num_players', $num_players);
         $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
         $stmt->execute();
         //Add the player to the database public.player table
