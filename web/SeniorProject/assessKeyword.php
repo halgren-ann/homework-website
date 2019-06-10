@@ -23,7 +23,7 @@ if ($rows[0]) {
     if ($rows[0].num_players < 4) {
         //Update the public.game table to reflect the number of players now
         $num_players = $rows[0].num_players + 2;
-        $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword = :keyword');
+        $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword = :keyword;');
         $stmt->bindValue(':num_players', $num_players);
         $stmt->bindValue(':keyword', $keyword);
         $stmt->execute();
