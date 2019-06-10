@@ -17,8 +17,10 @@ session_start();
 $stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
 $stmt->execute(array(':keyword' => $keyword));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+echo $rows;
 
 if ($rows[0]) {
+    /*
     //Then this keyword already exists in the database, and the player is joining that game
     if ($rows[0].num_players < 4) {
         //Update the public.game table to reflect the number of players now
@@ -35,6 +37,7 @@ if ($rows[0]) {
         //Return the information in JSON format
         echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . '}';
     }
+    */
 }
 else {
     //Then this keyword was not in the database and this player becomes the host (player_number = 1)
