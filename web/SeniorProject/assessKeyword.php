@@ -22,9 +22,14 @@ if ($rows[0]) {
     //Then this keyword already exists in the database, and the player is joining that game
     if ($rows[0].num_players < 4) {
         //Update the public.game table to reflect the number of players now
+        $num_players = $rows[0].num_players + 1;
+        $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword =:keyword;');
+        $stmt->bindValue(':num_players', $num_players, PDO::PARAM_STR);
+        $stmt->bindValue(':keyword', $keyword, PDO::PARAM_STR);
+        $stmt->execute();
         //Add the player to the database public.player table
         //Return the information in JSON format
-        echo '{"player_id":' . '"Joining"' . ', "player_number":' . '"Game"' . '}';
+        echo '{"player_id":' . '"Joining"' . ', "player_number":' . $num_players . '}';
     }
     else {
         //There are already 4 players, return "error"
