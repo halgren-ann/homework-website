@@ -17,14 +17,13 @@ session_start();
 $stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
 $stmt->execute(array(':keyword' => $keyword));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $rows[0]["game_id"] . " " . $rows[0]["keyword"] . " "  . $rows[0]["num_players"] . " "  . $rows[0]["game_obsolete"];
+//echo $rows[0]["game_id"] . " " . $rows[0]["keyword"] . " "  . $rows[0]["num_players"] . " "  . $rows[0]["game_obsolete"];
 
 if ($rows[0]) {
-    /*
     //Then this keyword already exists in the database, and the player is joining that game
-    if ($rows[0].num_players < 4) {
+    if ($rows[0]["num_players"] < 4) {
         //Update the public.game table to reflect the number of players now
-        $num_players = $rows[0].num_players + 1;
+        $num_players = $rows[0]["num_players"] + 1;
         $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword = :keyword;');
         $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -37,7 +36,6 @@ if ($rows[0]) {
         //Return the information in JSON format
         echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . '}';
     }
-    */
 }
 else {
     //Then this keyword was not in the database and this player becomes the host (player_number = 1)
