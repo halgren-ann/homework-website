@@ -17,7 +17,7 @@ session_start();
 $stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
 $stmt->execute(array(':keyword' => $keyword));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-echo $rows;
+echo $rows[0];
 
 if ($rows[0]) {
     /*
