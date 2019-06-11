@@ -35,7 +35,7 @@ if ($rows[0]) {
         //Collect the player's id
         $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id =:game_id AND player_number = :player_number;');
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $num_players));
-        $PlayerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $playerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Return the information in JSON format
         echo '{"player_id":' . $playerRows[0]["player_id"] . ', "player_number":' . $num_players . '}';
     }
