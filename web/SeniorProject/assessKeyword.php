@@ -33,7 +33,10 @@ if ($rows[0]) {
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
         $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
         $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-        $player_id = $stmt->execute();
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $outp = $result->fetch_all(PDO::FETCH_ASSOC);
+        $player_id = $outp[0]["player_id"];
         /*
         $stmt = $db->prepare('INSERT into public.player(player_id, game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
