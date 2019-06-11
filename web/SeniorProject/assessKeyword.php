@@ -73,10 +73,10 @@ else {
     $stmt->execute(array(':game_id' => $game_id, ':player_number' => '1', ':display_name' => $display_name, ':is_turn' => 'true', ':score' => '0'));
     $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    //Grab the player_id
-    $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id AND player_number = :player_number;');
-    $stmt->execute(array(':game_id' => $game_id, ':player_number' => $rows[0]["num_players"]));
-    $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+     //Grab the player_id
+     $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id AND player_number = :player_number;');
+     $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"]));
+     $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //Return the information in JSON format
     echo '{"player_id":' . $newRows[0]["player_id"] . ', "player_number":' . '"1"' . ', "game_id":' . $game_id . '}';
