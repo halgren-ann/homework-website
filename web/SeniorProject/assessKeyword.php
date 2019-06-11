@@ -79,7 +79,7 @@ else {
     $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //Return the information in JSON format
-    echo '{"player_id":' . '"Is"' . ', "player_number":' . '"Host"' . ', "game_id":' . $game_id . '}';
+    echo '{"player_id":' . $newRows[0]["player_id"] . ', "player_number":' . '"1"' . ', "game_id":' . $game_id . '}';
 }
 
 ?>
