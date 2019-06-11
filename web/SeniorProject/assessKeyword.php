@@ -27,11 +27,20 @@ if ($rows[0]) {
         $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
         $gameRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Add the player to the database public.player table
+        $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
+            VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
+        $stmt->bindValue(':game_id', $rows[0]["game_id"], PDO::PARAM_STR);
+        $stmt->bindValue(':player_number', $rows[0]["num_players"], PDO::PARAM_STR);
+        $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
+        $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
+        $stmt->bindValue(':score', '0', PDO::PARAM_STR);
+        $player_id = $stmt->execute();
+        /*
         $stmt = $db->prepare('INSERT into public.player(player_id, game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"], ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
         $playerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $player_id = PDO::lastInsertId();
+        */
         //Return the information in JSON format
         echo '{"player_id":' . $player_id . ', "player_number":' . $num_players . '}';
     }
