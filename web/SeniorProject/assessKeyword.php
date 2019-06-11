@@ -32,12 +32,8 @@ if ($rows[0]) {
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"], ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
         $stmt->fetchAll(PDO::FETCH_ASSOC);
-        //Collect the player's id
-        $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id =:game_id AND player_number = :player_number;');
-        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $num_players));
-        $playerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Return the information in JSON format
-        echo '{"player_id":' . $playerRows[0]["player_id"] . ', "player_number":' . $num_players . '}';
+        echo '{"player_id":' . 'TODO, get the correct player_id here' . ', "player_number":' . $num_players . '}';
     }
     else {
         //There are already 4 players, return "error"
