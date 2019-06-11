@@ -27,6 +27,12 @@ if ($rows[0]) {
         $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
         $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+        //Grab the game_id
+        $stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
+        $stmt->execute(array(':keyword' => $keyword));
+        $gameRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $game_id = $gameRows[0]["game_id"];
+
         //Add the player to the database public.player table
         $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
@@ -39,20 +45,41 @@ if ($rows[0]) {
         $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         //Return the information in JSON format
-        echo '{"player_id":' . $newRows[0]["player_id"] . ', "player_number":' . $num_players . '}';
+        echo '{"player_id":' . $newRows[0]["player_id"] . ', "player_number":' . $num_players . ', "game_id":' . $game_id . '}';
     }
     else {
         //There are already 4 players, return "error"
         //Return the information in JSON format
-        echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . '}';
+        echo '{"player_id":' . '"error"' . ', "player_number":' . '"error"' . ', "game_id":' . '"error"' . '}';
     }
 }
 else {
     //Then this keyword was not in the database and this player becomes the host (player_number = 1)
     //Add a new game instance row to the public.game table
+    $stmt = $db->prepare('INSERT into public.game(keyword, num_players, game_obsolete) 
+        VALUES (:keyword, :num_players, :game_obsolete);');
+    $stmt->execute(array(':keyword' => $keyword, ':num_players' => '1', ':game_obsolete' => 'false'));
+    $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //Grab the game_id
+    $stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
+    $stmt->execute(array(':keyword' => $keyword));
+    $gameRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $game_id = $gameRows[0]["game_id"];
+
     //Add the player to the database public.player table
+    $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
+        VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
+    $stmt->execute(array(':game_id' => $game_id, ':player_number' => '1', ':display_name' => $display_name, ':is_turn' => 'true', ':score' => '0'));
+    $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    //Grab the player_id
+    $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id AND player_number = :player_number;');
+    $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"]));
+    $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
     //Return the information in JSON format
-    echo '{"player_id":' . '"Is"' . ', "player_number":' . '"Host"' . '}';
+    echo '{"player_id":' . '"Is"' . ', "player_number":' . '"Host"' . ', "game_id":' . $game_id . '}';
 }
 
 ?>
