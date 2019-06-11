@@ -216,7 +216,7 @@ function assessKeyword_part1() {
 //If there were already 4 players when the request was made, the response will be "error" for both items
 function assessKeyword_part2(responseText) {
     console.log(responseText);
-    /*responseText = JSON.parse(responseText);
+    responseText = JSON.parse(responseText);
     if (responseText.player_number == "error") {
         //TODO there are already four players with this keyword. Keep the other info they entered, but prompt for another keyword
     }
@@ -229,7 +229,7 @@ function assessKeyword_part2(responseText) {
         console.log("Player number: " + player_number);
         console.log("Player_id: " + player_id);
     }
-    */
+    
 }
 
 //TODO: create function playPCGame that begins a game between the user and the PC
