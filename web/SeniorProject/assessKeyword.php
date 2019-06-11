@@ -27,8 +27,7 @@ if ($rows[0]) {
         $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
         $gameRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Add the player to the database public.player table
-        $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
-            VALUES (:game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
+        $stmt = $db->prepare('INSERT into public.player VALUES (DEFAULT, :game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
         $stmt->bindValue(':game_id', $rows[0]["game_id"], PDO::PARAM_STR);
         $stmt->bindValue(':player_number', $rows[0]["num_players"], PDO::PARAM_STR);
         $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
