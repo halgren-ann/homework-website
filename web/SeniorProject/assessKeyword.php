@@ -28,7 +28,7 @@ if ($rows[0]) {
         $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         //Add the player to the database public.player table
-        $stmt = $db->prepare('INSERT into public.player(player_id, game_id, player_number, display_name, is_turn, score) 
+        $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"], ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
         $stmt->fetchAll(PDO::FETCH_ASSOC);
