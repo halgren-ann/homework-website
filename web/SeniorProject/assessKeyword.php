@@ -25,26 +25,19 @@ if ($rows[0]) {
         $num_players = $rows[0]["num_players"] + 1;
         $stmt = $db->prepare('UPDATE public.game SET num_players = :num_players WHERE keyword = :keyword;');
         $stmt->execute(array(':num_players' => $num_players, ':keyword' => $keyword));
-        $gameRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->fetchAll(PDO::FETCH_ASSOC);
+
         //Add the player to the database public.player table
-        $stmt = $db->prepare('INSERT into public.player VALUES (DEFAULT, :game_id, :player_number, :display_name, :is_turn, :score) RETURNING player_id;');
-        $stmt->bindValue(':game_id', $rows[0]["game_id"], PDO::PARAM_STR);
-        $stmt->bindValue(':player_number', $rows[0]["num_players"], PDO::PARAM_STR);
-        $stmt->bindValue(':display_name', $display_name, PDO::PARAM_STR);
-        $stmt->bindValue(':is_turn', 'false', PDO::PARAM_STR);
-        $stmt->bindValue(':score', '0', PDO::PARAM_STR);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $outp = $result->fetch_all(PDO::FETCH_ASSOC);
-        $player_id = $outp[0]["player_id"];
-        /*
         $stmt = $db->prepare('INSERT into public.player(player_id, game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"], ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
-        $playerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        */
+        $stmt->fetchAll(PDO::FETCH_ASSOC);
+        //Collect the player's id
+        $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id =:game_id AND player_number = :player_number;');
+        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $num_players));
+        $PlayerRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         //Return the information in JSON format
-        echo '{"player_id":' . $player_id . ', "player_number":' . $num_players . '}';
+        echo '{"player_id":' . $playerRows[0]["player_id"] . ', "player_number":' . $num_players . '}';
     }
     else {
         //There are already 4 players, return "error"
