@@ -31,9 +31,9 @@ function pull() {
     var JSONstr = "{'game_id': " + game_id + ", 'player_id': " + player_id + "}";
     AJAX("update_manager.php", JSONstr, pull_part2);
 }
-function pull_part2() {
+function pull_part2(responseText) {
     setTimeout(pull, 5000); //pull from the server every 5 seconds
-
+    console.log(responseText);
     //TODO deal with the information returned and reflect the changes on the client
 }
 
