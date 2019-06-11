@@ -44,7 +44,31 @@ if ($rows[0]) {
         $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"]));
         $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        //Return the information in JSON format
+        /*
+        Tell update_manager table that:
+            - This new player needs to know about all the already existing players
+            - All the already existing players need to know about this player
+        */
+        for($i=1; $i<$num_players; $i++) {
+            //Grab the player_id of other players
+            $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id AND player_number = :player_number;');
+            $stmt->execute(array(':game_id' => $game_id, ':player_number' => $i));
+            $originalPlayer = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //Insert row into update_manager to update this player about the original player
+            $JSONstr = "{ 'desc': 'new_player', 'player_id': " . $originalPlayer[0]["player_id"] . "}";
+            $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
+                VALUES (:game_id, :player_id, :seen, :what);');
+            $stmt->execute(array(':game_id' => $game_id, ':player_id' => $newRows[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
+            $stmt->fetchAll(PDO::FETCH_ASSOC);
+            //Insert row into update_manager to update the original player about this player
+            $JSONstr = "{ 'desc': 'new_player', 'player_id': " . $newRows[0]["player_id"] . "}";
+            $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
+                VALUES (:game_id, :player_id, :seen, :what);');
+            $stmt->execute(array(':game_id' => $game_id, ':player_id' => $originalPlayer[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
+            $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
+
+        //Return the information about the current player in JSON format
         echo '{"player_id":' . $newRows[0]["player_id"] . ', "player_number":' . $num_players . ', "game_id":' . $game_id . '}';
     }
     else {

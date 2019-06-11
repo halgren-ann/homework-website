@@ -17,6 +17,8 @@ $stmt = $db->prepare('SELECT * FROM public.update_manager WHERE game_id = :game_
 $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':seen' => 'false'));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); //Could be zero, one, or many rows returned
 
+$JSONstr = ""; //this collects all the information to be returned to te user
+
 for ($i=0; $i < count($rows); $i++) {
     $what = json_decode($rows[$i]["what"], false); //get the JSON stored in "what" column
     $desc = $what->desc;
@@ -37,5 +39,11 @@ for ($i=0; $i < count($rows); $i++) {
     }
 }
 
-echo 'done';
+//Return all the information to the user
+if($JSONstr == "") {
+    echo 'no_updates';
+}
+else {
+    echo $JSONstr;
+}
 ?>
