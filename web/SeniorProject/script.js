@@ -26,7 +26,16 @@ var display_name = "";
 var is_turn = false;
 var score = 0;
 
+//Periodic pull from the server to check for updated information
+function pull() {
+    var JSONstr = "{'game_id': " + game_id + ", 'player_id': " + player_id + "}";
+    AJAX("update_manager.php", JSONstr, pull_part2);
+}
+function pull_part2() {
+    setTimeout(pull, 5000); //pull from the server every 5 seconds
 
+    //TODO deal with the information returned and reflect the changes on the client
+}
 
 
 

@@ -87,7 +87,6 @@ CREATE TABLE moves
 CREATE TABLE update_manager
 (
 	game_id INT NOT NULL REFERENCES public.game(game_id),
-	is_an_update BOOLEAN NOT NULL,
 	player_id INT NOT NULL REFERENCES public.player(player_id),
 	seen BOOLEAN NOT NULL,
 	what VARCHAR(100) NOT NULL

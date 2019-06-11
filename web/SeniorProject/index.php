@@ -9,7 +9,7 @@
     <title>Mille Bornes - Group Play</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="makeGame()" onclick="handleClick(event)">
+<body onload="pull()" onclick="handleClick(event)">
 
 
 <section id="startPlane">
