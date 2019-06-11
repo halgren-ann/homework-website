@@ -216,6 +216,7 @@ function assessKeyword_part1() {
 //the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
 //If there were already 4 players when the request was made, the response will be "error" for both items
 function assessKeyword_part2(responseText) {
+    console.log(responseText);
     responseText = JSON.parse(responseText);
     if (responseText.player_number == "error") {
         //TODO there are already four players with this keyword. Keep the other info they entered, but prompt for another keyword
