@@ -41,7 +41,7 @@ if ($rows[0]) {
 
         //Grab the player_id
         $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id AND player_number = :player_number;');
-        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"]));
+        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $num_players));
         $newRows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         /*
