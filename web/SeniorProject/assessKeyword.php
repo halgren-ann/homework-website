@@ -36,7 +36,7 @@ if ($rows[0]) {
         //Add the player to the database public.player table
         $stmt = $db->prepare('INSERT into public.player(game_id, player_number, display_name, is_turn, score) 
             VALUES (:game_id, :player_number, :display_name, :is_turn, :score);');
-        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $rows[0]["num_players"], ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
+        $stmt->execute(array(':game_id' => $rows[0]["game_id"], ':player_number' => $num_players, ':display_name' => $display_name, ':is_turn' => 'false', ':score' => '0'));
         $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         //Grab the player_id
@@ -55,13 +55,13 @@ if ($rows[0]) {
             $stmt->execute(array(':game_id' => $game_id, ':player_number' => $i));
             $originalPlayer = $stmt->fetchAll(PDO::FETCH_ASSOC);
             //Insert row into update_manager to update this player about the original player
-            $JSONstr = "{ 'desc': 'new_player', 'player_id': " . $originalPlayer[0]["player_id"] . "}";
+            $JSONstr = '{ "desc": "new_player", "player_id": ' . $originalPlayer[0]["player_id"] . '}';
             $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
                 VALUES (:game_id, :player_id, :seen, :what);');
             $stmt->execute(array(':game_id' => $game_id, ':player_id' => $newRows[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
             $stmt->fetchAll(PDO::FETCH_ASSOC);
             //Insert row into update_manager to update the original player about this player
-            $JSONstr = "{ 'desc': 'new_player', 'player_id': " . $newRows[0]["player_id"] . "}";
+            $JSONstr = '{ "desc": "new_player", "player_id": ' . $newRows[0]["player_id"] . '}';
             $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
                 VALUES (:game_id, :player_id, :seen, :what);');
             $stmt->execute(array(':game_id' => $game_id, ':player_id' => $originalPlayer[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
