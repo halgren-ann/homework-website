@@ -55,13 +55,13 @@ if ($rows[0]) {
             $stmt->execute(array(':game_id' => $game_id, ':player_number' => $i));
             $originalPlayer = $stmt->fetchAll(PDO::FETCH_ASSOC);
             //Insert row into update_manager to update this player about the original player
-            $JSONstr = '{ "desc": "new_player", "player_id": ' . $originalPlayer[0]["player_id"] . '}';
+            $JSONstr = '{ "desc": "new_player", "info": ' . $originalPlayer[0]["player_id"] . '}';
             $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
                 VALUES (:game_id, :player_id, :seen, :what);');
             $stmt->execute(array(':game_id' => $game_id, ':player_id' => $newRows[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
             $stmt->fetchAll(PDO::FETCH_ASSOC);
             //Insert row into update_manager to update the original player about this player
-            $JSONstr = '{ "desc": "new_player", "player_id": ' . $newRows[0]["player_id"] . '}';
+            $JSONstr = '{ "desc": "new_player", "info": ' . $newRows[0]["player_id"] . '}';
             $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
                 VALUES (:game_id, :player_id, :seen, :what);');
             $stmt->execute(array(':game_id' => $game_id, ':player_id' => $originalPlayer[0]["player_id"], ':seen' => 'false', ':what' => $JSONstr));
