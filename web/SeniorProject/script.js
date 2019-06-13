@@ -85,7 +85,6 @@ function pull_part2(responseText) {
                 //TODO error
             }
         }
-        console.log("/////////////////player variables: player1 display_name:" + display_name1 + ", player2 display_name:" + display_name2 + ", player 3 display_name:" + display_name3 + ", player4 display_name:" + display_name4 + ", this player's display_name:" + display_name);
     }
 }
 

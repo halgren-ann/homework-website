@@ -1,4 +1,5 @@
 <?php
+//TODO mark all updates as "seen" when they have been seen
 
 /*This service accepts the player's id and game id and then checks to see if there are
     updates to be seen for that player in the update_manager table in the database.
@@ -13,9 +14,13 @@ $player_id = $inputText->player_id;
 include 'dbConnect.php';
 session_start();
 
+//First, grab what I need from the update_manager table
 $stmt = $db->prepare('SELECT * FROM public.update_manager WHERE game_id = :game_id AND player_id = :player_id AND seen = :seen;');
 $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':seen' => 'false'));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); //Could be zero, one, or many rows returned
+//Then, mark all those entries as "seen"
+$stmt = $db->prepare('UPDATE public.update_manager SET seen = :seen WHERE game_id = :game_id AND player_id = :player_id;');
+$stmt->execute(array(':seen' => true, ':game_id' => $game_id, ':player_id' => $player_id));
 
 $JSONstr = ""; //this collects all the information to be returned to te user
 

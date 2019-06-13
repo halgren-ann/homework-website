@@ -14,8 +14,8 @@ $display_name = $inputText->display_name;
 include 'dbConnect.php';
 session_start();
 
-$stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword;');
-$stmt->execute(array(':keyword' => $keyword));
+$stmt = $db->prepare('SELECT * FROM public.game WHERE keyword =:keyword AND game_obsolete = :game_obsolete;');
+$stmt->execute(array(':keyword' => $keyword, ':game_obsolete' => false));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 if ($rows[0]) {
