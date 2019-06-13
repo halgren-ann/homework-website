@@ -1,5 +1,6 @@
 //TODO protect all inputs against malicious entry with htmlspecialchars etc.
 
+///////////////////////////////////////////////GENERAL////////////////////////////////////////////
 /*General Use AJAX*/
 function AJAX(url_var, content_var, callback) {
     var httpc = new XMLHttpRequest(); // simplified for clarity
@@ -16,7 +17,7 @@ function AJAX(url_var, content_var, callback) {
     httpc.send(content_var);
 }
 
-//Global variables
+//Global variables for this user
 var keyword = "";
 var num_players = 0;
 var player_number = "";
@@ -25,6 +26,28 @@ var game_id = "";
 var display_name = "";
 var is_turn = false;
 var score = 0;
+
+//Global variables for other player's information
+var player_id1 = "";
+var player_number1 = "";
+var display_name1 = "";
+var is_turn1 = false;
+var score1 = 0;
+var player_id2 = "";
+var player_number2 = "";
+var display_name2 = "";
+var is_turn2 = false;
+var score2 = 0;
+var player_id3 = "";
+var player_number3 = "";
+var display_name3 = "";
+var is_turn3 = false;
+var score3 = 0;
+var player_id4 = "";
+var player_number4 = "";
+var display_name4 = "";
+var is_turn4 = false;
+var score4 = 0;
 
 //Periodic pull from the server to check for updated information
 function pull() {
@@ -35,7 +58,38 @@ function pull_part2(responseText) {
     setTimeout(pull, 5000); //pull from the server every 5 seconds
     console.log(responseText);
     //TODO deal with the information returned and reflect the changes on the client
+    if (responseText == "no_updates") {
+        return;
+    }
+    else {
+        //We are receiving JSON
+        var updatesArray = JSON.parse(responseText);
+        //TODO finish filling these in
+        for (var i=0; i<updatesArray.length; i++) {
+            if (updatesArray[i].desc == "new_player") {
+                var temp = updatesArray[i].player_number;
+
+                window["player_id" + temp] = updatesArray[i].player_id;
+                window["player_number" + temp] = updatesArray[i].player_number;
+                window["display_name" + temp] = updatesArray[i].display_name;
+                window["is_turn" + temp] = updatesArray[i].is_turn;
+                window["score" + temp] = updatesArray[i].score;
+            }
+            else if (updatesArray[i].desc == "start_state") {
+
+            }
+            else if (updatesArray[i].desc == "move") {
+
+            }
+            else {
+                //TODO error
+            }
+        }
+        console.log("/////////////////player variables: player1 display_name:" + display_name1 + ", player2 display_name:" + display_name2 + ", player 3 display_name:" + display_name3 + ", player4 display_name:" + display_name4 + ", this player's display_name:" + display_name);
+    }
 }
+
+///////////////////////////////////END GENERAL////////////////////////////////////////
 
 
 
