@@ -38,7 +38,7 @@ for ($i=0; $i < count($rows); $i++) {
         $stmt->execute(array(':player_id' => $info));
         $new_playerRow = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        $JSONstr = $JSONstr . '{ "desc": "new_player", "player_id": ' . $new_playerRow[0]["player_id"] . ', "player_number": ' . $new_playerRow[0]["player_number"] . ', "display_name": ' . $new_playerRow[0]["display_name"] . ', "is_turn": ' . $new_playerRow[0]["is_turn"] . ', "score": ' . $new_playerRow[0]["score"] . '}';
+        $JSONstr = $JSONstr . '{ "desc": "new_player", "player_id": ' . $new_playerRow[0]["player_id"] . ', "player_number": ' . $new_playerRow[0]["player_number"] . ', "display_name": "' . $new_playerRow[0]["display_name"] . '", "is_turn": ' . $new_playerRow[0]["is_turn"] . ', "score": ' . $new_playerRow[0]["score"] . '}';
     }
     else if($desc == 'start_state') {
         echo 'start_state';
