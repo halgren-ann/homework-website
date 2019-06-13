@@ -1,5 +1,5 @@
 <?php
-//TODO add funtionality for update_manager to get a new entry when a new player is added to the game (both ways)
+//Coding complete
 /*This service accepts a keyword and then If the keyword is found in the databse:
     - The player is assigned a number (2-4) and added to that game instance
     If the keyword is not found in the database:
