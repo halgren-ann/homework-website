@@ -20,7 +20,7 @@ $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':seen'
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); //Could be zero, one, or many rows returned
 //Then, mark all those entries as "seen"
 $stmt = $db->prepare('UPDATE public.update_manager SET seen = :seen WHERE game_id = :game_id AND player_id = :player_id;');
-$stmt->execute(array(':seen' => true, ':game_id' => $game_id, ':player_id' => $player_id));
+$stmt->execute(array(':seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id));
 
 $JSONstr = ""; //this collects all the information to be returned to te user
 
