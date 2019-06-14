@@ -27,6 +27,13 @@
 
 <section id="waitingPlane" class="hidden">
     <h1>Waiting Room</h1>
+    <h2>People in this room:</h2>
+    <div class="playerWaitArea" id="player1_wait"></div>
+    <div class="playerWaitArea" id="player2_wait"></div>
+    <div class="playerWaitArea" id="player3_wait"></div>
+    <div class="playerWaitArea" id="player4_wait"></div>
+    <p>You are the host, you must start the game blurb</p>
+    <button id="startFromWaitingRoom" class="hidden">Start the game with these players</button>
 </section>
 
 <section id="gamePlane" class="hidden">

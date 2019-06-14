@@ -68,12 +68,21 @@ function pull_part2(responseText) {
         for (var i=0; i<updatesArray.length; i++) {
             if (updatesArray[i].desc == "new_player") {
                 var temp = updatesArray[i].player_number;
-
+                //set the corresponding global player variables
                 window["player_id" + temp] = updatesArray[i].player_id;
                 window["player_number" + temp] = updatesArray[i].player_number;
                 window["display_name" + temp] = updatesArray[i].display_name;
                 window["is_turn" + temp] = updatesArray[i].is_turn;
                 window["score" + temp] = updatesArray[i].score;
+                //Also, display this player in the waiting room
+                var tempStr;
+                if(temp == 1) {
+                    tempStr = "<h1>" + window["display_name" + temp] + " (Host)</h1>";
+                }
+                else {
+                    tempStr = "<h1>" + window["display_name" + temp] + "</h1>";
+                }
+                document.getElementById("player"+temp+"_wait").innerHTML = tempStr;
             }
             else if (updatesArray[i].desc == "start_state") {
 
@@ -275,7 +284,7 @@ function assessKeyword_part1() {
 "game_id": "z"
 }
 */
-//the response will be a number 1-4 representing this player's player_number (0 means the player is the host).
+//the response will be a number 1-4 representing this player's player_number (1 means the player is the host).
 //If there were already 4 players when the request was made, the response will be "error" for both items
 function assessKeyword_part2(responseText) {
     responseText = JSON.parse(responseText);
@@ -292,6 +301,17 @@ function assessKeyword_part2(responseText) {
         console.log("Player number: " + player_number);
         console.log("Player_id: " + player_id);
         console.log("Game_id: " + game_id);
+        //Display this user in the waiting room
+        var tempStr;
+        if(player_number == 1) {
+            tempStr = "<h1>" + display_name + " (Host)</h1>";
+            //This person is the host, so display the start button so they can start the game when ready
+            document.getElementById("startFromWaitingRoom").classList.remove("hidden");
+        }
+        else {
+            tempStr = "<h1>" + display_name + "</h1>";
+        }
+        document.getElementById("player"+player_number+"_wait").innerHTML = tempStr;
     }
     
 }
