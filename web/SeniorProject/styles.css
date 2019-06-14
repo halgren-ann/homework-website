@@ -20,11 +20,44 @@ body {
     background-image: url("greenHand.png");
 }
 
-.playerWaitArea {
+#player1_wait {
+    position: fixed;
+    width: 20%;
+    height: 25%;
+    top: 50%;
+    left: 10%;
+    background-color: white;
+    color: black;
+}
+
+#player2_wait {
+    position: fixed;
+    width: 20%;
+    height: 25%;
+    top: 50%;
+    left: 30%;
+    background-color: pink;
+    color: black;
+}
+
+#player3_wait {
+    position: fixed;
+    width: 20%;
+    height: 25%;
+    top: 75%;
+    left: 10%;
+    background-color: lightblue;
+    color: black;
+}
+
+#player4_wait {
     position: fixed;
     width: 20%;
     height: 35%;
-    background-color: cyan;
+    top: 75%;
+    left: 30%;
+    background-color: lightgoldenrodyellow;
+    color: black;
 }
 
 #startPlane {
