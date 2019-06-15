@@ -114,13 +114,12 @@ var PCMilesArray = new Array();
 var UserMilesArray = new Array();*/
 var discardPileArray = new Array();
 //items relevant to game play logic
-var isUserTurn = false;
 var haveDrawn = false;
 var selectedCard = null;
 var afterGame = false;
 var validArray = new Array();
 
-function makeGame() {
+function startGame() {
     //generate the random card stack
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
@@ -128,6 +127,11 @@ function makeGame() {
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
     }
+
+    var JSONstr = '{"game_id": ' + game_id + ', "cardArray": ' + JSON.stringify(cardArray) + '}';
+
+    //Send this deck information to the server
+    AJAX("makeGame.php", JSONstr, null);
 }
 
 //Make the card object

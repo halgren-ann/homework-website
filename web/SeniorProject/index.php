@@ -32,8 +32,8 @@
     <div class="playerWaitArea" id="player2_wait"></div>
     <div class="playerWaitArea" id="player3_wait"></div>
     <div class="playerWaitArea" id="player4_wait"></div>
-    <p>You are the host, you must start the game blurb</p>
-    <button id="startFromWaitingRoom" class="hidden">Start the game with these players</button>
+    <p>Only the host can start the game blurb</p>
+    <button id="startFromWaitingRoom" onclick="startGame() class="hidden">Start the game with these players</button>
 </section>
 
 <section id="gamePlane" class="hidden">
