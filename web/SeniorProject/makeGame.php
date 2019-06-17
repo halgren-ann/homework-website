@@ -6,7 +6,7 @@
 
 header("Content-Type: application/json; charset=UTF-8");
 $inputText = json_decode(file_get_contents('php://input'), false);
-$cardArray = json_decode($inputText->cardArray, false);
+$cardArray = $inputText->cardArray;
 $game_id = $inputText->game_id;
 include 'dbConnect.php';
 session_start();
