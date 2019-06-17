@@ -60,7 +60,7 @@ for ($i=0; $i < count($rows); $i++) {
             if($i != 0) {
                 $JSONstr = $JSONstr . ", ";
             }
-            $JSONstr = $JSONstr . $cards[$i]["card_id"];
+            $JSONstr = $JSONstr . '"' . $cards[$i]["card_id"] . '"';
         }
         $JSONstr = $JSONstr . ']}';
     }
