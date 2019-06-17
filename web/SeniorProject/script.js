@@ -51,6 +51,7 @@ var score4 = 0;
 
 //Periodic pull from the server to check for updated information
 function pull() {
+    console.log("got here");
     var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + '}';
     AJAX("update_manager.php", JSONstr, pull_part2);
 }
