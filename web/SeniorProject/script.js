@@ -97,6 +97,10 @@ function pull_part2(responseText) {
     }
 }
 
+function success(responseText) {
+    console.log(responseText);
+}
+
 ///////////////////////////////////END GENERAL////////////////////////////////////////
 
 
@@ -129,9 +133,8 @@ function startGame() {
     }*/
 
     var JSONstr = '{"game_id": ' + game_id + ', "cardArray": ' + JSON.stringify(cardArray) + '}';
-    console.log("JSONstr: " + JSONstr);
     //Send this deck information to the server
-    AJAX("makeGame.php", JSONstr, null);
+    AJAX("makeGame.php", JSONstr, success);
 }
 
 //Make the card object
