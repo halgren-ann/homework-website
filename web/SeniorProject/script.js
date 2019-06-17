@@ -120,7 +120,8 @@ function success(responseText) {
 
 ///////////////////////////////////GAME PLANE///////////////////////////////////////
 //cardArray is the draw deck
-var cardArray = new Array(); 
+var cardArray;
+cardArray = makeArray(); 
 /*var PCHandArray = new Array();
 var UserHandArray = new Array();
 var PCDriveArray = new Array();
@@ -138,7 +139,6 @@ var validArray = new Array();
 
 function startGame() {
     //generate the random card stack
-    cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
 
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
