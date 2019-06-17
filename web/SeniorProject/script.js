@@ -123,10 +123,10 @@ function startGame() {
     //generate the random card stack
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
-    //populate the draw pile
+    /*//populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
-    }
+    }*/
 
     var JSONstr = '{"game_id": ' + game_id + ', "cardArray": ' + JSON.stringify(cardArray) + '}';
 
