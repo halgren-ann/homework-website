@@ -132,7 +132,7 @@ function startGame() {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
     }*/
 
-    var JSONstr = '{"game_id": ' + game_id + ', "cardArray": ' + JSON.stringify(cardArray) + '}';
+    var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, success);
 }
