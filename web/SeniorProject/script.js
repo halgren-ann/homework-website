@@ -87,7 +87,7 @@ function pull_part2(responseText) {
             else if (updatesArray[i].desc == "start_state") {
                 //update the cardArray variable with the shuffled state
                 console.log("Size of cards array on js side: " + updatesArray[i].cards.length);
-                var tempArray;
+                var tempArray = new Array();
                 for (var j=0; j<updatesArray[i].cards.length; j++) {
                     tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
                 }
