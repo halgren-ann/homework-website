@@ -85,6 +85,8 @@ function pull_part2(responseText) {
                 document.getElementById("player"+temp+"_wait").innerHTML = tempStr;
             }
             else if (updatesArray[i].desc == "start_state") {
+                //how many players are in this game that has just been started?
+                num_players = updatesArray[i].num_players;
                 //update the cardArray variable with the shuffled state
                 console.log("Size of cards array on js side: " + updatesArray[i].cards.length);
                 var tempArray = new Array();
@@ -108,10 +110,6 @@ function pull_part2(responseText) {
             }
         }
     }
-}
-
-function success(responseText) {
-    console.log(responseText);
 }
 
 ///////////////////////////////////END GENERAL////////////////////////////////////////
@@ -143,7 +141,11 @@ function startGame() {
 
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
-    AJAX("makeGame.php", JSONstr, success);
+    AJAX("makeGame.php", JSONstr, deal);
+}
+
+function deal(responseText) {
+    console.log("Game is started....dealing the cards");
 }
 
 //Make the card object

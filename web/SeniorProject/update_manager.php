@@ -62,7 +62,11 @@ for ($i=0; $i < count($rows); $i++) {
             }
             $JSONstr = $JSONstr . '"' . $cards[$i]["card_id"] . '"';
         }
-        $JSONstr = $JSONstr . ']}';
+        //Grab the number of players in this game
+        $stmt = $db->prepare('SELECT * FROM public.game WHERE game_id = :game_id;');
+        $stmt->execute(array(':game_id' => $info));
+        $num = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $JSONstr = $JSONstr . '], "num_players": ' . $num[0]["num_players"] . '}';
     }
     else if($desc == 'move') {
         echo 'move';
