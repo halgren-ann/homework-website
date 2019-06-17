@@ -17,7 +17,7 @@ for ($i=0; $i<count($cardArray); $i++) {
     //Add each card to the database
     $stmt = $db->prepare('INSERT into public.start_state(game_id, card_id, position_in_deck) 
         VALUES (:game_id, :card_id, :position_in_deck);');
-    $stmt->execute(array(':game_id' => $game_id, ':card_id' => $cardArray[$i]["id"], ':position_in_deck' => $i));
+    $stmt->execute(array(':game_id' => $game_id, ':card_id' => $cardArray[$i]->id, ':position_in_deck' => $i));
     echo "Row inserted into public.start_state";
 }
 
