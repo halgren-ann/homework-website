@@ -85,7 +85,20 @@ function pull_part2(responseText) {
                 document.getElementById("player"+temp+"_wait").innerHTML = tempStr;
             }
             else if (updatesArray[i].desc == "start_state") {
-
+                //update the cardArray variable with the shuffled state
+                console.log("Size of cards array on js side: " + updatesArray[i].cards.length);
+                var tempArray;
+                for (var j=0; j<updatesArray[i].cards.length; j++) {
+                    tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
+                }
+                cardArray = tempArray;
+                //populate the draw pile with the updated cardArray
+                for (var k=0; k<cardArray.length; k++) {
+                    document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+                }
+                //The game has started and we have received the start state, so hide the waiting plane and show the game plane
+                document.getElementById("waitingPlane").classList.add("hidden");
+                document.getElementById("gamePlane").classList.remove("hidden");
             }
             else if (updatesArray[i].desc == "move") {
 
@@ -127,10 +140,6 @@ function startGame() {
     //generate the random card stack
     cardArray = makeArray();
     cardArray = shuffleArray(cardArray);
-    /*//populate the draw pile
-    for (var i=0; i<cardArray.length; i++) {
-        document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
-    }*/
 
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server

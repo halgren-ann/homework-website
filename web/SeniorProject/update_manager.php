@@ -1,6 +1,4 @@
 <?php
-//TODO mark all updates as "seen" when they have been seen
-
 /*This service accepts the player's id and game id and then checks to see if there are
     updates to be seen for that player in the update_manager table in the database.
     If there are updates, this file also goes and gets the updates, then returns the 
@@ -52,7 +50,19 @@ for ($i=0; $i < count($rows); $i++) {
         $JSONstr = $JSONstr . '{ "desc": "new_player", "player_id": ' . $new_playerRow[0]["player_id"] . ', "player_number": ' . $new_playerRow[0]["player_number"] . ', "display_name": "' . $new_playerRow[0]["display_name"] . '", "is_turn": ' . $is_turn . ', "score": ' . $new_playerRow[0]["score"] . '}';
     }
     else if($desc == 'start_state') {
-        echo 'start_state';
+        //Get the cards from the start_state table
+        $stmt = $db->prepare('SELECT * FROM public.start_state WHERE game_id = :game_id ORDER BY position_in_deck;');
+        $stmt->execute(array(':game_id' => $info));
+        $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $JSONstr = $JSONstr . '{ "desc": "start_state", "cards": [';
+        for($i=0; $i<count($cards); $i++) {
+            if($i != 0) {
+                $JSONstr = $JSONstr . ", ";
+            }
+            $JSONstr = $JSONstr . $cards[$i]["card_id"];
+        }
+        $JSONstr = $JSONstr . ']}';
     }
     else if($desc == 'move') {
         echo 'move';
