@@ -102,6 +102,9 @@ function pull_part2(responseText) {
                 //The game has started and we have received the start state, so hide the waiting plane and show the game plane
                 document.getElementById("waitingPlane").classList.add("hidden");
                 document.getElementById("gamePlane").classList.remove("hidden");
+
+                //Now deal the cards
+                deal();
             }
             else if (updatesArray[i].desc == "move") {
 
@@ -159,10 +162,14 @@ function startGame() {
 
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
-    AJAX("makeGame.php", JSONstr, deal);
+    AJAX("makeGame.php", JSONstr, dummy);
 }
 
-function deal(responseText) {
+function dummy() {
+    //Do nothing
+}
+
+function deal() {
     console.log("Game is started....dealing the cards");
     for (var i=1; i<=6; i++) {
         //deal the ith card to each player
