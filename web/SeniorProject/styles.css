@@ -223,7 +223,7 @@ iframe {
 }
 
 .topLeftPlayerHand, .topRightPlayerHand, .bottomRightPlayerHand {
-    display: none;
+    color: white;
 }
 
 .topLeftPlayerHand {

@@ -181,11 +181,9 @@ function deal() {
                 //We're currently dealing to this user
                 document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand" + i);
-                console.log("Dealing card number " + i + " to this user - Card is " + cardArray[cardArray.length-1].name);
             }
             else {
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
-                console.log("Dealing card number " + i + " to player number " + tempPlayerNum + " - Card is " + cardArray[cardArray.length-1].name);
             }
             window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
             cardArray.pop();
@@ -235,6 +233,7 @@ function convertToCSSClass(arrayName) {
         answerStr += "bottomLeftPlayer";
     }
     else {
+        //find out how far offset the player is from this user
         var counter = 1;
         var rollOnThis = "";
         for (var i=0; i<num_players; i++) {
