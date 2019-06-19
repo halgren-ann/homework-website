@@ -179,10 +179,13 @@ function deal() {
             document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
             if (tempPlayerNum == "") {
                 //We're currently dealing to this user
+                document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand" + i);
+                console.log("Dealing card number " + i + " to this user - Card is " + cardArray[cardArray.length-1].name);
             }
             else {
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
+                console.log("Dealing card number " + i + " to player number " + tempPlayerNum + " - Card is " + cardArray[cardArray.length-1].name);
             }
             window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
             cardArray.pop();
