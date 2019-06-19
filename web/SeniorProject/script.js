@@ -1,4 +1,5 @@
 //TODO protect all inputs against malicious entry with htmlspecialchars etc.
+//TODO account for the case where the person enters a keyword and tries to start a game when they are the only one in the room
 
 ///////////////////////////////////////////////GENERAL////////////////////////////////////////////
 /*General Use AJAX*/
@@ -27,7 +28,7 @@ var display_name = "";
 var is_turn = false;
 var score = 0;
 
-//Global variables for other player's information
+//Global variables for other players' information
 var player_id1 = "";
 var player_number1 = "";
 var display_name1 = "";
@@ -117,18 +118,35 @@ function pull_part2(responseText) {
 
 
 ///////////////////////////////////GAME PLANE///////////////////////////////////////
-//cardArray is the draw deck
-var cardArray;
-cardArray = makeArray(); 
-/*var PCHandArray = new Array();
-var UserHandArray = new Array();
-var PCDriveArray = new Array();
-var UserDriveArray = new Array();
-var PCSpeedArray = new Array();
-var UserSpeedArray = new Array();
-var PCMilesArray = new Array();
-var UserMilesArray = new Array();*/
-var discardPileArray = new Array();
+//Arrays to hold card stacks
+var cardArray; //cardArray is the draw deck
+cardArray = makeArray();
+var discardPileArray = new Array(); //this is the array for the discard pile
+var DriveArray = new Array();
+var SpeedArray = new Array();
+var MilesArray = new Array();
+var HandArray = new Array();
+
+var DriveArray1 = new Array();
+var SpeedArray1 = new Array();
+var MilesArray1 = new Array();
+var HandArray1 = new Array();
+
+var DriveArray2 = new Array();
+var SpeedArray2 = new Array();
+var MilesArray2 = new Array();
+var HandArray2 = new Array();
+
+var DriveArray3 = new Array();
+var SpeedArray3 = new Array();
+var MilesArray3 = new Array();
+var HandArray3 = new Array();
+
+var DriveArray4 = new Array();
+var SpeedArray4 = new Array();
+var MilesArray4 = new Array();
+var HandArray4 = new Array();
+
 //items relevant to game play logic
 var haveDrawn = false;
 var selectedCard = null;
@@ -146,6 +164,100 @@ function startGame() {
 
 function deal(responseText) {
     console.log("Game is started....dealing the cards");
+    for (var i=1; i<=6; i++) {
+        //deal the ith card to each player
+        for (var j=0; j<num_players; j++) {
+            var tempPlayerNum = roll(j); //Always deal to player number 1 first
+            document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+            document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
+            if (tempPlayerNum == "") {
+                //We're currently dealing to this user
+                document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand" + i);
+            }
+            else {
+                document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
+            }
+            window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
+            cardArray.pop();
+        }
+    }
+}
+
+/*This function returns the number of the next player, depending on how many people are playing. For example, if 3
+people are playing, then an input of 1 would give output of 2, input of 2 would output 3, and input of 3 would output
+1. Also, if the number to be output is the number of this user, an empty string is returned instead of the number to
+facilitate variable names. If the input is an empty string, then the number of the next player after the current player is returned.*/
+function roll(num) {
+    //add one to the input
+    if (num == "") {
+        num = player_number + 1;
+    }
+    else {
+        num = num + 1;
+    }
+    //roll
+    if (num > num_players) {
+        num = 1;
+    }
+    //return
+    if (num == player_number) {
+        return "";
+    }
+    else {
+        return num;
+    }
+
+}
+
+/*This function takes the name of a card stack array and, based on the number of players, the current user's player number, and the input,
+returns the name of the CSS class that the array is visually positioned with.*/
+//TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one
+function convertToCSSClass(arrayName) {
+    //the draw deck and discard pile are always in the same place, so the meaningful inputs are the DriveArray, SpeedArray, MilesArray, and HandArray variables
+    var answerStr = "";
+    //first, figure out the top, bottom, right, left player position on this user's screen
+    var last = arrayName[arrayName.length-1];
+    if (last == "y") {
+        //this array belongs to the current player
+        answerStr += "bottomLeftPlayer";
+    }
+    else {
+        var counter = 1;
+        var rollOnThis = "";
+        for (var i=0; i<num_players; i++) {
+            if (roll(rollOnThis) == last) {
+                break;
+            }
+            counter++;
+            rollOnThis = roll(rollOnThis);
+        }
+
+        if (counter == 1) {
+            answerStr += "topLeftPlayer";
+        }
+        else if (counter == 2) {
+            answerStr += "topRightPlayer";
+        }
+        else if (counter == 3) {
+            answerStr += "bottomRightPlayer";
+        }
+    }
+    //now, get which position within that play area
+    var first = arrayName[0];
+    if (first == "D") {
+        answerStr += "Drive";
+    }
+    else if (first == "S") {
+        answerStr += "Speed";
+    }
+    else if (first == "M") {
+        answerStr += "Miles";
+    }
+    else if (first == "H") {
+        answerStr += "Hand";
+    }
+    //finally, return the CSS class name
+    return answerStr;
 }
 
 //Make the card object

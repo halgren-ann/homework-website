@@ -222,6 +222,25 @@ iframe {
     left: 60.5%;
 }
 
+.topLeftPlayerHand, .topRightPlayerHand, .bottomRightPlayerHand {
+    display: none;
+}
+
+.topLeftPlayerHand {
+    top: 2%;
+    left: 1%;
+}
+
+.topRightPlayerHand {
+    top: 2%;
+    left: 36%;
+}
+
+.bottomRightPlayerHand {
+    top: 35%;
+    left: 36%;
+}
+
 img {
     width: 100%;
     height: 100%;
