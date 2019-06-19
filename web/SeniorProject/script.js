@@ -181,9 +181,11 @@ function deal() {
                 //We're currently dealing to this user
                 document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand" + i);
+                console.log("card added to css class " + "playerHand" + i);
             }
             else {
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
+                console.log("card added to css class " + "HandArray" + tempPlayerNum);
             }
             window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
             cardArray.pop();
