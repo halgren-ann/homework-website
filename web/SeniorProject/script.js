@@ -185,7 +185,7 @@ function deal() {
             }
             else {
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
-                console.log("card added to css class " + "HandArray" + tempPlayerNum);
+                console.log("card added to css class " + convertToCSSClass("HandArray" + tempPlayerNum));
             }
             window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
             cardArray.pop();
