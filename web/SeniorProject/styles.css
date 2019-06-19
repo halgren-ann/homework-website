@@ -294,3 +294,7 @@ img {
 .flip-card-front {
     transform: rotateY(180deg);
 }
+
+.flip {
+    transform: rotateY(180deg);
+}
