@@ -207,7 +207,7 @@ function roll(num) {
     console.log("In roll. Received: " + num);
     //add one to the input
     if (num.length == 0) {
-        num = player_number + 1;
+        num = parseInt(player_number) + parseInt(1);
         console.log("Got here. Num is " + num);
     }
     else {
