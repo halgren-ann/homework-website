@@ -89,7 +89,6 @@ function pull_part2(responseText) {
                 //how many players are in this game that has just been started?
                 num_players = updatesArray[i].num_players;
                 //update the cardArray variable with the shuffled state
-                console.log("Size of cards array on js side: " + updatesArray[i].cards.length);
                 var tempArray = new Array();
                 for (var j=0; j<updatesArray[i].cards.length; j++) {
                     tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
@@ -209,8 +208,10 @@ function roll(num) {
     //add one to the input
     if (num.length == 0) {
         num = player_number + 1;
+        console.log("Got here");
     }
     else {
+        console.log("Oops!");
         num = num + 1;
     }
     //roll
@@ -233,7 +234,6 @@ function roll(num) {
 returns the name of the CSS class that the array is visually positioned with.*/
 //TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one
 function convertToCSSClass(arrayName) {
-    console.log("In convertToCSSClass function. arrayName: " + arrayName + " player_number: " + player_number);
     //the draw deck and discard pile are always in the same place, so the meaningful inputs are the DriveArray, SpeedArray, MilesArray, and HandArray variables
     var answerStr = "";
     //first, figure out the top, bottom, right, left player position on this user's screen
@@ -243,12 +243,10 @@ function convertToCSSClass(arrayName) {
         answerStr += "bottomLeftPlayer";
     }
     else {
-        console.log("last: " + last);
         //find out how far offset the player is from this user
         var counter = 1;
         var rollOnThis = "";
         for (var i=0; i<num_players; i++) {
-            console.log("Time number " + counter +  " through the loop. rollOnThis: " + rollOnThis + " roll(rollOnThis): " + roll(rollOnThis));
             if (roll(rollOnThis) == last) {
                 break;
             }
