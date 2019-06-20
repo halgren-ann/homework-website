@@ -173,8 +173,15 @@ function deal() {
     console.log("Game is started....dealing the cards");
     for (var i=1; i<=6; i++) {
         //deal the ith card to each player
-        for (var j=0; j<num_players; j++) {
-            var tempPlayerNum = roll(j); //Always deal to player number 1 first
+        for (var j=1; j<=num_players; j++) {
+            var tempPlayerNum; 
+            //Always deal to player number 1 first
+            if (player_number == j){
+                tempPlayerNum = "";
+            }
+            else {
+                tempPlayerNum = j;
+            }
             document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
             document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = i;
             if (tempPlayerNum == "") {
@@ -200,10 +207,7 @@ facilitate variable names. If the input is an empty string, then the number of t
 function roll(num) {
     console.log("In roll. Received: " + num);
     //add one to the input
-    if (num === 0) {
-        num = 1;
-    }
-    else if (num === "") {
+    if (num === "") {
         num = player_number + 1;
     }
     else {
