@@ -207,7 +207,7 @@ facilitate variable names. If the input is an empty string, then the number of t
 function roll(num) {
     console.log("In roll. Received: " + num);
     //add one to the input
-    if (num == "") {
+    if (num.length == 0) {
         num = player_number + 1;
     }
     else {
