@@ -187,11 +187,9 @@ function deal() {
                 //We're currently dealing to this user
                 document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand" + i);
-                console.log("card added to css class " + "playerHand" + i);
             }
             else {
                 document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray" + tempPlayerNum));
-                console.log("card added to css class " + convertToCSSClass("HandArray" + tempPlayerNum));
             }
             window["HandArray" + tempPlayerNum].push(cardArray[cardArray.length-1]);
             cardArray.pop();
@@ -204,14 +202,11 @@ people are playing, then an input of 1 would give output of 2, input of 2 would 
 1. Also, if the number to be output is the number of this user, an empty string is returned instead of the number to
 facilitate variable names. If the input is an empty string, then the number of the next player after the current player is returned.*/
 function roll(num) {
-    console.log("In roll. Received: " + num);
     //add one to the input
     if (num.length == 0) {
         num = parseInt(player_number) + parseInt(1);
-        console.log("Got here. Num is " + num);
     }
     else {
-        console.log("Oops!");
         num = num + 1;
     }
     //roll
@@ -220,11 +215,9 @@ function roll(num) {
     }
     //return
     if (num == player_number) {
-        console.log("Returning from roll with: empty string");
         return "";
     }
     else {
-        console.log("Returning from roll with: " + num);
         return num;
     }
 
