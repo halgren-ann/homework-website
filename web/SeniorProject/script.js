@@ -208,7 +208,7 @@ function roll(num) {
     //add one to the input
     if (num.length == 0) {
         num = player_number + 1;
-        console.log("Got here");
+        console.log("Got here. Num is " + num);
     }
     else {
         console.log("Oops!");
