@@ -199,10 +199,10 @@ people are playing, then an input of 1 would give output of 2, input of 2 would 
 facilitate variable names. If the input is an empty string, then the number of the next player after the current player is returned.*/
 function roll(num) {
     //add one to the input
-    if (num == 0) {
+    if (num === 0) {
         num = 1;
     }
-    else if (num == "") {
+    else if (num === "") {
         num = player_number + 1;
     }
     else {
