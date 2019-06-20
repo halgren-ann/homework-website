@@ -198,6 +198,7 @@ people are playing, then an input of 1 would give output of 2, input of 2 would 
 1. Also, if the number to be output is the number of this user, an empty string is returned instead of the number to
 facilitate variable names. If the input is an empty string, then the number of the next player after the current player is returned.*/
 function roll(num) {
+    console.log("In roll. Received: " + num);
     //add one to the input
     if (num === 0) {
         num = 1;
@@ -214,9 +215,11 @@ function roll(num) {
     }
     //return
     if (num == player_number) {
+        console.log("Returning from roll with: empty string");
         return "";
     }
     else {
+        console.log("Returning from roll with: " + num);
         return num;
     }
 
@@ -226,6 +229,7 @@ function roll(num) {
 returns the name of the CSS class that the array is visually positioned with.*/
 //TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one
 function convertToCSSClass(arrayName) {
+    console.log("In convertToCSSClass function. arrayName: " + arrayName + " player_number: " + player_number);
     //the draw deck and discard pile are always in the same place, so the meaningful inputs are the DriveArray, SpeedArray, MilesArray, and HandArray variables
     var answerStr = "";
     //first, figure out the top, bottom, right, left player position on this user's screen
@@ -235,10 +239,12 @@ function convertToCSSClass(arrayName) {
         answerStr += "bottomLeftPlayer";
     }
     else {
+        console.log("last: " + last);
         //find out how far offset the player is from this user
         var counter = 1;
         var rollOnThis = "";
         for (var i=0; i<num_players; i++) {
+            console.log("Time number " + counter +  " through the loop. rollOnThis: " + rollOnThis + " roll(rollOnThis): " + roll(rollOnThis));
             if (roll(rollOnThis) == last) {
                 break;
             }
