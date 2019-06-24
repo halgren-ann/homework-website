@@ -474,6 +474,10 @@ function findValidMoves() {
 
     //The discard pile is always valid
     validArray.push("discardPile");
+    console.log("Valid array: ");
+    for (var i=0; i<validArray.length; i++) {
+        console.log(validArray[i]);
+    }
 }
 
 //TODO use this function
