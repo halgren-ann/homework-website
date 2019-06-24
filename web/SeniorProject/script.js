@@ -417,7 +417,7 @@ function findValidMoves() {
         while(roll(temp) != "") {
             temp = roll(temp);            
             if (!window["SpeedArray" + temp][0] || window["SpeedArray" + temp][window["SpeedArray" + temp].length-1].name == "EndSpeedLimit") {
-                validArray.push(convertToCSSClass(window["SpeedArray" + temp]));
+                validArray.push(convertToCSSClass("SpeedArray" + temp));
             }
         }
     }
@@ -426,7 +426,7 @@ function findValidMoves() {
         while(roll(temp) != "") {
             temp = roll(temp);            
             if (window["DriveArray" + temp][0] && window["DriveArray" + temp][window["DriveArray" + temp].length-1].type == "remedy") {
-                validArray.push(convertToCSSClass(window["DriveArray" + temp]));
+                validArray.push(convertToCSSClass("DriveArray" + temp));
             }
         }
     }
