@@ -738,6 +738,8 @@ function assessKeyword_part2(responseText) {
             tempStr = "<h1>" + display_name + " (Host)</h1>";
             //This person is the host, so display the start button so they can start the game when ready
             document.getElementById("startFromWaitingRoom").classList.remove("hidden");
+            //It is also this person's turn, because the host always starts
+            is_turn = true;
         }
         else {
             tempStr = "<h1>" + display_name + "</h1>";

@@ -300,11 +300,11 @@ img {
 }
 
 .hoverSim {
-    transform: translate(0%, -13%); 
+    transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;
 }
 
 .playerHand1:hover, .playerHand2:hover, .playerHand3:hover, .playerHand4:hover, .playerHand5:hover, .playerHand6:hover, .playerHand7:hover {
-    transform: translate(0%, -13%); 
+    transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;    
 }
