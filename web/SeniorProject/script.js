@@ -272,6 +272,7 @@ function convertToCSSClass(arrayName) {
         answerStr += "Hand";
     }
     //finally, return the CSS class name
+    console.log("Converting. Received " + arrayName + " and returning " + answerStr);
     return answerStr;
 }
 
