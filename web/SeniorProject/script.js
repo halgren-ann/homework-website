@@ -382,21 +382,124 @@ function shuffleArray(array) {
     return array;
 }
 
-//Add a click event listener to handle the clickable areas
+//Add a click event listener to handle clicking the user cards from their hand
 function handleClick(e) {    
-    /*
     e.preventDefault();
     if (haveDrawn) {
         if(!e.target.parentElement || !e.target.parentElement.parentElement || !e.target.parentElement.parentElement.parentElement) return;
-        if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard1")) selectCard(1);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard2")) selectCard(2);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard3")) selectCard(3);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard4")) selectCard(4);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard5")) selectCard(5);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard6")) selectCard(6);
-        else if (e.target.parentElement.parentElement.parentElement.classList.contains("UserCard7")) selectCard(7);
+        if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand1")) selectCard(1);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand2")) selectCard(2);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand3")) selectCard(3);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand4")) selectCard(4);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand5")) selectCard(5);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand6")) selectCard(6);
+        else if (e.target.parentElement.parentElement.parentElement.classList.contains("playerHand7")) selectCard(7);
     }
+}
+
+function selectCard(cardNum) {
+    //Select this card
+    selectedCard = HandArray[cardNum-1];
+    //unhighlight anything that is still highlighted
+    unhighlightValidMoves();
+    //Clear out valid array
+    validArray = [];
+    //check for all valid options
+    findValidMoves();
+    //highlight valid options
+    highlightValidMoves();
+}
+
+//TODO use and finish this function
+function findValidMoves() {
+    /*
+    if (selectedCard.name == "SpeedLimit") {
+        if (!PCSpeedArray[0] || PCSpeedArray[PCSpeedArray.length-1].name == "EndSpeedLimit") {
+            validArray.push("PCSpeed");
+        }
+    }
+    else if (selectedCard.type == "attack") {
+        if (PCDriveArray[0] && PCDriveArray[PCDriveArray.length-1].type == "remedy") {
+            validArray.push("PCDrive");
+        }
+    }
+    else if (selectedCard.name == "EndSpeedLimit") {
+        if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].name == "SpeedLimit") {
+            validArray.push("UserSpeed");
+        }
+    }
+    else if (selectedCard.type == "remedy") {
+        if (selectedCard.name == "Drive") {
+            //can play if either the User drive pile is empty or has a stop on it
+            if (!UserDriveArray[0] || UserDriveArray[UserDriveArray.length-1].name == "Stop") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectedCard.name == "Repairs") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "Accident") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectedCard.name == "SpareTire") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "FlatTire") {
+                validArray.push("UserDrive");
+            }
+        }
+        else if (selectedCard.name == "Gas") {
+            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "OutOfFuel") {
+                validArray.push("UserDrive");
+            }
+        }
+    }
+    else if (selectedCard.type == "mile") {
+        //there must be a drive card down first and there cannot be an attack card on the user
+        if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].type == "remedy") {
+            //check to make sure it's 50 or less if there is a speed limit on the user
+            if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
+                if (Number(selectedCard.name) <= 50) {
+                    validArray.push("UserMiles");
+                }
+            }
+            else {
+                validArray.push("UserMiles");
+            }
+        }
+    }
+
+    //The discard pile is always valid
+    validArray.push("discardPile");
     */
+}
+
+//TODO use this function
+function highlightValidMoves() {
+    /*
+    //first, select the currently selected card
+    document.getElementById(selectedCard.id).classList.add("backlit");
+    */
+    document.getElementById(selectedCard.id).classList.add("hoverSim");
+    //Then highlight the possible options
+    for (var i=0; i<validArray.length; i++) {
+        document.getElementsByClassName(validArray[i])[1].classList.add("backlit");
+    }
+}
+
+//TODO use this function
+function unhighlightValidMoves() {
+    if(document.getElementsByClassName("hoverSim")[0]) {
+        document.getElementsByClassName("hoverSim")[0].classList.remove("hoverSim");
+    }
+    //Unhighlight the possible options
+    for (var i=0; i<validArray.length; i++) {
+        document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
+    }
+}
+
+//TODO use this function
+function prepUserTurn() {
+    //highlight the draw pile
+    document.getElementsByClassName("discardPile")[1].classList.add("backlit");
+    document.getElementsByClassName("drawPile")[1].classList.add("backlit");
 }
 
 ///////////////////////////////////////////END GAME PLANE///////////////////////////////
