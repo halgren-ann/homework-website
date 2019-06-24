@@ -502,6 +502,189 @@ function prepUserTurn() {
     document.getElementsByClassName("drawPile")[1].classList.add("backlit");
 }
 
+function clickDrawPile() {
+    if (is_turn && !haveDrawn) {
+        //draw a card
+        document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+        document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
+        document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
+        document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand7");
+        HandArray.push(cardArray[cardArray.length-1]);
+        cardArray.pop();
+        haveDrawn = true;
+        //document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
+        //document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        setTimeout(selectCard, 300, 7);
+    }
+}
+
+//TODO finish and use this function
+function clickDiscardPile() {
+    //check for the scenario where the user is trying to draw from the DiscardPile
+    if (isUserTurn && !haveDrawn && discardPileArray[0]) {
+        //draw a card
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).style.zIndex = 7;
+        document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add("UserCard7");
+        UserHandArray.push(discardPileArray[discardPileArray.length-1]);
+        discardPileArray.pop();
+        haveDrawn = true;
+        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        setTimeout(selectCard, 300, 7);
+    }
+    else if (isUserTurn && haveDrawn && selectedCard != null) {
+        //The user is discarding
+        playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, "discardPile");
+        //clear out and reset
+        selectedCard = null;
+        unhighlightValidMoves();
+        haveDrawn = false;
+        validArray = [];
+        isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
+        setTimeout(takeTurnPC, 1000);
+    }
+}
+
+//TODO finish and use this function
+function clickOverlay(location) {
+    if (validArray[0] && validArray.includes(location)) {
+        //stop highlighting items
+        unhighlightValidMoves();
+        //move the card to take the turn
+        playCard("User", UserHandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
+        //clear selectedCard
+        selectedCard = null;
+        //clear out validArray
+        validArray = [];
+        //clear haveDrawn
+        haveDrawn = false;
+        //stop the user's turn
+        isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
+        //turn the turn over to the PC
+        //setTimeout(takeTurnPC, 1000);
+    }
+}
+
+//TODO finish and use this function
+function playCard(who, cardNumInHand, cardElement, card, whereTo) {
+    //remove the current class
+    cardElement.classList.remove(who+"Card"+cardNumInHand);
+    //arrange the new z-index and add the new class
+    if(whereTo == "PCDrive") {
+        if (!PCDriveArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCDriveArray.length + 1;
+        PCDriveArray.push(card);
+    }
+    else if (whereTo == "PCSpeed") {
+        if (!PCSpeedArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCSpeedArray.length + 1;
+        PCSpeedArray.push(card);
+    }
+    else if (whereTo == "PCMiles") {
+        if (!PCMilesArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = PCMilesArray.length + 1;
+        PCMilesArray.push(card);
+        updateScore("PC");
+    }
+    else if (whereTo == "UserDrive") {
+        if (!UserDriveArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserDriveArray.length + 1;
+        UserDriveArray.push(card);
+    }
+    else if (whereTo == "UserSpeed") {
+        if (!UserSpeedArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserSpeedArray.length + 1;
+        UserSpeedArray.push(card);
+    }
+    else if (whereTo == "UserMiles") {
+        if (!UserMilesArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = UserMilesArray.length + 1;
+        UserMilesArray.push(card);
+        updateScore("User");
+    }
+    else if(whereTo == "discardPile") {
+        if (!discardPileArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = discardPileArray.length + 1;
+        discardPileArray.push(card);
+    }
+
+    //add the new class
+    cardElement.classList.add(whereTo);
+    //flip the card if it's coming from the PC hand and remove the card from the hand array
+    if (who == "PC") {
+        cardElement.childNodes[1].classList.toggle("flip");
+        PCHandArray.splice(cardNumInHand-1,1);
+        //End the turn and shift the cards in hand left
+        shiftCards("PC", cardNumInHand);
+        isUserTurn = true;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }    
+        //highlight the draw piles that are relevant
+        setTimeout(prepUserTurn, 1000); 
+    }
+    else {
+        UserHandArray.splice(cardNumInHand-1,1);
+        //End the turn and shift the cards in hand left
+        shiftCards("User", cardNumInHand);
+        isUserTurn = false;
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
+    }
+}
+
+//TODO finish and use this function
+function shiftCards(who, cardNumInHand) {
+    for (var i=cardNumInHand+1; i<=7; i++) {
+        var cardElement = document.getElementsByClassName(who+"Card"+i)[0];
+        cardElement.classList.remove(who+"Card"+i);
+        var cardNumMinus1 = i-1;
+        cardElement.classList.add(who+"Card"+cardNumMinus1);
+        cardElement.style.zIndex = cardNumMinus1;
+    }
+}
+
+//TODO finish and use this function
+function updateScore(who) {
+    var total = 0;
+    if (who == "PC") {
+        for (var i=0; i < PCMilesArray.length; i++) {
+            total += Number(PCMilesArray[i].name);
+        }
+        document.getElementById("PCScore").innerHTML = "Score: " + total;
+        if (!afterGame && total >= 1000) endGame("PC");
+    }
+    else if (who == "User") {
+        for (var i=0; i < UserMilesArray.length; i++) {
+            total += Number(UserMilesArray[i].name);
+        }
+        document.getElementById("UserScore").innerHTML = "Score: " + total;
+        if (!afterGame && total >= 1000) endGame("User");
+    }
+}
+
 ///////////////////////////////////////////END GAME PLANE///////////////////////////////
 
 
