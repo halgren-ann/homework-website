@@ -410,65 +410,70 @@ function selectCard(cardNum) {
     highlightValidMoves();
 }
 
-//TODO use and finish this function
 function findValidMoves() {
-    /*
     if (selectedCard.name == "SpeedLimit") {
-        if (!PCSpeedArray[0] || PCSpeedArray[PCSpeedArray.length-1].name == "EndSpeedLimit") {
-            validArray.push("PCSpeed");
+        var temp = "";
+        while(roll(temp) != "") {
+            temp = roll(temp);            
+            if (!window["SpeedArray" + temp][0] || window["SpeedArray" + temp][window["SpeedArray" + temp].length-1].name == "EndSpeedLimit") {
+                validArray.push(convertToCSSClass(window["SpeedArray" + temp]));
+            }
         }
     }
     else if (selectedCard.type == "attack") {
-        if (PCDriveArray[0] && PCDriveArray[PCDriveArray.length-1].type == "remedy") {
-            validArray.push("PCDrive");
+        var temp = "";
+        while(roll(temp) != "") {
+            temp = roll(temp);            
+            if (window["DriveArray" + temp][0] && window["DriveArray" + temp][window["DriveArray" + temp].length-1].type == "remedy") {
+                validArray.push(convertToCSSClass(window["DriveArray" + temp]));
+            }
         }
     }
     else if (selectedCard.name == "EndSpeedLimit") {
-        if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].name == "SpeedLimit") {
-            validArray.push("UserSpeed");
+        if (SpeedArray[0] && SpeedArray[SpeedArray.length-1].name == "SpeedLimit") {
+            validArray.push(convertToCSSClass("SpeedArray"));
         }
     }
     else if (selectedCard.type == "remedy") {
         if (selectedCard.name == "Drive") {
             //can play if either the User drive pile is empty or has a stop on it
-            if (!UserDriveArray[0] || UserDriveArray[UserDriveArray.length-1].name == "Stop") {
-                validArray.push("UserDrive");
+            if (!DriveArray[0] || DriveArray[DriveArray.length-1].name == "Stop") {
+                validArray.push(convertToCSSClass("DriveArray"));
             }
         }
         else if (selectedCard.name == "Repairs") {
-            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "Accident") {
-                validArray.push("UserDrive");
+            if (DriveArray[0] && DriveArray[DriveArray.length-1].name == "Accident") {
+                validArray.push(convertToCSSClass("DriveArray"));
             }
         }
         else if (selectedCard.name == "SpareTire") {
-            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "FlatTire") {
-                validArray.push("UserDrive");
+            if (DriveArray[0] && DriveArray[DriveArray.length-1].name == "FlatTire") {
+                validArray.push(convertToCSSClass("DriveArray"));
             }
         }
         else if (selectedCard.name == "Gas") {
-            if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].name == "OutOfFuel") {
-                validArray.push("UserDrive");
+            if (DriveArray[0] && DriveArray[DriveArray.length-1].name == "OutOfFuel") {
+                validArray.push(convertToCSSClass("DriveArray"));
             }
         }
     }
     else if (selectedCard.type == "mile") {
         //there must be a drive card down first and there cannot be an attack card on the user
-        if (UserDriveArray[0] && UserDriveArray[UserDriveArray.length-1].type == "remedy") {
+        if (DriveArray[0] && DriveArray[DriveArray.length-1].type == "remedy") {
             //check to make sure it's 50 or less if there is a speed limit on the user
-            if (UserSpeedArray[0] && UserSpeedArray[UserSpeedArray.length-1].type == "attack") {
+            if (SpeedArray[0] && SpeedArray[SpeedArray.length-1].type == "attack") {
                 if (Number(selectedCard.name) <= 50) {
-                    validArray.push("UserMiles");
+                    validArray.push(convertToCSSClass("MilesArray"));
                 }
             }
             else {
-                validArray.push("UserMiles");
+                validArray.push(convertToCSSClass("MilesArray"));
             }
         }
     }
 
     //The discard pile is always valid
     validArray.push("discardPile");
-    */
 }
 
 //TODO use this function

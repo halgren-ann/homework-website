@@ -308,3 +308,34 @@ img {
     transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;    
 }
+
+/*Effects*/
+.backlit {
+    -webkit-animation: light 1s ease-in-out infinite alternate;
+    -moz-animation: light 1s ease-in-out infinite alternate;
+    animation: light 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes light {
+    from {
+      box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+}
+
+.backlitText {
+    -webkit-animation: lightText 1s ease-in-out infinite alternate;
+    -moz-animation: lightText 1s ease-in-out infinite alternate;
+    animation: lightText 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes lightText {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+    }
+}
