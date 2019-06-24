@@ -225,7 +225,7 @@ function roll(num) {
 
 /*This function takes the name of a card stack array and, based on the number of players, the current user's player number, and the input,
 returns the name of the CSS class that the array is visually positioned with.*/
-//TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one
+//TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one 
 function convertToCSSClass(arrayName) {
     //the draw deck and discard pile are always in the same place, so the meaningful inputs are the DriveArray, SpeedArray, MilesArray, and HandArray variables
     var answerStr = "";
