@@ -483,11 +483,11 @@ function findValidMoves() {
 //TODO use this function
 function highlightValidMoves() {
     //first, select the currently selected card
-    document.getElementById(selectedCard.id).classList.add("backlit");
+    //document.getElementById(selectedCard.id).classList.add("backlit");
     document.getElementById(selectedCard.id).classList.add("hoverSim");
     //Then highlight the possible options
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[0].classList.add("backlit");
+        document.getElementsByClassName(validArray[i])[1].classList.add("backlit");
     }
 }
 
