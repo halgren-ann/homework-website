@@ -6,6 +6,7 @@
 */
 
 header("Content-Type: application/json; charset=UTF-8");
+echo "checkpoint A initial input is " . file_get_contents('php://input');
 $inputText = json_decode(file_get_contents('php://input'), false);
 $game_id = $inputText->game_id;
 $player_id = $inputText->player_id;
@@ -14,7 +15,7 @@ $start_position = $inputText->start_position; //This is the number (1-7) out of 
 $end_position = $inputText->end_position; //this is the array name ("" not allowed) of where the card was played to
 include 'dbConnect.php';
 session_start();
-echo 'checkpoint A values: game_id is ' . $game_id . 'player_id is ' . $player_id . ' card_id is ' . $card_id . ' start_position is ' . $start_position . ' end_position is ' . $end_position;
+echo 'checkpoint B values: game_id is ' . $game_id . 'player_id is ' . $player_id . ' card_id is ' . $card_id . ' start_position is ' . $start_position . ' end_position is ' . $end_position;
 
 //Insert the new move into the public.moves table
 $stmt = $db->prepare('INSERT into public.moves(game_id, player_id, card_id, start_position, end_position) 
