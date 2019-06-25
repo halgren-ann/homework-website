@@ -688,7 +688,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     //rotate the turn
     for (var i=1; i<=num_players; i++) {
         var num = i;
-        if (player_num == num) {
+        if (player_number == num) {
             num = "";
         }
         if (roll(who) == num) {
