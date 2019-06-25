@@ -668,13 +668,22 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         cardElement.classList.remove(convertToCSSClass("HandArray"+who));
     }
     //arrange the new z-index and add the new array
-    if(!window[convertCSSClassToArray(whereTo)][0]) {
-        cardElement.style.zIndex = 1;
+    if (whereTo == "discardPile") {
+        if (!discardPileArray[0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else cardElement.style.zIndex = discardPileArray.length + 1;
+        discardPileArray.push(card);
     }
     else {
-        cardElement.style.zIndex = window[convertCSSClassToArray(whereTo)].length + 1;
+        if(!window[convertCSSClassToArray(whereTo)][0]) {
+            cardElement.style.zIndex = 1;
+        }
+        else {
+            cardElement.style.zIndex = window[convertCSSClassToArray(whereTo)].length + 1;
+        }
+        window[convertCSSClassToArray(whereTo)].push(card);
     }
-    window[convertCSSClassToArray(whereTo)].push(card);
     //add the new class
     cardElement.classList.add(whereTo);
     //flip the card if it's coming from any other hand than the current user's
