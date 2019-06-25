@@ -165,7 +165,7 @@ function startGame() {
 }
 
 function dummy(responseText) {
-    //Do nothing]
+    //Do nothing
     console.log(responseText);
 }
 
@@ -618,7 +618,7 @@ function clickDiscardPile() {
     else if (is_turn && haveDrawn && selectedCard != null) {
         //tell the database that I made this move
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
-        var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + ', "card_id": ' + selectedCard.id + ', "start_position": ' + start_position + ', "end_position": ' + '"discardPile"}';
+        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPile"}';
         AJAX("moves.php", JSONstr, dummy);
 
         //The user is discarding
@@ -647,7 +647,7 @@ function clickOverlay(location) {
             end_position = end_position + player_number;
         }
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
-        var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + ', "card_id": ' + selectedCard.id + ', "start_position": ' + start_position + ', "end_position": ' + end_position + '}';
+        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": "' + end_position + '"}';
         AJAX("moves.php", JSONstr, dummy);
         //move the card to take the turn
         playCard("", HandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
