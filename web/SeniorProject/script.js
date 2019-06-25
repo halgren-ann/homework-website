@@ -556,7 +556,6 @@ function findValidMoves() {
     }
 }
 
-//TODO use this function
 function highlightValidMoves() {
     //first, select the currently selected card
     //document.getElementById(selectedCard.id).classList.add("backlit");
@@ -567,7 +566,6 @@ function highlightValidMoves() {
     }
 }
 
-//TODO use this function
 function unhighlightValidMoves() {
     if(document.getElementsByClassName("hoverSim")[0]) {
         document.getElementsByClassName("hoverSim")[0].classList.remove("hoverSim");
@@ -617,6 +615,10 @@ function clickDiscardPile() {
         setTimeout(selectCard, 300, 7);
     }
     else if (is_turn && haveDrawn && selectedCard != null) {
+        //tell the database that I made this move
+        var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + ', "card_id": ' + selectedCard.id + ', "start_position": ' + parseInt(HandArray.indexOf(selectedCard)+1) + ', "end_position": ' + '"discardPile"}';
+        AJAX("moves.php", JSONstr, dummy);
+
         //The user is discarding
         playCard("", HandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, "discardPile");
         //clear out and reset
@@ -629,7 +631,6 @@ function clickDiscardPile() {
             reshuffle();
         }
         //setTimeout(takeTurnPC, 1000);
-        //TODO tell the database that I made this move and it is no longer my turn
     }
 }
 
@@ -638,6 +639,13 @@ function clickOverlay(location) {
     if (validArray[0] && validArray.includes(location)) {
         //stop highlighting items
         unhighlightValidMoves();
+        //tell the database that I made this move
+        var end_position = convertCSSClassToArray(location);
+        if(end_position[end_position.length-1] == "y") {
+            end_position = end_position + player_number;
+        }
+        var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + ', "card_id": ' + selectedCard.id + ', "start_position": ' + parseInt(HandArray.indexOf(selectedCard)+1) + ', "end_position": ' + end_position + '}';
+        AJAX("moves.php", JSONstr, dummy);
         //move the card to take the turn
         playCard("", HandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
         //clear selectedCard
@@ -651,8 +659,6 @@ function clickOverlay(location) {
         if(cardArray.length == 0) {
             reshuffle();
         }
-
-        //TODO tell the database that I made this move and it is no longer my turn
         //turn the turn over to the PC
         //setTimeout(takeTurnPC, 1000);
     }
