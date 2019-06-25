@@ -64,6 +64,15 @@
     <div id="bottomLeftPlayerDrive" class="card bottomLeftPlayerDrive overlay" onclick="clickOverlay('bottomLeftPlayerDrive')"></div>
     <div id="bottomLeftPlayerSpeed" class="card bottomLeftPlayerSpeed overlay" onclick="clickOverlay('bottomLeftPlayerSpeed')"></div>
     <div id="bottomLeftPlayerMiles" class="card bottomLeftPlayerMiles overlay" onclick="clickOverlay('bottomLeftPlayerMiles')"></div>
+    <div id="topLeftPlayerDrive" class="card topLeftPlayerDrive overlay" onclick="clickOverlay('topLeftPlayerDrive')"></div>
+    <div id="topLeftPlayerSpeed" class="card topLeftPlayerSpeed overlay" onclick="clickOverlay('topLeftPlayerSpeed')"></div>
+    <div id="topLeftPlayerMiles" class="card topLeftPlayerMiles overlay" onclick="clickOverlay('topLeftPlayerMiles')"></div>
+    <div id="topRightPlayerDrive" class="card topRightPlayerDrive overlay" onclick="clickOverlay('topRightPlayerDrive')"></div>
+    <div id="topRightPlayerSpeed" class="card topRightPlayerSpeed overlay" onclick="clickOverlay('topRightPlayerSpeed')"></div>
+    <div id="topRightPlayerMiles" class="card topRightPlayerMiles overlay" onclick="clickOverlay('topRightPlayerMiles')"></div>
+    <div id="bottomRightPlayerDrive" class="card bottomRightPlayerDrive overlay" onclick="clickOverlay('bottomRightPlayerDrive')"></div>
+    <div id="bottomRightPlayerSpeed" class="card bottomRightPlayerSpeed overlay" onclick="clickOverlay('bottomRightPlayerSpeed')"></div>
+    <div id="bottomRightPlayerMiles" class="card bottomRightPlayerMiles overlay" onclick="clickOverlay('bottomRightPlayerMiles')"></div>
 
     <div id="sidebar">
         <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
