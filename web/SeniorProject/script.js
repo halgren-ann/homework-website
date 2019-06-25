@@ -574,7 +574,7 @@ function unhighlightValidMoves() {
     }
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
-        document.getElementsByClassName(validArray[i])[1].classList.remove("backlit");
+        document.getElementsByClassName(validArray[i])[0].classList.remove("backlit");
     }
 }
 
