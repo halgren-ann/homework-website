@@ -164,8 +164,9 @@ function startGame() {
     AJAX("makeGame.php", JSONstr, dummy);
 }
 
-function dummy() {
-    //Do nothing
+function dummy(responseText) {
+    //Do nothing]
+    console.log(responseText);
 }
 
 function deal() {
