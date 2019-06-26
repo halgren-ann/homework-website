@@ -319,60 +319,37 @@ function convertCSSClassToArray(CSSClass) {
         result += "Miles";
     }
 
-    if (player_number == 1) {
+    if (num_players == 2) {
         if (begin == "bottomLeftPlayer") {
             result += "Array";
         }
         else if (begin == "topLeftPlayer") {
-            result += "Array2";
-        }
-        else if (begin == "topRightPlayer") {
-            result += "Array3";
-        }
-        else if (begin == "bottomRightPlayer") {
-            result += "Array4";
+            result += "Array" + roll(player_number);
         }
     }
-    else if (player_number == 2) {
+    else if (num_players == 3) {
         if (begin == "bottomLeftPlayer") {
             result += "Array";
         }
         else if (begin == "topLeftPlayer") {
-            result += "Array3";
+            result += "Array" + roll(player_number);
         }
         else if (begin == "topRightPlayer") {
-            result += "Array4";
-        }
-        else if (begin == "bottomRightPlayer") {
-            result += "Array1";
+            result += "Array" + roll(roll(player_number));
         }
     }
-    else if (player_number == 3) {
+    else if (num_players == 4) {
         if (begin == "bottomLeftPlayer") {
             result += "Array";
         }
         else if (begin == "topLeftPlayer") {
-            result += "Array4";
+            result += "Array" + roll(player_number);
         }
         else if (begin == "topRightPlayer") {
-            result += "Array1";
+            result += "Array" + roll(roll(player_number));
         }
         else if (begin == "bottomRightPlayer") {
-            result += "Array2";
-        }
-    }
-    else if (player_number == 4) {
-        if (begin == "bottomLeftPlayer") {
-            result += "Array";
-        }
-        else if (begin == "topLeftPlayer") {
-            result += "Array1";
-        }
-        else if (begin == "topRightPlayer") {
-            result += "Array2";
-        }
-        else if (begin == "bottomRightPlayer") {
-            result += "Array3";
+            result += "Array" + roll(roll(roll(player_number)));
         }
     }
 
