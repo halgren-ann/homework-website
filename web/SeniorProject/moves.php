@@ -23,11 +23,11 @@ $stmt = $db->prepare('INSERT into public.moves(game_id, player_id, card_id, star
 $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':card_id' => $card_id, ':start_position' => $start_position, ':end_position' => $end_position));
 
 //Now select what I just inserted to get the move_id
-$stmt = $db->prepare('SELECT * FROM public.moves WHERE game_id = :game_id AND player_id = :player_id AND card_id = :card_id;');
-$stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':card_id' => $card_id));
+$stmt = $db->prepare('SELECT * FROM public.moves WHERE game_id = :game_id AND player_id = :player_id AND card_id = :card_id AND start_position = :start_position AND end_position = :end_position;');
+$stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':card_id' => $card_id, ':start_position' => $start_position, ':end_position' => $end_position));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-$move_id = $rows[0]["move_id"];
+$move_id = $rows[count($rows)-1]["move_id"];
 
 //Next, Insert an update with this move_id into the public.update_manager table
 $JSONstr = '{"desc": "move", "info": ' . $move_id . '}';
