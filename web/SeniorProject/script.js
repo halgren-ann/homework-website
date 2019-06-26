@@ -114,20 +114,20 @@ function pull_part2(responseText) {
                 else if (player_id4 == updatesArray[i].player_id) temp = 4;
                 //recreate the card being played on this end
                 if (updatesArray[i].start_position == "draw") {
-                    document.getElementById(cardArray[cardArray.length-1]).classList.remove("drawPile");
-                    document.getElementById(cardArray[cardArray.length-1]).zIndex = 7;
+                    document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
+                    document.getElementById(cardArray[cardArray.length-1].id).zIndex = 7;
                     window["HandArray" + temp].push(cardArray[cardArray.length-1]);
-                    document.getElementById(cardArray[cardArray.length-1]).classList.add(convertToCSSClass("HandArray"+temp));
+                    document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray"+temp));
                     cardArray.pop();
                     if(cardArray.length == 0) {
                         reshuffle();
                     }
                 }
                 else if (updatesArray[i].start_position == "discard") {
-                    document.getElementById(discardPileArray[discardPileArray.length-1]).classList.remove("discardPile");
-                    document.getElementById(discardPileArray[discardPileArray.length-1]).zIndex = 7;
+                    document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
+                    document.getElementById(discardPileArray[discardPileArray.length-1].id).zIndex = 7;
                     window["HandArray" + temp].push(discardPileArray[discardPileArray.length-1]);
-                    document.getElementById(discardPileArray[discardPileArray.length-1]).classList.add(convertToCSSClass("HandArray"+temp));
+                    document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add(convertToCSSClass("HandArray"+temp));
                     discardPileArray.pop();
                 }
                 else {
