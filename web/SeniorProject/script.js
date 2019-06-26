@@ -113,7 +113,26 @@ function pull_part2(responseText) {
                 else if (player_id3 == updatesArray[i].player_id) temp = 3;
                 else if (player_id4 == updatesArray[i].player_id) temp = 4;
                 //recreate the card being played on this end
-                playCard(temp, updatesArray[i].start_position, document.getElementById(updatesArray[i].card_id), window["HandArray" + temp][updatesArray[i].start_position - 1], convertToCSSClass(updatesArray[i].end_position))
+                if (updatesArray[i].start_position == "draw") {
+                    document.getElementById(cardArray[cardArray.length-1]).classList.remove("drawPile");
+                    document.getElementById(cardArray[cardArray.length-1]).zIndex = 7;
+                    window["HandArray" + temp].push(cardArray[cardArray.length-1]);
+                    document.getElementById(cardArray[cardArray.length-1]).classList.add(convertToCSSClass("HandArray"+temp));
+                    cardArray.pop();
+                    if(cardArray.length == 0) {
+                        reshuffle();
+                    }
+                }
+                else if (updatesArray[i].start_position == "discard") {
+                    document.getElementById(discardPileArray[discardPileArray.length-1]).classList.remove("discardPile");
+                    document.getElementById(discardPileArray[discardPileArray.length-1]).zIndex = 7;
+                    window["HandArray" + temp].push(discardPileArray[discardPileArray.length-1]);
+                    document.getElementById(discardPileArray[discardPileArray.length-1]).classList.add(convertToCSSClass("HandArray"+temp));
+                    discardPileArray.pop();
+                }
+                else {
+                    playCard(temp, updatesArray[i].start_position, document.getElementById(updatesArray[i].card_id), window["HandArray" + temp][updatesArray[i].start_position - 1], convertToCSSClass(updatesArray[i].end_position));
+                }
             }
             else {
                 //TODO error or no updates
@@ -602,9 +621,13 @@ function clickDrawPile() {
         HandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
         haveDrawn = true;
-        //document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
-        //document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
         setTimeout(selectCard, 300, 7);
+        //Tell the database that I made this move
+        var start_position = "draw";
+        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
+        AJAX("moves.php", JSONstr, dummy);
     }
 }
 
@@ -622,6 +645,10 @@ function clickDiscardPile() {
         document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
         setTimeout(selectCard, 300, 7);
+        //Tell the database that I made this move
+        var start_position = "discard";
+        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
+        AJAX("moves.php", JSONstr, dummy);
     }
     else if (is_turn && haveDrawn && selectedCard != null) {
         //tell the database that I made this move
