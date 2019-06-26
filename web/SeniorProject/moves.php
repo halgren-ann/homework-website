@@ -36,12 +36,12 @@ $stmt = $db->prepare('SELECT * FROM public.player WHERE game_id = :game_id;');
 $stmt->execute(array(':game_id' => $game_id));
 $player_ids = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-for ($i=0; $i<count($rows); $i++) {
+for ($i=0; $i<count($player_ids); $i++) {
     //The player this came from does not need to be updated
-    if ($rows[$i]["player_id"] != $player_id) {
+    if ($player_ids[$i]["player_id"] != $player_id) {
         $stmt = $db->prepare('INSERT into public.update_manager(game_id, player_id, seen, what) 
             VALUES (:game_id, :player_id, :seen, :what);');
-        $stmt->execute(array(':game_id' => $game_id, ':player_id' => $rows[$i]["player_id"], ':seen' => 'false', 'what' => $JSONstr));
+        $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_ids[$i]["player_id"], ':seen' => 'false', 'what' => $JSONstr));
     }
 }
 ?>
