@@ -261,7 +261,7 @@ function convertToCSSClass(arrayName) {
     var answerStr = "";
     //first, figure out the top, bottom, right, left player position on this user's screen
     var last = arrayName[arrayName.length-1];
-    if (last == "y") {
+    if (last == "y" || last == player_number) {
         //this array belongs to the current player
         answerStr += "bottomLeftPlayer";
     }
