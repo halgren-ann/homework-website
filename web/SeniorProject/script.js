@@ -106,10 +106,17 @@ function pull_part2(responseText) {
                 deal();
             }
             else if (updatesArray[i].desc == "move") {
-
+                //first, figure out which player made this move and store it in temp
+                var temp = 0;
+                if (player_id1 == updatesArray[i].player_id) temp = 1;
+                else if (player_id2 == updatesArray[i].player_id) temp = 2;
+                else if (player_id3 == updatesArray[i].player_id) temp = 3;
+                else if (player_id4 == updatesArray[i].player_id) temp = 4;
+                //recreate the card being played on this end
+                playCard(temp, updatesArray[i].start_position, document.getElementById(updatesArray[i].card_id), window["HandArray" + temp][updatesArray[i].start_position - 1], convertToCSSClass(updatesArray[i].end_position))
             }
             else {
-                //TODO error
+                //TODO error or no updates
             }
         }
     }
@@ -228,6 +235,7 @@ function roll(num) {
 returns the name of the CSS class that the array is visually positioned with.*/
 //TODO wherever this is returned, account for if the array is this user's hand, which applies to several CSS classes instead of just one 
 function convertToCSSClass(arrayName) {
+    if (arrayName == "discardPileArray") return "discardPile";
     //the draw deck and discard pile are always in the same place, so the meaningful inputs are the DriveArray, SpeedArray, MilesArray, and HandArray variables
     var answerStr = "";
     //first, figure out the top, bottom, right, left player position on this user's screen
@@ -618,7 +626,7 @@ function clickDiscardPile() {
     else if (is_turn && haveDrawn && selectedCard != null) {
         //tell the database that I made this move
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
-        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPile"}';
+        var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPileArray"}';
         AJAX("moves.php", JSONstr, dummy);
 
         //The user is discarding
@@ -632,7 +640,6 @@ function clickDiscardPile() {
         if(cardArray.length == 0) {
             reshuffle();
         }
-        //setTimeout(takeTurnPC, 1000);
     }
 }
 
@@ -662,8 +669,6 @@ function clickOverlay(location) {
         if(cardArray.length == 0) {
             reshuffle();
         }
-        //turn the turn over to the PC
-        //setTimeout(takeTurnPC, 1000);
     }
 }
 

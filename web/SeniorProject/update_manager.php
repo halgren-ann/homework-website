@@ -34,7 +34,6 @@ for ($i=0; $i < count($rows); $i++) {
     $desc = $what->desc;
     $info = $what->info;
 
-    //TODO finish filling in these statements
     if($desc == 'new_player') {
         //Get the new player's info
         $stmt = $db->prepare('SELECT * FROM public.player WHERE player_id = :player_id;');
@@ -69,7 +68,11 @@ for ($i=0; $i < count($rows); $i++) {
         $JSONstr = $JSONstr . '], "num_players": ' . $num[0]["num_players"] . '}';
     }
     else if($desc == 'move') {
-        echo 'move';
+        //Select the new row from the move table
+        $stmt = $db->prepare('SELECT * FROM public.moves WHERE move_id = :move_id;');
+        $stmt->execute(array(':move_id' => $info));
+        $move = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $JSONstr = $JSONstr . '{ "desc": "move", "player_id": "' . $move[0]["player_id"] . '", "card_id": "' . $move[0]["card_id"] . '", "start_position": "' . $move[0]["start_position"] . '", "end_position": "' . $move[0]["end_position"] . '"}';
     }
     else {
         echo 'error';
