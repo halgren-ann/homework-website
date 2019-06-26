@@ -1,5 +1,6 @@
 //TODO protect all inputs against malicious entry with htmlspecialchars etc.
 //TODO account for the case where the person enters a keyword and tries to start a game when they are the only one in the room
+//TODO is there a problem with dealing when perhaps asynchronously the start state is received before all the players are received?
 
 ///////////////////////////////////////////////GENERAL////////////////////////////////////////////
 /*General Use AJAX*/
@@ -27,6 +28,7 @@ var game_id = "";
 var display_name = "";
 var is_turn = false;
 var score = 0;
+var flag = false;
 
 //Global variables for other players' information
 var player_id1 = "";
@@ -588,6 +590,20 @@ function prepUserTurn() {
     document.getElementsByClassName("drawPile")[1].classList.add("backlit");
 }
 
+function setFlag() {
+    flag = true;
+}
+
+function waitForFlag(phpFile, info, callback) {
+    if (flag) {
+        flag = false;
+        AJAX(phpFile, info, callback);
+    }
+    else {
+        setTimeout(waitForFlag, 2000, phpFile, info, callback);
+    }
+}
+
 function clickDrawPile() {
     if (is_turn && !haveDrawn) {
         //draw a card
@@ -604,7 +620,7 @@ function clickDrawPile() {
         //Tell the database that I made this move
         var start_position = "draw";
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
-        AJAX("moves.php", JSONstr, dummy);
+        AJAX("moves.php", JSONstr, setFlag);
     }
 }
 
@@ -625,13 +641,15 @@ function clickDiscardPile() {
         //Tell the database that I made this move
         var start_position = "discard";
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
-        AJAX("moves.php", JSONstr, dummy);
+        AJAX("moves.php", JSONstr, setFlag);
     }
     else if (is_turn && haveDrawn && selectedCard != null) {
         //tell the database that I made this move
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPileArray"}';
-        AJAX("moves.php", JSONstr, dummy);
+        //AJAX("moves.php", JSONstr, dummy);
+        //I can only make this move once the database knows I've drawn
+        waitForFlag("moves.php", JSONstr, dummy);
 
         //The user is discarding
         playCard("", HandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, "discardPile");
@@ -659,7 +677,8 @@ function clickOverlay(location) {
         }
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": "' + end_position + '"}';
-        AJAX("moves.php", JSONstr, dummy);
+        //AJAX("moves.php", JSONstr, dummy);
+        waitForFlag("moves.php", JSONstr, dummy);
         //move the card to take the turn
         playCard("", HandArray.indexOf(selectedCard)+1, document.getElementById(selectedCard.id), selectedCard, location);
         //clear selectedCard
