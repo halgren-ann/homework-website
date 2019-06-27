@@ -128,6 +128,7 @@ function pull_part2(responseText) {
                 }
                 else if (updatesArray[i].start_position == "discard") {
                     document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
+                    document.getElementById(discardPileArray[discardPileArray.length-1].id).childNodes[1].classList.toggle("flip");
                     document.getElementById(discardPileArray[discardPileArray.length-1].id).zIndex = 7;
                     window["HandArray" + temp].push(discardPileArray[discardPileArray.length-1]);
                     document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add(convertToCSSClass("HandArray"+temp));
