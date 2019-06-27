@@ -1,6 +1,6 @@
 //TODO protect all inputs against malicious entry with htmlspecialchars etc.
 //TODO account for the case where the person enters a keyword and tries to start a game when they are the only one in the room
-//TODO is there a problem with dealing when perhaps asynchronously the start state is received before all the players are received?
+//TODO is there a problem with dealing when perhaps asynchronously the start state is received before all the players are received? YES! Or moves are received before cards are dealt, too
 
 ///////////////////////////////////////////////GENERAL////////////////////////////////////////////
 /*General Use AJAX*/
@@ -108,6 +108,7 @@ function pull_part2(responseText) {
                 deal();
             }
             else if (updatesArray[i].desc == "move") {
+                debugger;
                 //first, figure out which player made this move and store it in temp
                 var temp = 0;
                 if (player_id1 == updatesArray[i].player_id) temp = 1;
@@ -199,6 +200,7 @@ function dummy(responseText) {
 
 function deal() {
     console.log("Game is started....dealing the cards");
+    debugger;
     for (var i=1; i<=6; i++) {
         //deal the ith card to each player
         for (var j=1; j<=num_players; j++) {
@@ -607,6 +609,7 @@ function waitForFlag(phpFile, info, callback) {
 function clickDrawPile() {
     if (is_turn && !haveDrawn) {
         //draw a card
+        debugger;
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
         document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
@@ -629,6 +632,7 @@ function clickDiscardPile() {
     //check for the scenario where the user is trying to draw from the DiscardPile
     if (is_turn && !haveDrawn && discardPileArray[0]) {
         //draw a card
+        debugger;
         document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
         document.getElementById(discardPileArray[discardPileArray.length-1].id).style.zIndex = 7;
         document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add("playerHand7");
@@ -644,6 +648,7 @@ function clickDiscardPile() {
         AJAX("moves.php", JSONstr, setFlag);
     }
     else if (is_turn && haveDrawn && selectedCard != null) {
+        debugger;
         //tell the database that I made this move
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPileArray"}';
@@ -668,6 +673,7 @@ function clickDiscardPile() {
 //TODO finish and use this function
 function clickOverlay(location) {
     if (validArray[0] && validArray.includes(location)) {
+        debugger;
         //stop highlighting items
         unhighlightValidMoves();
         //tell the database that I made this move
@@ -697,6 +703,7 @@ function clickOverlay(location) {
 
 //TODO finish and use this function
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
+    debugger;
     //remove the current class
     if (who == "") {
         cardElement.classList.remove("playerHand"+cardNumInHand);
