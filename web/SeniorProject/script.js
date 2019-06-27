@@ -239,7 +239,7 @@ function roll(num) {
         num = parseInt(player_number) + parseInt(1);
     }
     else {
-        num = num + 1;
+        num = parseInt(num) + parseInt(1);
     }
     //roll
     if (num > num_players) {
