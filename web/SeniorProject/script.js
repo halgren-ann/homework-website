@@ -200,7 +200,7 @@ function dummy(responseText) {
 
 function deal() {
     console.log("Game is started....dealing the cards");
-    debugger;
+    //debugger;
     for (var i=1; i<=6; i++) {
         //deal the ith card to each player
         for (var j=1; j<=num_players; j++) {
@@ -609,7 +609,7 @@ function waitForFlag(phpFile, info, callback) {
 function clickDrawPile() {
     if (is_turn && !haveDrawn) {
         //draw a card
-        debugger;
+        //debugger;
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
         document.getElementById(cardArray[cardArray.length-1].id).style.zIndex = 7;
         document.getElementById(cardArray[cardArray.length-1].id).childNodes[1].classList.toggle("flip");
@@ -632,7 +632,7 @@ function clickDiscardPile() {
     //check for the scenario where the user is trying to draw from the DiscardPile
     if (is_turn && !haveDrawn && discardPileArray[0]) {
         //draw a card
-        debugger;
+        //debugger;
         document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
         document.getElementById(discardPileArray[discardPileArray.length-1].id).style.zIndex = 7;
         document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.add("playerHand7");
