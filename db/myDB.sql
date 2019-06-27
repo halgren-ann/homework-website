@@ -86,6 +86,7 @@ CREATE TABLE moves
 
 CREATE TABLE update_manager
 (
+	update_id SERIAL NOT NULL,
 	game_id INT NOT NULL REFERENCES public.game(game_id),
 	player_id INT NOT NULL REFERENCES public.player(player_id),
 	seen BOOLEAN NOT NULL,
