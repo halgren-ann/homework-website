@@ -749,10 +749,6 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         }
         window[convertCSSClassToArray(whereTo)].push(card);
     }
-    //Update the score if this is a miles card
-    if (convertCSSClassToArray(whereTo).substring(0, convertCSSClassToArray(whereTo).length-5) == "Miles") {
-        updateScore(who);
-    }
     //add the new class
     cardElement.classList.add(whereTo);
     //flip the card if it's coming from any other hand than the current user's
@@ -763,6 +759,10 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     window["HandArray" + who].splice(cardNumInHand-1,1);
     //shift the cards in the hand that remain
     shiftCards(who, cardNumInHand);
+    //Update the score if this is a miles card
+    if (convertCSSClassToArray(whereTo).substring(0, convertCSSClassToArray(whereTo).length-5) == "Miles") {
+        updateScore(who);
+    }
     //rotate the turn
     for (var i=1; i<=num_players; i++) {
         var num = i;
