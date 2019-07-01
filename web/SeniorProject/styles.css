@@ -121,15 +121,17 @@ div {
     color: white;
     font-size: 20px;
     line-height: 100%;
+    padding: 50% 50% 50% 50%;
 }
 
 .label {
     position: fixed;
-    width: 28%;
+    width: 34%;
     height: 5%;
     background-color: black;
     opacity: 0.4;
     border-radius: 35%;
+    float: both;
 }
 
 .display_name {
@@ -147,26 +149,27 @@ div {
     width: 40%;
     height: 100%;
     left: 60%;
+    float: right;
 }
 
 #bottomLeftPlayerLabel {
     top: 60%;
-    left: 4%;
+    left: 1%;
 }
 
 #topLeftPlayerLabel {
     top: 27%;
-    left: 4%;
+    left: 1%;
 }
 
 #topRightPlayerLabel {
     top: 27%;
-    left: 39%;
+    left: 36%;
 }
 
 #bottomRightPlayerLabel {
     top: 60%;
-    left: 39%;
+    left: 36%;
 }
 
 .topLeftPlayerDrive {
