@@ -131,25 +131,22 @@ div {
     background-color: black;
     opacity: 0.5;
     border-radius: 30%;
-    overflow: auto;
 }
 
 .display_name {
-    position: relative;
+    position: absolute;
     border: black;
     width: 60%;
     height: 100%;
     left: 0%;
-    float: left;
 }
 
 .score {
-    position: relative;
+    position: absolute;
     border: black;
     width: 40%;
     height: 100%;
     left: 60%;
-    float: right;
 }
 
 #bottomLeftPlayerLabel {
