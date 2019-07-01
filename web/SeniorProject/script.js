@@ -223,8 +223,71 @@ function setupVideos() {
         for (var i=0; i < num_players; i++) {
             if (i == 0) {
                 document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_a";
-                //Now click the "JOIN" button using DOM
-                document.getElementById("iframe_vid_1").contentWindow.document.getElementById("confirm-join-button").click();
+            }
+            else if (i == 1) {
+                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_b";
+            }
+            else if (i == 2) {
+                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_c";
+            }
+            //Always display the user to themself
+            if (i == num_players-1) {
+                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_g";
+                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_g";
+            }
+        }
+    }
+    else if (player_number == 2) {
+        for (var i=0; i < num_players; i++) {
+            if (i == 0) {
+                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_d";
+            }
+            else if (i == 1) {
+                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_e";
+            }
+            else if (i == 2) {
+                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_a";
+            }
+            //Always display the user to themself
+            if (i == num_players-1) {
+                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_h";
+                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_h";
+            }
+        }
+    }
+    else if (player_number == 3) {
+        for (var i=0; i < num_players; i++) {
+            if (i == 0) {
+                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_f";
+            }
+            else if (i == 1) {
+                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_b";
+            }
+            else if (i == 2) {
+                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_d";
+            }
+            //Always display the user to themself
+            if (i == num_players-1) {
+                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_i";
+                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_i";
+            }
+        }
+    }
+    else if (player_number == 4) {
+        for (var i=0; i < num_players; i++) {
+            if (i == 0) {
+                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_c";
+            }
+            else if (i == 1) {
+                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_e";
+            }
+            else if (i == 2) {
+                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_f";
+            }
+            //Always display the user to themself
+            if (i == num_players-1) {
+                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_j";
+                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_j";
             }
         }
     }
@@ -235,6 +298,7 @@ function deal() {
     //overlay the areas that are not being used
     if (num_players < 4) {
         document.getElementById("overlayPlayer4").classList.remove("hidden");
+        console.log("Overlay placed over player 4");
     }
     if (num_players < 3) {
         document.getElementById("overlayPlayer3").classList.remove("hidden");

@@ -136,7 +136,7 @@ div {
 .display_name {
     position: absolute;
     border: black;
-    width: 50%;
+    width: 40%;
     height: 100%;
     left: 10%;
     float: left;
@@ -145,9 +145,9 @@ div {
 .score {
     position: absolute;
     border: black;
-    width: 40%;
+    width: 50%;
     height: 100%;
-    left: 60%;
+    left: 50%;
 }
 
 .nonPlayerOverlay {
