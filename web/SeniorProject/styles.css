@@ -120,8 +120,7 @@ iframe {
 div {
     color: white;
     font-size: 20px;
-    line-height: 100%;
-    padding: 50% 50% 50% 50%;
+    margin: auto;
 }
 
 .label {
