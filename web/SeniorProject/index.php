@@ -59,6 +59,23 @@
     <div class="drawPile cardOutline"></div>
     <div class="discardPile cardOutline"></div>
 
+    <div id="bottomLeftPlayerLabel" class="label">
+        <div id="bottomLeftPlayerDisplay_name" class="display_name"></div>
+        <div id="bottomLeftPlayerScore" class="score">Score: - </div>
+    </div>
+    <div id="topLeftPlayerLabel" class="label">
+        <div id="topLeftPlayerDisplay_name" class="display_name"></div>
+        <div id="topLeftPlayerScore" class="score">Score: - </div>
+    </div>
+    <div id="topRightPlayerLabel" class="label">
+        <div id="topRightPlayerDisplay_name" class="display_name"></div>
+        <div id="topRightPlayerScore" class="score">Score: - </div>
+    </div>
+    <div id="bottomRightPlayerLabel" class="label">
+        <div id="bottomRightPlayerDisplay_name" class="display_name"></div>
+        <div id="bottomRightPlayerScore" class="score">Score: - </div>
+    </div>
+
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
     <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>
     <div id="bottomLeftPlayerDrive" class="card bottomLeftPlayerDrive overlay" onclick="clickOverlay('bottomLeftPlayerDrive')"></div>
@@ -75,10 +92,10 @@
     <div id="bottomRightPlayerMiles" class="card bottomRightPlayerMiles overlay" onclick="clickOverlay('bottomRightPlayerMiles')"></div>
 
     <div id="sidebar">
-        <iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
+        <!--<iframe src="https://appr.tc/r/wow_1" allow-popups allow="microphone; camera" name="iframe_vid_1"></iframe>
         <iframe src="https://appr.tc/r/wow_2" allow-popups allow="microphone; camera" name="iframe_vid_2"></iframe>
         <iframe src="https://appr.tc/r/wow_3" allow-popups allow="microphone; camera" name="iframe_vid_3"></iframe>
-        <iframe src="https://appr.tc/r/wow_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>
+        <iframe src="https://appr.tc/r/wow_4" allow-popups allow="microphone; camera" name="iframe_vid_4"></iframe>-->
     </div>
 
     <?php

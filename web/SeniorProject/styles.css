@@ -117,6 +117,53 @@ iframe {
     transition: 0.5s;
 }
 
+div {
+    color: white;
+    font-size: 4em;
+}
+
+.label {
+    position: fixed;
+    width: 28%;
+    height: 5%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.display_name {
+    position: relative;
+    border: black;
+    width: 60%;
+    height: 100%;
+}
+
+.score {
+    position: relative;
+    border: black;
+    width: 40%;
+    height: 100%;
+}
+
+#bottomLeftPlayerLabel {
+    top: 61%;
+    left: 4%;
+}
+
+#topLeftPlayerLabel {
+    top: 28%;
+    left: 4%;
+}
+
+#topRightPlayerLabel {
+    top: 28%;
+    left: 59%;
+}
+
+#bottomRightPlayerLabel {
+    top: 61%;
+    left: 59%;
+}
+
 .topLeftPlayerDrive {
     top: 2%;
     left: 4%;

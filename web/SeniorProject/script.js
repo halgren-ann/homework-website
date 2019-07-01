@@ -192,6 +192,8 @@ function startGame() {
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, dummy);
+    //Put the display names in
+    displayNames();
 }
 
 function dummy(responseText) {
@@ -199,7 +201,25 @@ function dummy(responseText) {
     console.log(responseText);
 }
 
+function displayNames() {
+    for (var i=0; i<num_players; i++) {
+        if (i==0) {
+            document.getElementById("bottomLeftPlayerDisplay_name").innerHTML = display_name;
+        }
+        else if (i==1) {
+            document.getElementById("topLeftPlayerDisplay_name").innerHTML = display_name + roll("");
+        }
+        else if (i==2) {
+            document.getElementById("topRightPlayerDisplay_name").innerHTML = display_name + roll(roll(""));
+        }
+        else if (i==3) {
+            document.getElementById("bottomRightPlayerDisplay_name").innerHTML = display_name + roll(roll(roll("")));
+        }
+    }
+}
+
 function deal() {
+    displayNames();
     console.log("Game is started....dealing the cards");
     //debugger;
     for (var i=1; i<=6; i++) {
@@ -264,7 +284,7 @@ function convertToCSSClass(arrayName) {
     var answerStr = "";
     //first, figure out the top, bottom, right, left player position on this user's screen
     var last = arrayName[arrayName.length-1];
-    if (last == "y" || last == player_number) {
+    if (last == "y" || last == player_number || last == "e") {
         //this array belongs to the current player
         answerStr += "bottomLeftPlayer";
     }
@@ -291,17 +311,20 @@ function convertToCSSClass(arrayName) {
         }
     }
     //now, get which position within that play area
-    var first = arrayName[0];
-    if (first == "D") {
+    var first = arrayName.substring(0, 2);
+    if (first == "Dr") {
         answerStr += "Drive";
     }
-    else if (first == "S") {
+    else if (first == "Sp") {
         answerStr += "Speed";
     }
-    else if (first == "M") {
+    else if (first == "Sc") {
+        answerStr += "Score";
+    }
+    else if (first == "Mi") {
         answerStr += "Miles";
     }
-    else if (first == "H") {
+    else if (first == "Ha") {
         answerStr += "Hand";
     }
     //finally, return the CSS class name
@@ -589,8 +612,8 @@ function unhighlightValidMoves() {
 //TODO use this function
 function prepUserTurn() {
     //highlight the draw pile
-    document.getElementsByClassName("discardPile")[1].classList.add("backlit");
-    document.getElementsByClassName("drawPile")[1].classList.add("backlit");
+    document.getElementsByClassName("discardPile")[0].classList.add("backlit");
+    document.getElementsByClassName("drawPile")[0].classList.add("backlit");
 }
 
 function setFlag() {
@@ -618,8 +641,8 @@ function clickDrawPile() {
         HandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
         haveDrawn = true;
-        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
-        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
         var start_position = "draw";
@@ -628,7 +651,6 @@ function clickDrawPile() {
     }
 }
 
-//TODO finish and use this function
 function clickDiscardPile() {
     //check for the scenario where the user is trying to draw from the DiscardPile
     if (is_turn && !haveDrawn && discardPileArray[0]) {
@@ -671,7 +693,6 @@ function clickDiscardPile() {
     }
 }
 
-//TODO finish and use this function
 function clickOverlay(location) {
     if (validArray[0] && validArray.includes(location)) {
         debugger;
@@ -702,7 +723,6 @@ function clickOverlay(location) {
     }
 }
 
-//TODO finish and use this function
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     debugger;
     //remove the current class
@@ -728,6 +748,10 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
             cardElement.style.zIndex = window[convertCSSClassToArray(whereTo)].length + 1;
         }
         window[convertCSSClassToArray(whereTo)].push(card);
+    }
+    //Update the score if this is a miles card
+    if (window[convertCSSClassToArray(whereTo)].substring(0, window[convertCSSClassToArray(whereTo)].length-5) == "Miles") {
+        updateScore(who);
     }
     //add the new class
     cardElement.classList.add(whereTo);
@@ -780,23 +804,34 @@ function shiftCards(who, cardNumInHand) {
     }
 }
 
-//TODO finish and use this function
 function updateScore(who) {
     var total = 0;
-    if (who == "PC") {
-        for (var i=0; i < PCMilesArray.length; i++) {
-            total += Number(PCMilesArray[i].name);
-        }
-        document.getElementById("PCScore").innerHTML = "Score: " + total;
-        if (!afterGame && total >= 1000) endGame("PC");
+    for (var i=0; i < window["MilesArray" + who].length; i++) {
+        total += Number(window["MilesArray" + who][i].name);
     }
-    else if (who == "User") {
-        for (var i=0; i < UserMilesArray.length; i++) {
-            total += Number(UserMilesArray[i].name);
-        }
-        document.getElementById("UserScore").innerHTML = "Score: " + total;
-        if (!afterGame && total >= 1000) endGame("User");
+    document.getElementById(convertToCSSClass("Score" + who)).innerHTML = "Score: " + total;
+    if (!afterGame && total >= 1000) endGame(who);
+}
+
+function endGame(winner) {
+    afterGame = true;
+    alert(window["display_name" + winner] + " has won the game!");
+    //TODO maybe make the game obsolete in the database at this point??
+    
+    /*
+    document.getElementById("endGameOverlay").style.display = "block";
+    if(winner == "User") {
+        document.getElementById("winbanner").classList.add("winner");
+        animate();
+        //tally the wins and losses
+        localStorage["wins"] = Number(localStorage["wins"]) + 1;
     }
+    else {
+        document.getElementById("lossbanner").classList.add("winner");
+        localStorage["losses"] = Number(localStorage["losses"]) + 1;
+    }
+    document.getElementById("winslosses").innerHTML = "Wins: " + localStorage["wins"] + "      Losses: " + localStorage["losses"];
+    */
 }
 
 ///////////////////////////////////////////END GAME PLANE///////////////////////////////
