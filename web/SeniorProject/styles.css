@@ -119,17 +119,17 @@ iframe {
 
 div {
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     line-height: 100%;
 }
 
 .label {
     position: fixed;
     width: 28%;
-    height: 10%;
+    height: 5%;
     background-color: black;
     opacity: 0.4;
-    border-radius: 20%;
+    border-radius: 35%;
 }
 
 .display_name {
@@ -138,6 +138,7 @@ div {
     width: 60%;
     height: 100%;
     left: 0%;
+    float: left;
 }
 
 .score {

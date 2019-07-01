@@ -662,8 +662,8 @@ function clickDiscardPile() {
         HandArray.push(discardPileArray[discardPileArray.length-1]);
         discardPileArray.pop();
         haveDrawn = true;
-        document.getElementsByClassName("discardPile")[1].classList.remove("backlit");
-        document.getElementsByClassName("drawPile")[1].classList.remove("backlit");
+        document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
+        document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
         var start_position = "discard";
@@ -760,7 +760,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     //shift the cards in the hand that remain
     shiftCards(who, cardNumInHand);
     //Update the score if this is a miles card
-    if (convertCSSClassToArray(whereTo).substring(0, convertCSSClassToArray(whereTo).length-5) == "Miles") {
+    if (convertCSSClassToArray(whereTo).substring(0, 5) == "Miles") {
         updateScore(who);
     }
     //rotate the turn
