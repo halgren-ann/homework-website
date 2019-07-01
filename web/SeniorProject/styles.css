@@ -125,7 +125,7 @@ div {
 .label {
     position: fixed;
     width: 28%;
-    height: 5%;
+    height: 10%;
     background-color: black;
     opacity: 0.5;
 }
