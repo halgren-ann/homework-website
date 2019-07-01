@@ -21,11 +21,18 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); //Could be zero, one, or many rows re
 $stmt = $db->prepare('UPDATE public.update_manager SET seen = :seen WHERE game_id = :game_id AND player_id = :player_id;');
 $stmt->execute(array(':seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id));
 */
-$stmt = $db->prepare('UPDATE public.update_manager SET seen = :seen WHERE game_id = :game_id AND player_id = :player_id ORDER BY update_id RETURNING *;');
-$stmt->execute(array(':seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id));
+//first, update this batch so I know which entries I'm working with
+$stmt = $db->prepare('UPDATE public.update_manager SET temp_seen = :temp_seen WHERE game_id = :game_id AND player_id = :player_id AND seen = :seen;');
+$stmt->execute(array(':temp_seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id, ':seen' => 'false');
+//Then, grab what I need from the update_manager table
+$stmt = $db->prepare('SELECT * FROM public.update_manager WHERE game_id = :game_id AND player_id = :player_id AND temp_seen = :temp_seen AND seen = :seen ORDER BY update_id;');
+$stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':temp_seen' => 'true', ':seen' => 'false'));
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC); //Could be zero, one, or many rows returned
+//Then, go back and mark all those entries as "seen"
+$stmt = $db->prepare('UPDATE public.update_manager SET seen = :seen WHERE game_id = :game_id AND player_id = :player_id AND temp_seen = :temp_seen;');
+$stmt->execute(array(':seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id, ':temp_seen' => 'true'));
 
-$JSONstr = ""; //this collects all the information to be returned to te user
+$JSONstr = ""; //this collects all the information to be returned to the user
 
 for ($i=0; $i < count($rows); $i++) {
     if($JSONstr == "") {

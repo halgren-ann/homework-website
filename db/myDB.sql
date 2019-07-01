@@ -90,5 +90,6 @@ CREATE TABLE update_manager
 	game_id INT NOT NULL REFERENCES public.game(game_id),
 	player_id INT NOT NULL REFERENCES public.player(player_id),
 	seen BOOLEAN NOT NULL,
+	temp_seen BOOLEAN,
 	what VARCHAR(100) NOT NULL
 );
