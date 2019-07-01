@@ -218,8 +218,29 @@ function displayNames() {
     }
 }
 
+function setupVideos() {
+    if (player_number == 1) {
+        for (var i=0; i < num_players; i++) {
+            if (i == 0) {
+                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_a";
+                //Now click the "JOIN" button using DOM
+                document.getElementById("iframe_vid_1").contentWindow.document.getElementById("confirm-join-button").click();
+            }
+        }
+    }
+}
+
 function deal() {
     displayNames();
+    //overlay the areas that are not being used
+    if (num_players < 4) {
+        document.getElementById("overlayPlayer4").classList.remove("hidden");
+    }
+    if (num_players < 3) {
+        document.getElementById("overlayPlayer3").classList.remove("hidden");
+    }
+    //hook up the videos
+    setupVideos();
     console.log("Game is started....dealing the cards");
     //debugger;
     for (var i=1; i<=6; i++) {

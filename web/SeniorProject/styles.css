@@ -119,8 +119,8 @@ iframe {
 
 div {
     color: white;
-    font-size: 20px;
-    text-indent: 50px;
+    font-weight: bold;
+    font-size: 25px;
     margin: 0 auto;
 }
 
@@ -136,9 +136,9 @@ div {
 .display_name {
     position: absolute;
     border: black;
-    width: 60%;
+    width: 50%;
     height: 100%;
-    left: 0%;
+    left: 10%;
     float: left;
 }
 
@@ -148,6 +148,23 @@ div {
     width: 40%;
     height: 100%;
     left: 60%;
+}
+
+.nonPlayerOverlay {
+    background-color: rgba(0,0,0,0.7);
+    position: fixed;
+    width: 34%;
+    height: 31%;
+}
+
+#overlayPlayer3 {
+    left: 36%;
+    top: 1%;
+}
+
+#overlayPlayer4 {
+    left: 36%;
+    top: 34%;
 }
 
 #bottomLeftPlayerLabel {
