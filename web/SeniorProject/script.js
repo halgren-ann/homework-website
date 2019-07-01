@@ -750,7 +750,7 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         window[convertCSSClassToArray(whereTo)].push(card);
     }
     //Update the score if this is a miles card
-    if (window[convertCSSClassToArray(whereTo)].substring(0, window[convertCSSClassToArray(whereTo)].length-5) == "Miles") {
+    if (convertCSSClassToArray(whereTo).substring(0, convertCSSClassToArray(whereTo).length-5) == "Miles") {
         updateScore(who);
     }
     //add the new class
