@@ -207,13 +207,13 @@ function displayNames() {
             document.getElementById("bottomLeftPlayerDisplay_name").innerHTML = display_name;
         }
         else if (i==1) {
-            document.getElementById("topLeftPlayerDisplay_name").innerHTML = display_name + roll("");
+            document.getElementById("topLeftPlayerDisplay_name").innerHTML = window["display_name" + roll("")];
         }
         else if (i==2) {
-            document.getElementById("topRightPlayerDisplay_name").innerHTML = display_name + roll(roll(""));
+            document.getElementById("topRightPlayerDisplay_name").innerHTML = window["display_name" + roll(roll(""))];
         }
         else if (i==3) {
-            document.getElementById("bottomRightPlayerDisplay_name").innerHTML = display_name + roll(roll(roll("")));
+            document.getElementById("bottomRightPlayerDisplay_name").innerHTML = window["display_name" + roll(roll(roll("")))];
         }
     }
 }
