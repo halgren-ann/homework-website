@@ -23,7 +23,7 @@ $stmt->execute(array(':seen' => 'true', ':game_id' => $game_id, ':player_id' => 
 */
 //first, update this batch so I know which entries I'm working with
 $stmt = $db->prepare('UPDATE public.update_manager SET temp_seen = :temp_seen WHERE game_id = :game_id AND player_id = :player_id AND seen = :seen;');
-$stmt->execute(array(':temp_seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id, ':seen' => 'false');
+$stmt->execute(array(':temp_seen' => 'true', ':game_id' => $game_id, ':player_id' => $player_id, ':seen' => 'false'));
 //Then, grab what I need from the update_manager table
 $stmt = $db->prepare('SELECT * FROM public.update_manager WHERE game_id = :game_id AND player_id = :player_id AND temp_seen = :temp_seen AND seen = :seen ORDER BY update_id;');
 $stmt->execute(array(':game_id' => $game_id, ':player_id' => $player_id, ':temp_seen' => 'true', ':seen' => 'false'));
