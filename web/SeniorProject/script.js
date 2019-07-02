@@ -227,7 +227,7 @@ function setupVideos() {
             document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + player_number];
         }
         else {
-            if (rollOnThis > player_number) {
+            if (parseInt(rollOnThis) > parseInt(player_number)) {
                 document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + rollOnThis];
             }
             else {

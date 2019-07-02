@@ -13,27 +13,28 @@
 
 
 <section id="startPlane">
-    <h1>Mille Bornes - Group Play</h1>
-    <div>Blurb</div>
+    <h1 class="centered">Mille Bornes - Group Play</h1>
+    <div class="blurb">Welcome to the game Mille Bornes! To play and skype with other people, enter a name for yourself and your group's keyword below</div>
+    <br/>
     <label>Display name:</label>
     <input id="display_name" type="text" value="">
-    <p>Keyword instructions</p>
     <label>Keyword:</label>
     <input id="keyword" type="text" value="">
     <button onclick="assessKeyword_part1()">Enter</button>
+    <br/>
     <p>Or, just play by yourself against the PC:</p>
-    <button onclick="playPCGame()">Play PC</button>
+    <button class="centered" onclick="playPCGame()">Play PC</button>
 </section>
 
 <section id="waitingPlane" class="hidden">
-    <h1>Waiting Room</h1>
-    <h2>People in this room:</h2>
+    <h1 class="centered">Waiting Room</h1>
+    <h2 class="centered">People in this room:</h2>
     <div class="playerWaitArea" id="player1_wait"></div>
     <div class="playerWaitArea" id="player2_wait"></div>
     <div class="playerWaitArea" id="player3_wait"></div>
     <div class="playerWaitArea" id="player4_wait"></div>
-    <p>Only the host can start the game blurb</p>
-    <button id="startFromWaitingRoom" onclick="startGame()" class="hidden">Start the game with these players</button>
+    <p>The first person here (the "Host") gets to start the game when everyone is ready.</p>
+    <button id="startFromWaitingRoom" onclick="startGame()" class="hidden centered">Start the game with these players</button>
 </section>
 
 <section id="gamePlane" class="hidden">

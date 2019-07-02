@@ -162,8 +162,8 @@ div {
 .nonPlayerOverlay {
     background-color: rgba(0,0,0,0.7);
     position: fixed;
-    width: 34%;
-    height: 31%;
+    width: 34.5%;
+    height: 31.5%;
     z-index: 200;
 }
 
@@ -327,10 +327,41 @@ img {
     border-radius: 15%;
 }
 
+p {
+    color: white;
+    font-weight: bold;
+    font-size: 25px;
+    margin: 0 auto;
+}
+
+button {
+    border-color: white;
+    border-radius: 15px;
+    border-width: 2px;
+    background-color: lightblue;
+    width: 100%;
+}
+
 .overlay {
     z-index: 105;
     color: white;
     opacity: 0;
+}
+
+.centered {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
+
+label {
+    position: relative;
+    left: 40%;
+}
+
+.blurb {
+    width: 60%;
 }
 
 .cardOutline {
