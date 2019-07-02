@@ -1,4 +1,8 @@
 //TODO protect all inputs against malicious entry with htmlspecialchars etc.
+//TODO add the option to refresh the iframes
+//TODO add labels for the draw and discard piles
+//TODO add an audio signal when it is thier turn?
+//TODO look at font sizes at all steps with different screen effects, get it to be a percentage for the font sizes?
 //TODO account for the case where the person enters a keyword and tries to start a game when they are the only one in the room
 //TODO is there a problem with dealing when perhaps asynchronously the start state is received before all the players are received? YES! Or moves are received before cards are dealt, too
 
@@ -184,6 +188,7 @@ var haveDrawn = false;
 var selectedCard = null;
 var afterGame = false;
 var validArray = new Array();
+var prepped = false;
 
 function startGame() {
     //generate the random card stack
@@ -638,11 +643,11 @@ function unhighlightValidMoves() {
     }
 }
 
-//TODO use this function
 function prepUserTurn() {
     //highlight the draw pile
     document.getElementsByClassName("discardPile")[0].classList.add("backlit");
     document.getElementsByClassName("drawPile")[0].classList.add("backlit");
+    prepped = true;
 }
 
 function setFlag() {
@@ -660,7 +665,7 @@ function waitForFlag(phpFile, info, callback) {
 }
 
 function clickDrawPile() {
-    if (is_turn && !haveDrawn) {
+    if (prepped && is_turn && !haveDrawn) {
         //draw a card
         //debugger;
         document.getElementById(cardArray[cardArray.length-1].id).classList.remove("drawPile");
@@ -682,7 +687,7 @@ function clickDrawPile() {
 
 function clickDiscardPile() {
     //check for the scenario where the user is trying to draw from the DiscardPile
-    if (is_turn && !haveDrawn && discardPileArray[0]) {
+    if (prepped && is_turn && !haveDrawn && discardPileArray[0]) {
         //draw a card
         //debugger;
         document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
@@ -807,8 +812,8 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
     }
     //if it is this user's turn now, notify them and highlight the draw and discard piles
     if (is_turn) {
-        //TODO alert the current user that it is now their turn
-        setTimeout(prepUserTurn, 1000);
+        prepUserTurn();
+        //setTimeout(prepUserTurn, 1000);
     }
     //reshuffle the discard pile into the draw pile if the draw pile is empty
     if(cardArray.length == 0) {

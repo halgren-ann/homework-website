@@ -36,7 +36,7 @@
     <div class="playerWaitArea" id="player3_wait"></div>
     <div class="playerWaitArea" id="player4_wait"></div>
     <p id="onlyHostCanStartBlurb">The first person here (the "Host") gets to start the game when everyone is ready.</p>
-    <button id="startFromWaitingRoom" onclick="startGame()" class="hidden centered">Start the game with these players</button>
+    <button id="startFromWaitingRoom" onclick="startGame()" class="hidden">Start the game with these players</button>
 </section>
 
 <section id="gamePlane" class="hidden">
