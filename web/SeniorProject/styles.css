@@ -20,12 +20,23 @@ body {
     background-image: url("greenHand.png");
 }
 
+#onlyHostCanStartBlurb {
+    position: relative;
+    top: 70%;
+    width: 25%;
+}
+
+#startFromWaitingRoom {
+    position: relative;
+    top: 85%;
+}
+
 #player1_wait {
     position: fixed;
     width: 20%;
-    height: 25%;
-    top: 50%;
-    left: 10%;
+    height: 20%;
+    top: 20%;
+    left: 30%;
     background-color: white;
     color: black;
 }
@@ -33,30 +44,30 @@ body {
 #player2_wait {
     position: fixed;
     width: 20%;
-    height: 25%;
-    top: 50%;
-    left: 30%;
-    background-color: pink;
+    height: 20%;
+    top: 20%;
+    left: 50%;
+    background-color: rgb(255, 211, 218);
     color: black;
 }
 
 #player3_wait {
     position: fixed;
     width: 20%;
-    height: 25%;
-    top: 75%;
-    left: 10%;
-    background-color: lightblue;
+    height: 20%;
+    top: 40%;
+    left: 30%;
+    background-color: rgb(212, 244, 255);
     color: black;
 }
 
 #player4_wait {
     position: fixed;
     width: 20%;
-    height: 35%;
-    top: 75%;
-    left: 30%;
-    background-color: lightgoldenrodyellow;
+    height: 20%;
+    top: 20%;
+    left: 50%;
+    background-color: rgb(255, 255, 230);
     color: black;
 }
 
@@ -335,11 +346,23 @@ p {
 }
 
 button {
-    border-color: white;
+    /*border-color: white;
     border-radius: 15px;
     border-width: 2px;
     background-color: lightblue;
-    width: 100%;
+    width: 100%;*/
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: forestgreen;
+    border-style: inset;
+    border-radius: 10px;
+    border-color: white;
+    padding: 10px;
+
+    display:table; 
+    margin:0 auto;
+    width: 25%;
 }
 
 .overlay {
@@ -355,13 +378,22 @@ button {
     text-align: center;
 }
 
-label {
+label, input {
     position: relative;
-    left: 40%;
+    left: 35%;
+    top: 50%;
+}
+
+h2 {
+    position: relative;
+    top: 15%;
 }
 
 .blurb {
-    width: 60%;
+    width: 70%;
+    position: fixed;
+    top: 15%;
+    text-align: justify;
 }
 
 .cardOutline {
