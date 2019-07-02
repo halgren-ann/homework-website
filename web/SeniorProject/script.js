@@ -192,8 +192,7 @@ function startGame() {
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, dummy);
-    //Put the display names in
-    displayNames();
+    prepUserTurn();
 }
 
 function dummy(responseText) {
@@ -224,20 +223,21 @@ function setupVideos() {
     for (var i=1; i<=num_players; i++) {
         rollOnThis = roll(rollOnThis);
         if (rollOnThis == "") {
-            document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + player_number];
+            document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_" + mapArray[String(player_number) + String(player_number)];
         }
         else {
             if (parseInt(rollOnThis) > parseInt(player_number)) {
-                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + rollOnThis];
+                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[String(player_number) + String(rollOnThis)];
             }
             else {
-                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[rollOnThis + player_number];
+                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[String(rollOnThis) + String(player_number)];
             }
         }
     }
 }
 
 function deal() {
+    //Display all the players' names by their play area
     displayNames();
     //overlay the areas that are not being used
     if (num_players < 4) {
