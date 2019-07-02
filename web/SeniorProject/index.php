@@ -76,8 +76,8 @@
         <div id="bottomRightPlayerScore" class="score">Score: - </div>
     </div>
 
-    <div id="overlayPlayer3" class="hidden" class="nonPlayerOverlay"></div>
-    <div id="overlayPlayer4" class="hidden" class="nonPlayerOverlay"></div>
+    <div id="overlayPlayer3" class="hidden nonPlayerOverlay"></div>
+    <div id="overlayPlayer4" class="hidden nonPlayerOverlay"></div>
 
     <div id="drawPile" class="card drawPile overlay" onclick="clickDrawPile()"></div>
     <div id="discardPile" class="card discardPile overlay" onclick="clickDiscardPile()"></div>
@@ -99,7 +99,7 @@
         <iframe src="" allow-popups allow="microphone; camera" name="iframe_vid_2" id="iframe_vid_2"></iframe>
         <iframe src="" allow-popups allow="microphone; camera" name="iframe_vid_3" id="iframe_vid_3"></iframe>
         <iframe src="" allow-popups allow="microphone; camera" name="iframe_vid_4" id="iframe_vid_4"></iframe>
-        <iframe class="hidden" src="" allow-popups allow="microphone; camera" name="iframe_vid_5" id="iframe_vid_5"></iframe>
+        <div class="iframeOverlay"></div>
     </div>
 
     <?php

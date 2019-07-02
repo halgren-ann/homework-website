@@ -219,75 +219,19 @@ function displayNames() {
 }
 
 function setupVideos() {
-    if (player_number == 1) {
-        for (var i=0; i < num_players; i++) {
-            if (i == 0) {
-                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_a";
-            }
-            else if (i == 1) {
-                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_b";
-            }
-            else if (i == 2) {
-                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_c";
-            }
-            //Always display the user to themself
-            if (i == num_players-1) {
-                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_g";
-                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_g";
-            }
+    var mapArray = {"12": "a", "13": "b", "14": "c", "23": "d", "24": "e", "34": "f", "11": "g", "22": "h", "33": "i", "44": "j"};
+    var rollOnThis = "";
+    for (var i=1; i<=num_players; i++) {
+        rollOnThis = roll(rollOnThis);
+        if (rollOnThis == "") {
+            document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + player_number];
         }
-    }
-    else if (player_number == 2) {
-        for (var i=0; i < num_players; i++) {
-            if (i == 0) {
-                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_d";
+        else {
+            if (rollOnThis > player_number) {
+                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[player_number + rollOnThis];
             }
-            else if (i == 1) {
-                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_e";
-            }
-            else if (i == 2) {
-                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_a";
-            }
-            //Always display the user to themself
-            if (i == num_players-1) {
-                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_h";
-                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_h";
-            }
-        }
-    }
-    else if (player_number == 3) {
-        for (var i=0; i < num_players; i++) {
-            if (i == 0) {
-                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_f";
-            }
-            else if (i == 1) {
-                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_b";
-            }
-            else if (i == 2) {
-                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_d";
-            }
-            //Always display the user to themself
-            if (i == num_players-1) {
-                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_i";
-                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_i";
-            }
-        }
-    }
-    else if (player_number == 4) {
-        for (var i=0; i < num_players; i++) {
-            if (i == 0) {
-                document.getElementById("iframe_vid_1").src = "https://appr.tc/r/" + keyword + "_c";
-            }
-            else if (i == 1) {
-                document.getElementById("iframe_vid_2").src = "https://appr.tc/r/" + keyword + "_e";
-            }
-            else if (i == 2) {
-                document.getElementById("iframe_vid_3").src = "https://appr.tc/r/" + keyword + "_f";
-            }
-            //Always display the user to themself
-            if (i == num_players-1) {
-                document.getElementById("iframe_vid_4").src = "https://appr.tc/r/" + keyword + "_j";
-                document.getElementById("iframe_vid_5").src = "https://appr.tc/r/" + keyword + "_j";
+            else {
+                document.getElementById("iframe_vid_" + i).src = "https://appr.tc/r/" + keyword + "_" + mapArray[rollOnThis + player_number];
             }
         }
     }
