@@ -14,28 +14,28 @@
 
 <section id="startPlane">
     <h1 class="centered">Mille Bornes - Group Play</h1>
-    <div class="blurb">Welcome to the game Mille Bornes! To play and skype with other people, enter a name for yourself and your group's keyword below:</div>
+    <div id="welcomeBlurb">Welcome to the game Mille Bornes! To play and skype with other people, enter a name for yourself and your group's keyword below:</div>
     <br/>
-    <label>Display name:</label>
+    <label id="display_nameLabel">Display name:</label>
     <input id="display_name" type="text" value="">
     <br/><br/>
-    <label>Keyword:</label>
+    <label id="keywordLabel">Keyword:</label>
     <input id="keyword" type="text" value="">
-    <button onclick="assessKeyword_part1()">Enter</button>
+    <button id="enter" onclick="assessKeyword_part1()">Enter</button>
     <br/>
-    <p class="centered">Or, just play by yourself against the PC:</p>
+    <p id="playPCBlurb">Or, just play by yourself against the PC:</p>
     <br/>
-    <button class="centered" onclick="playPCGame()">Play PC</button>
+    <button id="playPCButton" onclick="playPCGame()">Play PC</button>
 </section>
 
 <section id="waitingPlane" class="hidden">
     <h1 class="centered">Waiting Room</h1>
-    <h2 class="centered">People in this room:</h2>
+    <h2 id="people">People in this room:</h2>
     <div class="playerWaitArea" id="player1_wait"></div>
     <div class="playerWaitArea" id="player2_wait"></div>
     <div class="playerWaitArea" id="player3_wait"></div>
     <div class="playerWaitArea" id="player4_wait"></div>
-    <p class="centered" id="onlyHostCanStartBlurb">The first person here (the "Host") gets to start the game when everyone is ready.</p>
+    <p id="onlyHostCanStartBlurb">The first person here (the "Host") gets to start the game when everyone is ready.</p>
     <button id="startFromWaitingRoom" onclick="startGame()" class="hidden centered">Start the game with these players</button>
 </section>
 

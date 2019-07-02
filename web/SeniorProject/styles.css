@@ -3,6 +3,7 @@ body {
     height: 100%;
     background-color: black;
     padding: none;
+    color: forestgreen;
 }
 
 #gamePlane {
@@ -17,18 +18,66 @@ body {
     z-index: 1;
     width: 100%;
     height: 100%;
-    background-image: url("greenHand.png");
+    background-image: url("dark-triangles.png");
 }
 
-#onlyHostCanStartBlurb {
-    position: relative;
-    top: 70%;
+#welcomeBlurb {
+    position: fixed;
+    left: 25%;
+    top: 15%;
+    width: 50%;
+    text-align: justify;
+}
+
+#display_nameLabel {
+    position: fixed;
+    left: 40%;
+    top: 30%;
+}
+
+#display_name {
+    position: fixed;
+    left: 48%;
+    top: 30%;
+}
+
+#keywordLabel {
+    position: fixed;
+    left: 40%;
+    top: 40%;
+}
+
+#keyword {
+    position: fixed;
+    left: 48%;
+    top: 40%;
+}
+
+#enter {
+    position: fixed;
+    left: 37.5%;
+    top: 50%;
     width: 25%;
 }
 
-#startFromWaitingRoom {
-    position: relative;
+#playPCBlurb {
+    position: fixed;
+    left: 35%;
+    top: 75%;
+    width: 30%;
+}
+
+#playPCButton {
+    position: fixed;
+    left: 37.5%;
     top: 85%;
+    width: 25%;
+}
+
+#people {
+    position: fixed;
+    top: 15%;
+    left: 37%;
 }
 
 #player1_wait {
@@ -65,10 +114,25 @@ body {
     position: fixed;
     width: 20%;
     height: 20%;
-    top: 20%;
+    top: 40%;
     left: 50%;
     background-color: rgb(255, 255, 230);
     color: black;
+}
+
+#onlyHostCanStartBlurb {
+    position: fixed;
+    top: 70%;
+    left: 34%;
+    width: 32%;
+    text-align: justify;
+}
+
+#startFromWaitingRoom {
+    position: fixed;
+    top: 80%;
+    left: 37.5%;
+    width: 25%;
 }
 
 #startPlane {
@@ -79,7 +143,7 @@ body {
     height: 100%;
     z-index: 2;
     background-size: 100% 100%;
-    background-image: url("greenHand.png");
+    background-image: url("dark-triangles.png");
 }
 
 #sidebar {
@@ -376,24 +440,6 @@ button {
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
-}
-
-label, input {
-    position: relative;
-    left: 35%;
-    top: 50%;
-}
-
-h2 {
-    position: relative;
-    top: 15%;
-}
-
-.blurb {
-    width: 70%;
-    position: fixed;
-    top: 15%;
-    text-align: justify;
 }
 
 .cardOutline {
