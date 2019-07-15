@@ -5,6 +5,7 @@
 //TODO look at font sizes at all steps with different screen effects, get it to be a percentage for the font sizes?
 //TODO account for the case where the person enters a keyword and tries to start a game when they are the only one in the room
 //TODO is there a problem with dealing when perhaps asynchronously the start state is received before all the players are received? YES! Or moves are received before cards are dealt, too
+//TODO can I edit right in github and have it save to heroku automatically?
 
 ///////////////////////////////////////////////GENERAL////////////////////////////////////////////
 /*General Use AJAX*/
