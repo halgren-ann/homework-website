@@ -526,6 +526,19 @@ function shuffleArray(array) {
     return array;
 }
 
+function reshuffle() {
+    cardArray = shuffleArray(discardPileArray);
+    discardPileArray = [];
+    //populate the draw pile
+    for (var i=0; i<cardArray.length; i++) {
+        document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
+        document.getElementById(cardArray[i].id).classList.remove("discardPile");
+        document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
+        document.getElementById(cardArray[i].id).classList.add("drawPile");
+    }
+
+}
+
 //Add a click event listener to handle clicking the user cards from their hand
 function handleClick(e) {    
     e.preventDefault();
@@ -933,9 +946,14 @@ function assessKeyword_part2(responseText) {
     
 }
 
-//TODO: create function playPCGame that begins a game between the user and the PC
-function playPCGame() {
+//TODO: create function play
 
+Game that begins a game between the user and the PC
+function playPCGame() {
+    document.getElementById("gamePlane").innerHTML = "<iframe src="https://homework-website.herokuapp.com/CIT261/MilleBornes/index.php" name="pc_game" id="pc_game"></iframe>"
+    document.getElementById("gamePlane").classList.remove("hidden");
+    document.getElementById("startPlane").classList.add("hidden");
+    document.getElementById("waitingPlane").classList.add("hidden");
 }
 
 //////////////////////////////////////END START PLANE///////////////////////////////////
