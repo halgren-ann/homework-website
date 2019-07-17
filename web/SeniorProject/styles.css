@@ -6,6 +6,14 @@ body {
     color: forestgreen;
 }
 
+#pc_game {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+}
+
 #gamePlane {
     position: fixed;
     z-index: 0;
