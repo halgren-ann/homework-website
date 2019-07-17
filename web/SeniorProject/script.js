@@ -948,7 +948,7 @@ function assessKeyword_part2(responseText) {
 
 //TODO: create function playPCGame that begins a game between the user and the PC
 function playPCGame() {
-    document.getElementById("gamePlane").innerHTML = "<iframe src="https:/\/homework-website.herokuapp.com/CIT261/MilleBornes/index.php" name="pc_game" id="pc_game"></iframe>";
+    document.getElementById("gamePlane").innerHTML = '<iframe src="https:/\/homework-website.herokuapp.com/CIT261/MilleBornes/index.php" name="pc_game" id="pc_game"></iframe>';
     document.getElementById("gamePlane").classList.remove("hidden");
     document.getElementById("startPlane").classList.add("hidden");
     document.getElementById("waitingPlane").classList.add("hidden");
