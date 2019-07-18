@@ -479,6 +479,7 @@ button {
     transition: transform 1s;
     transform-style: preserve-3d;
     z-index: inherit;
+    transform: rotateY(180deg);
 }
 
 /* Position the front and back side */

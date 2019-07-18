@@ -688,6 +688,10 @@ function clickDrawPile() {
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand7");
         HandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
+        //If the draw pile is empty, shuffle the discard pile into the draw pile
+        if(cardArray.length == 0) {
+            reshuffle();
+        }
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
@@ -735,9 +739,11 @@ function clickDiscardPile() {
         haveDrawn = false;
         validArray = [];
         is_turn = false;
+        /*I think I just want to reshuffle immediately once they've drawn, instead of doing this
         if(cardArray.length == 0) {
             reshuffle();
         }
+        */
     }
 }
 
@@ -765,9 +771,9 @@ function clickOverlay(location) {
         haveDrawn = false;
         //stop the user's turn
         is_turn = false;
-        if(cardArray.length == 0) {
+        /*if(cardArray.length == 0) {
             reshuffle();
-        }
+        }*/
     }
 }
 
@@ -830,9 +836,9 @@ function playCard(who, cardNumInHand, cardElement, card, whereTo) {
         //setTimeout(prepUserTurn, 1000);
     }
     //reshuffle the discard pile into the draw pile if the draw pile is empty
-    if(cardArray.length == 0) {
+    /*if(cardArray.length == 0) {
         reshuffle();
-    }
+    }*/
 }
 
 function shiftCards(who, cardNumInHand) {
