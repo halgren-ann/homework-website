@@ -93,6 +93,7 @@ function pull_part2(responseText) {
                 document.getElementById("player"+temp+"_wait").innerHTML = tempStr;
             }
             else if (updatesArray[i].desc == "start_state") {
+                cardArray = makeArray();
                 //how many players are in this game that has just been started?
                 num_players = updatesArray[i].num_players;
                 //update the cardArray variable with the shuffled state
@@ -104,6 +105,11 @@ function pull_part2(responseText) {
                 //populate the draw pile with the updated cardArray
                 for (var k=0; k<cardArray.length; k++) {
                     document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+                    //In case of restarting the game, make sure all the cards are in the draw pile area
+                    document.getElementById(cardArray[k].id).className = '';
+                    document.getElementById(cardArray[k].id).classList.add("flip-card");
+                    document.getElementById(cardArray[k].id).classList.add("card");
+                    document.getElementById(cardArray[k].id).classList.add("drawPile");
                 }
                 //The game has started and we have received the start state, so hide the waiting plane and show the game plane
                 document.getElementById("waitingPlane").classList.add("hidden");
@@ -192,6 +198,7 @@ var validArray = new Array();
 var prepped = false;
 
 function startGame() {
+    cardArray = makeArray();
     //generate the random card stack
     cardArray = shuffleArray(cardArray);
 
@@ -199,6 +206,14 @@ function startGame() {
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, dummy);
     prepUserTurn();
+}
+
+function reload() {
+    location.reload();
+}
+
+function off() {
+    document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
 function dummy(responseText) {

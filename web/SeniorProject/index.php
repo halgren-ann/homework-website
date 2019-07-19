@@ -62,6 +62,9 @@
     <div class="drawPile cardOutline"></div>
     <div class="discardPile cardOutline"></div>
 
+    <div id="drawLabel">Draw</div>
+    <div id="discardLabel">Draw</div>
+
     <div id="bottomLeftPlayerLabel" class="label">
         <div id="bottomLeftPlayerDisplay_name" class="display_name"></div>
         <div id="bottomLeftPlayerScore" class="score">Score: - </div>
@@ -103,6 +106,15 @@
         <iframe src="" allow-popups allow="microphone; camera" name="iframe_vid_3" id="iframe_vid_3"></iframe>
         <iframe src="" allow-popups allow="microphone; camera" name="iframe_vid_4" id="iframe_vid_4"></iframe>
         <div class="iframeOverlay"></div>
+    </div>
+
+    <img id="optionsButton" src="options.png" onclick="openOptions()">
+    <div id="optionsOverlay" class="hidden">
+        <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
+        <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
+        <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
+        <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
+        <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
     </div>
 
     <?php

@@ -6,6 +6,28 @@ body {
     color: forestgreen;
 }
 
+#optionsButton {
+    position: fixed;
+    left: 47%;
+    top: 45%;
+    width: 6%;
+    height: 10%;
+}
+
+#optionsOverlay {
+    position: fixed; /* Sit on top of the page content */
+    /*display: none;*/ /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
 #pc_game {
     position: fixed;
     top: 0%;
@@ -210,6 +232,7 @@ iframe {
     height: 24%;
     border-radius: 15%;
     transition: 0.5s;
+    cursor: pointer; /* Add a pointer on hover */
 }
 
 div {
@@ -226,6 +249,30 @@ div {
     background-color: black;
     opacity: 0.5;
     border-radius: 30%;
+}
+
+#drawLabel {
+    position: fixed;
+    width: 8%;
+    height: 4.5%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 30%;
+    left: 51%;
+    bottom: 27%;
+    text-align: center;
+}
+
+#discardLabel {
+    position: fixed;
+    width: 8%;
+    height: 4.5%;
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 30%;
+    left: 60.5%;
+    bottom: 27%;
+    text-align: center;
 }
 
 .display_name {
