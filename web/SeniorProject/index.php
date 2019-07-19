@@ -359,6 +359,15 @@
         <img id="background_6" src="panelBackground.png" onclick="setBackground(6)">
     </div>
 
+    <div id="endGameOverlay" style="display:none" onclick="offEndGame()">
+        <div class="winslosses" id="winslosses">Wins: 0   Losses: 0</div>
+        <canvas id="canvas" style="width:100%;height:100%;"></canvas>
+        <p id="winbanner" class="backlitText winbanner">YOU WON!</p>
+        <p id="lossbanner" class="lossbanner">YOU LOST</p>
+        <button id="overlayNewGame" onclick="startGame()">New Game</button>
+        <button id="overlayContinue" onclick="offEndGame()">Continue</button>
+    </div>
+
 </section>
 
 </body>

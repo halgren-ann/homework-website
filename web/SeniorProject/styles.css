@@ -4,7 +4,6 @@ body {
     background-color: black;
     padding: none;
     color: forestgreen;
-    pointer-events: auto;
 }
 
 #optionsButton {
@@ -765,4 +764,73 @@ button {
     to {
       text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
     }
+}
+
+.winbanner {
+    position: fixed;
+    top: 15%;
+    left: 27%;
+    font-size: 100px; 
+    transform: scale(0);
+    font-family: 'Sigmar One', cursive;
+    color: gold;
+    transition: 1s;
+}
+
+.lossbanner {
+    position: fixed;
+    top: 15%;
+    left: 27%;
+    font-size: 100px; 
+    transform: scale(0);
+    font-family: 'Sigmar One', cursive;
+    color: rgb(50, 50, 184);
+    transition: 1s;
+}
+
+.winner {
+    transform: scale(1);
+    z-index: 201;
+}
+
+#endGameOverlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlayContinue {
+    position: fixed;
+    top: 60%;
+    left: 52%;
+    width: 10%;
+    height: 5%;
+}
+
+#overlayNewGame {
+    position: fixed;
+    top: 60%;
+    left: 38%;
+    width:10%;
+    height: 5%;
+}
+
+.winslosses {
+    position: fixed;
+    top: 10%;
+    left: 40%;
+    width: 20%;
+    height: 7%;
+    color: white;
+    font-weight: bold;
+    font-size: 200%;
+    text-align: center;
 }
