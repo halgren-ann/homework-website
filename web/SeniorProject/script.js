@@ -203,7 +203,7 @@ var shuffling = false;
 function start() {
     pull();
     //set the background image
-    document.getElementById("nonSidebar").backgroundImage = 'url("' + localStorage["MilleBornesBackground"] + '")';
+    document.getElementById("nonSidebar").style.backgroundImage = 'url("' + localStorage["MilleBornesBackground"] + '")';
 }
 
 function startGame() {
@@ -267,11 +267,11 @@ function changeBackgroundButton() {
 function setBackground(num) {
     if (num < 6) {
         localStorage["MilleBornesBackground"] = "background_" + num + "jpg";
-        document.getElementById("nonSidebar").backgroundImage = 'url("background_' + num + '.jpg")';
+        document.getElementById("nonSidebar").style.backgroundImage = 'url("background_' + num + '.jpg")';
     }
     else {
         localStorage["MilleBornesBackground"] = "panelBackground.png";
-        document.getElementById("nonSidebar").backgroundImage = 'url("panelBackground.png")';
+        document.getElementById("nonSidebar").style.backgroundImage = 'url("panelBackground.png")';
     }
 }
 

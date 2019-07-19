@@ -99,7 +99,7 @@ body {
     left: 8%;
     top: 0%;
     width: 50%;
-    height: 85%;
+    height: 90%;
     color: black;
     overflow-y: scroll;
 }
@@ -128,9 +128,9 @@ body {
 
 #background_1 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 10%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 9.75%;
     top: 33.5%;
     cursor: pointer;
     border-radius: 0%;
@@ -138,9 +138,9 @@ body {
 
 #background_2 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 27.5%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 27.25%;
     top: 33.5%;
     cursor: pointer;
     border-radius: 0%;
@@ -148,9 +148,9 @@ body {
 
 #background_3 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 45%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 44.75%;
     top: 33.5%;
     cursor: pointer;
     border-radius: 0%;
@@ -158,9 +158,9 @@ body {
 
 #background_4 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 10%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 9.75%;
     top: 54%;
     cursor: pointer;
     border-radius: 0%;
@@ -169,9 +169,9 @@ body {
 
 #background_5 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 27.5%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 27.25%;
     top: 54%;
     cursor: pointer;
     border-radius: 0%;
@@ -179,9 +179,9 @@ body {
 
 #background_6 {
     position: fixed;
-    width: 15%;
-    height: 20%;
-    left: 45%;
+    width: 16.5%;
+    height: 19.75%;
+    left: 44.75%;
     top: 54%;
     cursor: pointer;
     border-radius: 0%;

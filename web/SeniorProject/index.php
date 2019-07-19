@@ -349,7 +349,7 @@
         <div><pre id="instructionsSheet"></pre></div>
     </div>
 
-    <div id="backgroundsOverlay" class="hidden" onclick="offBackgrounds()">
+    <div id="backgroundsOverlay" class="hidden">
         <img id="backgroundsOutline" src="backgroundsOutline.png" onclick="offBackgrounds()">
         <img id="background_1" src="background_1.jpg" onclick="setBackground(1)">
         <img id="background_2" src="background_2.jpg" onclick="setBackground(2)">
