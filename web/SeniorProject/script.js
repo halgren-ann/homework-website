@@ -200,6 +200,12 @@ var validArray = new Array();
 var prepped = false;
 var shuffling = false;
 
+function start() {
+    pull();
+    //set the background image
+    document.getElementById("nonSidebar").backgroundImage = 'url("' + localStorage["MilleBornesBackground"] + '.png")';
+}
+
 function startGame() {
     off();
     cardArray = makeArray();
@@ -229,6 +235,10 @@ function offInstructions() {
     document.getElementById("instructionsOverlay").classList.add("hidden");
 }
 
+function offBackgrounds() {
+    document.getElementById("backgroundsOverlay").classList.add("hidden");
+}
+
 function openOptions() {
     document.getElementById("optionsOverlay").classList.remove("hidden");
 }
@@ -249,7 +259,18 @@ function openInstructions() {
 }
 
 function changeBackgroundButton() {
-    //TODO finish this function and children functions
+    document.getElementById("backgroundsOverlay").classList.remove("hidden");
+}
+
+function setBackground(num) {
+    if (num < 6) {
+        localStorage["MilleBornesBackground"] = "background_" + num;
+        document.getElementById("nonSidebar").backgroundImage = 'url("background_' + num + '.png")';
+    }
+    else {
+        localStorage["MilleBornesBackground"] = "panelBackground";
+        document.getElementById("nonSidebar").backgroundImage = 'url("panelBackground.png")';
+    }
 }
 
 function displayNames() {

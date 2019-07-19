@@ -9,7 +9,7 @@
     <title>Mille Bornes - Group Play</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
-<body onload="pull()" onclick="handleClick(event)">
+<body onload="start()" onclick="handleClick(event)">
 
 
 <section id="startPlane">
@@ -336,7 +336,7 @@
     ?>
 
     <img id="optionsButton" src="options.png" onclick="openOptions()">
-    <div id="optionsOverlay" class="hidden">
+    <div id="optionsOverlay" class="hidden" onclick="off()">
         <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
         <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
         <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
@@ -347,6 +347,16 @@
 
     <div id="instructionsOverlay" class="hidden" onclick="offInstructions()">
         <div><pre id="instructionsSheet"></pre></div>
+    </div>
+
+    <div id="backgroundsOverlay" class="hidden" onclick="offBackgrounds()">
+        <img id="backgroundsOutline" src="backgroundsOutline.png" onclick="offBackgrounds()">
+        <img id="background_1" src="background_1.png" onclick="setBackground(1)">
+        <img id="background_2" src="background_2.png" onclick="setBackground(2)">
+        <img id="background_3" src="background_3.png" onclick="setBackground(3)">
+        <img id="background_4" src="background_4.png" onclick="setBackground(4)">
+        <img id="background_5" src="background_5.png" onclick="setBackground(5)">
+        <img id="background_6" src="panelBackground.png" onclick="setBackground(6)">
     </div>
 
 </section>
