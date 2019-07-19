@@ -98,6 +98,7 @@ function pull_part2(responseText) {
                 num_players = updatesArray[i].num_players;
                 //update the cardArray variable with the shuffled state
                 var tempArray = new Array();
+                console.log("Num cards in the deck: " +updatesArray[i].cards.length);
                 for (var j=0; j<updatesArray[i].cards.length; j++) {
                     tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
                 }
@@ -119,6 +120,11 @@ function pull_part2(responseText) {
 
                 //Now deal the cards
                 deal();
+
+                //If this is player number 1, shown them it is their turn
+                if(player_number == 1) {
+                    prepUserTurn();
+                }
             }
             else if (updatesArray[i].desc == "move") {
                 debugger;
@@ -218,7 +224,7 @@ function startGame() {
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, dummy);
-    prepUserTurn();
+    //prepUserTurn();
 }
 
 function dummy(responseText) {
@@ -231,23 +237,28 @@ function reload() {
 }
 
 function off() {
+    console.log("off");
     document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
 function offInstructions() {
+    console.log("offInstructions");
     document.getElementById("instructionsOverlay").classList.add("hidden");
 }
 
 function offBackgrounds() {
+    console.log("offBackgrounds");
     document.getElementById("optionsOverlay").classList.remove("hidden");
     document.getElementById("backgroundsOverlay").classList.add("hidden");
 }
 
 function openOptions() {
+    console.log("openOptions");
     document.getElementById("optionsOverlay").classList.remove("hidden");
 }
 
 function openInstructions() {
+    console.log("openInstructions");
     document.getElementById("instructionsOverlay").classList.remove("hidden");
     //WITH AJAX
     var xmlhttp = new XMLHttpRequest ();
@@ -263,13 +274,16 @@ function openInstructions() {
 }
 
 function changeBackgroundButton() {
+    console.log("changeBackgroundButton");
     document.getElementById("backgroundsOverlay").classList.remove("hidden");
     document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
 function setBackground(num) {
+    console.log('setBackground');
+    document.getElementById("backgroundsOverlay").classList.add("hidden");
     if (num < 6) {
-        localStorage["MilleBornesBackground"] = "background_" + num + "jpg";
+        localStorage["MilleBornesBackground"] = "background_" + num + ".jpg";
         document.getElementById("nonSidebar").style.backgroundImage = 'url("background_' + num + '.jpg")';
     }
     else {

@@ -454,19 +454,19 @@ div {
 .nonPlayerOverlay {
     background-color: rgba(0,0,0,0.8);
     position: fixed;
-    width: 34.5%;
-    height: 31.5%;
+    width: 36%;
+    height: 33%;
     z-index: 200;
 }
 
 #overlayPlayer3 {
     left: 36%;
-    top: 1%;
+    top: 0%;
 }
 
 #overlayPlayer4 {
     left: 36%;
-    top: 34%;
+    top: 33%;
 }
 
 #bottomLeftPlayerLabel {
