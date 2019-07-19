@@ -8,10 +8,10 @@ body {
 
 #optionsButton {
     position: fixed;
-    left: 32%;
-    top: 26%;
-    width: 6%;
-    height: 13%;
+    left: 33%;
+    top: 22%;
+    width: 9%;
+    height: 21%;
     z-index: 201;
     cursor: pointer;
     border-radius: 50%;
@@ -20,7 +20,7 @@ body {
 #optionsOverlay {
     position: fixed; /* Sit on top of the page content */
     /*display: none;*/ /* Hidden by default */
-    width: 70%; /* Full width (cover the whole page) */
+    width: 72%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0; 
     left: 0;
@@ -28,7 +28,6 @@ body {
     background-color: rgba(0,0,0,0.7); /* Black background with opacity */
     z-index: 202; /* Specify a stack order in case you're using a different order for other elements */
     /*cursor: pointer;*/ /* Add a pointer on hover */
-    border-radius: 0%;
 }
 
 #optionsOutline {
@@ -38,6 +37,7 @@ body {
     left: 15%;
     top: 22%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #viewInstructions {
@@ -78,7 +78,6 @@ body {
 
 #instructionsOverlay {
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
     width: 70%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0; 

@@ -108,6 +108,7 @@ function pull_part2(responseText) {
                     //In case of restarting the game, make sure all the cards are in the draw pile area
                     //And flipped correctly
                     document.getElementById(cardArray[k].id).className = '';
+                    document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
                     document.getElementById(cardArray[k].id).classList.add("flip-card");
                     document.getElementById(cardArray[k].id).classList.add("card");
                     document.getElementById(cardArray[k].id).classList.add("drawPile");
@@ -197,6 +198,7 @@ var selectedCard = null;
 var afterGame = false;
 var validArray = new Array();
 var prepped = false;
+var shuffling = false;
 
 function startGame() {
     off();
@@ -571,6 +573,7 @@ function shuffleArray(array) {
 }
 
 function reshuffle() {
+    shuffling = true;
     cardArray = shuffleArray(discardPileArray);
     discardPileArray = [];
     //populate the draw pile
@@ -580,7 +583,7 @@ function reshuffle() {
         document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[i].id).classList.add("drawPile");
     }
-
+    shuffling = false;
 }
 
 //Add a click event listener to handle clicking the user cards from their hand
@@ -707,6 +710,8 @@ function prepUserTurn() {
     //highlight the draw pile
     document.getElementsByClassName("discardPile")[0].classList.add("backlit");
     document.getElementsByClassName("drawPile")[0].classList.add("backlit");
+    document.getElementsByClassName("discardPile")[0].style.cursor = "pointer";
+    document.getElementsByClassName("drawPile")[0].style.cursor = "pointer";
     prepped = true;
 }
 
@@ -741,6 +746,9 @@ function clickDrawPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
+        document.getElementsByClassName("discardPile")[0].style.cursor = "auto";
+        document.getElementsByClassName("drawPile")[0].style.cursor = "auto";
+        
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
         var start_position = "draw";
@@ -762,14 +770,17 @@ function clickDiscardPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
+        document.getElementsByClassName("discardPile")[0].style.cursor = "auto";
+        document.getElementsByClassName("drawPile")[0].style.cursor = "auto";
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
         var start_position = "discard";
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
         AJAX("moves.php", JSONstr, setFlag);
     }
-    else if (is_turn && haveDrawn && selectedCard != null) {
-        debugger;
+    else if (is_turn && haveDrawn && selectedCard != null && !shuffling) {
+        //debugger;
+        //is discarding a card
         //tell the database that I made this move
         var start_position = parseInt(HandArray.indexOf(selectedCard)+1);
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + selectedCard.id + '", "start_position": "' + start_position + '", "end_position": ' + '"discardPileArray"}';
