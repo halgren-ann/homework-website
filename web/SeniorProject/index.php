@@ -108,20 +108,6 @@
         <div class="iframeOverlay"></div>
     </div>
 
-    <img id="optionsButton" src="options.png" onclick="openOptions()">
-    <div id="optionsOverlay" class="hidden">
-        <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
-        <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
-        <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
-        <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
-        <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
-        <div id="instructions">
-    </div>
-
-    <div id="instructionsOverlay" class="hidden" onclick="offInstructions()">
-        <div><pre id="instructionsSheet"></pre></div>
-    </div>
-
     <?php
         for ($i=1; $i <= 10; $i++) {
             echo '
@@ -348,6 +334,20 @@
             ';
         }
     ?>
+
+    <img id="optionsButton" src="options.png" onclick="openOptions()">
+    <div id="optionsOverlay" class="hidden">
+        <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
+        <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
+        <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
+        <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
+        <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
+        <div id="instructions">
+    </div>
+
+    <div id="instructionsOverlay" class="hidden" onclick="offInstructions()">
+        <div><pre id="instructionsSheet"></pre></div>
+    </div>
 
 </section>
 

@@ -106,6 +106,7 @@ function pull_part2(responseText) {
                 for (var k=0; k<cardArray.length; k++) {
                     document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
                     //In case of restarting the game, make sure all the cards are in the draw pile area
+                    //And flipped correctly
                     document.getElementById(cardArray[k].id).className = '';
                     document.getElementById(cardArray[k].id).classList.add("flip-card");
                     document.getElementById(cardArray[k].id).classList.add("card");
@@ -198,6 +199,7 @@ var validArray = new Array();
 var prepped = false;
 
 function startGame() {
+    off();
     cardArray = makeArray();
     //generate the random card stack
     cardArray = shuffleArray(cardArray);

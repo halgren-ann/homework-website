@@ -13,6 +13,8 @@ body {
     width: 6%;
     height: 13%;
     z-index: 201;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
 #optionsOverlay {
@@ -24,8 +26,9 @@ body {
     left: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.7); /* Black background with opacity */
-    z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
-    cursor: pointer; /* Add a pointer on hover */
+    z-index: 202; /* Specify a stack order in case you're using a different order for other elements */
+    /*cursor: pointer;*/ /* Add a pointer on hover */
+    border-radius: 0%;
 }
 
 #optionsOutline {
@@ -34,6 +37,7 @@ body {
     height: 52%;
     left: 15%;
     top: 22%;
+    cursor: pointer;
 }
 
 #viewInstructions {
@@ -81,11 +85,12 @@ body {
     left: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.7); /* Black background with opacity */
-    z-index: 202; /* Specify a stack order in case you're using a different order for other elements */
+    z-index: 203; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */   
 }
 
 #instructionsSheet {
+    display: block;
     position: fixed;
     padding: 20px 20px 20px 20px;
     font-weight: bold;
