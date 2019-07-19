@@ -478,8 +478,8 @@ button {
     text-align: center;
     transition: transform 1s;
     transform-style: preserve-3d;
-    z-index: inherit;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg);/*/////////////////*/
+    /*z-index: inherit;////////////////////*/
 }
 
 /* Position the front and back side */
@@ -494,8 +494,12 @@ button {
 
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
-    transform: rotateY(180deg);
+    /*transform: rotateY(180deg);//////////////////*/
 }
+
+.flip-card-back {
+    transform: rotateY(180deg)
+;}
 
 .flip {
     transform: rotateY(180deg);
