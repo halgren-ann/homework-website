@@ -342,7 +342,7 @@
         <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
         <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
         <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
-        <div id="instructions">
+        <div id="instructions"></div>
     </div>
 
     <div id="instructionsOverlay" class="hidden" onclick="offInstructions()">

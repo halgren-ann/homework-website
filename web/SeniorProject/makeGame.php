@@ -11,6 +11,10 @@ $game_id = $inputText->game_id;
 include 'dbConnect.php';
 session_start();
 
+//First, delete any previous decks from this game, if this is a deck restart
+$stmt = $db->prepare('DELETE FROM public.start_state WHERE game_id = :game_id;');
+$stmt->execute(array(':game_id' => $game_id));
+$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //Insert each card in the deck into the public.start_state table
 for ($i=0; $i<count($cardArray); $i++) {
     //Add each card to the database

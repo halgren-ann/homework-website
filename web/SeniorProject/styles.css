@@ -4,6 +4,7 @@ body {
     background-color: black;
     padding: none;
     color: forestgreen;
+    pointer-events: auto;
 }
 
 #optionsButton {
@@ -454,7 +455,7 @@ div {
 .nonPlayerOverlay {
     background-color: rgba(0,0,0,0.8);
     position: fixed;
-    width: 36%;
+    width: 35.5%;
     height: 33%;
     z-index: 200;
 }
