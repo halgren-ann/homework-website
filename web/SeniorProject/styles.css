@@ -478,6 +478,7 @@ button {
     height: 100%;
     text-align: center;
     transition: transform 1s;
+    transition: -moz-transform 1s;
     transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     z-index: inherit;
@@ -497,19 +498,23 @@ button {
 /* Style the front side (fallback if image is missing) */
 .flip-card-front {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 }
 
 .flip {
     transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
 }
 
 .hoverSim {
     transform: translate(0%, -19%); 
+    -moz-transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;
 }
 
 .playerHand1:hover, .playerHand2:hover, .playerHand3:hover, .playerHand4:hover, .playerHand5:hover, .playerHand6:hover, .playerHand7:hover {
-    transform: translate(0%, -19%); 
+    transform: translate(0%, -19%);
+    -moz-transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;    
 }
 
