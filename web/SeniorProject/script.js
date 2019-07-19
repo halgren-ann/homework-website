@@ -203,7 +203,7 @@ var shuffling = false;
 function start() {
     pull();
     //set the background image
-    document.getElementById("nonSidebar").backgroundImage = 'url("' + localStorage["MilleBornesBackground"] + '.png")';
+    document.getElementById("nonSidebar").backgroundImage = 'url("' + localStorage["MilleBornesBackground"] + '")';
 }
 
 function startGame() {
@@ -236,6 +236,7 @@ function offInstructions() {
 }
 
 function offBackgrounds() {
+    document.getElementById("optionsOverlay").classList.remove("hidden");
     document.getElementById("backgroundsOverlay").classList.add("hidden");
 }
 
@@ -259,16 +260,17 @@ function openInstructions() {
 }
 
 function changeBackgroundButton() {
+    document.getElementById("optionsOverlay").classList.add("hidden");
     document.getElementById("backgroundsOverlay").classList.remove("hidden");
 }
 
 function setBackground(num) {
     if (num < 6) {
-        localStorage["MilleBornesBackground"] = "background_" + num;
-        document.getElementById("nonSidebar").backgroundImage = 'url("background_' + num + '.png")';
+        localStorage["MilleBornesBackground"] = "background_" + num + "jpg";
+        document.getElementById("nonSidebar").backgroundImage = 'url("background_' + num + '.jpg")';
     }
     else {
-        localStorage["MilleBornesBackground"] = "panelBackground";
+        localStorage["MilleBornesBackground"] = "panelBackground.png";
         document.getElementById("nonSidebar").backgroundImage = 'url("panelBackground.png")';
     }
 }

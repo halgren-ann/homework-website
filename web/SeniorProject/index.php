@@ -336,7 +336,7 @@
     ?>
 
     <img id="optionsButton" src="options.png" onclick="openOptions()">
-    <div id="optionsOverlay" class="hidden" onclick="off()">
+    <div id="optionsOverlay" class="hidden">
         <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
         <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
         <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
@@ -351,11 +351,11 @@
 
     <div id="backgroundsOverlay" class="hidden" onclick="offBackgrounds()">
         <img id="backgroundsOutline" src="backgroundsOutline.png" onclick="offBackgrounds()">
-        <img id="background_1" src="background_1.png" onclick="setBackground(1)">
-        <img id="background_2" src="background_2.png" onclick="setBackground(2)">
-        <img id="background_3" src="background_3.png" onclick="setBackground(3)">
-        <img id="background_4" src="background_4.png" onclick="setBackground(4)">
-        <img id="background_5" src="background_5.png" onclick="setBackground(5)">
+        <img id="background_1" src="background_1.jpg" onclick="setBackground(1)">
+        <img id="background_2" src="background_2.jpg" onclick="setBackground(2)">
+        <img id="background_3" src="background_3.jpg" onclick="setBackground(3)">
+        <img id="background_4" src="background_4.jpg" onclick="setBackground(4)">
+        <img id="background_5" src="background_5.jpg" onclick="setBackground(5)">
         <img id="background_6" src="panelBackground.png" onclick="setBackground(6)">
     </div>
 

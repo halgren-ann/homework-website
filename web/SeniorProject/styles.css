@@ -104,6 +104,18 @@ body {
     overflow-y: scroll;
 }
 
+#backgroundsOverlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 72%;
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+    z-index: 204; /* Specify a stack order in case you're using a different order for other elements */
+    /*cursor: pointer;*/ /* Add a pointer on hover */
+}
+
 #backgroundsOutline {
     position: fixed;
     width: 55%;
@@ -116,56 +128,63 @@ body {
 
 #background_1 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
-    left: 9.5%;
-    top: 34.5%;
+    left: 10%;
+    top: 33.5%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #background_2 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
     left: 27.5%;
-    top: 34.5%;
+    top: 33.5%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #background_3 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
-    left: 45.5%;
-    top: 34.5%;
+    left: 45%;
+    top: 33.5%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #background_4 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
-    left: 9.5%;
-    top: 55%;
+    left: 10%;
+    top: 54%;
     cursor: pointer;
+    border-radius: 0%;
+
 }
 
 #background_5 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
     left: 27.5%;
-    top: 55%;
+    top: 54%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #background_6 {
     position: fixed;
-    width: 17%;
+    width: 15%;
     height: 20%;
-    left: 45.5%;
-    top: 55%;
+    left: 45%;
+    top: 54%;
     cursor: pointer;
+    border-radius: 0%;
 }
 
 #pc_game {
