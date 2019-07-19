@@ -466,6 +466,7 @@ button {
 .flip-card {
     background-color: transparent;
     -moz-perspective: 1000px;
+    -webkit-perspective: 1000px;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
     position: fixed;
     z-index: inherit;
@@ -481,6 +482,7 @@ button {
     transition: -moz-transform 1s;
     transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     z-index: inherit;
 }
 
@@ -491,6 +493,7 @@ button {
     height: 100%;
     backface-visibility: hidden;
     -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     border: 3px solid white;
     border-radius: 15%;
 }
@@ -499,21 +502,25 @@ button {
 .flip-card-front {
     transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .flip {
     transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
 }
 
 .hoverSim {
     transform: translate(0%, -19%); 
+    -webkit-transform: translate(0%, -19%);
     -moz-transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;
 }
 
 .playerHand1:hover, .playerHand2:hover, .playerHand3:hover, .playerHand4:hover, .playerHand5:hover, .playerHand6:hover, .playerHand7:hover {
     transform: translate(0%, -19%);
+    -webkit-transform: translate(0%, -19%);
     -moz-transform: translate(0%, -19%); 
     box-shadow: 2px -6px 5px white;    
 }
