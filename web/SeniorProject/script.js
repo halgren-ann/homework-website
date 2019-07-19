@@ -714,7 +714,7 @@ function highlightValidMoves() {
     //Then highlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[0].classList.add("backlit");
-        document.getElementsByClassName(validArray[i])[document.getElementsByClassName(validArray[i]).length - 1].style.cursor = "pointer";
+        document.getElementById(validArray[i]).style.cursor = "pointer";
     }
 }
 
@@ -725,7 +725,7 @@ function unhighlightValidMoves() {
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[0].classList.remove("backlit");
-        document.getElementsByClassName(validArray[i])[document.getElementsByClassName(validArray[i]).length - 1].style.cursor = "auto";
+        document.getElementById(validArray[i]).style.cursor = "auto";
     }
 }
 
@@ -733,8 +733,8 @@ function prepUserTurn() {
     //highlight the draw pile
     document.getElementsByClassName("discardPile")[0].classList.add("backlit");
     document.getElementsByClassName("drawPile")[0].classList.add("backlit");
-    document.getElementsByClassName("discardPile")[0].style.cursor = "pointer";
-    document.getElementsByClassName("drawPile")[0].style.cursor = "pointer";
+    document.getElementById("drawPile").style.cursor = "pointer";
+    document.getElementById("discardPile").style.cursor = "pointer";
     prepped = true;
 }
 
@@ -769,8 +769,8 @@ function clickDrawPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
-        document.getElementsByClassName("discardPile")[0].style.cursor = "auto";
-        document.getElementsByClassName("drawPile")[0].style.cursor = "auto";
+        document.getElementById("drawPile").style.cursor = "auto";
+    document.getElementById("discardPile").style.cursor = "auto";
         
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
@@ -793,8 +793,8 @@ function clickDiscardPile() {
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
-        document.getElementsByClassName("discardPile")[0].style.cursor = "auto";
-        document.getElementsByClassName("drawPile")[0].style.cursor = "auto";
+        document.getElementById("drawPile").style.cursor = "auto";
+    document.getElementById("discardPile").style.cursor = "auto";
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
         var start_position = "discard";
