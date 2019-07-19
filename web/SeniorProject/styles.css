@@ -8,24 +8,95 @@ body {
 
 #optionsButton {
     position: fixed;
-    left: 47%;
-    top: 45%;
+    left: 32%;
+    top: 26%;
     width: 6%;
-    height: 10%;
+    height: 13%;
+    z-index: 201;
 }
 
 #optionsOverlay {
     position: fixed; /* Sit on top of the page content */
     /*display: none;*/ /* Hidden by default */
-    width: 100%; /* Full width (cover the whole page) */
+    width: 70%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0; 
     left: 0;
-    right: 0;
     bottom: 0;
     background-color: rgba(0,0,0,0.7); /* Black background with opacity */
     z-index: 200; /* Specify a stack order in case you're using a different order for other elements */
     cursor: pointer; /* Add a pointer on hover */
+}
+
+#optionsOutline {
+    position: fixed;
+    width: 43%;
+    height: 52%;
+    left: 15%;
+    top: 22%;
+}
+
+#viewInstructions {
+    position: fixed;
+    width: 20%;
+    height: 20%;
+    left: 15%;
+    top: 34%;
+    cursor: pointer;
+}
+
+#startNewGame {
+    position: fixed;
+    width: 20%;
+    height: 20%;
+    left: 35%;
+    top: 34%;
+    cursor: pointer;
+}
+
+#changeBackgroundButton {
+    position: fixed;
+    width: 20%;
+    height: 20%;
+    left: 15%;
+    top: 54%;
+    cursor: pointer;
+}
+
+#backToHomePage {
+    position: fixed;
+    width: 20%;
+    height: 20%;
+    left: 35%;
+    top: 54%;
+    cursor: pointer;
+}
+
+#instructionsOverlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 70%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7); /* Black background with opacity */
+    z-index: 202; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */   
+}
+
+#instructionsSheet {
+    position: fixed;
+    padding: 20px 20px 20px 20px;
+    font-weight: bold;
+    white-space: pre-wrap;
+    background-color: lightgreen;
+    left: 25%;
+    top: 0%;
+    width: 50%;
+    height: 100%;
+    color: black;
+    overflow-y: scroll;
 }
 
 #pc_game {
@@ -232,7 +303,7 @@ iframe {
     height: 24%;
     border-radius: 15%;
     transition: 0.5s;
-    cursor: pointer; /* Add a pointer on hover */
+    /*cursor: pointer;*/ /* Add a pointer on hover */
 }
 
 div {

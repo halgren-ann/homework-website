@@ -208,6 +208,11 @@ function startGame() {
     prepUserTurn();
 }
 
+function dummy(responseText) {
+    //Do nothing
+    console.log(responseText);
+}
+
 function reload() {
     location.reload();
 }
@@ -216,9 +221,31 @@ function off() {
     document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
-function dummy(responseText) {
-    //Do nothing
-    console.log(responseText);
+function offInstructions() {
+    document.getElementById("instructionsOverlay").classList.add("hidden");
+}
+
+function openOptions() {
+    document.getElementById("optionsOverlay").classList.remove("hidden");
+}
+
+function openInstructions() {
+    document.getElementById("instructionsOverlay").classList.remove("hidden");
+    //WITH AJAX
+    var xmlhttp = new XMLHttpRequest ();
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            var instructions = xmlhttp.responseText;
+            document.getElementById("instructionsSheet").textContent = instructions;
+        }
+    }
+
+    xmlhttp.open("GET", "instructions.txt");
+    xmlhttp.send();
+}
+
+function changeBackgroundButton() {
+    //TODO finish this function and children functions
 }
 
 function displayNames() {
@@ -659,6 +686,7 @@ function highlightValidMoves() {
     //Then highlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[0].classList.add("backlit");
+        document.getElementsByClassName(validArray[i])[document.getElementsByClassName(validArray[i]).length - 1].style.cursor = "pointer";
     }
 }
 
@@ -669,6 +697,7 @@ function unhighlightValidMoves() {
     //Unhighlight the possible options
     for (var i=0; i<validArray.length; i++) {
         document.getElementsByClassName(validArray[i])[0].classList.remove("backlit");
+        document.getElementsByClassName(validArray[i])[document.getElementsByClassName(validArray[i]).length - 1].style.cursor = "auto";
     }
 }
 

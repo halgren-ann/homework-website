@@ -63,7 +63,7 @@
     <div class="discardPile cardOutline"></div>
 
     <div id="drawLabel">Draw</div>
-    <div id="discardLabel">Draw</div>
+    <div id="discardLabel">Discard</div>
 
     <div id="bottomLeftPlayerLabel" class="label">
         <div id="bottomLeftPlayerDisplay_name" class="display_name"></div>
@@ -115,6 +115,11 @@
         <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
         <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
         <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
+        <div id="instructions">
+    </div>
+
+    <div id="instructionsOverlay" class="hidden" onclick="offInstructions()">
+        <div><pre id="instructionsSheet"></pre></div>
     </div>
 
     <?php
