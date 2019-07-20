@@ -220,7 +220,7 @@ body {
 
 #display_nameLabel {
     position: fixed;
-    right: 38%;
+    right: 52%;
     top: 30%;
 }
 
@@ -232,7 +232,7 @@ body {
 
 #keywordLabel {
     position: fixed;
-    right: 38%;
+    right: 52%;
     top: 40%;
 }
 
@@ -394,11 +394,12 @@ iframe {
     /*cursor: pointer;*/ /* Add a pointer on hover */
 }
 
-div p {
+div, p {
     color: white;
     font-weight: bold;
     font-size: 2vw;
     margin: 0 auto;
+    text-align: center;
 }
 
 .label {
