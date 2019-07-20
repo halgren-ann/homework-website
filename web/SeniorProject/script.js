@@ -130,7 +130,7 @@ function pull_part2(responseText) {
                 cardArray = discardPileArray;
                 var tempArray = new Array();
                 //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
-                for (var j=0; j<updatesArray[i].cardArray.length; j++) {
+                for (var j=0; j<cardArray.length; j++) {
                     tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cardArray[j])];
                 }
                 cardArray = tempArray;
@@ -631,7 +631,6 @@ function shuffleArray(array) {
 function reshuffle() {
     shuffling = true;
     cardArray = shuffleArray(discardPileArray);
-    discardPileArray = [];
     /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
