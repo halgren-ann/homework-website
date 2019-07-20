@@ -339,7 +339,7 @@
     <div id="optionsOverlay" class="hidden">
         <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
         <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
-        <!--<img id="startNewGame" src="startNewGame.png" onclick="startGame()">-->
+        <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
         <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
         <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
         <div id="instructions"></div>
@@ -359,6 +359,7 @@
         <img id="background_6" src="panelBackground.png" onclick="setBackground(6)">
     </div>
 
+    <!--
     <div id="endGameOverlay" style="display:none" onclick="offEndGame()">
         <div class="winslosses" id="winslosses">Wins: 0   Losses: 0</div>
         <canvas id="canvas" style="width:100%;height:100%;"></canvas>
@@ -367,6 +368,7 @@
         <button id="overlayNewGame" onclick="startGame()">New Game</button>
         <button id="overlayContinue" onclick="offEndGame()">Continue</button>
     </div>
+    -->
 
 </section>
 

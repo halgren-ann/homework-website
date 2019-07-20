@@ -127,6 +127,7 @@ function pull_part2(responseText) {
                 }
             }
             else if (updatesArray[i].desc == "reshuffle") {
+                /*
                 cardArray = discardPileArray;
                 var tempArray = new Array();
                 //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
@@ -141,6 +142,7 @@ function pull_part2(responseText) {
                     document.getElementById(cardArray[i].id).childNodes[1].classList.remove("flip");
                     document.getElementById(cardArray[i].id).classList.add("drawPile");
                 }
+                */
             }
             else if (updatesArray[i].desc == "move") {
                 //debugger;
