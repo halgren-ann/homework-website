@@ -143,7 +143,7 @@ function pull_part2(responseText) {
                 }
             }
             else if (updatesArray[i].desc == "move") {
-                debugger;
+                //debugger;
                 //first, figure out which player made this move and store it in temp
                 var temp = 0;
                 if (player_id1 == updatesArray[i].player_id) temp = 1;
@@ -240,6 +240,18 @@ function startGame() {
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
     AJAX("makeGame.php", JSONstr, dummy);
+    //reset the scores
+    /*score = 0;
+    score1 = 0;
+    score2 = 0;
+    score3 = 0;
+    score4 = 0;
+    document.getElementById(convertToCSSClass("Score" + "")).innerHTML = "Score: -";
+    document.getElementById(convertToCSSClass("Score" + 1)).innerHTML = "Score: -";
+    document.getElementById(convertToCSSClass("Score" + 2)).innerHTML = "Score: -";
+    document.getElementById(convertToCSSClass("Score" + 3)).innerHTML = "Score: -";
+    document.getElementById(convertToCSSClass("Score" + 4)).innerHTML = "Score: -";
+    */
     //prepUserTurn();
 }
 
@@ -807,7 +819,7 @@ function clickDrawPile() {
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
         document.getElementById("drawPile").style.cursor = "auto";
-    document.getElementById("discardPile").style.cursor = "auto";
+        document.getElementById("discardPile").style.cursor = "auto";
         
         setTimeout(selectCard, 300, 7);
         //Tell the database that I made this move
@@ -866,7 +878,7 @@ function clickDiscardPile() {
 
 function clickOverlay(location) {
     if (validArray[0] && validArray.includes(location)) {
-        debugger;
+        //debugger;
         //stop highlighting items
         unhighlightValidMoves();
         //tell the database that I made this move
@@ -895,7 +907,7 @@ function clickOverlay(location) {
 }
 
 function playCard(who, cardNumInHand, cardElement, card, whereTo) {
-    debugger;
+    //debugger;
     //remove the current class
     if (who == "") {
         cardElement.classList.remove("playerHand"+cardNumInHand);
