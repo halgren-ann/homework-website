@@ -127,13 +127,18 @@ function pull_part2(responseText) {
                 }
             }
             else if (updatesArray[i].desc == "reshuffle") {
-                cardArray = updatesArray[i].cardArray;
-                discardPileArray = [];
+                cardArray = discardPileArray;
+                var tempArray = new Array();
+                //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
+                for (var j=0; j<updatesArray[i].cardArray.length; j++) {
+                    tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
+                }
+                cardArray = tempArray;
                 //populate the draw pile
                 for (var i=0; i<cardArray.length; i++) {
                     document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
                     document.getElementById(cardArray[i].id).classList.remove("discardPile");
-                    document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
+                    document.getElementById(cardArray[i].id).childNodes[1].classList.remove("flip");
                     document.getElementById(cardArray[i].id).classList.add("drawPile");
                 }
             }
