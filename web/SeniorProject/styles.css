@@ -324,8 +324,8 @@ body {
 #startFromWaitingRoom {
     position: fixed;
     top: 80%;
-    left: 37.5%;
-    width: 25%;
+    left: 25%;
+    width: 50%;
 }
 
 #startPlane {
@@ -401,7 +401,6 @@ div, p {
     font-size: 2vw;
     margin: 0 auto;
     text-align: center;
-    white-space: pre-wrap;
 }
 
 .label {
