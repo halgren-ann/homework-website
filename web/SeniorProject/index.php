@@ -339,7 +339,7 @@
     <div id="optionsOverlay" class="hidden">
         <img id="optionsOutline" src="optionsOutline.png" onclick="off()">
         <img id="viewInstructions" src="viewInstructions.png" onclick="openInstructions()">
-        <img id="startNewGame" src="startNewGame.png" onclick="startGame()">
+        <!--<img id="startNewGame" src="startNewGame.png" onclick="startGame()">-->
         <img id="changeBackgroundButton" src="changeBackgroundButton.png" onclick="changeBackgroundButton()">
         <img id="backToHomePage" src="backToHomePage.png" onclick="reload()">
         <div id="instructions"></div>

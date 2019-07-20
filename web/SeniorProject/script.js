@@ -127,7 +127,6 @@ function pull_part2(responseText) {
                 }
             }
             else if (updatesArray[i].desc == "reshuffle") {
-                /*
                 cardArray = discardPileArray;
                 var tempArray = new Array();
                 //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
@@ -136,13 +135,12 @@ function pull_part2(responseText) {
                 }
                 cardArray = tempArray;
                 //populate the draw pile
-                for (var i=0; i<cardArray.length; i++) {
-                    document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
-                    document.getElementById(cardArray[i].id).classList.remove("discardPile");
-                    document.getElementById(cardArray[i].id).childNodes[1].classList.remove("flip");
-                    document.getElementById(cardArray[i].id).classList.add("drawPile");
+                for (var k=0; k<cardArray.length; k++) {
+                    document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+                    document.getElementById(cardArray[k].id).classList.remove("discardPile");
+                    document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
+                    document.getElementById(cardArray[k].id).classList.add("drawPile");
                 }
-                */
             }
             else if (updatesArray[i].desc == "move") {
                 //debugger;
