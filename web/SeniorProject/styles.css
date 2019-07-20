@@ -270,13 +270,14 @@ body {
     left: 37%;
     width: 26%;
     text-align: center;
+    font-size: 2vw;
 }
 
 #player1_wait {
     position: fixed;
     width: 20%;
     height: 20%;
-    top: 20%;
+    top: 22%;
     left: 30%;
     background-color: white;
     color: black;
@@ -286,7 +287,7 @@ body {
     position: fixed;
     width: 20%;
     height: 20%;
-    top: 20%;
+    top: 22%;
     left: 50%;
     background-color: rgb(255, 211, 218);
     color: black;
@@ -296,7 +297,7 @@ body {
     position: fixed;
     width: 20%;
     height: 20%;
-    top: 40%;
+    top: 42%;
     left: 30%;
     background-color: rgb(212, 244, 255);
     color: black;
@@ -306,7 +307,7 @@ body {
     position: fixed;
     width: 20%;
     height: 20%;
-    top: 40%;
+    top: 42%;
     left: 50%;
     background-color: rgb(255, 255, 230);
     color: black;
@@ -315,8 +316,8 @@ body {
 #onlyHostCanStartBlurb {
     position: fixed;
     top: 70%;
-    left: 34%;
-    width: 32%;
+    left: 25%;
+    width: 50%;
     text-align: justify;
 }
 
@@ -400,6 +401,7 @@ div, p {
     font-size: 2vw;
     margin: 0 auto;
     text-align: center;
+    white-space: pre-wrap;
 }
 
 .label {
