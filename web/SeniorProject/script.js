@@ -131,7 +131,7 @@ function pull_part2(responseText) {
                 var tempArray = new Array();
                 //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
                 for (var j=0; j<updatesArray[i].cardArray.length; j++) {
-                    tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cards[j])];
+                    tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cardArray[j])];
                 }
                 cardArray = tempArray;
                 //populate the draw pile
