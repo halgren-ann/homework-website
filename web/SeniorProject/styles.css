@@ -220,25 +220,25 @@ body {
 
 #display_nameLabel {
     position: fixed;
-    left: 40%;
+    right: 48%;
     top: 30%;
 }
 
 #display_name {
     position: fixed;
-    left: 48%;
+    left: 50%;
     top: 30%;
 }
 
 #keywordLabel {
     position: fixed;
-    left: 40%;
+    right: 48%;
     top: 40%;
 }
 
 #keyword {
     position: fixed;
-    left: 48%;
+    left: 50%;
     top: 40%;
 }
 
@@ -397,7 +397,7 @@ iframe {
 div {
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2vw;
     margin: 0 auto;
 }
 
