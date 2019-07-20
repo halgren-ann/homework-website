@@ -74,6 +74,13 @@ CREATE TABLE public.start_state
 	position_in_deck INT NOT NULL
 );
 
+CREATE TABLE public.reshuffle
+(
+	game_id INT NOT NULL REFERENCES public.game(game_id),
+	card_id VARCHAR NOT NULL,
+	position_in_deck INT NOT NULL
+);
+
 CREATE TABLE moves
 (
 	move_id SERIAL NOT NULL,

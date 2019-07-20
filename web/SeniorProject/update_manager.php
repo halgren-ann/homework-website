@@ -79,6 +79,21 @@ for ($i=0; $i < count($rows); $i++) {
         $num = $stmt->fetchAll(PDO::FETCH_ASSOC);
         $JSONstr = $JSONstr . '], "num_players": ' . $num[0]["num_players"] . '}';
     }
+    else if($desc == 'reshuffle') {
+        //Get the cards from the reshuffle table
+        $stmt = $db->prepare('SELECT * FROM public.reshuffle WHERE game_id = :game_id ORDER BY position_in_deck;');
+        $stmt->execute(array(':game_id' => $info));
+        $cards = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        $JSONstr = $JSONstr . '{ "desc": "reshuffle", "cardArray": [';
+        for($i=0; $i<count($cards); $i++) {
+            if($i != 0) {
+                $JSONstr = $JSONstr . ", ";
+            }
+            $JSONstr = $JSONstr . '"' . $cards[$i]["card_id"] . '"';
+        }
+        $JSONstr = $JSONstr . ']}';
+    }
     else if($desc == 'move') {
         //Select the new row from the move table
         $stmt = $db->prepare('SELECT * FROM public.moves WHERE move_id = :move_id;');

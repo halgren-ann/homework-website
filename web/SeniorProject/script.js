@@ -126,6 +126,17 @@ function pull_part2(responseText) {
                     prepUserTurn();
                 }
             }
+            else if (updatesArray[i].desc == "reshuffle") {
+                cardArray = updatesArray[i].cardArray;
+                discardPileArray = [];
+                //populate the draw pile
+                for (var i=0; i<cardArray.length; i++) {
+                    document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
+                    document.getElementById(cardArray[i].id).classList.remove("discardPile");
+                    document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
+                    document.getElementById(cardArray[i].id).classList.add("drawPile");
+                }
+            }
             else if (updatesArray[i].desc == "move") {
                 debugger;
                 //first, figure out which player made this move and store it in temp
@@ -141,9 +152,9 @@ function pull_part2(responseText) {
                     window["HandArray" + temp].push(cardArray[cardArray.length-1]);
                     document.getElementById(cardArray[cardArray.length-1].id).classList.add(convertToCSSClass("HandArray"+temp));
                     cardArray.pop();
-                    if(cardArray.length == 0) {
+                    /*if(cardArray.length == 0) {
                         reshuffle();
-                    }
+                    }*/
                 }
                 else if (updatesArray[i].start_position == "discard") {
                     document.getElementById(discardPileArray[discardPileArray.length-1].id).classList.remove("discardPile");
@@ -616,6 +627,7 @@ function reshuffle() {
     shuffling = true;
     cardArray = shuffleArray(discardPileArray);
     discardPileArray = [];
+    /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
         document.getElementById(cardArray[i].id).style = "z-index:" + (i+1);
@@ -623,6 +635,10 @@ function reshuffle() {
         document.getElementById(cardArray[i].id).childNodes[1].classList.toggle("flip");
         document.getElementById(cardArray[i].id).classList.add("drawPile");
     }
+    */
+    var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
+    //Send this deck information to the server
+    AJAX("reshuffle.php", JSONstr, dummy);
     shuffling = false;
 }
 
@@ -969,7 +985,7 @@ function endGame(winner) {
     alert(window["display_name" + winner] + " has won the game!");
     //TODO maybe make the game obsolete in the database at this point??
     
-    
+    /*
     document.getElementById("endGameOverlay").style.display = "block";
     if(winner == player_number) {
         document.getElementById("winbanner").classList.add("winner");
@@ -983,9 +999,10 @@ function endGame(winner) {
         localStorage["losses"] = Number(localStorage["losses"]) + 1;
     }
     document.getElementById("winslosses").innerHTML = "Wins: " + localStorage["wins"] + "      Losses: " + localStorage["losses"];
-    
+    */
 }
 
+/*
 /////////////ANIMATION FOR VICTORY ENDGAME
 // shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
@@ -1064,6 +1081,7 @@ window.requestAnimFrame = (function(){
       requestAnimFrame(animate);
       draw();
   }
+  */
 
 ///////////////////////////////////////////END GAME PLANE///////////////////////////////
 
