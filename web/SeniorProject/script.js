@@ -141,7 +141,7 @@ function pull_part2(responseText) {
                     document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
                     document.getElementById(cardArray[k].id).classList.add("drawPile");
                 }
-                discardPileArray = [];
+                //discardPileArray = [];
             }
             else if (updatesArray[i].desc == "move") {
                 //debugger;
@@ -644,7 +644,7 @@ function shuffleArray(array) {
 function reshuffle() {
     shuffling = true;
     cardArray = shuffleArray(discardPileArray);
-    discardPileArray = [];
+    //discardPileArray = [];
     /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
