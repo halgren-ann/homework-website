@@ -643,6 +643,7 @@ function shuffleArray(array) {
 function reshuffle() {
     shuffling = true;
     cardArray = shuffleArray(discardPileArray);
+    discardPileArray = [];
     /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
