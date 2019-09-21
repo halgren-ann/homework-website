@@ -127,13 +127,13 @@ function pull_part2(responseText) {
                 }
             }
             else if (updatesArray[i].desc == "reshuffle") {
-                cardArray = discardPileArray;
                 var tempArray = new Array();
                 //console.log("Num cards in the deck: " +updatesArray[i].cards.length);
-                for (var j=0; j<cardArray.length; j++) {
-                    tempArray[j] = cardArray[cardArray.findIndex(x => x.id === updatesArray[i].cardArray[j])];
+                for (var j=0; j<discardPileArray.length; j++) {
+                    tempArray[j] = discardPileArray[discardPileArray.findIndex(x => x.id === updatesArray[i].cardArray[j])];
                 }
                 cardArray = tempArray;
+                discardPileArray = [];
                 //populate the draw pile
                 for (var k=0; k<cardArray.length; k++) {
                     document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
@@ -141,7 +141,6 @@ function pull_part2(responseText) {
                     document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
                     document.getElementById(cardArray[k].id).classList.add("drawPile");
                 }
-                //discardPileArray = [];
             }
             else if (updatesArray[i].desc == "move") {
                 //debugger;
@@ -643,8 +642,12 @@ function shuffleArray(array) {
 
 function reshuffle() {
     shuffling = true;
-    cardArray = shuffleArray(discardPileArray);
-    //discardPileArray = [];
+    discardPileArray = shuffleArray(discardPileArray);
+    //deep copy
+    for (var i=0;i<discardPileArray.length; i++) {
+        cardArray[i] = discardPileArray[i];
+    }
+    discardPileArray = [];
     /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
