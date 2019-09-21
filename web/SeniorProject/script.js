@@ -816,17 +816,6 @@ function clickDrawPile() {
         document.getElementById(cardArray[cardArray.length-1].id).classList.add("playerHand7");
         HandArray.push(cardArray[cardArray.length-1]);
         cardArray.pop();
-        //If the draw pile is empty, shuffle the discard pile into the draw pile
-        if(cardArray.length == 0) {
-            reshuffle();
-            //populate the draw pile
-            for (var k=0; k<cardArray.length; k++) {
-                document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
-                document.getElementById(cardArray[k].id).classList.remove("discardPile");
-                document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
-                document.getElementById(cardArray[k].id).classList.add("drawPile");
-            }
-        }
         haveDrawn = true;
         document.getElementsByClassName("discardPile")[0].classList.remove("backlit");
         document.getElementsByClassName("drawPile")[0].classList.remove("backlit");
@@ -838,6 +827,18 @@ function clickDrawPile() {
         var start_position = "draw";
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
         AJAX("moves.php", JSONstr, setFlag);
+
+        //If the draw pile is empty, shuffle the discard pile into the draw pile
+        if(cardArray.length == 0) {
+            reshuffle();
+            //populate the draw pile
+            for (var k=0; k<cardArray.length; k++) {
+                document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+                document.getElementById(cardArray[k].id).classList.remove("discardPile");
+                document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
+                document.getElementById(cardArray[k].id).classList.add("drawPile");
+            }
+        }
     }
 }
 
