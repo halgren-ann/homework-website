@@ -829,9 +829,11 @@ function clickDrawPile() {
         //If the draw pile is empty, shuffle the discard pile into the draw pile
         if(cardArray.length == 0) {
             //Don't continue until the database knows this player has drawn, aka flag = true;
+            /*
             while(!flag){
                 setTimeout(dummy, 1000);
             }
+            */
 
             reshuffle();
             //populate the draw pile
