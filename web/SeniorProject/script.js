@@ -657,7 +657,7 @@ function reshuffle() {
     */
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
     //Send this deck information to the server
-    AJAX("reshuffle.php", JSONstr, dummy);
+    waitForFlag("reshuffle.php", JSONstr, populateDrawPileAfterReshuffleOnThisClient);
     shuffling = false;
 }
 
@@ -804,6 +804,16 @@ function waitForFlag(phpFile, info, callback) {
     }
 }
 
+function populateDrawPileAfterReshuffleOnThisClient() {
+    //populate the draw pile
+    for (var k=0; k<cardArray.length; k++) {
+        document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+        document.getElementById(cardArray[k].id).classList.remove("discardPile");
+        document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
+        document.getElementById(cardArray[k].id).classList.add("drawPile");
+    }
+}
+
 function clickDrawPile() {
     if (prepped && is_turn && !haveDrawn) {
         //draw a card
@@ -829,6 +839,7 @@ function clickDrawPile() {
         //If the draw pile is empty, shuffle the discard pile into the draw pile
         if(cardArray.length == 0) {
             reshuffle();
+            /*
             //populate the draw pile
             for (var k=0; k<cardArray.length; k++) {
                 document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
@@ -836,6 +847,7 @@ function clickDrawPile() {
                 document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
                 document.getElementById(cardArray[k].id).classList.add("drawPile");
             }
+            */
         }
     }
 }
