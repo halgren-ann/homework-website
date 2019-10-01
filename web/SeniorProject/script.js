@@ -826,11 +826,13 @@ function clickDrawPile() {
         var JSONstr = '{"game_id": "' + game_id + '", "player_id": "' + player_id + '", "card_id": "' + HandArray[HandArray.length-1].id + '", "start_position": "' + start_position + '", "end_position": ' + '"HandArray' + player_number + '"}';
         AJAX("moves.php", JSONstr, setFlag);
 
-        //Don't continue until the database knows this player has drawn, aka flag = true;
-        while(!flag){}
-        
         //If the draw pile is empty, shuffle the discard pile into the draw pile
         if(cardArray.length == 0) {
+            //Don't continue until the database knows this player has drawn, aka flag = true;
+            while(!flag){
+                setTimeout(dummy, 1000);
+            }
+
             reshuffle();
             //populate the draw pile
             for (var k=0; k<cardArray.length; k++) {
