@@ -659,6 +659,14 @@ function reshuffle() {
     //Send this deck information to the server
     AJAX("reshuffle.php", JSONstr, dummy);
     shuffling = false;
+
+    //populate the draw pile
+    for (var k=0; k<cardArray.length; k++) {
+        document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
+        document.getElementById(cardArray[k].id).classList.remove("discardPile");
+        document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
+        document.getElementById(cardArray[k].id).classList.add("drawPile");
+    }
 }
 
 //Add a click event listener to handle clicking the user cards from their hand
@@ -835,7 +843,10 @@ function clickDrawPile() {
             }
             */
 
-            reshuffle();
+            waitToReshuffle();
+
+            //reshuffle();
+            /*
             //populate the draw pile
             for (var k=0; k<cardArray.length; k++) {
                 document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
@@ -843,7 +854,17 @@ function clickDrawPile() {
                 document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
                 document.getElementById(cardArray[k].id).classList.add("drawPile");
             }
+            */
         }
+    }
+}
+
+function waitToReshuffle() {
+    if (flag) {
+        reshuffle();
+    }
+    else {
+        setTimeout(reshuffle, 3000);
     }
 }
 
