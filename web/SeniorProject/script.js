@@ -644,7 +644,7 @@ function reshuffle() {
     shuffling = true;
     discardPileArray = shuffleArray(discardPileArray);
     //deep copy
-    tempArray = JSON.parse(JSON.stringify(discardPileArray));
+    var tempArray = JSON.parse(JSON.stringify(discardPileArray));
     //discardPileArray = [];
     /*
     //populate the draw pile
