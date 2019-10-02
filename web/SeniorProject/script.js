@@ -644,8 +644,8 @@ function reshuffle() {
     shuffling = true;
     discardPileArray = shuffleArray(discardPileArray);
     //deep copy
-    cardArray = JSON.parse(JSON.stringify(discardPileArray));
-    discardPileArray = [];
+    tempArray = JSON.parse(JSON.stringify(discardPileArray));
+    //discardPileArray = [];
     /*
     //populate the draw pile
     for (var i=0; i<cardArray.length; i++) {
@@ -655,11 +655,12 @@ function reshuffle() {
         document.getElementById(cardArray[i].id).classList.add("drawPile");
     }
     */
-    var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(cardArray) + '}';
+    var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(tempArray) + '}';
     //Send this deck information to the server
     AJAX("reshuffle.php", JSONstr, dummy);
     shuffling = false;
 
+    /*
     //populate the draw pile
     for (var k=0; k<cardArray.length; k++) {
         document.getElementById(cardArray[k].id).style = "z-index:" + (k+1);
@@ -667,6 +668,7 @@ function reshuffle() {
         document.getElementById(cardArray[k].id).childNodes[1].classList.remove("flip");
         document.getElementById(cardArray[k].id).classList.add("drawPile");
     }
+    */
 }
 
 //Add a click event listener to handle clicking the user cards from their hand
