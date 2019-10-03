@@ -866,7 +866,7 @@ function waitToReshuffle() {
         reshuffle();
     }
     else {
-        setTimeout(reshuffle, 3000);
+        setTimeout(waitToReshuffle, 1000);
     }
 }
 
@@ -918,7 +918,7 @@ function clickDiscardPile() {
 }
 
 function clickOverlay(location) {
-    if (validArray[0] && validArray.includes(location)) {
+    if (validArray[0] && validArray.includes(location) && !shuffling) {
         //debugger;
         //stop highlighting items
         unhighlightValidMoves();
