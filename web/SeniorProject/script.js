@@ -657,8 +657,8 @@ function reshuffle() {
     */
     var JSONstr = '{"game_id": "' + game_id + '", "cardArray": ' + JSON.stringify(tempArray) + '}';
     //Send this deck information to the server
-    AJAX("reshuffle.php", JSONstr, dummy);
-    shuffling = false;
+    AJAX("reshuffle.php", JSONstr, doneShuffling);
+    //shuffling = false;
 
     /*
     //populate the draw pile
@@ -669,6 +669,10 @@ function reshuffle() {
         document.getElementById(cardArray[k].id).classList.add("drawPile");
     }
     */
+}
+
+function doneShuffling() {
+    shuffling = false;
 }
 
 //Add a click event listener to handle clicking the user cards from their hand
