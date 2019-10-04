@@ -123,7 +123,7 @@ function pull_part2(responseText) {
                 //Now deal the cards
                 deal();
 
-                //If this is player number 1, shown them it is their turn
+                //If this is player number 1, show them it is their turn
                 if(player_number == 1) {
                     prepUserTurn();
                 }
@@ -258,25 +258,30 @@ function startGame() {
 }
 
 function highlightWhoseTurnItIs() {
+    console.log("I made it into the new function! :)");
     if (is_turn) {
+        console.log("A :)");
         document.getElementById("bottomLeftPlayerOutline").classList.add("backlit");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topRightPlayerOutline").classList.remove("backlit");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
     }
     else if (window["is_turn" + roll("")]) {
+        console.log("B :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topLeftPlayerOutline").classList.add("backlit");
         document.getElementById("topRightPlayerOutline").classList.remove("backlit");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
     }
     else if (window["is_turn" + roll(roll(""))]) {
+        console.log("C :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topRightPlayerOutline").classList.add("backlit");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
     }
     else if (window["is_turn" + roll(roll(roll("")))]) {
+        console.log("D :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
         document.getElementById("topRightPlayerOutline").classList.remove("backlit");
