@@ -463,7 +463,7 @@ div, p {
 
 #topLeftPlayerOutline {
     position: fixed;
-    border-radius: 15%;
+    border-radius: 10px;
     top: 1%;
     left: 2%;
     width: 31.5%;
@@ -473,7 +473,7 @@ div, p {
 
 #topRightPlayerOutline {
     position: fixed;
-    border-radius: 15%;
+    border-radius: 10px;
     top: 1%;
     left: 37.5%;
     width: 31.5%;
@@ -483,7 +483,7 @@ div, p {
 
 #bottomRightPlayerOutline {
     position: fixed;
-    border-radius: 15%;
+    border-radius: 10px;
     top: 33.5%;
     left: 37.5%;
     width: 31.5%;
@@ -493,7 +493,8 @@ div, p {
 
 #bottomLeftPlayerOutline {
     position: fixed;
-    border-radius: 15%;
+    border-radius: 10px;
+    top: 33.5%;
     left: 2%;
     width: 31.5%;
     height: 30.5%;
@@ -793,10 +794,10 @@ button {
 
 @-webkit-keyframes lightTurn {
     from {
-      box-shadow: 0 0 10px rgb(201, 21, 21), 0 0 20px rgb(201, 21, 21), 0 0 30px rgb(201, 21, 21), 0 0 40px rgb(201, 21, 21), 0 0 70px rgb(201, 21, 21), 0 0 80px rgb(201, 21, 21), 0 0 100px rgb(201, 21, 21), 0 0 150px rgb(201, 21, 21);
+      box-shadow: 0 0 10px rgb(226, 213, 98), 0 0 20px rgb(238, 228, 138), 0 0 30px rgb(238, 228, 138), 0 0 40px rgb(238, 228, 138), 0 0 70px rgb(238, 228, 138), 0 0 80px rgb(238, 228, 138), 0 0 100px rgb(238, 228, 138), 0 0 150px rgb(238, 228, 138);
     }
     to {
-      box-shadow: 0 0 5px rgb(201, 21, 21), 0 0 10px rgb(201, 21, 21), 0 0 15px rgb(201, 21, 21), 0 0 20px rgb(201, 21, 21), 0 0 35px rgb(201, 21, 21), 0 0 40px rgb(201, 21, 21), 0 0 50px rgb(201, 21, 21), 0 0 75px rgb(201, 21, 21);
+      box-shadow: 0 0 5px rgb(238, 228, 138), 0 0 10px rgb(238, 228, 138), 0 0 15px rgb(238, 228, 138), 0 0 20px rgb(238, 228, 138), 0 0 35px rgb(238, 228, 138), 0 0 40px rgb(238, 228, 138), 0 0 50px rgb(238, 228, 138), 0 0 75px rgb(238, 228, 138);
     }
 }
 
