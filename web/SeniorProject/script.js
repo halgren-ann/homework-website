@@ -261,31 +261,31 @@ function highlightWhoseTurnItIs() {
     console.log("I made it into the new function! :)");
     if (is_turn) {
         console.log("A :)");
-        document.getElementById("bottomLeftPlayerOutline").classList.add("backlit");
-        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
-        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomLeftPlayerOutline").classList.add("backlitTurn");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll("")]) {
         console.log("B :)");
-        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topLeftPlayerOutline").classList.add("backlit");
-        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
-        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topLeftPlayerOutline").classList.add("backlitTurn");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll(roll(""))]) {
         console.log("C :)");
-        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topRightPlayerOutline").classList.add("backlit");
-        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topRightPlayerOutline").classList.add("backlitTurn");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll(roll(roll("")))]) {
         console.log("D :)");
-        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
-        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
-        document.getElementById("bottomRightPlayerOutline").classList.add("backlit");
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
+        document.getElementById("bottomRightPlayerOutline").classList.add("backlitTurn");
     }
 }
 
