@@ -468,6 +468,7 @@ div, p {
     width: 31.5%;
     height: 30.5%;
     opacity: 0;
+    z-index: 104;
 }
 
 #topRightPlayerOutline {
@@ -477,6 +478,7 @@ div, p {
     width: 31.5%;
     height: 30.5%;
     opacity: 0;
+    z-index: 104;
 }
 
 #bottomRightPlayerOutline {
@@ -486,6 +488,7 @@ div, p {
     width: 31.5%;
     height: 30.5%;
     opacity: 0;
+    z-index: 104;
 }
 
 #bottomLeftPlayerOutline {
@@ -495,6 +498,7 @@ div, p {
     width: 31.5%;
     height: 30.5%;
     opacity: 0;
+    z-index: 104;
 }
 
 #overlayPlayer3 {
