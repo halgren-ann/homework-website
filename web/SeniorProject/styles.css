@@ -461,6 +461,42 @@ div, p {
     z-index: 200;
 }
 
+#topLeftPlayerOutline {
+    position: fixed;
+    top: 1%;
+    left: 2%;
+    width: 31.5%;
+    height: 30.5%;
+    opacity: 0;
+}
+
+#topRightPlayerOutline {
+    position: fixed;
+    top: 1%;
+    left: 37.5%;
+    width: 31.5%;
+    height: 30.5%;
+    opacity: 0;
+}
+
+#bottomRightPlayerOutline {
+    position: fixed;
+    top: 33.5%;
+    left: 37.5%;
+    width: 31.5%;
+    height: 30.5%;
+    opacity: 0;
+}
+
+#bottomLeftPlayerOutline {
+    position: fixed;
+    top: 33.5%;
+    left: 2%;
+    width: 31.5%;
+    height: 30.5%;
+    opacity: 0;
+}
+
 #overlayPlayer3 {
     left: 36%;
     top: 0%;

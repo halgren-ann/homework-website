@@ -61,9 +61,11 @@ var score4 = 0;
 function pull() {
     var JSONstr = '{"game_id": ' + game_id + ', "player_id": ' + player_id + '}';
     AJAX("update_manager.php", JSONstr, pull_part2);
+    highlightWhoseTurnItIs();
 }
+
 function pull_part2(responseText) {
-    setTimeout(pull, 1000); //pull from the server every 5 seconds
+    setTimeout(pull, 1000); //pull from the server every second
     console.log(responseText);
     //TODO deal with the information returned and reflect the changes on the client
     if (responseText == "no_updates") {
@@ -253,6 +255,33 @@ function startGame() {
     document.getElementById(convertToCSSClass("Score" + 4)).innerHTML = "Score: -";
     */
     //prepUserTurn();
+}
+
+function highlightWhoseTurnItIs() {
+    if (is_turn) {
+        document.getElementById("bottomLeftPlayerOutline").classList.add("backlit");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+    }
+    else if (window["is_turn" + roll("")]) {
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topLeftPlayerOutline").classList.add("backlit");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+    }
+    else if (window["is_turn" + roll(roll(""))]) {
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topRightPlayerOutline").classList.add("backlit");
+        document.getElementById("bottomRightPlayerOutline").classList.remove("backlit");
+    }
+    else if (window["is_turn" + roll(roll(roll("")))]) {
+        document.getElementById("bottomLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topLeftPlayerOutline").classList.remove("backlit");
+        document.getElementById("topRightPlayerOutline").classList.remove("backlit");
+        document.getElementById("bottomRightPlayerOutline").classList.add("backlit");
+    }
 }
 
 function dummy(responseText) {

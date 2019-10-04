@@ -43,6 +43,11 @@
 
     <div id="nonSidebar"></div>
 
+    <div id="topLeftPlayerOutline" ></div>
+    <div id="topRightPlayerOutline" ></div>
+    <div id="bottomRightPlayerOutline" ></div>
+    <div id="bottomLeftPlayerOutline" ></div>
+
     <div class="topLeftPlayerDrive cardOutline"></div>
     <div class="topLeftPlayerSpeed cardOutline"></div>
     <div class="topLeftPlayerMiles cardOutline"></div>
