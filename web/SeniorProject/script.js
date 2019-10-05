@@ -258,30 +258,30 @@ function startGame() {
 }
 
 function highlightWhoseTurnItIs() {
-    console.log("I made it into the new function! :)");
+    //console.log("I made it into the new function! :)");
     if (is_turn) {
-        console.log("A :)");
+        //console.log("A :)");
         document.getElementById("bottomLeftPlayerOutline").classList.add("backlitTurn");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll("")]) {
-        console.log("B :)");
+        //console.log("B :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topLeftPlayerOutline").classList.add("backlitTurn");
         document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll(roll(""))]) {
-        console.log("C :)");
+        //console.log("C :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topRightPlayerOutline").classList.add("backlitTurn");
         document.getElementById("bottomRightPlayerOutline").classList.remove("backlitTurn");
     }
     else if (window["is_turn" + roll(roll(roll("")))]) {
-        console.log("D :)");
+        //console.log("D :)");
         document.getElementById("bottomLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topLeftPlayerOutline").classList.remove("backlitTurn");
         document.getElementById("topRightPlayerOutline").classList.remove("backlitTurn");
@@ -299,28 +299,28 @@ function reload() {
 }
 
 function off() {
-    console.log("off");
+    //console.log("off");
     document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
 function offInstructions() {
-    console.log("offInstructions");
+    //console.log("offInstructions");
     document.getElementById("instructionsOverlay").classList.add("hidden");
 }
 
 function offBackgrounds() {
-    console.log("offBackgrounds");
+    //console.log("offBackgrounds");
     document.getElementById("optionsOverlay").classList.remove("hidden");
     document.getElementById("backgroundsOverlay").classList.add("hidden");
 }
 
 function openOptions() {
-    console.log("openOptions");
+    //console.log("openOptions");
     document.getElementById("optionsOverlay").classList.remove("hidden");
 }
 
 function openInstructions() {
-    console.log("openInstructions");
+    //console.log("openInstructions");
     document.getElementById("instructionsOverlay").classList.remove("hidden");
     //WITH AJAX
     var xmlhttp = new XMLHttpRequest ();
@@ -336,13 +336,13 @@ function openInstructions() {
 }
 
 function changeBackgroundButton() {
-    console.log("changeBackgroundButton");
+    //console.log("changeBackgroundButton");
     document.getElementById("backgroundsOverlay").classList.remove("hidden");
     document.getElementById("optionsOverlay").classList.add("hidden");
 }
 
 function setBackground(num) {
-    console.log('setBackground');
+    //console.log('setBackground');
     document.getElementById("backgroundsOverlay").classList.add("hidden");
     if (num < 6) {
         localStorage["MilleBornesBackground"] = "background_" + num + ".jpg";
@@ -396,7 +396,7 @@ function deal() {
     //overlay the areas that are not being used
     if (num_players < 4) {
         document.getElementById("overlayPlayer4").classList.remove("hidden");
-        console.log("Overlay placed over player 4");
+        //console.log("Overlay placed over player 4");
     }
     if (num_players < 3) {
         document.getElementById("overlayPlayer3").classList.remove("hidden");
