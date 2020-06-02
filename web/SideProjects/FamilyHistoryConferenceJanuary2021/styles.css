@@ -1,0 +1,11 @@
+body {
+    background-image: url("blue-canvas-background.jpg");
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: center;
+}
