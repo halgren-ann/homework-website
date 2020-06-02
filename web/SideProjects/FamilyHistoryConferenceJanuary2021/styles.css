@@ -4,8 +4,12 @@ body {
 }
 
 .centered {
-    position: absolute;
+    /*position: absolute;
     left: 50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);*/
     text-align: center;
+}
+
+table {
+    outline: white;
 }
