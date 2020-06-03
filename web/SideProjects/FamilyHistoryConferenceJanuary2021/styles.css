@@ -1,6 +1,10 @@
 body {
     background-image: url("blue-canvas-background.jpg");
     color: white;
+    font-size: 15px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 .centered {
@@ -11,5 +15,33 @@ body {
 }
 
 table {
-    outline: white;
+    border: 1px solid white;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+#title {
+    top: 10%;
+}
+
+#date {
+    top: 17%;
+}
+
+#registerHereSection {
+    top: 30%;
+}
+
+#tableOfClassesSection {
+    top: 45%;
 }
