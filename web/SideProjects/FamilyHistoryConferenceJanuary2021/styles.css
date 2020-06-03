@@ -14,7 +14,7 @@ body {
     text-align: center;
 }
 
-table th tr td {
+table, th, tr, td {
     border: 1px solid white;
     padding: 25px 25px 25px 25px;
 }
