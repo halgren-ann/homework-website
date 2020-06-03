@@ -8,9 +8,9 @@ body {
 }
 
 .centered {
-    /*position: absolute;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, 0%);*/
+    transform: translate(-50%, 0%);
     text-align: center;
 }
 
@@ -39,9 +39,9 @@ h3 {
 }
 
 #registerHereSection {
-    top: 30%;
+    top: 35%;
 }
 
 #tableOfClassesSection {
-    top: 45%;
+    top: 60%;
 }
