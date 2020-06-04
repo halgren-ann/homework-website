@@ -1,5 +1,5 @@
 body {
-    background: url(family-circle.jpg) 100% 100%;
+    background: url(family-circle.jpg) top left contain;
     color: black;
     font-size: 15px;
     position: absolute;
