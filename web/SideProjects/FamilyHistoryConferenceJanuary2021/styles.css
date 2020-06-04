@@ -1,7 +1,7 @@
 body {
     background-image: url("blue-canvas-background.jpg");
     color: white;
-    font-size: 30px;
+    font-size: 15px;
     position: fixed;
     height: 100%;
     width: 100%;
@@ -12,6 +12,18 @@ body {
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
+    width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, tr, td {
+    border: 1px solid white;
+    padding: 35px;
+    width: 100%;
+    text-align: left;
 }
 
 table, th, tr, td {
@@ -20,15 +32,15 @@ table, th, tr, td {
 }
 
 h1 {
-    font-size: 60px;
+    font-size: 30px;
 }
 
 h2 {
-    font-size: 50px;
+    font-size: 25px;
 }
 
 h3 {
-    font-size: 40px;
+    font-size: 20px;
 }
 
 #title {
@@ -45,4 +57,5 @@ h3 {
 
 #tableOfClassesSection {
     top: 25%;
+    width: 75%;
 }
