@@ -1,5 +1,6 @@
 body {
-    background: url(family-circle.jpg) top left contain;
+    background-image: url("family-circle.jpg");
+    background-size: cover;
     color: black;
     font-size: 15px;
     position: absolute;
