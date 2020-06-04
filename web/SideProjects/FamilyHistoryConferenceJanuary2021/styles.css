@@ -2,13 +2,12 @@ body {
     background-image: url("blue-canvas-background.jpg");
     color: white;
     font-size: 15px;
-    position: fixed;
+    position: absolute;
     height: 100%;
     width: 100%;
 }
 
 .centered {
-    position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
@@ -17,22 +16,18 @@ body {
 
 table {
     border-collapse: collapse;
+    border: 5px solid white;
 }
 
 table, th, tr, td {
     border: 1px solid white;
-    padding: 35px;
+    padding: 10px;
     width: 100%;
     text-align: left;
 }
 
-table, th, tr, td {
-    border: 1px solid white;
-    padding: 25px;
-}
-
 h1 {
-    font-size: 30px;
+    font-size: 40px;
 }
 
 h2 {
@@ -44,11 +39,11 @@ h3 {
 }
 
 #title {
-    top: 4%;
+    top: 1%;
 }
 
 #date {
-    top: 7%;
+    top: 3%;
 }
 
 #registerHereSection {
@@ -56,6 +51,6 @@ h3 {
 }
 
 #tableOfClassesSection {
-    top: 25%;
-    width: 75%;
+    top: 40%;
+    width: 50%;
 }
