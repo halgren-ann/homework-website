@@ -8,7 +8,7 @@ body {
 }
 
 .centered {
-    /*position: absolute;*/
+    position: absolute;
     left: 50%;
     transform: translate(-50%, 0%);
     text-align: center;
@@ -16,7 +16,7 @@ body {
 
 table, th, tr, td {
     border: 1px solid white;
-    padding: 25px 25px 25px 25px;
+    padding: 25px;
 }
 
 h1 {
@@ -32,17 +32,17 @@ h3 {
 }
 
 #title {
-    top: 7%;
+    top: 4%;
 }
 
 #date {
-    top: 11%;
+    top: 7%;
 }
 
 #registerHereSection {
-    top: 20%;
+    top: 15%;
 }
 
 #tableOfClassesSection {
-    top: 35%;
+    top: 25%;
 }
