@@ -1,5 +1,5 @@
 body {
-    background-image: url("family-circle.jpg");
+    background: url("family-circle.jpg");
     background-size: contain;
     color: black;
     font-size: 15px;
