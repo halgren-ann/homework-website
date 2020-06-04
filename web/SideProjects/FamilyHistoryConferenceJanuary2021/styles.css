@@ -1,5 +1,6 @@
 body {
     background-image: url("family-circle.jpg");
+    background-size: 100% 100%;
     color: black;
     font-size: 15px;
     position: absolute;
@@ -18,6 +19,7 @@ body {
 }
 
 table {
+    table-layout: fixed;
     border-collapse: collapse;
     border: 5px solid white;
 }
@@ -47,7 +49,7 @@ h3 {
 }
 
 #date {
-    top: 5%;
+    top: 6%;
 }
 
 #registerHereSection {
@@ -85,6 +87,6 @@ h3 {
     top: 0%;
     height: 150%;
     background-color: white;
-    opacity: 0.5;
+    opacity: 0.6;
     z-index: -1;
 }
