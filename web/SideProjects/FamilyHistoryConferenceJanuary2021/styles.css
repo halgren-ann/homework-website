@@ -1,6 +1,6 @@
 body {
-    background-image: url("blue-canvas-background.jpg");
-    color: white;
+    background-image: url("family-circle.jpg");
+    color: black;
     font-size: 15px;
     position: absolute;
     height: 100%;
@@ -28,6 +28,7 @@ table, th, tr, td {
 }
 
 h1 {
+    padding: 0px;
     font-size: 40px;
 }
 
@@ -40,18 +41,48 @@ h3 {
 }
 
 #title {
-    top: 1%;
+    top: 2%;
 }
 
 #date {
-    top: 3%;
+    top: 5%;
 }
 
 #registerHereSection {
-    top: 15%;
+    top: 18%;
 }
 
 #tableOfClassesSection {
     top: 40%;
     width: 50%;
+}
+
+#timeCol {
+    width: 12%;
+}
+
+#topicCol {
+    width: 24%;
+}
+
+#teacherCol {
+    width: 20%;
+}
+
+#zoomCol {
+    width: 22%;
+}
+
+#additionalCol {
+    width: 22%;
+}
+
+#opaqueContentBox {
+    position: absolute;
+    width: 58%;
+    top: 0%;
+    height: 150%;
+    background-color: beige;
+    opacity: 0.5;
+    z-index: -1;
 }
