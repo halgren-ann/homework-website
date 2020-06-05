@@ -1,7 +1,8 @@
 body {
     position: absolute;
-    background-image: url("family-circle.jpg"), url("greenery.jpg");
-    background-size: 100% 100%;
+    background-color: #006600;
+    background-image: url("family-circle.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     color: black;
     font-size: 15px;
