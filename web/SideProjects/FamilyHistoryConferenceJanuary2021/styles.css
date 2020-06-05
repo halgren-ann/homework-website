@@ -62,7 +62,12 @@ h3 {
 
 #tableOfClassesSection {
     top: 40%;
-    width: 60%;
+    width: 63%;
+    left: 17%;
+}
+
+#checkboxCol {
+    width: 3%;
 }
 
 #timeCol {
