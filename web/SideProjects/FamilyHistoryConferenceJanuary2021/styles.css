@@ -1,6 +1,6 @@
 body {
     position: absolute;
-    background-image: url("greenery.jpg"), url("family-circle.jpg");
+    background-image: url("family-circle.jpg"), url("greenery.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     color: black;
