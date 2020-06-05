@@ -1,7 +1,7 @@
 body {
     position: absolute;
     background-image: url("family-circle.jpg"), url("greenery.jpg");
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     color: black;
     font-size: 15px;
@@ -61,7 +61,7 @@ h3 {
 
 #tableOfClassesSection {
     top: 40%;
-    width: 50%;
+    width: 60%;
 }
 
 #timeCol {
@@ -86,7 +86,7 @@ h3 {
 
 #opaqueContentBox {
     position: absolute;
-    width: 58%;
+    width: 68%;
     top: 0%;
     height: 150%;
     background-color: white;
