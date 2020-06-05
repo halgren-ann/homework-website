@@ -24,6 +24,7 @@ table {
     table-layout: fixed;
     border-collapse: collapse;
     border: 5px solid white;
+    word-wrap: break-word;
 }
 
 table, th, tr, td {
