@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 </head>
 <body>
-    <form action="handleRegistration.php" method="get">
+    <form action="handleRegistration.php" method="post">
     <div id="opaqueContentBox" class="centered"></div>
     <h1 class="centered" id="title">Family History Conference</h1>
     <br/><br/><br/>
@@ -28,7 +28,7 @@
         <img src="x-2.png" id="x" onclick="closeRegisterPopupSection()">
         <br/>
         <label for="full_name">Full name:</label>
-        <input type="text" id="full_name" name="full_name">
+        <input type="text" id="full_name" name="full_name" autofocus>
         <br/>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
