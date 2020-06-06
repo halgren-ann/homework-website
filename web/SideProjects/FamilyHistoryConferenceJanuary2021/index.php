@@ -42,7 +42,7 @@
                     echo '
                         <tr>
                         <td><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
-                        <td>' . $rows[$i]["class_time"] . '</td>
+                        <td>' . to_char($rows[$i]["class_time"], 'HH12:MI AM') . '</td>
                         <td>' . $rows[$i]["topic"] . '</td>
                         <td>' . $rows[$i]["teacher"] . '</td>
                         <td><a href="' . $rows[$i]["link"] . '">' . $rows[$i]["link"] . '</a></td>
