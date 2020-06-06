@@ -50,7 +50,7 @@
                     echo '
                         <tr>
                         <td class=registrationCol style="padding: 2px"><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
-                        <td>' . $rows[$i]["class_time"]/*date("h:i a", $rows[$i]["class_time"])*/ . '</td>
+                        <td>' . /*$rows[$i]["class_time"]*/date("h:i a", strtotime($rows[$i]["class_time"])) . '</td>
                         <td>' . $rows[$i]["topic"] . '</td>
                         <td>' . $rows[$i]["teacher"] . '</td>
                         <td><a href="' . $rows[$i]["link"] . '">' . $rows[$i]["link"] . '</a></td>
