@@ -12,11 +12,15 @@
     $stmt->execute(array(':full_name' => $_POST["full_name"], ':email' => $_POST["email"]));
     $stmt->fetchAll(PDO::FETCH_ASSOC);
 
+    echo "Checkpoint A";
+
     //Grab the attendee's id
     $stmt = $db->prepare('SELECT * FROM public.attendee WHERE email =:email;');
     $stmt->execute(array(':email' => $_POST["email"]));
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $attendee_id = $rows[0]["id"];
+
+    echo "Checkpoint B";
 
     //Couple the attendee with the classes they registered for
     foreach($_POST as $key => $value)
@@ -29,6 +33,8 @@
             $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
+
+    echo "Checkpoint C";
 
     //Redirect back to the main page and let them know if registration was successful
     echo "<script type='text/javascript'>alert('Congratulations, you're registered!');
