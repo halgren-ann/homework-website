@@ -61,7 +61,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
         <p>Check the boxes below next to the classes you would like to register for, then hit "Submit". You will receive an email with the information. If you want to change your class choices later, just come back here and register again.</p>
-        <input type="submit" value="Submit">
+        <input type="submit" name="submit" value="Submit">
     </section>
     <br/><br/><br/>
     <section class="centered" id="tableOfClassesSection">
@@ -75,7 +75,7 @@
                 <th id="additionalCol">Additional Materials</th>
             </tr>
             <?php
-                for ($i=0; $i < sizeof($rows); $i++) {
+                for ($i=0; $i < sizeof($classList); $i++) {
                     echo '
                         <tr>
                         <td class=registrationCol style="padding: 2px"><input type="checkbox" name="' . $classList[$i]["id"] . '"></td>
