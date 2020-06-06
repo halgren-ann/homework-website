@@ -38,11 +38,14 @@
     $msg = wordwrap($msg,70);
 
     // send email
-    mail("annabellelarsen@gmail.com","Test",$msg);
+    if(mail("annabellelarsen@gmail.com","Test",$msg)) {
+        //Redirect back to the main page   
+        header("Location:index.php");
+    }
     ///////////////////////////////////////////////////////////////////
 
-    //Redirect back to the main page   
-    header("Location:index.php");
+    /*//Redirect back to the main page   
+    header("Location:index.php");*/
 ?>
 
 </body>
