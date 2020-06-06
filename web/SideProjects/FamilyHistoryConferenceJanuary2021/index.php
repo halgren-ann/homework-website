@@ -38,7 +38,7 @@
                 <th id="additionalCol">Additional Materials</th>
             </tr>
             <?php
-                for ($i=0; $i < $rows[].sizeof(); $i++) {
+                for ($i=0; $i < sizeof($rows); $i++) {
                     echo '
                         <tr>
                         <td><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
