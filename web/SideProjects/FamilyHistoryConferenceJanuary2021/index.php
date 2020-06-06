@@ -20,14 +20,21 @@
     <br/><br/><br/>
     <section class="centered" id="registerHereSection">
         <h3>Want to participate? Register Here.</h3>
-        <button id="goToRegisterPortion">Register</button>
+        <button id="goToRegisterPortion" onclick="registerButtonClicked()">Register</button>
     </section>
     <br/><br/><br/>
-    <section class="centered" id="registerPopupSection">
-        
+    <section class="centered" class="hidden" id="registerPopupSection">
+        <img src="x.png" id="x">
+        <label for="full_name">Full name:</label>
+        <input type="text" id="full_name" name="full_name">
+        <br/>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <p>Check the boxes below next to the classes you would like to register for, then hit "Submit". You will receive an email with the information. If you want to change your class choices later, just come back here and register again.</p>
+        <input type="submit" value="Submit">
     </section>
     <br/><br/><br/>
-    <section class="centeredClasses" id="tableOfClassesSection">
+    <section class="centered" id="tableOfClassesSection">
         <table>
             <tr>
                 <th class="registrationCol" id="checkboxCol"></th>

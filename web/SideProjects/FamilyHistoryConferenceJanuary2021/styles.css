@@ -21,14 +21,6 @@ body {
     width: 100%;
 }
 
-.centeredClasses {
-    position: absolute;
-    left: 47%;
-    transform: translate(-50%, 0%);
-    text-align: center;
-    width: 100%;
-}
-
 table {
     table-layout: fixed;
     border-collapse: collapse;
@@ -107,10 +99,30 @@ h3 {
     z-index: -1;
 }
 
+#registerPopupSection {
+    background-color: black;
+    position: sticky;
+    top: 2%;
+    width: 64%;
+    bottom: 38%;
+    color: white;
+    column-width: 50%;
+}
+
 input {
     margin-top: 0;
 }
 
 .registrationCol {
     visibility: collapse;
+}
+
+.hidden {
+    display: none;
+}
+
+#x {
+    position: absolute;
+    top: 0%;
+    right: 0%;
 }
