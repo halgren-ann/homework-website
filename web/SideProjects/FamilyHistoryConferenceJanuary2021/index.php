@@ -23,8 +23,9 @@
         <button id="goToRegisterPortion" onclick="registerButtonClicked()">Register</button>
     </section>
     <br/><br/><br/>
-    <section class="centered hidden" id="registerPopupSection">
+    <section class="hidden" id="registerPopupSection">
         <img src="x.png" id="x">
+        <br/>
         <label for="full_name">Full name:</label>
         <input type="text" id="full_name" name="full_name">
         <br/>
