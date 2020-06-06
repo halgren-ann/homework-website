@@ -63,6 +63,7 @@ h3 {
 #tableOfClassesSection {
     top: 40%;
     width: 63%;
+    transform: translate(-3%, 0%);
 }
 
 #checkboxCol {

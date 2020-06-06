@@ -30,7 +30,7 @@
     <section class="centered" id="tableOfClassesSection">
         <table>
             <tr>
-                <th id="checkboxCol"></th>
+                <th class="registrationCol" id="checkboxCol"></th>
                 <th id="timeCol">Time</th>
                 <th id="topicCol">Topic</th>
                 <th id="teacherCol">Teacher</th>
