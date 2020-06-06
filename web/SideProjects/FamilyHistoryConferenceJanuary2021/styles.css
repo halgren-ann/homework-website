@@ -102,3 +102,7 @@ h3 {
 input {
     margin-top: 0;
 }
+
+.registrationCol {
+    visibility: collapse;
+}

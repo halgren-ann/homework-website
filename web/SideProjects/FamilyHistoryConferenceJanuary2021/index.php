@@ -41,7 +41,7 @@
                 for ($i=0; $i < sizeof($rows); $i++) {
                     echo '
                         <tr>
-                        <td><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
+                        <td class=registrationCol style="padding: 2px"><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
                         <td>' . $rows[$i]["class_time"] . '</td>
                         <td>' . $rows[$i]["topic"] . '</td>
                         <td>' . $rows[$i]["teacher"] . '</td>
