@@ -20,11 +20,11 @@
     <br/><br/><br/>
     <section class="centered" id="registerHereSection">
         <h3>Want to participate? Register Here.</h3>
-        <button id="goToRegisterPortion" onclick="registerButtonClicked()">Register</button>
+        <button id="goToRegisterPortion" onclick="openRegisterPopupSection()">Register</button>
     </section>
     <br/><br/><br/>
     <section class="hidden" id="registerPopupSection">
-        <img src="x.png" id="x">
+        <img src="x-2.png" id="x" onclick="closeRegisterPopupSection()">
         <br/>
         <label for="full_name">Full name:</label>
         <input type="text" id="full_name" name="full_name">
