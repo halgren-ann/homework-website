@@ -37,9 +37,9 @@
     echo "Checkpoint C";
 
     //Redirect back to the main page and let them know if registration was successful
-    echo "<script type='text/javascript'>alert('Congratulations, you're registered!');
+    /*echo "<script type='text/javascript'>alert('Congratulations, you're registered!');
         window.location = 'index.php';</script>";
-    die();
+    die();*/
 ?>
 
 </body>
