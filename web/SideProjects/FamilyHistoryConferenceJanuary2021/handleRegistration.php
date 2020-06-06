@@ -40,6 +40,7 @@
     /*echo "<script type='text/javascript'>alert('Congratulations, you're registered!');
         window.location = 'index.php';</script>";
     die();*/
+    header("Location:index.php");
 ?>
 
 </body>
