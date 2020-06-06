@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 </head>
 <body>
+    <form action="handleRegistration.php" method="get">
     <div id="opaqueContentBox" class="centered"></div>
     <h1 class="centered" id="title">Family History Conference</h1>
     <br/><br/><br/>
@@ -61,7 +62,7 @@
             ?>
         </table>
     </section>
-
+    </form>
 </body>
 <footer>
     <script src="script.js"></script>
