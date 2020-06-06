@@ -27,7 +27,7 @@
         
     </section>
     <br/><br/><br/>
-    <section class="centered" id="tableOfClassesSection">
+    <section class="centeredClasses" id="tableOfClassesSection">
         <table>
             <tr>
                 <th class="registrationCol" id="checkboxCol"></th>
