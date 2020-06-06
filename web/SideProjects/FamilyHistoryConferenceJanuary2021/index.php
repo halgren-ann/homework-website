@@ -27,7 +27,7 @@
         
     </section>
     <br/><br/><br/>
-    <section id="tableOfClassesSection">
+    <section class="centered" id="tableOfClassesSection">
         <table>
             <tr>
                 <th id="checkboxCol">Select</th>
@@ -38,7 +38,7 @@
                 <th id="additionalCol">Additional Materials</th>
             </tr>
             <?php
-                for ($i=1; $i <= $rows.count(); $i++) {
+                for ($i=0; $i <= 2; $i++) {
                     echo '
                         <tr>
                         <td><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
