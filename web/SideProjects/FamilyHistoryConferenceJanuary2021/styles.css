@@ -103,7 +103,7 @@ h3 {
     background-color: #003300;
     position: absolute;
     position: sticky;
-    top: -65%;
+    transform: translate(0%, -50%);
     left: 18%;
     width: 64%;
     height: 36%;
