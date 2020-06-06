@@ -101,9 +101,10 @@ h3 {
 
 #registerPopupSection {
     background-color: black;
+    padding: 10px;
     position: absolute;
     position: sticky;
-    top: 2%;
+    top: -25%;
     left: 18%;
     width: 64%;
     height: 36%;
@@ -125,6 +126,7 @@ input {
 
 #x {
     position: absolute;
+    padding: 0px;
     top: 0%;
     right: 0%;
     width: 5%;
