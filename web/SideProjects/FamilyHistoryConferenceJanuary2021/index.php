@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 </head>
 <body>
+
+    <form action="handleRegistration.php">
+
     <div id="opaqueContentBox" class="centered"></div>
     <h1 class="centered" id="title">Family History Conference</h1>
     <br/><br/><br/>
@@ -50,7 +53,7 @@
                     echo '
                         <tr>
                         <td class=registrationCol style="padding: 2px"><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
-                        <td>' . $rows[$i]["class_time"] . '</td>
+                        <td>' . date("h:i a", $rows[$i]["class_time"]) . '</td>
                         <td>' . $rows[$i]["topic"] . '</td>
                         <td>' . $rows[$i]["teacher"] . '</td>
                         <td><a href="' . $rows[$i]["link"] . '">' . $rows[$i]["link"] . '</a></td>
@@ -75,6 +78,9 @@
             </tr>-->
         </table>
     </section>
+
+    </form>
+
 </body>
 <footer>
     <script src="script.js"></script>
