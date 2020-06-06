@@ -100,11 +100,10 @@ h3 {
 }
 
 #registerPopupSection {
-    background-color: black;
-    padding: 10px;
+    background-color: #003300;
     position: absolute;
     position: sticky;
-    top: -25%;
+    top: -65%;
     left: 18%;
     width: 64%;
     height: 36%;
