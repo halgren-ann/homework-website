@@ -7,27 +7,29 @@
     $classList = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     //WORK DONE WHEN FORM IS SUBMITTED FOR REGISTRATION
-    //Add new attendee
-    $stmt = $db->prepare('INSERT into public.attendee(full_name, email) 
-        VALUES (:full_name, :email);');
-    $stmt->execute(array(':full_name' => $_POST["full_name"], ':email' => $_POST["email"]));
-    $stmt->fetchAll(PDO::FETCH_ASSOC);
+    if(isset($_POST['Submit'])) {
+        //Add new attendee
+        $stmt = $db->prepare('INSERT into public.attendee(full_name, email) 
+            VALUES (:full_name, :email);');
+        $stmt->execute(array(':full_name' => $_POST["full_name"], ':email' => $_POST["email"]));
+        $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    //Grab the attendee's id
-    $stmt = $db->prepare('SELECT * FROM public.attendee WHERE email =:email;');
-    $stmt->execute(array(':email' => $_POST["email"]));
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $attendee_id = $rows[0]["id"];
+        //Grab the attendee's id
+        $stmt = $db->prepare('SELECT * FROM public.attendee WHERE email =:email;');
+        $stmt->execute(array(':email' => $_POST["email"]));
+        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $attendee_id = $rows[0]["id"];
 
-    //Couple the attendee with the classes they registered for
-    foreach($_POST as $key => $value)
-    {
-        if (is_numeric($key))
+        //Couple the attendee with the classes they registered for
+        foreach($_POST as $key => $value)
         {
-            $stmt = $db->prepare('INSERT into public.registered(attendee_id, class_id) 
-                VALUES (:attendee_id, :class_id);');
-            $stmt->execute(array(':attendee_id' => $attendee_id, ':class_id' => $key));
-            $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if (is_numeric($key))
+            {
+                $stmt = $db->prepare('INSERT into public.registered(attendee_id, class_id) 
+                    VALUES (:attendee_id, :class_id);');
+                $stmt->execute(array(':attendee_id' => $attendee_id, ':class_id' => $key));
+                $stmt->fetchAll(PDO::FETCH_ASSOC);
+            }
         }
     }
 ?>
@@ -39,7 +41,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 </head>
 <body>
-    <form action="<?php=$_SERVER['PHP_SELF'];?>" method="post">
+    <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
     <div id="opaqueContentBox" class="centered"></div>
     <h1 class="centered" id="title">Family History Conference</h1>
     <br/><br/><br/>
