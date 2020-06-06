@@ -24,4 +24,8 @@
             $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     }
+
+    //Redirect back to the main page and let them know if registration was successful
+    echo "<script type='text/javascript'>alert('Congratulations, you're registered!');
+        window.location = 'index.php';</script>";
 ?>
