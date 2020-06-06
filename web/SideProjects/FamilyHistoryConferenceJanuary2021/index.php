@@ -75,4 +75,7 @@
         </table>
     </section>
 </body>
+<footer>
+    <script src="script.js"></script>
+</footer>
 </html>
