@@ -13,9 +13,6 @@
     <link rel="stylesheet" type="text/css" href="styles.css">    
 </head>
 <body>
-
-    <form action="handleRegistration.php">
-
     <div id="opaqueContentBox" class="centered"></div>
     <h1 class="centered" id="title">Family History Conference</h1>
     <br/><br/><br/>
@@ -53,7 +50,7 @@
                     echo '
                         <tr>
                         <td class=registrationCol style="padding: 2px"><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
-                        <td>' . date("h:i a", $rows[$i]["class_time"]) . '</td>
+                        <td>' . $rows[$i]["class_time"]/*date("h:i a", $rows[$i]["class_time"])*/ . '</td>
                         <td>' . $rows[$i]["topic"] . '</td>
                         <td>' . $rows[$i]["teacher"] . '</td>
                         <td><a href="' . $rows[$i]["link"] . '">' . $rows[$i]["link"] . '</a></td>
@@ -62,24 +59,8 @@
                     ';
                 }
             ?>
-            <!--<tr>
-                <td>10:00 am</td>
-                <td>Intro to Family Search</td>
-                <td>John Halgren</td>
-                <td><a href="blahblah.zoom.com">blahblah.zoom.com</a></td>
-                <td>N/A</td>
-            </tr>
-            <tr>
-                <td>10:30 am</td>
-                <td>Finding Joy in Your Heritage</td>
-                <td>LeAnn Halgren</td>
-                <td><a href="example.zoom.com">example.zoom.com</a></td>
-                <td>Link to Google Drive with powerpoint slides</td>
-            </tr>-->
         </table>
     </section>
-
-    </form>
 
 </body>
 <footer>
