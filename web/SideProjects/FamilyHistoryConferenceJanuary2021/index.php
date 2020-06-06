@@ -30,7 +30,7 @@
     <section class="centered" id="tableOfClassesSection">
         <table>
             <tr>
-                <th id="checkboxCol">Select</th>
+                <th id="checkboxCol"></th>
                 <th id="timeCol">Time</th>
                 <th id="topicCol">Topic</th>
                 <th id="teacherCol">Teacher</th>
@@ -38,7 +38,7 @@
                 <th id="additionalCol">Additional Materials</th>
             </tr>
             <?php
-                for ($i=0; $i < $rows.count(); $i++) {
+                for ($i=0; $i < $rows.sizeof(); $i++) {
                     echo '
                         <tr>
                         <td><input type="checkbox" name="' . $rows[$i]["id"] . '"></td>
