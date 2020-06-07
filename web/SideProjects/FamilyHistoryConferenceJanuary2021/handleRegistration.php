@@ -31,6 +31,7 @@
         }
     }
 
+    /////////////////////////////////////////////////////////////////////
     //Send an email with the info about the classes they signed up for
     /*// the message
     $msg = "Hi Developer!";
@@ -60,7 +61,7 @@
     echo $response->body();
     */
 
-    $request_body = json_decode('{
+    /*$request_body = json_decode('{
         "personalizations": [
           {
             "to": [
@@ -88,11 +89,11 @@
       $response = $sg->client->mail()->send()->post($request_body);
       echo $response->statusCode();
       echo $response->body();
-      echo $response->headers();
+      echo $response->headers();*/
     ///////////////////////////////////////////////////////////////////
 
-    /*//Redirect back to the main page   
-    header("Location:index.php");*/
+    //Redirect back to the main page   
+    header("Location:index.php");
 ?>
 
 </body>
