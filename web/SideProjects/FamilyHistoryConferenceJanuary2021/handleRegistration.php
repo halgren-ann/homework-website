@@ -5,7 +5,7 @@
 
 <?php 
     include 'dbConnect.php';
-    require("C:/Users/David Halgren/Desktop/sendgrid-php/sendgrid-php.php");
+    require("sendgrid-php/sendgrid-php/sendgrid-php.php");
 
     //Add new attendee
     $stmt = $db->prepare('INSERT into public.attendee(full_name, email) 
