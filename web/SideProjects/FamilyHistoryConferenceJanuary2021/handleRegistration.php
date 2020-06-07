@@ -32,7 +32,7 @@
     }
 
     //Send an email with the info about the classes they signed up for
-    /*// the message
+    // the message
     $msg = "Hi Developer!";
 
     // use wordwrap() if lines are longer than 70 characters
@@ -42,7 +42,9 @@
     if(mail("annabellelarsen@gmail.com","Test",$msg)) {
         //Redirect back to the main page   
         header("Location:index.php");
-    }*/
+    }
+
+    /*
     $from = new SendGrid\Email(null, "annabellelarsen@gmail.com");
     $subject = "Hello World from the SendGrid PHP Library!";
     $to = new SendGrid\Email(null, "annabellelarsen@gmail.com");
@@ -56,6 +58,7 @@
     echo $response->statusCode();
     echo $response->headers();
     echo $response->body();
+    */
     ///////////////////////////////////////////////////////////////////
 
     /*//Redirect back to the main page   
