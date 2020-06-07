@@ -45,7 +45,7 @@
         header("Location:index.php");
     }*/
 
-    /*
+    
     $from = new SendGrid\Email(null, "annabellelarsen@gmail.com");
     $subject = "Hello World from the SendGrid PHP Library!";
     $to = new SendGrid\Email(null, "annabellelarsen@gmail.com");
@@ -59,7 +59,7 @@
     echo $response->statusCode();
     echo $response->headers();
     echo $response->body();
-    */
+    
 
     /*$request_body = json_decode('{
         "personalizations": [
