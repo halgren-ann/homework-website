@@ -1,3 +1,4 @@
+/*Tables for Task Project*/
 CREATE TABLE public.user
 (
 	id SERIAL NOT NULL PRIMARY KEY,
@@ -100,3 +101,33 @@ CREATE TABLE update_manager
 	temp_seen BOOLEAN,
 	what VARCHAR(100) NOT NULL
 );
+
+
+
+/*Tables for Family History Conference January 2021 Project*/
+CREATE TABLE public.class
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	class_time TIME NOT NULL,
+	topic TEXT NOT NULL,
+    teacher TEXT NOT NULL,
+    link TEXT,
+    additional_materials TEXT
+);
+
+CREATE TABLE public.attendee
+(
+	id SERIAL NOT NULL PRIMARY KEY,
+	full_name TEXT NOT NULL,
+	email TEXT NOT NULL
+);
+
+CREATE TABLE public.registered
+(
+	attendee_id INT NOT NULL REFERENCES public.attendee(id),
+	class_id INT NOT NULL REFERENCES public.class(id)
+);
+
+/*Insert some dummy content to test it out*/
+INSERT INTO public.class(class_time, topic, teacher, link, additional_materials) VALUES('10:00 AM', 'Intro to Family Search', 'John Halgren', 'blahblah.zoom.com', NULL);
+INSERT INTO public.class(class_time, topic, teacher, link, additional_materials) VALUES('1:00 PM', 'Finding Joy in Your Heritage', 'LeAnn Halgren', 'example.zoom.com', 'linkToGoogleDrive.drive.google.com');

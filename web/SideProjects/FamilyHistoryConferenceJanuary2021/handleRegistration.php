@@ -5,6 +5,7 @@
 
 <?php 
     include 'dbConnect.php';
+    require("C:\Users\David Halgren\Desktop\sendgrid-php\sendgrid-php\sendgrid-php.php");
 
     //Add new attendee
     $stmt = $db->prepare('INSERT into public.attendee(full_name, email) 
@@ -31,7 +32,7 @@
     }
 
     //Send an email with the info about the classes they signed up for
-    // the message
+    /*// the message
     $msg = "Hi Developer!";
 
     // use wordwrap() if lines are longer than 70 characters
@@ -41,7 +42,20 @@
     if(mail("annabellelarsen@gmail.com","Test",$msg)) {
         //Redirect back to the main page   
         header("Location:index.php");
-    }
+    }*/
+    $from = new SendGrid\Email(null, "annabellelarsen@gmail.com");
+    $subject = "Hello World from the SendGrid PHP Library!";
+    $to = new SendGrid\Email(null, "annabellelarsen@gmail.com");
+    $content = new SendGrid\Content("text/plain", "Hello, Email!");
+    $mail = new SendGrid\Mail($from, $subject, $to, $content);
+
+    $apiKey = getenv('SENDGRID_API_KEY');
+    $sg = new \SendGrid($apiKey);
+
+    $response = $sg->client->mail()->send()->post($mail);
+    echo $response->statusCode();
+    echo $response->headers();
+    echo $response->body();
     ///////////////////////////////////////////////////////////////////
 
     /*//Redirect back to the main page   
