@@ -60,7 +60,10 @@
     //$contentStr += $emailClassContent;
     $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";
 
+    echo "\ncontentStr before wordwrap: " . $contentStr;
     $contentStr = wordwrap($contentStr,70);
+    echo "\ncontentStr after wordwrap: " . $contentStr;
+    echo "\nemailClassContent: " . $emailClassContent;
 
     $content = new SendGrid\Content("text/plain", $contentStr);
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
