@@ -31,7 +31,7 @@
             $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             //For email purposes
-            /*$stmt = $db->prepare('SELECT * FROM public.class(class_time, topic, teacher, link, additional_materials) 
+            $stmt = $db->prepare('SELECT * FROM public.class(class_time, topic, teacher, link, additional_materials) 
                 WHERE id=:id;');
             $stmt->execute(array(':id' => $key));
             $classContent = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@
             $emailClassContent += "Topic: " . $classContent[0]["topic"] . "\n";
             $emailClassContent += "Teacher: " . $classContent[0]["teacher"] . "\n";
             $emailClassContent += "Link: " . $classContent[0]["link"] . "\n";
-            $emailClassContent += "Any Additional Materials: " . $classContent[0]["additional_materials"] . "\n\n";*/
+            $emailClassContent += "Any Additional Materials: " . $classContent[0]["additional_materials"] . "\n\n";
         }
     }
 

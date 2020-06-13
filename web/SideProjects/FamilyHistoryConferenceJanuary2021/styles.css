@@ -116,7 +116,8 @@ input {
 }
 
 .registrationCol {
-    visibility: collapse;
+    /*visibility: collapse;*/
+    display: none;
 }
 
 .hidden {
