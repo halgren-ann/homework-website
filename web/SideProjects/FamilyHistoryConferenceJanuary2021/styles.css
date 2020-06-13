@@ -101,9 +101,11 @@ h3 {
 
 #registerPopupSection {
     background-color: #003300;
-    position: absolute;
+    /*position: absolute;
     position: sticky;
-    transform: translate(0%, -70%);
+    transform: translate(0%, -70%);*/
+    position: fixed;
+    top: 2%;
     left: 18%;
     width: 64%;
     height: 36%;
@@ -116,8 +118,8 @@ input {
 }
 
 .registrationCol {
-    /*visibility: collapse;*/
-    display: none;
+    visibility: collapse;
+    /*display: none;*/
 }
 
 .hidden {
