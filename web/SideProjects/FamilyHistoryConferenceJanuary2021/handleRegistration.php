@@ -53,12 +53,12 @@
 
     //Create the content of the email
     $contentStr = "Hi " . $_POST["full_name"] . ",\n\nThank you for registering for Family History Conference.";
-    /*$contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
+    $contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
     $contentStr += "If you change your mind and would like to sign up for a different set of classes, ";
     $contentStr += "just return to (link website here) and register again. Your class select will be reset with ";
     $contentStr += "the new information.\n\n";
-    $contentStr += $emailClassContent;
-    $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";*/
+    /*$contentStr += $emailClassContent;*/
+    $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";
 
     $contentStr = wordwrap($contentStr,70);
 
