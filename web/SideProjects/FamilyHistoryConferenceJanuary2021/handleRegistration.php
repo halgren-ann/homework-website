@@ -57,7 +57,7 @@
     $contentStr += "If you change your mind and would like to sign up for a different set of classes, ";
     $contentStr += "just return to (link website here) and register again. Your class select will be reset with ";
     $contentStr += "the new information.\n\n";
-    $contentStr += $emailClassContent;
+    //$contentStr += $emailClassContent;
     $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";
 
     $contentStr = wordwrap($contentStr,70);
@@ -75,7 +75,7 @@
     ///////////////////////////////////////////////////////////////////
 
     //Redirect back to the main page   
-    header("Location:index.php");
+    //header("Location:index.php");
 ?>
 
 </body>
