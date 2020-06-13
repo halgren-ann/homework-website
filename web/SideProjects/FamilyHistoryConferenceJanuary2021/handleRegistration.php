@@ -31,7 +31,7 @@
             $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             //For email purposes
-            $stmt = $db->prepare('SELECT * FROM public.class(class_time, topic, teacher, link, additional_materials) 
+            /*$stmt = $db->prepare('SELECT * FROM public.class(class_time, topic, teacher, link, additional_materials) 
                 WHERE id=:id;');
             $stmt->execute(array(':id' => $key));
             $classContent = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,7 @@
             $emailClassContent += "Topic: " . $classContent[0]["topic"] . "\n";
             $emailClassContent += "Teacher: " . $classContent[0]["teacher"] . "\n";
             $emailClassContent += "Link: " . $classContent[0]["link"] . "\n";
-            $emailClassContent += "Any Additional Materials: " . $classContent[0]["additional_materials"] . "\n\n";
+            $emailClassContent += "Any Additional Materials: " . $classContent[0]["additional_materials"] . "\n\n";*/
         }
     }
 
@@ -53,13 +53,13 @@
 
     //Create the content of the email
     $contentStr = "Hi " . $_POST["full_name"] . ",\n\nThank you for registering for Family History Conference.";
-    $contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
+    /*$contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
     $contentStr += "If you change your mind and would like to sign up for a different set of classes, ";
     $contentStr += "just return to (link website here) and register again. Your class select will be reset with ";
     $contentStr += "the new information.\n\n";
     $contentStr += $emailClassContent;
-    $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";
-    
+    $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";*/
+
     $contentStr = wordwrap($contentStr,70);
 
     $content = new SendGrid\Content("text/plain", $contentStr);
