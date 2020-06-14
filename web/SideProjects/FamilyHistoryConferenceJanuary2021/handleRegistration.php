@@ -5,7 +5,7 @@
 
 <?php 
     include 'dbConnect.php';
-    require('sendgrid-php/sendgrid-php/sendgrid-php.php');
+    require("sendgrid-php/sendgrid-php/sendgrid-php.php");
 
     //Add new attendee
     $stmt = $db->prepare('INSERT into public.attendee(full_name, email) 
@@ -47,25 +47,25 @@
     /////////////////////////////////////////////////////////////////////
     //Send an email with the info about the classes they signed up for
     
-    $from = new SendGrid\Email(null, 'annabellelarsen@gmail.com');
-    $subject = 'Family History Conference Registration';
+    $from = new SendGrid\Email(null, "annabellelarsen@gmail.com");
+    $subject = "Family History Conference Registration";
     $to = new SendGrid\Email(null, $_POST["email"]);
 
     //Create the content of the email
-    $contentStr = 'Hi ' . $_POST["full_name"] . ',\n\nThank you for registering for Family History Conference.';
-    $contentStr += 'Below are the classes you are registered for that will take place on Saturday January 2021.';
-    $contentStr += 'If you change your mind and would like to sign up for a different set of classes, ';
-    $contentStr += 'just return to (link website here) and register again. Your class select will be reset with ';
-    $contentStr += 'the new information.\n\n';
+    $contentStr = "Hi " . $_POST["full_name"] . ",\n\nThank you for registering for Family History Conference.";
+    $contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
+    $contentStr += "If you change your mind and would like to sign up for a different set of classes, ";
+    $contentStr += "just return to (link website here) and register again. Your class selection will be reset with ";
+    $contentStr += "the new information.\n\n";
     $contentStr += $emailClassContent;
-    $contentStr += 'If you have any questions, please contact (contact info here). We look forward to seeing you!';
+    $contentStr += "If you have any questions, please contact (contact info here). We look forward to seeing you!";
 
     echo '\ncontentStr before wordwrap: ' . $contentStr;
     $contentStr = wordwrap($contentStr,70);
     echo '\ncontentStr after wordwrap: ' . $contentStr;
     echo '\nemailClassContent: ' . $emailClassContent;
 
-    $content = new SendGrid\Content('text/plain', $contentStr);
+    $content = new SendGrid\Content("text/plain", $contentStr);
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
     $apiKey = getenv('SENDGRID_API_KEY');
@@ -78,7 +78,7 @@
     ///////////////////////////////////////////////////////////////////
 
     //Redirect back to the main page   
-    //header('Location:index.php');
+    //header("Location:index.php");
 ?>
 
 </body>
