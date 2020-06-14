@@ -20,7 +20,7 @@
     $attendee_id = $rows[0]["id"];
 
     //Couple the attendee with the classes they registered for, and save the info for the email
-    $emailClassContent = null;
+    $emailClassContent = "";
     foreach($_POST as $key => $value)
     {
         if (is_numeric($key))
@@ -36,11 +36,11 @@
             $stmt->execute(array(':id' => $key));
             $classContent = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $emailClassContent += 'Class time: ' . $classContent[0]["class_time"] . '\n';
-            $emailClassContent += 'Topic: ' . $classContent[0]["topic"] . '\n';
-            $emailClassContent += 'Teacher: ' . $classContent[0]["teacher"] . '\n';
-            $emailClassContent += 'Link: ' . $classContent[0]["link"] . '\n';
-            $emailClassContent += 'Any Additional Materials: ' . $classContent[0]["additional_materials"] . '\n\n';
+            $emailClassContent = $emailClassContent . 'Class time: ' . $classContent[0]["class_time"] . '\n';
+            $emailClassContent = $emailClassContent . 'Topic: ' . $classContent[0]["topic"] . '\n';
+            $emailClassContent = $emailClassContent . 'Teacher: ' . $classContent[0]["teacher"] . '\n';
+            $emailClassContent = $emailClassContent . 'Link: ' . $classContent[0]["link"] . '\n';
+            $emailClassContent = $emailClassContent . 'Any Additional Materials: ' . $classContent[0]["additional_materials"] . '\n\n';
         }
     }
 
@@ -52,7 +52,7 @@
     $to = new SendGrid\Email(null, $_POST["email"]);
 
     //Create the content of the email
-    $contentStr = null;
+    $contentStr = "";
     /*$contentStr += "Hi " . $_POST["full_name"] . ",\n\nThank you for registering for Family History Conference.";
     $contentStr += "Below are the classes you are registered for that will take place on Saturday January 2021.";
     $contentStr += "If you change your mind and would like to sign up for a different set of classes, ";
