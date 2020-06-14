@@ -35,11 +35,11 @@
             $stmt->execute(array(':id' => $key));
             $classContent = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            $emailClassContent = $emailClassContent . 'Class time: ' . $classContent[0]["class_time"] . '\n';
-            $emailClassContent = $emailClassContent . 'Topic: ' . $classContent[0]["topic"] . '\n';
-            $emailClassContent = $emailClassContent . 'Teacher: ' . $classContent[0]["teacher"] . '\n';
-            $emailClassContent = $emailClassContent . 'Link: ' . $classContent[0]["link"] . '\n';
-            $emailClassContent = $emailClassContent . 'Any Additional Materials: ' . $classContent[0]["additional_materials"] . '\n\n';
+            $emailClassContent = $emailClassContent . 'Class time: ' . $classContent[0]["class_time"] . "\n";
+            $emailClassContent = $emailClassContent . 'Topic: ' . $classContent[0]["topic"] . "\n";
+            $emailClassContent = $emailClassContent . 'Teacher: ' . $classContent[0]["teacher"] . "\n";
+            $emailClassContent = $emailClassContent . 'Link: ' . $classContent[0]["link"] . "\n";
+            $emailClassContent = $emailClassContent . 'Any Additional Materials: ' . $classContent[0]["additional_materials"] . "\n\n";
         }
     }
 
@@ -53,17 +53,14 @@
     //Create the content of the email
     $contentStr = "";
     $contentStr = $contentStr . "Hi " . $_POST["full_name"] . ",\n\nThank you for registering for Family History Conference.";
-    $contentStr = $contentStr . "Below are the classes you are registered for that will take place on Saturday January 2021.";
-    $contentStr = $contentStr . "If you change your mind and would like to sign up for a different set of classes, ";
+    $contentStr = $contentStr . " Below are the classes you are registered for that will take place on Saturday January 2021.";
+    $contentStr = $contentStr . " If you change your mind and would like to sign up for a different set of classes, ";
     $contentStr = $contentStr . "just return to (link website here) and register again. Your class selection will be reset with ";
     $contentStr = $contentStr . "the new information.\n\n";
     $contentStr = $contentStr . $emailClassContent;
     $contentStr = $contentStr . "If you have any questions, please contact (contact info here). We look forward to seeing you!";
 
-    echo '\ncontentStr before wordwrap: ' . $contentStr;
     $contentStr = wordwrap($contentStr,70);
-    echo '\ncontentStr after wordwrap: ' . $contentStr;
-    echo '\nemailClassContent: ' . $emailClassContent;
 
     $content = new SendGrid\Content("text/plain", $contentStr);
     $mail = new SendGrid\Mail($from, $subject, $to, $content);
