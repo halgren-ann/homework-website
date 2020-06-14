@@ -31,8 +31,7 @@
             $stmt->fetchAll(PDO::FETCH_ASSOC);
 
             //For email purposes
-            $stmt = $db->prepare('SELECT * FROM public.class(class_time, topic, teacher, link, additional_materials) 
-                WHERE id=:id;');
+            $stmt = $db->prepare('SELECT * FROM public.class WHERE id=:id;');
             $stmt->execute(array(':id' => $key));
             $classContent = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
