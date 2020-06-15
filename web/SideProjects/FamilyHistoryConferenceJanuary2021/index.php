@@ -29,7 +29,7 @@
         <img src="x-2.png" id="x" onclick="closeRegisterPopupSection()">
         <br/>
         <label for="full_name">Full name:</label>
-        <input type="text" id="full_name" name="full_name" autofocus>
+        <input type="text" id="full_name" name="full_name" autofocus required>
         <br/>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required>
