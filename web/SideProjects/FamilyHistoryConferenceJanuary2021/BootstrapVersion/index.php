@@ -93,8 +93,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<!--Only include this next one if they are NOT logged in-->
-      	<li><a href="#createaccount">Create Account</a></li>
-        <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	<li><a data-toggle="tab" href="#createaccount">Create Account</a></li>
+        <li><a data-toggle="tab" href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -114,7 +114,7 @@
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="url(family-pic.jpg)" alt="Image">
+          <img src="family-pic.jpg" alt="Image">
           <div class="carousel-caption">
             <h3>Family Discovery Day!</h3>
             <p>Come discover more about the roots of your family tree - where and how they lived, what challenges they had to overcome, and what brought them joy.</p>
@@ -122,7 +122,7 @@
         </div>
 
         <div class="item">
-          <img src="url(family-circle.jpg)" alt="Image">
+          <img src="family-circle.jpg" alt="Image">
           <div class="carousel-caption">
             <h3>Become More Connected</h3>
             <p>Past, Present, and Future</p>
@@ -194,7 +194,8 @@
       </tr>
     </tbody>
   </table>
-
+  
+  <br/>
   <p>Booths (Available in the Cultural Hall)</p>            
   <table class="table table-striped">
     <thead>
@@ -289,7 +290,6 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th></th> <!--checkboxes-->
                 <th>Class</th>
                 <th>Time</th>
                 <th>Presenter</th>
@@ -298,21 +298,18 @@
             </thead>
             <tbody>
             <tr>
-                <td><input type="checkbox" name="checkbox1"></td>
                 <td>Intro to Family Search</td>
                 <td>10:00am</td>
                 <td>John Halgren</td>
                 <td>This is a brief description of the material that will be covered</td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="checkbox2"></td>
                 <td>Intro to Family Search</td>
                 <td>10:00am</td>
                 <td>John Halgren</td>
                 <td>This is a brief description of the material that will be covered</td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="checkbox3"></td>
                 <td>Intro to Family Search</td>
                 <td>10:00am</td>
                 <td>John Halgren</td>
@@ -325,19 +322,16 @@
         <table class="table table-striped">
             <thead>
             <tr>
-                <th></th> <!--checkboxes-->
                 <th>Booth</th>
                 <th>Brief Description</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td><input type="checkbox" name="checkbox3"></td>
                 <td>Indexing</td>
                 <td>Come learn about indexing digital records</td>
             </tr>
             <tr>
-                <td><input type="checkbox" name="checkbox4"></td>
                 <td>Indexing</td>
                 <td>Come learn about indexing digital records</td>
             </tr>
@@ -369,7 +363,7 @@
     <div class="well">
         <table class="table">
             <tr class="danger">
-                <td>Delete your account</td>
+                <td>Delete your account:</td>
                 <td>All your data will be deleteled, including your login credentials.</td>
                 <td><button class="danger">Delete</button></td>
             </tr>
