@@ -26,33 +26,6 @@
       }
     }
 
-    .signup-form .btn {        
-        font-size: 16px;
-        font-weight: bold;		
-        min-width: 140px;
-        outline: none !important;
-    }
-    .signup-form .row div:first-child {
-        padding-right: 10px;
-    }
-    .signup-form .row div:last-child {
-        padding-left: 10px;
-    }    	
-    .signup-form a {
-        color: #fff;
-        text-decoration: underline;
-    }
-    .signup-form a:hover {
-        text-decoration: none;
-    }
-    .signup-form form a {
-        color: #5cb85c;
-        text-decoration: none;
-    }	
-    .signup-form form a:hover {
-        text-decoration: underline;
-    }
-
     .login-form {
         width: 340px;
         margin: 50px auto;
@@ -156,7 +129,7 @@
     <div class="well">
        <p>Upcoming Events...</p>
        <div class="well">Family Discovery Day, October 15, 2021
-           <button>Sign Up</button>
+           <button><a href=#registration>Register<a></button>
        </div>
     </div>
   </div>
@@ -391,7 +364,7 @@
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
         	<div class="panel panel-default">
         		<div class="panel-heading">
-                    <h3 class="panel-title">Create your account <small>It's free and only takes a minute</small></h3>
+                    <h3 class="panel-title">Create your account for Family Discovery Day<small> It's free!</small></h3>
                 </div>
                 <div class="panel-body">
                 <form role="form">
@@ -428,6 +401,7 @@
                     <input type="submit" value="Register" class="btn btn-info btn-block">
                 
                 </form>
+                <div class="text-center">Already have an account? <a href="#login">Sign in</a></div>
                 </div>
             </div>
         </div>
@@ -483,7 +457,7 @@
                 <a href="#" class="float-right">Forgot Password?</a>
             </div>        
         </form>
-        <p class="text-center"><a href="#">Create an Account</a></p>
+        <p class="text-center"><a href="#createaccount">Create an Account</a></p>
     </div>
 <hr>
 </div>
