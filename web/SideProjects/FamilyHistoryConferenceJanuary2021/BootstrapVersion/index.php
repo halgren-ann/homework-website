@@ -25,6 +25,48 @@
         display: none; 
       }
     }
+
+    .signup-form .btn {        
+        font-size: 16px;
+        font-weight: bold;		
+        min-width: 140px;
+        outline: none !important;
+    }
+    .signup-form .row div:first-child {
+        padding-right: 10px;
+    }
+    .signup-form .row div:last-child {
+        padding-left: 10px;
+    }    	
+    .signup-form a {
+        color: #fff;
+        text-decoration: underline;
+    }
+    .signup-form a:hover {
+        text-decoration: none;
+    }
+    .signup-form form a {
+        color: #5cb85c;
+        text-decoration: none;
+    }	
+    .signup-form form a:hover {
+        text-decoration: underline;
+    }
+
+    .login-form {
+        width: 340px;
+        margin: 50px auto;
+        font-size: 15px;
+    }
+    .login-form form {
+        margin-bottom: 15px;
+        background: #f7f7f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+    .login-form h2 {
+        margin: 0 0 15px;
+    }
   </style>
 </head>
 <body>
@@ -45,14 +87,14 @@
         <li><a data-toggle="tab" href="#faqs">FAQs</a></li>
         <li><a data-toggle="tab" href="#contact">Contact</a></li>
         <!--Only include these if they are logged in-->
-        <li><a data-toggle="tab" href="#myevents"><mark>My Events</mark></a></li>
+        <li><a data-toggle="tab" href="#myeventschedule"><mark>My Event Schedule</mark></a></li>
         <li><a data-toggle="tab" href="#myaccount">My Account</a></li>
         <!--//-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
       	<!--Only include this next one if they are NOT logged in-->
-      	<li><a href="#">Create Account</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      	<li><a href="#createaccount">Create Account</a></li>
+        <li><a href="#login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
@@ -74,8 +116,8 @@
         <div class="item active">
           <img src="url(family-pic.jpg)" alt="Image">
           <div class="carousel-caption">
-            <h3>Become More Connected</h3>
-            <p>Past, Present, and Future</p>
+            <h3>Family Discovery Day!</h3>
+            <p>Come discover more about the roots of your family tree - where and how they lived, what challenges they had to overcome, and what brought them joy.</p>
           </div>      
         </div>
 
@@ -100,11 +142,11 @@
   </div>
   <div class="col-sm-4">
     <div class="well">
-      <p>Some text..</p>
+      <p>Click the Menu item in the upper right to get more information on this exciting free conference and how to sign up.</p>
     </div>
     <div class="well">
        <p>Upcoming Events...</p>
-       <div class="well">Family History Conference 2021
+       <div class="well">Family Discovery Day, October 15, 2021
            <button>Sign Up</button>
        </div>
     </div>
@@ -113,69 +155,70 @@
 <hr>
 </div>
 
-<div id="about" class="container tab-pane fade">
-<div class="row">
-  <h3>What We Do</h3>
-  <br>
-  <div class="row">
-    <div class="col-sm-3">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Current Project</p>
-    </div>
-    <div class="col-sm-3"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Project 2</p>    
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>
-    <div class="col-sm-3">
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-      <div class="well">
-       <p>Some text..</p>
-      </div>
-    </div>  
-  </div>
-  <hr>
-</div>
+<div id="registration" class="container tab-pane fade">
+  <h2>Family Discovery Day Schedule</h2>
+  <p>This schedule includes the initial welcome and keynote address, the classes offered, and the list of unscheduled booths available in the culteral hall.</p>
+  <p>First, create an account or login, and then you will be able to sign up for classes and "favorite" booths you want to make sure to see.</p>
+  <p>Click the checkboxes next to the classes you would like to sign up for and the booths you want to make sure to see. After clicking "SAVE", you will be sent an email with more information.</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th> <!--checkboxes-->
+        <th>Class</th>
+        <th>Time</th>
+        <th>Presenter</th>
+        <th>Brief Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="checkbox1"></td>
+        <td>Intro to Family Search</td>
+        <td>10:00am</td>
+        <td>John Halgren</td>
+        <td>This is a brief description of the material that will be covered</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="checkbox2"></td>
+        <td>Intro to Family Search</td>
+        <td>10:00am</td>
+        <td>John Halgren</td>
+        <td>This is a brief description of the material that will be covered</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="checkbox3"></td>
+        <td>Intro to Family Search</td>
+        <td>10:00am</td>
+        <td>John Halgren</td>
+        <td>This is a brief description of the material that will be covered</td>
+      </tr>
+    </tbody>
+  </table>
 
-<div class="container text-center">    
-  <h3>Our Partners</h3>
-  <br>
-  <div class="row">
-    <div class="col-sm-2">
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 1</p>
-    </div>
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 2</p>    
-    </div>
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 3</p>
-    </div>
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 4</p>
-    </div> 
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 5</p>
-    </div>     
-    <div class="col-sm-2"> 
-      <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
-      <p>Partner 6</p>
-    </div> 
-  </div>
-</div>
+  <p>Booths (Available in the Cultural Hall)</p>            
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th></th> <!--checkboxes-->
+        <th>Booth</th>
+        <th>Brief Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><input type="checkbox" name="checkbox3"></td>
+        <td>Indexing</td>
+        <td>Come learn about indexing digital records</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" name="checkbox4"></td>
+        <td>Indexing</td>
+        <td>Come learn about indexing digital records</td>
+    </tr>
+    </tbody>
+  </table>
+
+  <Button>SAVE</button>
 <hr>
 </div>
 
@@ -187,42 +230,33 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-        Collapsible Group 1</a>
+        Can I get a free account to FamilyTree?</a>
       </h4>
     </div>
     <div id="collapse1" class="panel-collapse collapse in">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
+      <div class="panel-body">Yes. Include details about how to do that.</div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-        Collapsible Group 2</a>
+        What if I don't know my grandfather's birthdate - can I still find information about him?</a>
       </h4>
     </div>
     <div id="collapse2" class="panel-collapse collapse">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
+      <div class="panel-body">Answer that question here.</div>
     </div>
   </div>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-        Collapsible Group 3</a>
+        Do I have to sign up for an account here if I want to attend Family Discovery Day?</a>
       </h4>
     </div>
     <div id="collapse3" class="panel-collapse collapse">
-      <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.</div>
+      <div class="panel-body">Answer that question here.</div>
     </div>
   </div>
 </div>
@@ -234,20 +268,112 @@
 <div id="contact" class="container tab-pane fade">
   <div class="col-sm-12">
     <div class="well">
-      <p>Some text..</p>
+      <p>The following individuals are family history consultants for the Arvada Stake, and would love to help you with any questions you may have:</p>
+      <p>John Doe</p>
+      <p>Jane Doe</p>
     </div>
     <div class="well">
-       <p>More text...</p>
+       <p>Email a family history consultant at youremail@example.com</p>
     </div>
   </div>
 <hr>
 </div>
 
 
-<div id="myevents" class="container tab-pane fade">
+<div id="myeventschedule" class="container tab-pane fade">
   <div class="col-sm-12">
     <div class="well">
-      <button><a data-toggle="tab" href="#classtablepane">Family History Conference 2021</a></button>
+        <h2>My Family Discovery Day Schedule</h2>
+        <p>This schedule includes the initial welcome and keynote address, along with any classes you signed up for or booths you favorited.</p>
+        <p>If you would like to change your selections, just revisit the Registration tab.</p>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th> <!--checkboxes-->
+                <th>Class</th>
+                <th>Time</th>
+                <th>Presenter</th>
+                <th>Brief Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox" name="checkbox1"></td>
+                <td>Intro to Family Search</td>
+                <td>10:00am</td>
+                <td>John Halgren</td>
+                <td>This is a brief description of the material that will be covered</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checkbox2"></td>
+                <td>Intro to Family Search</td>
+                <td>10:00am</td>
+                <td>John Halgren</td>
+                <td>This is a brief description of the material that will be covered</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checkbox3"></td>
+                <td>Intro to Family Search</td>
+                <td>10:00am</td>
+                <td>John Halgren</td>
+                <td>This is a brief description of the material that will be covered</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <p>Booths (Available in the Cultural Hall)</p>            
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th></th> <!--checkboxes-->
+                <th>Booth</th>
+                <th>Brief Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox" name="checkbox3"></td>
+                <td>Indexing</td>
+                <td>Come learn about indexing digital records</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="checkbox4"></td>
+                <td>Indexing</td>
+                <td>Come learn about indexing digital records</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+<hr>
+</div>
+
+
+
+<div id="myaccount" class="container tab-pane fade">
+  <div class="col-sm-12">
+    <div class="well">
+      <table class="table">
+          <tr>
+              <td>Your email:</td>
+              <td>youremail@example.com</td>
+              <td><button>Change</button></td>
+          </tr>
+          <tr>
+              <td>Your password:</td>
+              <td>examplepassword</td>
+              <td><button>Change</button></td>
+          </tr>
+      </table>
+    </div>
+    <div class="well">
+        <table class="table">
+            <tr class="danger">
+                <td>Delete your account</td>
+                <td>All your data will be deleteled, including your login credentials.</td>
+                <td><button class="danger">Delete</button></td>
+            </tr>
+        </table>
     </div>
   </div>
 <hr>
@@ -256,6 +382,61 @@
 
 
 
+<div id="createaccount" class="container tab-pane fade">
+<div class="signup-form">
+    <form action="/examples/actions/confirmation.php" method="post">
+		<h2>Create Account</h2>
+		<p class="hint-text">Create your account. It's free and only takes a minute.</p>
+        <div class="form-group">
+			<div class="row">
+				<div class="col"><input type="text" class="form-control" name="first_name" placeholder="First Name" required="required"></div>
+				<div class="col"><input type="text" class="form-control" name="last_name" placeholder="Last Name" required="required"></div>
+			</div>        	
+        </div>
+        <div class="form-group">
+        	<input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        </div>
+		<div class="form-group">
+            <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
+        </div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+        </div>
+    </form>
+	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
+</div>
+<hr>
+</div>
+
+
+
+<div id="login" class="container tab-pane fade">
+    <div class="login-form">
+        <form action="/examples/actions/confirmation.php" method="post">
+            <h2 class="text-center">Log in</h2>       
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Username" required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Password" required="required">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            </div>
+            <div class="clearfix">
+                <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
+                <a href="#" class="float-right">Forgot Password?</a>
+            </div>        
+        </form>
+        <p class="text-center"><a href="#">Create an Account</a></p>
+    </div>
+<hr>
+</div>
+
+<!--
 <div id="classtablepane" class="container tab-pane fade">
   <h2>Striped Rows</h2>
   <p>The .table-striped class adds zebra-stripes to a table:</p>            
@@ -287,6 +468,7 @@
   </table>
 <hr>
 </div>
+-->
 
 
 
@@ -296,7 +478,7 @@
 </div>
 <br>
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>Church of Jesus Christ, Arvada Stake, Family Discovery Day</p>
 </footer>
 
 </body>
