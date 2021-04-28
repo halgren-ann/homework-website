@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <style>
     /* Add a gray background color and some padding to the footer */
     footer {
@@ -68,22 +69,7 @@
         margin: 0 0 15px;
     }
 
-    body {
-        color: #fff;
-        background: #63738a;
-        font-family: 'Roboto', sans-serif;
-    }
-    .form-control {
-        height: 40px;
-        box-shadow: none;
-        color: #969fa4;
-    }
-    .form-control:focus {
-        border-color: #5cb85c;
-    }
-    .form-control, .btn {        
-        border-radius: 3px;
-    }
+    
   </style>
 </head>
 <body>
@@ -414,7 +400,7 @@
             <input type="password" class="form-control" name="confirm_password" placeholder="Confirm Password" required="required">
         </div>
 		<div class="form-group">
-            <button type="submit" class="btn btn-success btn-lg btn-block">Register Now</button>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Create Account</button>
         </div>
     </form>
 	<div class="text-center">Already have an account? <a href="#">Sign in</a></div>
