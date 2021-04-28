@@ -129,7 +129,7 @@
     <div class="well">
        <p>Upcoming Events...</p>
        <div class="well">Family Discovery Day, October 15, 2021
-           <button><a href="#registration">Register<a></button>
+           <button><a href="#registration">Register</a></button>
        </div>
     </div>
   </div>
