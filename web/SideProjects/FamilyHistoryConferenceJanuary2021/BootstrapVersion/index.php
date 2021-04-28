@@ -69,7 +69,7 @@
         <li><a data-toggle="tab" href="#faqs">FAQs</a></li>
         <li><a data-toggle="tab" href="#contact">Contact</a></li>
         <!--Only include these if they are logged in-->
-        <li><a data-toggle="tab" href="#myeventschedule"><mark>My Event Schedule</mark></a></li>
+        <li><a data-toggle="tab" href="#myeventschedule">My Event Schedule</a></li>
         <li><a data-toggle="tab" href="#myaccount">My Account</a></li>
         <!--//-->
       </ul>
@@ -364,7 +364,7 @@
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
         	<div class="panel panel-default">
         		<div class="panel-heading">
-                    <h3 class="panel-title">Create your account for Family Discovery Day<small> It's free!</small></h3>
+                    <h3 class="panel-title">Create your account for Family Discovery Day <small> It's free!</small></h3>
                 </div>
                 <div class="panel-body">
                 <form role="form">
@@ -505,6 +505,9 @@
 <br>
 <footer class="container-fluid text-center">
   <p>Church of Jesus Christ, Arvada Stake, Family Discovery Day</p>
+
+
+  <script>"script.js"</script>
 </footer>
 
 </body>
