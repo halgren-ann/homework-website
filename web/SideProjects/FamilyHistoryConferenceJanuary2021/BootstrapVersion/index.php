@@ -129,7 +129,7 @@
     <div class="well">
        <p>Upcoming Events...</p>
        <div class="well">Family Discovery Day, October 15, 2021
-           <button><a href="#registration">Register</a></button>
+           <button><a data-toggle="tab" href="#registration">Register</a></button>
        </div>
     </div>
   </div>
@@ -401,7 +401,8 @@
                     <input type="submit" value="Register" class="btn btn-info btn-block">
                 
                 </form>
-                <div class="text-center">Already have an account? <a href="#login">Sign in</a></div>
+                <br/>
+                <div class="text-center">Already have an account? <a data-toggle="tab" href="#login">Sign in</a></div>
                 </div>
             </div>
         </div>
@@ -453,11 +454,10 @@
                 <button type="submit" class="btn btn-primary btn-block">Log in</button>
             </div>
             <div class="clearfix">
-                <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
                 <a href="#" class="float-right">Forgot Password?</a>
             </div>        
         </form>
-        <p class="text-center"><a href="#createaccount">Create an Account</a></p>
+        <p class="text-center"><a data-toggle="tab" href="#createaccount">Create an Account</a></p>
     </div>
 <hr>
 </div>
