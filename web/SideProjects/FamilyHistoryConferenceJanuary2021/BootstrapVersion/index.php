@@ -67,6 +67,23 @@
     .login-form h2 {
         margin: 0 0 15px;
     }
+
+    body {
+        color: #fff;
+        background: #63738a;
+        font-family: 'Roboto', sans-serif;
+    }
+    .form-control {
+        height: 40px;
+        box-shadow: none;
+        color: #969fa4;
+    }
+    .form-control:focus {
+        border-color: #5cb85c;
+    }
+    .form-control, .btn {        
+        border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -412,7 +429,7 @@
         <form action="/examples/actions/confirmation.php" method="post">
             <h2 class="text-center">Log in</h2>       
             <div class="form-group">
-                <input type="text" class="form-control" placeholder="Username" required="required">
+                <input type="email" class="form-control" placeholder="Email" required="required">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="Password" required="required">
