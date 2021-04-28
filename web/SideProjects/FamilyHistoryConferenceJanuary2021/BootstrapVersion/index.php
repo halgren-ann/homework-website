@@ -83,7 +83,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-        <li><a data-toggle="tab" href="#about">About</a></li>
+        <li><a data-toggle="tab" href="#registration">Registration</a></li>
         <li><a data-toggle="tab" href="#faqs">FAQs</a></li>
         <li><a data-toggle="tab" href="#contact">Contact</a></li>
         <!--Only include these if they are logged in-->
